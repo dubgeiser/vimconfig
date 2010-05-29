@@ -141,10 +141,6 @@ vnoremap < <gv
 nnoremap <Leader>b :buffers<CR>:buffer 
 nnoremap <Leader>f :e <C-D>
 
-" For programming languages using a semi colon at the end of statement.
-autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
-    \ nmap <silent> <Leader>; :call <SID>appendSemiColon()<cr>
-
 " CD to the directory the file in the current buffer is in.
 nmap <silent> <Leader>cd :cd %:h<CR>
 " ... same thing, but for the current window only.
@@ -215,6 +211,16 @@ autocmd BufReadPost *
 " Automatically rebuild the help documentation when vimfu file is changed.
 autocmd BufWrite vimfu.txt :helptags ~/.vim/doc/
 
+" For programming languages using a semi colon at the end of statement.
+autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
+    \ nmap <silent> <Leader>; :call <SID>appendSemiColon()<cr>
+
+fun s:mapTodoKeyBindings()
+    nmap <Leader>o :call Todo_PlaceTickbox()<cr>
+    nmap <Leader>v :call Todo_TickFinished()<cr>
+    nmap <Leader>x :call Todo_TickCancelled()<cr>
+endf
+autocmd FileType todo call <SID>mapTodoKeyBindings()
 
 
 
