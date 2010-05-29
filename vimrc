@@ -1,0 +1,245 @@
+" ==============================================================================
+" Description: vimrc configuration
+"              This should be svn co'd in the directory ~/.vim
+"              From ~/.vimrc source this file:
+"
+"                   source ~/.vim/vimrc
+"
+"              Or make ~/.vimrc a symlink
+"
+" Author: P. Juchtmans
+" Note: Still needs some cleaning up.
+" ==============================================================================
+
+" do this before anything else...
+set nocompatible
+au!
+
+" Better % matching.  Note that this comes from vim install and might need to
+" be updated if Vim is updated.  This includes the doc file macros/matchit.txt
+" and running the :helptags command afterwards.
+runtime macros/matchit.vim
+
+" {{{1 Functions
+"===============================================================================
+" Copied from _vimrc file upon installation of vim 7
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let eq = ''
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      let cmd = '""' . $VIMRUNTIME . '\diff"'
+      let eq = '"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
+
+
+" If there isn't one, append a semi colon to the end of the current line.
+function s:appendSemiColon()
+    if getline('.') !~ ';$'
+        let save_cursor = getpos('.')
+        exec("s/$/;/")
+        call setpos('.', save_cursor)
+    endif
+endfunction
+
+
+" {{{1 Settings
+"===============================================================================
+filetype plugin indent on
+set autoindent
+set autoread
+
+" Not convinced if this is really necessary:
+" If autowrite is on, this will push me towards using autowriteall
+" autowriteall seems like a bridge too far; easy to overwrite stuff and because
+" undo only works in current buffer, going back to a previous buffer and
+" undoing stuff won't work, example:
+" edit file a by accident, then do :e b
+" then back to a, but the accidently changes were written and cannot be
+" changed back by doing undo...
+"set autowrite
+
+set backspace=indent,eol,start whichwrap+=<,>,[,]
+set cindent
+
+" Complete as far as possible, just complete if there's only one possibility
+" and show menu if there's more than 1 possible completion.
+" Show extra info if menu (preview)
+set completeopt=preview,menu,longest
+set diffexpr=MyDiff()
+set encoding=utf-8
+set expandtab
+set fileformat=unix
+set foldclose=all
+set foldmethod=marker
+set history=500
+set incsearch
+set laststatus=2
+set linespace=0
+set mousehide
+set nobackup
+
+" Ignore case sensitivity, unless a search term has capital letters in it.
+set ignorecase
+set smartcase
+
+set nonumber
+" no longer necessary with custom statusline.
+"set ruler
+set scrolljump=1
+set scrolloff=5
+set shiftwidth=4
+set showcmd
+set smartindent
+set softtabstop=4
+set statusline=%-32.32(%<%f\ %r\ %m\%)\ Ln:\ %l/%L,\ Col:\ %c%=%{&ff}\ %{strlen(&fenc)?&fenc:''}\ %Y\ 
+
+" Not too long or we drop to a virtual stand still when editing
+" large-all-on-one-line-code (like OOo xml files.)
+set synmaxcol=512
+
+set tabstop=4
+
+"hate the error dingdong or whatever noise.
+set visualbell
+
+set wildmenu
+set wildmode=full
+syntax on
+set nohlsearch
+
+
+" {{{1 Key bindings
+"===============================================================================
+" Make <Leader> char something more accessible on a AZERTY keyboard
+let mapleader = ","
+let g:mapleader = ","
+
+" Easier omni-complete keys
+inoremap <c-space> <c-x><c-o>
+inoremap <c-d> <c-x><c-f>
+
+" Do not exit visual mode when shifting
+vnoremap > >gv
+vnoremap < <gv
+
+nnoremap <Leader>b :buffers<CR>:buffer 
+nnoremap <Leader>f :e <C-D>
+
+" For programming languages using a semi colon at the end of statement.
+autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
+    \ nmap <silent> <Leader>; :call <SID>appendSemiColon()<cr>
+
+" CD to the directory the file in the current buffer is in.
+nmap <silent> <Leader>cd :cd %:h<CR>
+" ... same thing, but for the current window only.
+"nmap <silent> <Leader>lcd :lcd %:h<CR>
+
+" Add open lines without going to insert mode.
+nmap <C-Enter> o<ESC>
+nmap <C-S-Enter> O<ESC>
+
+" Encountering loads of mixed line-endings at new job - sigh -
+nmap <Leader>r :%s/\r/\r/g<cr>
+
+" {{{2 Standard CTRL-X/C/V/A
+vnoremap <C-X> "+x
+vnoremap <C-C> "+y
+map <C-V>		"+gP
+cmap <C-V>		<C-R>+
+" Uses the paste.vim autoload script.
+exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
+exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
+" CTRL-A for select-all
+noremap <C-A> gggH<C-O>G
+inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
+cnoremap <C-A> <C-C>gggH<C-O>G
+onoremap <C-A> <C-C>gggH<C-O>G
+snoremap <C-A> <C-C>gggH<C-O>G
+xnoremap <C-A> <C-C>ggVG
+" Using CTRL-V as paste, remapping block selection
+noremap <M-v> <C-V>
+" Using CTRL-A as select-all, remapping increment
+noremap <M-k> <C-A>
+" Using CTRL-X as cut, remapping decrement
+noremap <M-j> <C-X>
+
+
+" {{{2 Function keys
+"nnoremap <silent> <F4> :call <SID>toggleHighContrast()<cr>
+" Tabs
+" tabclose does not work on Mac; there it is more of a toggle thing (rather
+" unlogical btw & imho :-( )
+" But CMD-W does close the current tab on Mac.
+" Uncommenting the basic movements, since they can be done as quickly in
+" normal mode via gt and gT.
+" Additionally these keystrokes take numbers for movement, so 3gt goes 3 tabs
+" forward.
+"nnoremap <C-F4> :tabclose<cr>
+"nnoremap <C-TAB> :tabnext<cr>
+"nnoremap <C-S-TAB> :tabprevious<cr>
+
+nnoremap <silent> <F5> :make<CR>
+" F6 is used in file type specific configs for running tests.
+nnoremap <silent> <F8> :TlistToggle<CR>
+
+
+" {{{1 Auto commands
+"===============================================================================
+"autocmd FileType text setlocal textwidth=72
+autocmd FileType mail setlocal nocindent textwidth=72
+
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
+
+" Automatically rebuild the help documentation when vimfu file is changed.
+autocmd BufWrite vimfu.txt :helptags ~/.vim/doc/
+
+
+
+
+" {{{1 Plugin configuration
+"===============================================================================
+"
+" {{{2 pathogen
+call pathogen#runtime_append_all_bundles() 
+
+" {{{2 SnipMate
+let g:snips_author = "P. Juchtmans"
+
+" {{{2 TagList
+" http://vim-taglist.sourceforge.net/extend.html
+if has("gui_macvim")
+    let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
+endif
+let Tlist_Sort_Type = "name"
+let Tlist_Exit_OnlyWindow = 0
+let Tlist_File_Fold_Auto_Close = 1
+let Tlist_Use_Right_Window = 0
+let Tlist_WinWidth = 45
+let Tlist_Compact_Format = 1
+
+" {{{2 TaskList
+let g:tlWindowPosition = 1
+let g:tlTokenList = ['TODO', 'FIXME', 'XXX', 'HACK', '@todo', '???']
+

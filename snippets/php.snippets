@@ -1,0 +1,154 @@
+snippet php
+	<?php
+	${1}
+	?>
+snippet ec
+	echo "${1:string}"${2};
+snippet inc
+	include '${1:file}';${2}
+snippet inco
+	include_once '${1:file}';${2}
+snippet req
+	require '${1:file}';${2}
+snippet reqo
+	require_once '${1:file}';${2}
+# $GLOBALS['...']
+snippet globals
+	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
+snippet $_ COOKIE['...']
+	$_COOKIE['${1:variable}']${2}
+snippet $_ ENV['...']
+	$_ENV['${1:variable}']${2}
+snippet $_ FILES['...']
+	$_FILES['${1:variable}']${2}
+snippet $_ GET['...']
+	$_GET['${1:variable}']${2}
+snippet $_ POST['...']
+	$_POST['${1:variable}']${2}
+snippet $_ REQUEST['...']
+	$_REQUEST['${1:variable}']${2}
+snippet $_ SERVER['...']
+	$_SERVER['${1:variable}']${2}
+snippet $_ SESSION['...']
+	$_SESSION['${1:variable}']${2}
+# File header
+snippet doc
+	/**
+	 * ${1}
+	 *
+	 * @author ${2:`g:snips_author`}
+	 * @version ${3:$Id$}
+	 * @copyright ${4:$2}, `strftime('%d %B, %Y')`
+	 * @package ${5:default}
+	 */
+# Start Docblock
+snippet /**
+	/**
+	 * ${1}
+	 */
+# class ...
+snippet cl
+	class ${1} {
+		${2}
+	}
+snippet clt
+	class ${1}Test extends UnitTestCase {
+		function setUp() {
+		}
+
+		function tearDown() {
+		}
+
+		function test_${2}() {
+			${3}
+		}
+	}
+# define(...)
+snippet def
+	define('${1}', ${2});${3}
+# defined(...)
+snippet def?
+	${1}defined('${2}')${3}
+snippet wh
+	while (${1:/* condition */}) {
+		${2}
+	}
+# do ... while
+snippet do
+	do {
+		${2 }
+	} while (${1:/* condition */});
+snippet if
+	if (${1:/* condition */}) {
+		${2}
+	}
+snippet ife
+	if (${1:/* condition */}) {
+		${2}
+	} else {
+		${3}
+	}
+snippet else
+	else {
+		${1}
+	}
+snippet elif
+	elseif (${1:/* condition */}) {
+		${2}
+	}
+# Tertiary conditional
+snippet ?:
+	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
+snippet switch
+	switch ($${1:variable}) {
+		case '${2:value}':
+			${3}
+		break;
+		${5}
+		default:
+			${4}
+		break;
+	}
+snippet case
+	case '${1:value}':
+		${2}
+	break;${3}
+snippet fori
+	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
+		${4}
+	}
+snippet for
+	foreach($${1:collection} as $${2:key}) {
+		${3}
+	}
+snippet forkv
+	foreach($${1:collection} as $${2:key} => $${3:value}) {
+		${4}
+	}
+snippet fn
+	function ${1}(${2}) {
+		${3}
+	}
+snippet fnt
+	function test_${1}() {
+		${2}
+	}
+# $... = array (...)
+snippet rr=
+	$${1:arrayName} = array(${2});${3}
+snippet kv
+	'${1:key}' => '${2:value}',${3}
+snippet .
+	$this->${1}
+snippet ctor
+	function __construct(${1}) {
+		${2}
+	}
+snippet cctor
+	parent::__construct(${1});
+snippet try
+	try {
+		${1}
+	} catch(${2:Exception} $e) {
+		${3}
+	}

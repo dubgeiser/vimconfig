@@ -1,0 +1,13 @@
+snippet ct
+	create table ${1:tablename} (
+		${2}
+	);
+snippet pk
+	id integer primary key default nextval('${1}_serial'),
+	${2}
+snippet fk
+	${1:table}_id ${2:integer} references $1(id)
+		on delete ${3:cascade}
+		deferrable initially deferred${4}
+snippet acol
+	alter table ${1:tablename} add column ${2:colname} ${3:coltype};

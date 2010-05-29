@@ -1,0 +1,149 @@
+*vimfu.txt*
+
+Using the Vim help system to keep track of my own personal Vim tips and stuff
+that I need to get in my fingers.
+
+Based on http://djcraven5.blogspot.com/2006/10/mastering-vim-help-system.html
+
+
+Keyboard mappings to get in my fingers     *vimfu-learning* *vimfu-training*
+------------------------------------------------------------------------------
+Note to self: COPY them over from other sections, do not move them.
+
+`.              To the line you have last edited.
+^O              Jump to previous position in jump list
+^I/TAB          Jump to next position in jump list
+gc-g            Detailed info on position in file
+zf              Create a fold (follows normal movements, so zf20j creates fold
+                over the next 20 lines down).  zf in visual will create a fold
+                for that selection, and so on.
+zd              Delete the fold the cursor is in.  This does not delete
+                underlying, nested folds.
+zD              Delete folds recursively.  This will delete underlying nested
+                folds.
+
+
+Auto completions                         *vimfu-autocomplete* *vimfu-complete*
+------------------------------------------------------------------------------
+^N              Complete function.
+C-X C-F         Complete file path.
+C-X C-O         Omni completion.  This has been mapped to <C-SPACE>
+
+
+Buffers                                                       *vimfu-buffers*
+------------------------------------------------------------------------------
+:%bd            Close all buffers
+:wa             Write all changed buffers
+
+
+Editing                                                          *vimfu-edit*
+------------------------------------------------------------------------------
+ciw             Change complete word under cursor.
+cit             Change everything between open/close html tag.
+C-R "           paste clipboard in insert mode.
+gJ              Join lines without inserting a space
+
+
+Folds                                                           *vimfu-folds*
+------------------------------------------------------------------------------
+zf              Create a fold (follows normal movements, so zf20j creates fold
+                over the next 20 lines down).  zf in visual will create a fold
+                for that selection, and so on.
+zo              Open fold
+zd              Delete the fold the cursor is in.  This does not delete
+                underlying, nested folds.
+zD              Delete folds recursively.  This will delete underlying nested
+                folds.
+zE              Delete all folds in document.
+zM              Close all open folds.
+zR              Open all folds.
+
+
+Help                                                             *vimfu-help*
+------------------------------------------------------------------------------
+:helpgrep       Search help with a regex
+K               To man page of word under cursor.
+C-]             Jump to tag
+C-T             Back from tag jump
+
+
+Getting Information                                              *vimfu-info*
+------------------------------------------------------------------------------
+ga              Show ascii, hex and octal value of char under cursor
+c-g             Full name of file, how many line, whether it is modified, ...
+gc-g            Detailed info on position in file
+
+
+Moving around                                                    *vimfu-move*
+------------------------------------------------------------------------------
+C-u/d           Half page up/down
+H, M, L         High-, Middle-, Low part of the page
+[[              Previous function / class declaration. (only class in Python)
+]]              Next function / class declaration. (only class in Python)
+[{              Beginning of block (no go in Python)
+]}              End of current block (no go in Python)
+''              To the last place you were.
+`.              To the line you have last edited.
+
+These are not motion commands, but they can come in handy and they "move"
+through files, so I put them here:
+
+^O              Jump to previous position in jump list
+^I/TAB          Jump to next position in jump list
+
+
+Finding / searching                                *vimfu-find* *vimfu-search*
+------------------------------------------------------------------------------
+:g/SE/#         Find occurences of SE and list them in command buffer with lines
+                numbered.
+
+
+Spellchecker                                              *vimfu-spellchecker*
+------------------------------------------------------------------------------
+z=              Find spelling suggestion for word under/after cursor.
+
+
+Surrounding stuff with brackets etc...                       *vimfu-surround*
+------------------------------------------------------------------------------
+Uses |surround.txt|
+
+If surrounding with [{(, use closing version, the opening char will padd the
+surrounding with a space.
+
+cs<C1><C2>      Change surronding char <C1> to char <C2>
+cst<C>          Change surrounding tag (<tag>) with char <C>
+ds<C>           Delete surrounding chars <C>
+dst             Delete surroundig html tag.
+s<C>            Surround selection with char <C> (Visual mode)
+
+
+Selecting stuff                               *vimfu-visual* *vimfu-selection*
+------------------------------------------------------------------------------
+vaw             Visual select word (+ space if there)
+viw             Visual select 1 word
+vap             Visual select paragraph (+ open line if there)
+vip             Visual select 1 paragraph
+
+
+Get input from user                               *vimfu-input* *vimfu-prompt*
+------------------------------------------------------------------------------
+:let a = input('A: ')           Get input from user on commandline
+:let a = inputdialog('A')       Get input from user in a graphical ui dialog.
+:let a = confirm("ok?", "&OK\n&Cancel")  Get input from prompt with buttons.
+
+
+
+Windows                                                        *vimfu-windows*
+------------------------------------------------------------------------------
+:only           Close all windows except current
+<c-w><c-o>      Close all windows except current
+
+
+
+Programming                                                *vimfu-programming*
+------------------------------------------------------------------------------
+Loads of stuff in the vim-OPL book (ex: chapters 26, 27 and more), also check
+help on functions, variables, script(s), usr_41.txt
+
+
+ vim:tw=78:ts=8:ft=help:norl:nocindent:

@@ -1,0 +1,30 @@
+snippet cp
+	class ${1} extends ContentProxy {
+		public function setTableDefinition() {
+			parent::setTableDefinition();
+			${2}
+		}
+
+		public function setUp() {
+			parent::setUp();
+		}
+	}
+snippet dr
+	class ${1} extends Doctrine_Record {
+		public function setTableDefinition() {
+			parent::setTableDefinition();
+			${2}
+		}
+
+		public function setUp() {
+			parent::setUp();
+		}
+	}
+snippet hc
+	$this->hasColumn('${1:column}', '${2:clob}', ${3:null}, array(
+		'notnull' => ${4:true},
+		));${5}
+snippet ho
+	$this->hasOne('${1}');
+snippet hm
+	$this->hasMany('${1:ClassName} as $1s');

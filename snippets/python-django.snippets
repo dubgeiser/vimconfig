@@ -1,0 +1,68 @@
+# Django snipps
+snippet vn
+	verbose_name=_("${1}")
+snippet vnp
+	verbose_name_plural=_("${1}")
+snippet vnm
+	verbose_name = _("${1}")
+snippet vnpm
+	verbose_name_plural = _("${1}")
+snippet mmodel
+	class ${1:ModelName}(${2:models.Model}):
+		${4}
+
+		def __unicode__(self):
+			return unicode(${3})
+snippet bnt
+	blank=${1:True}, null=${2:True}${3}
+snippet rtr
+	render_to_response('${1:template}', RequestContext(${2:request}, ${3:context}))${4}
+# Django model fields
+snippet mfk
+	models.ForeignKey(${1})
+snippet mchar
+	models.CharField(max_length=${1:128}${2})
+snippet mpint
+	models.PositiveIntegerField(${1})
+snippet mint
+	models.IntegerField(${1})
+snippet mdate
+	models.DateField(${1})
+snippet mtime
+	models.TimeField(${1})
+snippet mdatet
+	models.DateTimeField(${1})
+snippet mbool
+	models.BooleanField(${1})
+snippet mtext
+	models.TextField(${1})
+snippet mdec
+	models.DecimalField(max_digits=${1:10}, decimal_places=${2:2}${3})
+snippet mip
+	models.IPAddressField(${1})
+snippet mfile
+	models.FileField(upload_to='${1}'${2})
+snippet mid
+	id = models.AutoField(primary_key=True, verbose_name=_('ID'))
+# Django Form fields
+snippet fchar
+	forms.CharField(label=_('${1}')${2})
+snippet fint
+	forms.IntegerField(label=_('${1}')${2})
+snippet fdate
+	forms.DateField(label=_('${1}')${2})
+snippet ftime
+	forms.TimeField(label=_('${1}')${2})
+snippet fdatet
+	forms.DateTimeField(label=_('${1}')${2})
+snippet fbool
+	forms.BooleanField(label=_('${1}')${2})
+snippet fdec
+	forms.DecimalField(label=_('${1}')${2})
+snippet fip
+	forms.IPAddressField(label=_('${1}')${2})
+snippet ffile
+	forms.FileField(label=_('${1}')${2})
+snippet fchoice
+	forms.ChoiceField(label=_('${1}')${2})
+
