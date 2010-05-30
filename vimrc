@@ -140,6 +140,9 @@ vnoremap < <gv
 
 nnoremap <Leader>b :buffers<CR>:buffer 
 nnoremap <Leader>f :e <C-D>
+nmap <Leader>o :call Todo_PlaceTickbox()<cr>
+nmap <Leader>v :call Todo_TickFinished()<cr>
+nmap <Leader>x :call Todo_TickCancelled()<cr>
 
 " CD to the directory the file in the current buffer is in.
 nmap <silent> <Leader>cd :cd %:h<CR>
@@ -215,12 +218,6 @@ autocmd BufWrite vimfu.txt :helptags ~/.vim/doc/
 autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
     \ nmap <silent> <Leader>; :call <SID>appendSemiColon()<cr>
 
-fun s:mapTodoKeyBindings()
-    nmap <Leader>o :call Todo_PlaceTickbox()<cr>
-    nmap <Leader>v :call Todo_TickFinished()<cr>
-    nmap <Leader>x :call Todo_TickCancelled()<cr>
-endf
-autocmd FileType todo call <SID>mapTodoKeyBindings()
 
 
 
