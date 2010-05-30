@@ -141,8 +141,11 @@ vnoremap < <gv
 nnoremap <Leader>b :buffers<CR>:buffer 
 nnoremap <Leader>f :e <C-D>
 nmap <Leader>o :call Todo_PlaceTickbox()<cr>
+vmap <Leader>o :call Todo_PlaceTickbox()<cr>
 nmap <Leader>v :call Todo_TickFinished()<cr>
+vmap <Leader>v :call Todo_TickFinished()<cr>
 nmap <Leader>x :call Todo_TickCancelled()<cr>
+vmap <Leader>x :call Todo_TickCancelled()<cr>
 
 " CD to the directory the file in the current buffer is in.
 nmap <silent> <Leader>cd :cd %:h<CR>
