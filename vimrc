@@ -203,8 +203,12 @@ nnoremap <silent> <F8> :TlistToggle<CR>
 
 " {{{1 Auto commands
 "===============================================================================
-"autocmd FileType text setlocal textwidth=72
 autocmd FileType mail setlocal nocindent textwidth=72
+autocmd FileType text,rst setlocal nocindent
+
+" These types are fussy about tabs and spaces.
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
