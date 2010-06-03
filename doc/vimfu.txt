@@ -21,6 +21,7 @@ zd              Delete the fold the cursor is in.  This does not delete
                 underlying, nested folds.
 zD              Delete folds recursively.  This will delete underlying nested
                 folds.
+==              Indent current line
 
 
 Auto completions                         *vimfu-autocomplete* *vimfu-complete*
@@ -65,6 +66,11 @@ Help                                                             *vimfu-help*
 K               To man page of word under cursor.
 C-]             Jump to tag
 C-T             Back from tag jump
+
+
+Indent                                                         *vimfu-indent*
+------------------------------------------------------------------------------
+==              Indent current line
 
 
 Getting Information                                              *vimfu-info*
