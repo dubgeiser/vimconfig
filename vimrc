@@ -81,6 +81,7 @@ set cindent
 " and show menu if there's more than 1 possible completion.
 " Show extra info if menu (preview)
 set completeopt=preview,menu,longest
+
 set diffexpr=MyDiff()
 set encoding=utf-8
 set expandtab
@@ -159,43 +160,7 @@ nmap <C-S-Enter> O<ESC>
 " Encountering loads of mixed line-endings at new job - sigh -
 nmap <Leader>r :%s/\r/\r/g<cr>
 
-" {{{2 Standard CTRL-X/C/V/A
-vnoremap <C-X> "+x
-vnoremap <C-C> "+y
-map <C-V>		"+gP
-cmap <C-V>		<C-R>+
-" Uses the paste.vim autoload script.
-exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
-exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
-" CTRL-A for select-all
-noremap <C-A> gggH<C-O>G
-inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
-cnoremap <C-A> <C-C>gggH<C-O>G
-onoremap <C-A> <C-C>gggH<C-O>G
-snoremap <C-A> <C-C>gggH<C-O>G
-xnoremap <C-A> <C-C>ggVG
-" Using CTRL-V as paste, remapping block selection
-noremap <M-v> <C-V>
-" Using CTRL-A as select-all, remapping increment
-noremap <M-k> <C-A>
-" Using CTRL-X as cut, remapping decrement
-noremap <M-j> <C-X>
-
-
 " {{{2 Function keys
-"nnoremap <silent> <F4> :call <SID>toggleHighContrast()<cr>
-" Tabs
-" tabclose does not work on Mac; there it is more of a toggle thing (rather
-" unlogical btw & imho :-( )
-" But CMD-W does close the current tab on Mac.
-" Uncommenting the basic movements, since they can be done as quickly in
-" normal mode via gt and gT.
-" Additionally these keystrokes take numbers for movement, so 3gt goes 3 tabs
-" forward.
-"nnoremap <C-F4> :tabclose<cr>
-"nnoremap <C-TAB> :tabnext<cr>
-"nnoremap <C-S-TAB> :tabprevious<cr>
-
 nnoremap <silent> <F5> :make<CR>
 " F6 is used in file type specific configs for running tests.
 nnoremap <silent> <F8> :TlistToggle<CR>
@@ -204,7 +169,7 @@ nnoremap <silent> <F8> :TlistToggle<CR>
 " {{{1 Auto commands
 "===============================================================================
 autocmd FileType mail setlocal nocindent textwidth=72
-autocmd FileType text,rst setlocal nocindent
+autocmd FileType text,rst,gitcommit setlocal nocindent
 
 " These types are fussy about tabs and spaces.
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
