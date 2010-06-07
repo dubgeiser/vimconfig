@@ -1,8 +1,5 @@
-" File: todo.vim
-" Author: P. Juchtmans
-" Version: 0.1
-" Last Modified: May 29, 2010
 " Description: simple todo lists
+" Author: P. Juchtmans
 " License: http://sam.zoy.org/wtfpl/COPYING
 "          No warranties, expressed or implied.
 "
@@ -33,6 +30,16 @@ if exists('todo_loaded') || &cp || version < 700
 endif
 let todo_loaded = 1
 
+
+fun Todo_ToggleTickbox()
+    if s:currentLineHasEmptyTickbox()
+        call Todo_RemoveTickbox()
+    elseif s:currentLineHasTickbox()
+        call Todo_TickOpen()
+    else
+        call Todo_PlaceTickbox()
+    endif
+endf
 
 fun Todo_PlaceTickbox()
     if ! s:currentLineHasTickbox()
@@ -68,6 +75,10 @@ endf
 
 fun s:currentLineHasTickbox()
     return getline(".") =~ '^\s*\[[ VX]\]'
+endf
+
+fun s:currentLineHasEmptyTickbox()
+    return getline(".") =~ '^\s*\[[ ]\]'
 endf
 
 fun s:tick(char)
