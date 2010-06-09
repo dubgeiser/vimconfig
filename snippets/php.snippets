@@ -52,16 +52,14 @@ snippet cl
 		${2}
 	}
 snippet clt
-	class ${1}Test extends UnitTestCase {
+	class ${1}Test extends ${2:UnitTestCase} {
 		function setUp() {
 		}
 
 		function tearDown() {
 		}
 
-		function test_${2}() {
-			${3}
-		}
+		${3}
 	}
 # define(...)
 snippet def
@@ -70,20 +68,20 @@ snippet def
 snippet def?
 	${1}defined('${2}')${3}
 snippet wh
-	while (${1:/* condition */}) {
+	while (${1}) {
 		${2}
 	}
 # do ... while
 snippet do
 	do {
-		${2 }
-	} while (${1:/* condition */});
+		${2}
+	} while (${1});
 snippet if
-	if (${1:/* condition */}) {
+	if (${1}) {
 		${2}
 	}
 snippet ife
-	if (${1:/* condition */}) {
+	if (${1}) {
 		${2}
 	} else {
 		${3}
@@ -93,7 +91,7 @@ snippet else
 		${1}
 	}
 snippet elif
-	elseif (${1:/* condition */}) {
+	elseif (${1}) {
 		${2}
 	}
 # Tertiary conditional
@@ -130,8 +128,8 @@ snippet fn
 		${3}
 	}
 snippet fnt
-	function test_${1}() {
-		${2}
+	function test_${1:method}_${2:scenario}_${3:expectedBehavior}() {
+		${4}
 	}
 # $... = array (...)
 snippet rr=
