@@ -1,2 +1,3 @@
 .*.swp
 doc/tags
+.DS_Store
