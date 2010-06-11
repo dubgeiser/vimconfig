@@ -28,6 +28,6 @@ elseif has("gui_macvim")
     "set guifont=Monaco:h14
     set antialias
 else
-    set guifont=Monospace\ 11
+    set guifont=Monospace\ 10
 endif
 
