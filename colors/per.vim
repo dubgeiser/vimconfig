@@ -14,3 +14,6 @@ hi NonText  guifg=#222222   guibg=#101010   gui=NONE    ctermfg=black   ctermbg=
 " it (not that I use it on a daily basis, but some plugins (NERD_tree fi.)
 " rely on it.)
 hi CursorLine   guifg=NONE  guibg=#222222   gui=NONE    ctermfg=NONE    ctermbg=NONE    cterm=BOLD
+
+" Override ir_black, don't want an italic font
+hi StatusLine   guifg=#CCCCCC     guibg=#202020     gui=NONE    ctermfg=white       ctermbg=darkgray    cterm=NONE
