@@ -140,7 +140,7 @@ vnoremap > >gv
 vnoremap < <gv
 
 nnoremap <Leader>b :buffers<CR>:buffer 
-nnoremap <Leader>f :e <C-D>
+nnoremap <Leader>e :e <C-D>
 nmap <Leader>o :call Todo_ToggleTickbox()<cr>
 vmap <Leader>o :call Todo_ToggleTickbox()<cr>
 nmap <Leader>v :call Todo_TickFinished()<cr>
