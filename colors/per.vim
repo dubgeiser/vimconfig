@@ -3,7 +3,7 @@
 runtime colors/grb4.vim
 
 " Make cursor stand out more;
-hi Cursor   guifg=black     guibg=yellow    gui=NONE    ctermfg=black   ctermbg=yellow  cterm=reverse
+hi Cursor   guifg=black     guibg=orange    gui=none    ctermfg=black   ctermbg=yellow  cterm=bold
 
 " black background is too ... errr... black, slightly dark grey is nicer on
 " the eyes.
