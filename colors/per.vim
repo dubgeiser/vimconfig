@@ -17,3 +17,7 @@ hi CursorLine   guifg=NONE  guibg=#222222   gui=NONE    ctermfg=NONE    ctermbg=
 
 " Override ir_black, don't want an italic font
 hi StatusLine   guifg=#CCCCCC     guibg=#202020     gui=NONE    ctermfg=white       ctermbg=darkgray    cterm=NONE
+
+hi Error            guifg=NONE        guibg=NONE        gui=undercurl ctermfg=white       ctermbg=red         cterm=NONE     guisp=#FF0000 " undercurl color
+hi ErrorMsg         guifg=white       guibg=#FF0000     gui=BOLD      ctermfg=white       ctermbg=red         cterm=NONE
+hi WarningMsg       guifg=black       guibg=#FFFF00     gui=BOLD      ctermfg=black       ctermbg=yellow         cterm=NONE
