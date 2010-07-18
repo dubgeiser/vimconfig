@@ -1,4 +1,4 @@
-winpos 0 0
+"winpos 0 0
 set lines=48
 set columns=86
 "colorscheme zenburn
