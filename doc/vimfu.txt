@@ -35,6 +35,7 @@ Buffers                                                       *vimfu-buffers*
 ------------------------------------------------------------------------------
 :%bd            Close all buffers
 :wa             Write all changed buffers
+:w !sudo tee %  Write buffer when opened without sudo
 
 
 Editing                                                          *vimfu-edit*
