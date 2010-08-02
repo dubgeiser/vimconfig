@@ -1,2 +1,39 @@
-This is my personal Vim configuration (http://www.vim.org/).
+Vim configuration
+=================
+
+This is my Vim configuration (http://www.vim.org/).
 Feel free to check it out.
+
+
+Installation
+============
+
+Backup (*IMPORTANT*)
+--------------------
+
+    cd
+    tar -cjf vimconfig.tar.bz2 .vim/ .vimrc .gvimrc
+
+
+Install
+-------
+If you haven't done it already: *BACKUP*
+
+    rm -fr .vim .vimrc .gvimrc
+    git clone git://github.com/dubgeiser/vimconfig.git .vim/
+    ln -s .vim/vimrc .vimrc
+    ln -s .vim/gvimrc .gvimrc
+    vim
+    :helptags ~/.vim/doc/
+
+enjoy.
+
+
+Restore backup
+--------------
+You _did_ backup, right?
+
+    cd
+    rm -fr .vim .vimrc .gvimrc
+    tar -xjf vimconfig.tar.bz2
+
