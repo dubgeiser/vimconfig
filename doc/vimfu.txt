@@ -14,14 +14,6 @@ Note to self: COPY them over from other sections, do not move them.
 ^O              Jump to previous position in jump list
 ^I/TAB          Jump to next position in jump list
 gc-g            Detailed info on position in file
-zf              Create a fold (follows normal movements, so zf20j creates fold
-                over the next 20 lines down).  zf in visual will create a fold
-                for that selection, and so on.
-zd              Delete the fold the cursor is in.  This does not delete
-                underlying, nested folds.
-zD              Delete folds recursively.  This will delete underlying nested
-                folds.
-==              Indent current line
 
 
 Auto completions                         *vimfu-autocomplete* *vimfu-complete*
