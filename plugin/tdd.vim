@@ -11,7 +11,7 @@ endif
 let tdd_loaded = 1
 
 
-fun! ShowTestSuccess()
+fun Tdd_ShowTestSuccess()
     hi TestSuccess ctermfg=white ctermbg=green guibg=green
     echohl TestSuccess
     echon repeat(" ", &columns)
@@ -19,7 +19,7 @@ fun! ShowTestSuccess()
 endf
 
 
-fun! ShowTestFail()
+fun Tdd_ShowTestFail()
     hi TestFail ctermfg=white ctermbg=red guibg=red
     echohl TestFail
     echon repeat(" ", &columns)
