@@ -25,12 +25,9 @@ endif
 let tdd_loaded = 1
 
 
-hi TestSuccess ctermfg=white ctermbg=green guibg=green
-hi TestFail ctermfg=white ctermbg=red guibg=red
-
 
 " Run a given testfile, pass '%' for the file in the current buffer.
-fun Tdd_RunTestFile(fn)
+fun! Tdd_RunTestFile(fn)
     call s:runTest(a:fn)
     if s:isSuccess()
         call s:showTestSuccess()
@@ -39,7 +36,7 @@ fun Tdd_RunTestFile(fn)
     endif
 endf
 
-fun s:isSuccess()
+fun! s:isSuccess()
     for each in getqflist()
         if each['valid'] == 1
             return 0
@@ -48,20 +45,22 @@ fun s:isSuccess()
     return 1
 endf
 
-fun s:runTest(fn)
+fun! s:runTest(fn)
     silent exec "make " . a:fn
     silent !echo
 endf
 
-fun s:showTestSuccess()
+fun! s:showTestSuccess()
     call s:showBar("TestSuccess")
 endf
 
-fun s:showTestFail()
+fun! s:showTestFail()
     call s:showBar("TestFail")
 endf
 
-fun s:showBar(higroup)
+fun! s:showBar(higroup)
+    hi TestSuccess ctermfg=white ctermbg=green guibg=green
+    hi TestFail ctermfg=white ctermbg=red guibg=red
     exec "echohl " . a:higroup
     " We do not want a blank line after our colored bar.
     echon repeat(" ", &columns - 1)
