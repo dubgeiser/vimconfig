@@ -45,6 +45,10 @@
 "
 " To Do:
 "   - Show error message for failed tests.
+"   - Introduce awareness for alternating files, fi. '.inc.php' and
+"     '.test.php'.  This makes it possible to edit the CUT and simply run the
+"     test.  (well, sort of, assuming CUT and test itself are in the buffers
+"     fi.)
 
 
 if exists('tdd_loaded') || &cp || version < 700
