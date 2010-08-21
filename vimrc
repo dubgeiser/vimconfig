@@ -160,6 +160,12 @@ nmap <C-S-Enter> O<ESC>
 " Encountering loads of mixed line-endings at new job - sigh -
 nmap <Leader>r :%s/\r/\r/g<cr>
 
+" TaskList
+nmap <unique> <Leader>l <Plug>TaskList
+
+" Run current buffer as test for tdd.vim
+nmap <Leader>t :call Tdd_RunTestFile('%')<cr>
+
 " {{{2 Function keys
 nnoremap <silent> <F5> :make<CR>
 " F6 is used in file type specific configs for running tests.

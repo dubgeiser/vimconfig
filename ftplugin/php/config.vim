@@ -3,8 +3,14 @@
 set fileformat=unix
 set textwidth=0
 
-"set makeprg=php\ -l\ %
-"set errorformat=%m\ in\ %f\ on\ line\ %l
-set makeprg=php\ %
-set errorformat=%m\ at\ \[%f\ line\ %l]
+set makeprg=php\ -l\ %
+"set makeprg=php\ %
+
+" PHP error
+set errorformat+=%m\ in\ %f\ on\ line\ %l
+
+" SimpleTest Failing Test
+set errorformat+=%m\ at\ \[%f\ line\ %l]
+
+let g:Tdd_makeprg='php\ %'
 
