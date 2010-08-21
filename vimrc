@@ -64,15 +64,10 @@ filetype plugin indent on
 set autoindent
 set autoread
 
-" Not convinced if this is really necessary:
-" If autowrite is on, this will push me towards using autowriteall
-" autowriteall seems like a bridge too far; easy to overwrite stuff and because
-" undo only works in current buffer, going back to a previous buffer and
-" undoing stuff won't work, example:
-" edit file a by accident, then do :e b
-" then back to a, but the accidently changes were written and cannot be
-" changed back by doing undo...
-"set autowrite
+" 2010-08-21 Enabling this; it's very handy when running :make (and thus
+" tdd.vim)  The reluctance I had before, will most probably go away once I'm
+" on 7.3 because there the undo WILL keep on working.
+set autowrite
 
 set backspace=indent,eol,start whichwrap+=<,>,[,]
 set cindent
