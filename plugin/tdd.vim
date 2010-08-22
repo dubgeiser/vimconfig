@@ -58,10 +58,10 @@
 "     defined.
 
 
-if exists('tdd_loaded') || &cp || version < 700
-    finish
-endif
-let tdd_loaded = 1
+"if exists('tdd_loaded') || &cp || version < 700
+    "finish
+"endif
+"let tdd_loaded = 1
 
 
 " Run a given testfile, pass '%' for the file in the current buffer.
@@ -101,8 +101,8 @@ endf
 
 " 'success_or_failure' string Either 'Success' or 'Failure'
 fun! s:showBar(success_or_failure, message)
-    hi Tdd_Success ctermfg=white ctermbg=green guibg=green
-    hi Tdd_Failure ctermfg=white ctermbg=red guibg=red
+    hi Tdd_Success ctermfg=white ctermbg=green guibg=#256414
+    hi Tdd_Failure ctermfg=white ctermbg=red guibg=#dd2212
     exec "echohl Tdd_" . a:success_or_failure
     echon a:message
     " -1 because we don't want a blank line
