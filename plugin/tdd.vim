@@ -58,10 +58,10 @@
 "     defined.
 
 
-"if exists('tdd_loaded') || &cp || version < 700
-    "finish
-"endif
-"let tdd_loaded = 1
+if exists('tdd_loaded') || &cp || version < 700
+    finish
+endif
+let tdd_loaded = 1
 
 
 " Run a given testfile, pass '%' for the file in the current buffer.
