@@ -64,9 +64,10 @@ filetype plugin indent on
 set autoindent
 set autoread
 
-" 2010-08-21 Enabling this; it's very handy when running :make (and thus
-" tdd.vim)  The reluctance I had before, will most probably go away once I'm
-" on 7.3 because there the undo WILL keep on working.
+" Remember undo's even when buffer has been in the background.
+" Also allows for sending buffers to the background without saving...
+set hidden 
+" ... this is where this comes in:
 set autowrite
 
 set backspace=indent,eol,start whichwrap+=<,>,[,]
