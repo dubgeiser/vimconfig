@@ -39,15 +39,17 @@
 
 "
 " Known Limitations:
-"           - Only tested with PHP and SimpleTest's autorun on Mac & Linux
-"           - The test file must be runnable, if it is not, a green bar will
-"             be displayed.
-"           - When a test run is a success, the last line of the test run
-"             output is re-echoed in the green bar, depending on the output
-"             format of your test runner, this might not be the result you
-"             were hoping for.
-"           - Yes, I am aware of the tragic irony that this plugin does not
-"             have tests.
+"   - Only tested with:
+"       - PHP and SimpleTest's autorun on Mac & Linux
+"       - Python unittest.main() on Mac & Linux
+"   - The test file must be runnable, if it is not, a green bar will
+"     be displayed.
+"   - When a test run is a success, the last line of the test run
+"     output is re-echoed in the green bar, depending on the output
+"     format of your test runner, this might not be the result you
+"     were hoping for.
+"   - Yes, I am aware of the tragic irony that this plugin does not
+"     have tests.
 "
 " To Do:
 "   - Introduce awareness for alternating files, fi. '.inc.php' and
