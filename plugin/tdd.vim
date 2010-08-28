@@ -39,7 +39,7 @@
 
 "
 " Known Limitations:
-"   - Only tested with:
+"   - Only tested in Gvim and MacVim with:
 "       - PHP and SimpleTest's autorun on Mac & Linux
 "       - Python unittest.main() on Mac & Linux
 "   - The test file must be runnable, if it is not, a green bar will
@@ -58,6 +58,7 @@
 "     fi.)
 "   - Better error handling for things like checking if 'Tdd_makeprg' is
 "     defined.
+"   - UI screwed when used in vim (G-/MacVim are ok though)?
 
 
 if exists('tdd_loaded') || &cp || version < 700
