@@ -48,6 +48,11 @@
 "     output is re-echoed in the green bar, depending on the output
 "     format of your test runner, this might not be the result you
 "     were hoping for.
+"   - Alternating between buffers with code in different languages needs
+"     manually re-setting the filetype, ex: edit php file switch to buffer
+"     with python code, go back to the php file, :call Tdd_RunTestFile('%')
+"     and a red bar is shown with 'Syntax Error' message.  :set ft=php before
+"     running again solves this.
 "   - Yes, I am aware of the tragic irony that this plugin does not
 "     have tests.
 "
@@ -59,6 +64,7 @@
 "   - Better error handling for things like checking if 'Tdd_makeprg' is
 "     defined.
 "   - UI screwed when used in vim (G-/MacVim are ok though)?
+"   - Investigate :help write-compiler-plugin
 
 
 if exists('tdd_loaded') || &cp || version < 700
