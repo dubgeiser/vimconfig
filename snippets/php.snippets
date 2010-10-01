@@ -48,19 +48,15 @@ snippet /**
 	 */
 # class ...
 snippet cl
-	class ${1}
-	{
+	class ${1} {
 		${2}
 	}
 snippet clt
-	class ${1}Test extends ${2:UnitTestCase}
-	{
-		function setUp()
-		{
+	class ${1}Test extends ${2:UnitTestCase} {
+		function setUp() {
 		}
 
-		function tearDown()
-		{
+		function tearDown() {
 		}
 
 		${3}
@@ -128,13 +124,11 @@ snippet forkv
 		${4}
 	}
 snippet fn
-	function ${1}(${2})
-	{
+	function ${1}(${2}) {
 		${3}
 	}
 snippet fnt
-	function test_${1:usecase}_${2:expectedBehavior}()
-	{
+	function test_${1:usecase}_${2:expectedBehavior}() {
 		${3}
 	}
 # $... = array (...)
@@ -145,8 +139,7 @@ snippet kv
 snippet .
 	$this->${1}
 snippet ctor
-	function __construct(${1})
-	{
+	function __construct(${1}) {
 		${2}
 	}
 snippet cctor

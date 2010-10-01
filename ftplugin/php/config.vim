@@ -2,10 +2,10 @@
 
 
 " Use hard tabs that take 4 spaces visually.
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set noexpandtab
+"set tabstop=4
+"set shiftwidth=4
+"set softtabstop=4
+"set noexpandtab
 
 set fileformat=unix
 set textwidth=0
