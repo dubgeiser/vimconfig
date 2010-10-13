@@ -58,6 +58,14 @@ function s:appendSemiColon()
 endfunction
 
 
+" {{{1 pathogen
+" Apparently, we need to execute pathogen before filetype detection.
+" http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+call pathogen#runtime_append_all_bundles() 
+call pathogen#helptags()
+
+
+
 " {{{1 Settings
 "===============================================================================
 filetype plugin indent on
@@ -198,9 +206,6 @@ autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
 " {{{1 Plugin configuration
 "===============================================================================
 "
-" {{{2 pathogen
-call pathogen#runtime_append_all_bundles() 
-
 " {{{2 SnipMate
 let g:snips_author = "P. Juchtmans"
 
