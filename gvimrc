@@ -1,8 +1,9 @@
 "winpos 0 0
 set lines=48
-set columns=86
+set columns=96
 "colorscheme zenburn
-colorscheme per
+"colorscheme per
+colorscheme mayansmoke
 " no menu
 set guioptions-=m
 " no toolbar
@@ -25,11 +26,11 @@ elseif has("gui_macvim")
     set fuoptions=maxvert,maxhorz
 
     "http://nodnod.net/2009/feb/12/adding-straight-single-and-double-quotes-inconsola/
-    "set guifont=Inconsolata-dz:h14
-    "set antialias
+    set guifont=Inconsolata-dz:h14
+    set antialias
 
-    set guifont=Monaco:h14
-    set noantialias
+    "set guifont=Monaco:h14
+    "set noantialias
 else
     set guifont=Monospace\ 10
 endif
