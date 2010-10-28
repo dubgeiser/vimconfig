@@ -2,8 +2,8 @@
 set lines=48
 set columns=96
 "colorscheme zenburn
-"colorscheme per
-colorscheme mayansmoke
+colorscheme per
+"colorscheme mayansmoke
 " no menu
 set guioptions-=m
 " no toolbar
