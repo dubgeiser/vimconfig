@@ -1,10 +1,14 @@
 snippet rr
 	return render_to_response('${1:template}', $${2:context});
 snippet prop
-	function ${1:propertyName}() {
-		if (func_num_args()) {
+	function ${1:propertyName}()
+	{
+		if(func_num_args())
+		{
 			$this->${2:instanceVarName} = func_get_arg(0);
-		} else {
+		}
+		else
+		{
 			return $this->$2;
 		}
 		return $this;

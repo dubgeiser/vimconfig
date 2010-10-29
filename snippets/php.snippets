@@ -48,15 +48,19 @@ snippet /**
 	 */
 # class ...
 snippet cl
-	class ${1} {
+	class ${1}
+	{
 		${2}
 	}
 snippet clt
-	class ${1}Test extends ${2:UnitTestCase} {
-		function setUp() {
+	class ${1}Test extends ${2:UnitTestCase}
+	{
+		function setUp()
+		{
 		}
 
-		function tearDown() {
+		function tearDown()
+		{
 		}
 
 		${3}
@@ -68,37 +72,46 @@ snippet def
 snippet def?
 	${1}defined('${2}')${3}
 snippet wh
-	while (${1}) {
+	while (${1})
+	{
 		${2}
 	}
 # do ... while
 snippet do
-	do {
+	do 
+	{
 		${2}
 	} while (${1});
 snippet if
-	if (${1}) {
+	if(${1})
+	{
 		${2}
 	}
 snippet ife
-	if (${1}) {
+	if(${1}) 
+	{
 		${2}
-	} else {
+	}
+	else
+	{
 		${3}
 	}
 snippet else
-	else {
+	else
+	{
 		${1}
 	}
 snippet elif
-	elseif (${1}) {
+	elseif(${1})
+	{
 		${2}
 	}
 # Tertiary conditional
 snippet ?:
 	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
 snippet switch
-	switch ($${1:variable}) {
+	switch($${1:variable})
+	{
 		case '${2:value}':
 			${3}
 		break;
@@ -112,23 +125,28 @@ snippet case
 		${2}
 	break;${3}
 snippet fori
-	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
+	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++})
+	{
 		${4}
 	}
 snippet for
-	foreach($${1:collection} as $${2:key}) {
+	foreach($${1:collection} as $${2:key})
+	{
 		${3}
 	}
 snippet forkv
-	foreach($${1:collection} as $${2:key} => $${3:value}) {
+	foreach($${1:collection} as $${2:key} => $${3:value})
+	{
 		${4}
 	}
 snippet fn
-	function ${1:name}(${2}) {
+	function ${1:name}(${2})
+	{
 		${3}
 	}
 snippet fnt
-	function test_${1:usecase}_${2:expectedBehavior}() {
+	function test_${1:usecase}_${2:expectedBehavior}()
+	{
 		${3}
 	}
 # $... = array (...)
@@ -139,7 +157,8 @@ snippet kv
 snippet .
 	$this->${1}
 snippet ctor
-	function __construct(${1}) {
+	function __construct(${1})
+	{
 		${2}
 	}
 snippet cctor
