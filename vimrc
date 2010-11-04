@@ -161,9 +161,6 @@ nmap <silent> <Leader>cd :cd %:h<CR>
 nmap <C-Enter> o<ESC>
 nmap <C-S-Enter> O<ESC>
 
-" Encountering loads of mixed line-endings at new job - sigh -
-nmap <Leader>r :%s/\r/\r/g<cr>
-
 " TaskList
 nmap <unique> <Leader>l <Plug>TaskList
 
