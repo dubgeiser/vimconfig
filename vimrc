@@ -169,8 +169,7 @@ nmap <Leader>t :call Tdd_RunTestFile('%')<cr>
 
 " {{{2 Function keys
 nnoremap <silent> <F5> :make<CR>
-" F6 is used in file type specific configs for running tests.
-nnoremap <silent> <F8> :TlistToggle<CR>
+nnoremap <silent> <F6> :TlistToggle<CR>
 
 
 " {{{1 Auto commands
