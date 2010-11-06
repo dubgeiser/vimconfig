@@ -157,11 +157,9 @@ nmap <silent> <Leader>cd :cd %:h<CR>
 " ... same thing, but for the current window only.
 "nmap <silent> <Leader>lcd :lcd %:h<CR>
 
-" Less finger-knackering shortcuts for moving through windows.
-nmap <c-h> <c-w><c-h>
-nmap <c-j> <c-w><c-j>
-nmap <c-k> <c-w><c-k>
-nmap <c-l> <c-w><c-l>
+" Hop from method to method.
+nmap <c-j> ]]
+nmap <c-k> [[
 
 " Add open lines without going to insert mode.
 nmap <C-Enter> o<ESC>
