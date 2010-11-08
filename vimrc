@@ -211,9 +211,6 @@ let g:snips_author = "P. Juchtmans"
 
 " {{{2 TagList
 " http://vim-taglist.sourceforge.net/extend.html
-if has("gui_macvim")
-    let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
-endif
 let Tlist_Sort_Type = "name"
 let Tlist_Exit_OnlyWindow = 0
 let Tlist_File_Fold_Auto_Close = 1
