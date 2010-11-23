@@ -28,9 +28,6 @@ elseif has("gui_macvim")
     "http://nodnod.net/2009/feb/12/adding-straight-single-and-double-quotes-inconsola/
     set guifont=Inconsolata-dz:h14
     set antialias
-
-    "set guifont=Monaco:h14
-    "set noantialias
 else
     set guifont=Monospace\ 10
 endif
