@@ -139,6 +139,10 @@ let g:mapleader = ","
 inoremap <c-space> <c-x><c-o>
 inoremap <c-d> <c-x><c-f>
 
+" Easier accesible word deletion when typing, also in command
+imap <c-h> <c-w>
+cmap <c-h> <c-w>
+
 " Do not exit visual mode when shifting
 vnoremap > >gv
 vnoremap < <gv
