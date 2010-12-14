@@ -4,6 +4,8 @@ Vim configuration
 This is my Vim configuration (http://www.vim.org/).
 Feel free to check it out.
 
+Follow @dgcode on Twitter for updates (uses github hook)
+
 
 Installation
 ============
