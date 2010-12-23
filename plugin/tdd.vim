@@ -110,8 +110,8 @@ endf
 
 " 'success_or_failure' string Either 'Success' or 'Failure'
 fun! s:showBar(success_or_failure, message)
-    hi Tdd_Success ctermfg=white ctermbg=green guibg=#256414
-    hi Tdd_Failure ctermfg=white ctermbg=red guibg=#dd2212
+    hi Tdd_Success ctermfg=white ctermbg=green guifg=white guibg=#256414
+    hi Tdd_Failure ctermfg=white ctermbg=red guifg=white guibg=#dd2212
     exec "echohl Tdd_" . a:success_or_failure
     echon a:message
     " -1 because we don't want a blank line
