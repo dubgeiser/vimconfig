@@ -61,14 +61,15 @@ endfunction
 " {{{1 pathogen
 " Apparently, we need to execute pathogen before filetype detection.
 " http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+filetype off
 call pathogen#runtime_append_all_bundles() 
 call pathogen#helptags()
+filetype plugin indent on
 
 
 
 " {{{1 Settings
 "===============================================================================
-filetype plugin indent on
 set autoindent
 set autoread
 
@@ -174,6 +175,10 @@ nmap <unique> <Leader>l <Plug>TaskList
 
 " Run current buffer as test for tdd.vim
 nmap <Leader>t :call Tdd_RunTestFile('%')<cr>
+
+" Underline current line
+nnoremap <Leader>= yypVr=
+nnoremap <Leader>- yypVr-
 
 " {{{2 Function keys
 nnoremap <silent> <F5> :make<CR>
