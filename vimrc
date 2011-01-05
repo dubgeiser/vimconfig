@@ -209,6 +209,8 @@ autocmd BufWrite vimfu.txt :helptags ~/.vim/doc/
 autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
     \ nmap <silent> <Leader>; :call <SID>appendSemiColon()<cr>
 
+autocmd FocusLost * :wa
+
 
 
 
