@@ -10,11 +10,11 @@ Keyboard mappings to get in my fingers     *vimfu-learning* *vimfu-training*
 ------------------------------------------------------------------------------
 Note to self: COPY them over from other sections, do not move them.
 
-`.              To the line you have last edited.
-^O              Jump to previous position in jump list
-^I/TAB          Jump to next position in jump list
-gc-g            Detailed info on position in file
-
+`.                  To the line you have last edited.
+^O                  Jump to previous position in jump list
+^I/TAB              Jump to next position in jump list
+gc-g                Detailed info on position in file
+<Leader>c<SPACE>    Toggle comment(s)
 
 Auto completions                         *vimfu-autocomplete* *vimfu-complete*
 ------------------------------------------------------------------------------
