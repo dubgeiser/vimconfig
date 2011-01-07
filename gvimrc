@@ -13,7 +13,7 @@ set guioptions-=l
 set guioptions-=r
 
 set nocursorcolumn
-set nocursorline
+set cursorline
 
 if !has("unix")
     " ProggyClean does not look too good on my Ubuntu
