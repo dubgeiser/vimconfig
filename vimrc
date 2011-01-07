@@ -150,6 +150,8 @@ vnoremap < <gv
 
 nnoremap <Leader>b :buffers<CR>:buffer 
 nnoremap <Leader>e :e <C-D>
+
+" Todolists
 nmap <Leader>o :call Todo_ToggleTickbox()<cr>
 vmap <Leader>o :call Todo_ToggleTickbox()<cr>
 nmap <Leader>v :call Todo_TickFinished()<cr>
@@ -179,6 +181,9 @@ nmap <Leader>t :call Tdd_RunTestFile('%')<cr>
 " Underline current line
 nnoremap <Leader>= yypVr=
 nnoremap <Leader>- yypVr-
+
+" Shortcut to open my gtd inbox
+nnoremap <Leader>i :e ~/gtd/inbox.rst<cr>
 
 " {{{2 Function keys
 nnoremap <silent> <F5> :make<CR>
