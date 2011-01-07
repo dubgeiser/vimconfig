@@ -15,6 +15,9 @@ Note to self: COPY them over from other sections, do not move them.
 ^I/TAB              Jump to next position in jump list
 gc-g                Detailed info on position in file
 <Leader>c<SPACE>    Toggle comment(s)
+C-F                 In command line mode: take current edit and switch to
+                    command mode (ie. in a buffer)
+
 
 Auto completions                         *vimfu-autocomplete* *vimfu-complete*
 ------------------------------------------------------------------------------
@@ -143,6 +146,13 @@ Programming                                                *vimfu-programming*
 ------------------------------------------------------------------------------
 Loads of stuff in the vim-OPL book (ex: chapters 26, 27 and more), also check
 help on functions, variables, script(s), usr_41.txt
+
+
+Command line                                               *vimfu-commandline*
+------------------------------------------------------------------------------
+
+C-F             In command line mode: take current edit and take that to a
+                buffer for further 'full' editing.
 
 
  vim:tw=78:ts=8:ft=help:norl:nocindent:
