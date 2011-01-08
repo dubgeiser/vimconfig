@@ -129,6 +129,10 @@ set wildmode=full
 syntax on
 set nohlsearch
 
+" Which color scheme to use is not under version control so that it doesn't
+" bother anyone if I choose to switch color schemes.
+source ~/.vimcolorscheme
+
 
 " {{{1 Key bindings
 "===============================================================================

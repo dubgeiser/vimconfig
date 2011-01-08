@@ -10,32 +10,34 @@ Follow @dgcode on Twitter for updates (uses github hook)
 Installation
 ============
 
+Dependencies
+------------
+The taglist plugin needs exuberant ctags <http://ctags.sourceforge.net/> to work.
+See <code>:help taglist-install</code> in Vim.
+
+
 Backup (*IMPORTANT*)
 --------------------
-
-    cd
-    tar -cjf vimconfig.tar.bz2 .vim/ .vimrc .gvimrc
+If you already have a Vim configuration back it up, keep it under (D)VCS, in short have an extra copy somewhere.
 
 
 Install
 -------
-If you haven't done it already: *BACKUP*
+Clone the git repository and make the necessary symlinks:
 
-    rm -fr .vim .vimrc .gvimrc
     git clone git://github.com/dubgeiser/vimconfig.git .vim/
     ln -s .vim/vimrc .vimrc
     ln -s .vim/gvimrc .gvimrc
+
+A color scheme is a very personal thing, people often change it depending on the ambient light, the file type being edited, their mood, etc...  People using this Vim configuration, can now choose their own color scheme, without going through the hassle of setting your color scheme again every time you merge.  Create a file in your home directory and set your preferred color scheme there:
+
+	echo 'colorscheme zenburn' > ~/.vimcolorscheme
+
+Note that this file is read from vimrc now (as oppose to being set in gvimrc before).
+
+Then, in Vim, (re)generate all the doc files:
+
     vim
     :helptags ~/.vim/doc/
 
-enjoy.
-
-
-Restore backup
---------------
-You _did_ backup, right?
-
-    cd
-    rm -fr .vim .vimrc .gvimrc
-    tar -xjf vimconfig.tar.bz2
-
+Enjoy.

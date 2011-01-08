@@ -1,9 +1,7 @@
 "winpos 0 0
 set lines=48
 set columns=96
-"colorscheme zenburn
-"colorscheme per
-colorscheme newspaper
+
 " no menu
 set guioptions-=m
 " no toolbar
