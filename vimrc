@@ -61,7 +61,6 @@ endfunction
 " {{{1 pathogen
 " Apparently, we need to execute pathogen before filetype detection.
 " http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
-filetype off
 call pathogen#runtime_append_all_bundles() 
 call pathogen#helptags()
 filetype plugin indent on
