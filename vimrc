@@ -230,12 +230,17 @@ let g:snips_author = "P. Juchtmans"
 
 " {{{2 TagList
 " http://vim-taglist.sourceforge.net/extend.html
-let Tlist_Sort_Type = "name"
+let Tlist_Close_On_Select = 1
+let Tlist_Compact_Format = 1
+let Tlist_Display_Prototype = 1
 let Tlist_Exit_OnlyWindow = 0
 let Tlist_File_Fold_Auto_Close = 1
-let Tlist_Use_Right_Window = 0
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Highlight_Tag_On_BufEnter = 1
+let Tlist_Show_One_File = 1
+let Tlist_Sort_Type = "name"
+let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 45
-let Tlist_Compact_Format = 1
 
 " {{{2 TaskList
 let g:tlWindowPosition = 1
