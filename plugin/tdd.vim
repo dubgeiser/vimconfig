@@ -35,7 +35,7 @@
 "       Note that it's best to define a key map that runs the current file in
 "       the current buffer:
 "
-"           :nmap <Leader>r :call Tdd_RunTestFile('%')
+"           :nmap <Leader>t :call Tdd_RunTestFile('%')
 
 "
 " Known Limitations:
@@ -57,12 +57,8 @@
 "     have tests.
 "
 " To Do:
-"   - Introduce awareness for alternating files, fi. '.inc.php' and
-"     '.test.php'.  This makes it possible to edit the CUT and simply run the
-"     test.  (well, sort of, assuming CUT and test itself are in the buffers
-"     fi.)
 "   - Better error handling for things like checking if 'Tdd_makeprg' is
-"     defined.
+"     defined.  Maybe we need to supply some defaults?
 "   - UI screwed when used in vim (G-/MacVim are ok though)?
 "   - Investigate :help write-compiler-plugin
 
