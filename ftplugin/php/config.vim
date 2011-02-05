@@ -19,5 +19,5 @@ set errorformat+=%m\ in\ %f\ on\ line\ %l
 " SimpleTest Failing Test
 set errorformat+=%m\ at\ \[%f\ line\ %l]
 
-let g:Tdd_makeprg='php\ %'
+let g:Tdd_makeprg='php'
 
