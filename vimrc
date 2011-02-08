@@ -135,6 +135,10 @@ source ~/.vimcolorscheme
 
 " {{{1 Key bindings
 "===============================================================================
+" Set search results that you jump to in the middle of the screen.
+nnoremap n nzz
+nnoremap N Nzz
+
 " Make <Leader> char something more accessible on a AZERTY keyboard
 let mapleader = ","
 let g:mapleader = ","
