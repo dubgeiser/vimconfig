@@ -92,7 +92,7 @@ set expandtab
 set fileformat=unix
 set foldclose=all
 set foldmethod=marker
-set history=500
+set history=1000
 set incsearch
 set laststatus=2
 set linespace=0
@@ -152,7 +152,8 @@ vnoremap > >gv
 vnoremap < <gv
 
 nnoremap <Leader>b :buffers<CR>:buffer 
-nnoremap <Leader>e :e <C-D>
+nnoremap <Leader>e :e ./**/
+"nnoremap <Leader>e :e <C-D>
 
 " Todolists
 nmap <Leader>o :call Todo_ToggleTickbox()<cr>
