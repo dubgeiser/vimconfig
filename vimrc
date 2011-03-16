@@ -173,8 +173,8 @@ nmap <c-j> ]]
 nmap <c-k> [[
 
 " Add open lines without going to insert mode.
-nmap <C-Enter> o<ESC>
-nmap <C-S-Enter> O<ESC>
+nmap <CR> o<ESC>
+nmap <S-CR> O<ESC>
 
 " TaskList
 nmap <unique> <Leader>l <Plug>TaskList
