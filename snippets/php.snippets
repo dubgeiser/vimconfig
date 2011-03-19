@@ -34,11 +34,11 @@ snippet $_ SESSION['...']
 # File header
 snippet doc
 	/**
-	 * ${5}
+	 * ${7}
 	 *
-	 * @author ${1:`g:snips_author`} <${2:per@dubgeiser.net}>
-	 * @package ${3}
-	 * @subpackage ${4}
+	 * @author ${1:`g:snips_author`} <${2:per}@${3:dubgeiser}.${4:net}>
+	 * @package ${5}
+	 * @subpackage ${6}
 	 */
 # Start Docblock
 snippet /**
@@ -168,3 +168,7 @@ snippet try
 	} catch(${2:Exception} $e) {
 		${3}
 	}
+snippet @p
+	@param ${1:type}${2:[optional]} $${3:varname} ${4:description}
+snippet @r
+	@return ${1:void}
