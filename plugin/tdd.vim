@@ -13,18 +13,20 @@
 "           set errorformat+=%m\ at\ \[%f\ line\ %l]
 "       
 "       Then define the test runner in g:Tdd_makeprg, which is actually a
-"       makeprg definition that will be used for running the tests.  You can
-"       use the same format as Vim's makeprg, but you must enclose it in
-"       single quotes, ex:
+"       makeprg definition that will be used for running the tests.
 "
-"           let g:Tdd_makeprg='php\ %'
+"           let g:Tdd_makeprg='php ~/Projects/myproject/alltests.php'
+"
+"       or (an ok default imo), which will run the file in the current buffer:
+"
+"           let g:Tdd_makeprg='php %'
 "
 "       tdd.vim will remember the current makeprg setting and will restore
 "       that after the test is run.
 "
-"       To run a test:
+"       To run the test:
 "
-"           :call Tdd_RunTestFile('/path/to/test/file')
+"           :call Tdd_RunTest()
 "
 "       This will then save your current makeprg setting, set g:Tdd_makeprg as
 "       the makeprg, execute Vim's make, match the output against the list of
@@ -35,8 +37,8 @@
 "       Note that it's best to define a key map that runs the current file in
 "       the current buffer:
 "
-"           :nmap <Leader>t :call Tdd_RunTestFile('%')
-
+"           :nmap <Leader>t :call Tdd_RunTest()
+"
 "
 " Known Limitations:
 "   - Only tested in Gvim and MacVim with:
@@ -50,7 +52,7 @@
 "     were hoping for.
 "   - Alternating between buffers with code in different languages needs
 "     manually re-setting the filetype, ex: edit php file switch to buffer
-"     with python code, go back to the php file, :call Tdd_RunTestFile('%')
+"     with python code, go back to the php file, :call Tdd_RunTest()
 "     and a red bar is shown with 'Syntax Error' message.  :set ft=php before
 "     running again solves this.
 "   - Yes, I am aware of the tragic irony that this plugin does not
@@ -69,20 +71,18 @@ endif
 let tdd_loaded = 1
 
 
-" Run a given testfile, pass '%' for the file in the current buffer.
-fun! Tdd_RunTestFile(fn)
-    call s:runTest(a:fn)
+" Run test, ie. call make with the makeprg set to g:Tdd_makeprg
+fun! Tdd_RunTest()
+    call s:runTest()
     let result = s:processTestOuput()
     call s:showBar(result.type, result.message)
 endf
 
-
-fun! s:runTest(fn)
+fun! s:runTest()
     let save_makeprg=&makeprg
-    exec "set makeprg=" . g:Tdd_makeprg
-    silent exec "make " . a:fn
+    exec "set makeprg=" . escape(g:Tdd_makeprg, ' ')
+    silent exec "make"
     silent !echo
-    " TODO Escaping SPACE alone will probably not be enough
     exec "set makeprg=" . escape(save_makeprg, ' ')
 endf
 

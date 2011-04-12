@@ -179,8 +179,8 @@ nmap <C-CR> O<ESC>
 " TaskList
 nmap <unique> <Leader>l <Plug>TaskList
 
-" Run current buffer as test for tdd.vim
-nmap <Leader>t :call Tdd_RunTestFile('%')<cr>
+" Run current defined test (see tdd.vim plugin)
+nmap <Leader>t :call Tdd_RunTest()<cr>
 
 " Underline current line
 nnoremap <Leader>= yypVr=

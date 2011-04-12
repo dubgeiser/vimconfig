@@ -15,5 +15,5 @@ endif
 
 " Error format and Tdd_makeprg for tdd.vim
 set errorformat+=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-let g:Tdd_makeprg='python'
+let g:Tdd_makeprg='python %'
 
