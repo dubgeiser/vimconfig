@@ -189,6 +189,13 @@ nnoremap <Leader>- yypVr-
 " Shortcut to open my gtd inbox
 nnoremap <Leader>i :e ~/gtd/inbox.rst<cr>
 
+" Less finger wrecking window navigation.
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+
 " {{{2 Function keys
 nnoremap <silent> <F5> :make<CR>
 nnoremap <silent> <F6> :TlistToggle<CR>
