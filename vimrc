@@ -169,8 +169,8 @@ nmap <silent> <Leader>cd :cd %:h<CR>
 "nmap <silent> <Leader>lcd :lcd %:h<CR>
 
 " Hop from method to method.
-nmap <c-j> ]]
-nmap <c-k> [[
+nmap <c-n> ]]
+nmap <c-p> [[
 
 " Add open lines without going to insert mode.
 nmap <CR> o<ESC>
