@@ -112,7 +112,7 @@ set shiftwidth=4
 set showcmd
 set smartindent
 set softtabstop=4
-set statusline=%-32.32(%<%f\ %r\ %m\%)\ Ln:\ %l/%L,\ Col:\ %c%=%{&ff}\ %{strlen(&fenc)?&fenc:''}\ %Y\ 
+set statusline=%-32.32(%<%t\ %m%r\%)line\ %l\ of\ %L\ --%P--\ col\ %c%=%{&ff},%{strlen(&fenc)?&fenc:''}%Y\ 
 
 " Not too long or we drop to a virtual stand still when editing
 " large-all-on-one-line-code (like OOo xml files.)
