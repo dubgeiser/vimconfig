@@ -1,0 +1,26 @@
+# html snippets additions
+snippet aref
+	<a href="${1:http://}"${3}>${2}</a>${4}
+snippet img
+	<img src="${1}" style="border: ${2:0};" />${3}
+snippet p
+	<p${1}>${2}</p>${3}
+
+# Spoon/fork snippets
+# Put an autocommand in vimrc that sets the filetype to html for *.tpl files.
+snippet v
+	{$${1}}
+snippet err
+	{$err${1}}
+snippet lbl
+	{$lbl${1}}
+snippet msg
+	{$msg${1}}
+snippet it
+	{iteration:${1:IterationName}}
+		${2}
+	{/iteration:$1}
+snippet op
+	{option:${1:OptionName}}
+		${2}
+	{/option:$1}
