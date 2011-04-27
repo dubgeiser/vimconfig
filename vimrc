@@ -257,3 +257,7 @@ let Tlist_WinWidth = 45
 let g:tlWindowPosition = 1
 let g:tlTokenList = ['TODO', 'FIXME', 'XXX', 'HACK', '@todo', '???']
 
+" {{{2 PairTools
+" https://github.com/MartinLafreniere/PairTools/
+let g:pairtools_surround = 0
+
