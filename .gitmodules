@@ -1,0 +1,3 @@
+[submodule "bundle/pairtools"]
+	path = bundle/pairtools
+	url = git://github.com/MartinLafreniere/PairTools.git
