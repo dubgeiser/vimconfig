@@ -59,7 +59,7 @@ Help                                                             *vimfu-help*
 ------------------------------------------------------------------------------
 :helpgrep       Search help with a regex
 K               To man page of word under cursor.
-C-]             Jump to tag
+C-$             Jump to tag (normally C-] but that doesn't do it on AZERTY)
 C-T             Back from tag jump
 
 
