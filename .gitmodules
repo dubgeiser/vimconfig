@@ -14,3 +14,7 @@
 	path = bundle/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
     ignore = dirty
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
+    ignore = dirty
