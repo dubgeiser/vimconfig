@@ -41,3 +41,10 @@ Then, in Vim, (re)generate all the doc files:
     :helptags ~/.vim/doc/
 
 Enjoy.
+
+
+LICENSE
+=======
+For all plugins used, the license of that plugin applies.
+For personal written stuff in this repo (like tdd.vim or todo.vim), http://sam.zoy.org/wtfpl/COPYING applies.
+
