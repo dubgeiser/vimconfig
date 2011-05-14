@@ -9,6 +9,7 @@ set guioptions-=T
 " no scrollbars
 set guioptions-=l
 set guioptions-=r
+set guioptions-=L
 
 set nocursorcolumn
 set cursorline
