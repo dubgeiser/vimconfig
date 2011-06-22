@@ -135,9 +135,9 @@ snippet forkv
 		${4}
 	}
 snippet fn
-	function ${1:name}(${2})
+	${1:public} function ${2:name}(${3})
 	{
-		${3}
+		${4}
 	}
 snippet fnt
 	function test_${1:usecase}_${2:expectedBehavior}()
@@ -152,7 +152,7 @@ snippet kv
 snippet .
 	$this->${1}
 snippet ctor
-	function __construct(${1})
+	public function __construct(${1})
 	{
 		${2}
 	}
