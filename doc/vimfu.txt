@@ -11,8 +11,6 @@ Keyboard mappings to get in my fingers     *vimfu-learning* *vimfu-training*
 Note to self: COPY them over from other sections, do not move them.
 
 `.                  To the line you have last edited.
-^O                  Jump to previous position in jump list
-^I/TAB              Jump to next position in jump list
 gc-g                Detailed info on position in file
 C-F                 In command line mode: take current edit and switch to
                     command mode (ie. in a buffer)
