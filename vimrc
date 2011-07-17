@@ -132,6 +132,9 @@ set nohlsearch
 " bother anyone if I choose to switch color schemes.
 source ~/.vimcolorscheme
 
+set nocursorcolumn
+set cursorline
+
 
 " {{{1 Key bindings
 "===============================================================================

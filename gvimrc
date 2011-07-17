@@ -11,9 +11,6 @@ set guioptions-=l
 set guioptions-=r
 set guioptions-=L
 
-set nocursorcolumn
-set cursorline
-
 if !has("unix")
     " ProggyClean does not look too good on my Ubuntu
     set guifont=ProggyClean
