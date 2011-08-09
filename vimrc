@@ -58,6 +58,34 @@ function s:appendSemiColon()
 endfunction
 
 
+" Toggle between dark / light colorschemes.
+" depends on 3 configuration variables being set
+" (in ~/.vimcolorscheme)
+"
+" - g:light_colorscheme     The name of the 'light' colorscheme
+" - g:dark_colorscheme      The name of the 'dark' colorscheme
+" - g:colorscheme_mode      Which colorscheme mode ('light' or 'dark') to
+"                           start in.
+" Example:
+" let g:light_colorscheme = 'newspaper'
+" let g:dark_colorscheme = 'zenburn'
+" let g:colorscheme_mode = 'dark'
+" Will start with zenburn colorscheme, when toggleColorScheme() is called,
+" will set the background to 'light' and use g:light_colorscheme.
+"
+" Note:
+" There is a command 'C' mapped to this function
+" (see the section 'Further initialization')
+fun! s:toggleColorScheme()
+	let light_or_dark = g:colorscheme_mode
+	let colorscheme = eval('g:' . light_or_dark . '_colorscheme')
+	exec('set background=' . light_or_dark)
+	exec('colorscheme ' . colorscheme)
+	let g:colorscheme_mode = light_or_dark == 'dark' ? 'light' : 'dark'
+endf
+
+
+
 " {{{1 pathogen
 " Apparently, we need to execute pathogen before filetype detection.
 " http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
@@ -263,4 +291,8 @@ let Tlist_WinWidth = 45
 let g:tlWindowPosition = 1
 let g:tlTokenList = ['TODO', 'FIXME', 'XXX', 'HACK', '@todo', '???']
 
+
+"{{{1 Further initialization
+command C call <SID>toggleColorScheme()
+:C
 
