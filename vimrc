@@ -89,8 +89,7 @@ endf
 " {{{1 pathogen
 " Apparently, we need to execute pathogen before filetype detection.
 " http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
-call pathogen#runtime_append_all_bundles() 
-call pathogen#helptags()
+call pathogen#infect() 
 filetype plugin indent on
 
 
