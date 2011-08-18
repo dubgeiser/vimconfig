@@ -3,7 +3,6 @@ snippet php
 
 	${1}
 
-	?>
 snippet ec
 	echo "${1:string}"${2};
 snippet inc
@@ -22,11 +21,11 @@ snippet doc
 	/**
 	 * ${8}
 	 *
-	 * @package		${1}
-	 * @subpackage	${2}
+	 * @package ${1}
+	 * @subpackage ${2}
 	 *
-	 * @author		${3:`g:snips_author`} <${4:per}@${5:dubgeiser}.${6:net}>
-	 * @since		${7}
+	 * @author ${3:`g:snips_author`} <${4:per}@${5:dubgeiser}.${6:net}>
+	 * @since ${7}
 	 */
 # Start Docblock
 snippet /**
@@ -154,8 +153,8 @@ snippet try
 		${3}
 	}
 snippet @p
-	@param	${1:type}${2:[optional]} $${3:varname} ${4:description}
+	@param ${1:type}${2:[optional]} $${3:varname} ${4:description}
 snippet @r
-	@return	${1:void}
+	@return ${1:void}
 snippet pd
 	die('<pre>' . print_r($${1:var}, true) . '</pre>');
