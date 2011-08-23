@@ -263,8 +263,8 @@ autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
 
 autocmd FocusLost * :wa
 
-" .tpl files are mainly html files
-autocmd BufNewFile,BufRead *.tpl set filetype=html
+" .tpl files are mainly (x)html files, xhtml gives better omni completion.
+autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
 
 
 
