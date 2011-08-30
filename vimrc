@@ -22,31 +22,6 @@ runtime macros/matchit.vim
 
 " {{{1 Functions
 "===============================================================================
-" Copied from _vimrc file upon installation of vim 7
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
-
 
 " If there isn't one, append a semi colon to the end of the current line.
 function s:appendSemiColon()
@@ -113,7 +88,6 @@ set cindent
 " Show extra info if menu (preview)
 set completeopt=preview,menu,longest
 
-set diffexpr=MyDiff()
 set encoding=utf-8
 set expandtab
 set fileformat=unix
