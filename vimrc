@@ -177,7 +177,11 @@ inoremap <c-space> <c-x><c-o>
 inoremap <c-d> <c-x><c-f>
 
 " Use Perl/Python/egrep regex when searching
-nmap / /\v
+" 2011-08-30
+"   In 'PHP' programming, this makes searching for vars in various forms rather
+"   cumbersome, fi. both '$' and '>' need to be escaped.  After a couple days
+"   of use have to conclude that this mapping is of little to no use.
+"nmap / /\v
 
 " Easier accesible word deletion when typing, also in command
 imap <c-h> <c-w>
