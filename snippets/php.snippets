@@ -3,19 +3,10 @@ snippet php
 
 	${1}
 
-snippet ec
-	echo "${1:string}"${2};
-snippet inc
-	include '${1:file}';${2}
 snippet inco
 	include_once '${1:file}';${2}
-snippet req
-	require '${1:file}';${2}
 snippet reqo
 	require_once '${1:file}';${2}
-# $GLOBALS['...']
-snippet globals
-	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
 # File header
 snippet doc
 	/**
@@ -43,23 +34,6 @@ snippet clt
 	{
 		${3}
 	}
-# define(...)
-snippet def
-	define('${1}', ${2});${3}
-# defined(...)
-snippet def?
-	${1}defined('${2}')${3}
-snippet wh
-	while (${1})
-	{
-		${2}
-	}
-# do ... while
-snippet do
-	do 
-	{
-		${2}
-	} while (${1});
 snippet if
 	if(${1})
 	{
@@ -87,21 +61,6 @@ snippet elif
 # Tertiary conditional
 snippet ?:
 	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
-snippet switch
-	switch($${1:variable})
-	{
-		case '${2:value}':
-			${3}
-		break;
-		${5}
-		default:
-			${4}
-		break;
-	}
-snippet case
-	case '${1:value}':
-		${2}
-	break;${3}
 snippet fori
 	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++})
 	{
