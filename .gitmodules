@@ -1,20 +1,38 @@
+# vim: noet:
 [submodule "bundle/surround"]
-    path = bundle/surround
-    url = git://github.com/tpope/vim-surround.git
-    ignore = dirty
+	path = bundle/surround
+	url = git://github.com/tpope/vim-surround.git
+	ignore = dirty
 [submodule "bundle/repeat"]
-    path = bundle/repeat
-    url = git://github.com/tpope/vim-repeat.git
-    ignore = dirty
+	path = bundle/repeat
+	url = git://github.com/tpope/vim-repeat.git
+	ignore = dirty
 [submodule "bundle/snipmate"]
-    path = bundle/snipmate
-    url = git://github.com/msanders/snipmate.vim.git
-    ignore = dirty
+	path = bundle/snipmate
+	url = git://github.com/msanders/snipmate.vim.git
+	ignore = dirty
 [submodule "bundle/nerdcommenter"]
-    path = bundle/nerdcommenter
-    url = git://github.com/scrooloose/nerdcommenter.git
-    ignore = dirty
+	path = bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
+	ignore = dirty
 [submodule "bundle/taglist"]
-    path = bundle/taglist
-    url = git://github.com/vim-scripts/taglist.vim.git
-    ignore = dirty
+	path = bundle/taglist
+	url = git://github.com/vim-scripts/taglist.vim.git
+	ignore = dirty
+[submodule "bundle/cmdline-completion"]
+	path = bundle/cmdline-completion
+	url = git://github.com/vim-scripts/cmdline-completion.git
+	ignore = dirty
+[submodule "bundle/tasklist"]
+	path = bundle/tasklist
+	url = git://github.com/vim-scripts/TaskList.vim.git
+	ignore = dirty
+[submodule "bundle/tdd"]
+	path = bundle/tdd
+	url = git://github.com/dubgeiser/vim-tdd.git
+	ignore = dirty
+[submodule "bundle/todo"]
+	path = bundle/todo
+	url = git://github.com/dubgeiser/vim-todo.git
+	ignore = dirty
+

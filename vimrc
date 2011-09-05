@@ -169,14 +169,6 @@ nnoremap <Leader>b :buffers<CR>:buffer
 nnoremap <Leader>e :e ./**/
 "nnoremap <Leader>e :e <C-D>
 
-" Todolists
-nmap <Leader>o :call Todo_ToggleTickbox()<cr>
-vmap <Leader>o :call Todo_ToggleTickbox()<cr>
-nmap <Leader>v :call Todo_TickFinished()<cr>
-vmap <Leader>v :call Todo_TickFinished()<cr>
-nmap <Leader>x :call Todo_TickCancelled()<cr>
-vmap <Leader>x :call Todo_TickCancelled()<cr>
-
 " CD to the directory the file in the current buffer is in.
 nmap <silent> <Leader>cd :cd %:h<CR>
 " ... same thing, but for the current window only.
@@ -270,6 +262,14 @@ let Tlist_WinWidth = 45
 " {{{2 TaskList
 let g:tlWindowPosition = 1
 let g:tlTokenList = ['TODO', 'FIXME', 'XXX', 'HACK', '@todo', '???']
+
+ " {{{2 vim-todo
+nmap <Leader>o :call Todo_ToggleTickbox()<cr>
+vmap <Leader>o :call Todo_ToggleTickbox()<cr>
+nmap <Leader>v :call Todo_TickFinished()<cr>
+vmap <Leader>v :call Todo_TickFinished()<cr>
+nmap <Leader>x :call Todo_TickCancelled()<cr>
+vmap <Leader>x :call Todo_TickCancelled()<cr>
 
 
 "{{{1 Further initialization
