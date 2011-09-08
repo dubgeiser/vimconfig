@@ -33,6 +33,12 @@ function s:appendSemiColon()
 endfunction
 
 
+" Remove trailing whitespace current buffer from trailing whitespace.
+fun s:rtrim()
+    exec('%s/\s\+$//e')
+endf
+
+
 " Toggle between dark / light colorschemes.
 " depends on 3 configuration variables being set
 " (in ~/.vimcolorscheme)
@@ -275,4 +281,5 @@ vmap <Leader>x :call Todo_TickCancelled()<cr>
 "{{{1 Further initialization
 command C call <SID>toggleColorScheme()
 :C
+command Rtrim call <SID>rtrim()
 
