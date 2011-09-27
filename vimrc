@@ -58,11 +58,14 @@ endf
 " There is a command 'C' mapped to this function
 " (see the section 'Further initialization')
 fun! s:toggleColorScheme()
-	let light_or_dark = g:colorscheme_mode
-	let colorscheme = eval('g:' . light_or_dark . '_colorscheme')
-	exec('set background=' . light_or_dark)
-	exec('colorscheme ' . colorscheme)
-	let g:colorscheme_mode = light_or_dark == 'dark' ? 'light' : 'dark'
+    if !exists('g:colorscheme_mode')
+        return
+    endif
+    let light_or_dark = g:colorscheme_mode
+    let colorscheme = eval('g:' . light_or_dark . '_colorscheme')
+    exec('set background=' . light_or_dark)
+    exec('colorscheme ' . colorscheme)
+    let g:colorscheme_mode = light_or_dark == 'dark' ? 'light' : 'dark'
 endf
 
 
