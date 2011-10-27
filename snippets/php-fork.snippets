@@ -2,3 +2,91 @@ snippet sd
 	Spoon::dump(${1});
 snippet sdd
 	Spoon::dump('TEST');${1}
+snippet ffindex
+	class Frontend${1:BaseClassName}Index extends FrontendBaseBlock
+	{
+		/**
+		 * @var array Assoc. array used to filter the items that must be fetched.
+		 */
+		protected $filter;
+
+		/**
+		 * @var array The list of items fetched by this action.
+		 */
+		protected $items;
+
+		/**
+		 * @var array Assoc. array with the pager's parameters.
+		 */
+		protected $pagination = array();
+
+		/**
+		 * Execute this action.
+		 */
+		public function execute()
+		{
+			parent::execute();
+			$this->loadFilter();
+			$this->loadData();
+			$this->loadTemplate();
+		}
+
+		/**
+		 * Load the data necessary for this action.
+		 */
+		private function loadData()
+		{
+			$requestedPage = $this->URL->getParameter('page', 'int', 1);
+			$limit = FrontendModel::getModuleSetting($this->getModule(), 'overview_num_items', 10);
+			$offset = ($requestedPage * $limit) - $limit;
+			list($this->items, $totalRowCount) = Frontend$1Model::find(
+				$this->filter, $limit, $offset
+			);
+			$this->configurePager($requestedPage, $limit, $totalRowCount, $offset);
+		}
+
+		/**
+		 * Configure the pagination component for this request.
+		 *
+		 * @param int $requestedPage The requested page (starts from 1)
+		 * @param int $limit The number of rows displayed in a page.
+		 * @param int $totalRowCount The total number of rows counted.
+		 * @param int $offset The offset in all the rows we have started to fetch from.
+		 */
+		private function configurePager($requestedPage, $limit, $totalRowCount, $offset)
+		{
+			$this->pagination['url'] = FrontendNavigation::getURLForBlock($this->getModule())
+				. ($this->filter ? '?' . http_build_query($this->filter) : '');
+			$this->pagination['limit'] = $limit;
+			$this->pagination['num_items'] = $totalRowCount;
+			$this->pagination['num_pages'] = (int) ceil($totalRowCount / $limit);
+			if($this->pagination['num_pages'] == 0)
+			{
+				$this->pagination['num_pages'] = 1;
+			}
+			if($requestedPage > $this->pagination['num_pages'] || $requestedPage < 1)
+			{
+				$this->redirect(FrontendNavigation::getURL(404));
+			}
+			$this->pagination['requested_page'] = $requestedPage;
+			$this->pagination['offset']  = $offset;
+		}
+
+		/**
+		 * Load the filter to be used when retrieving items.
+		 */
+		private function loadFilter()
+		{
+			$this->filter = array(${2});
+		}
+
+		/**
+		 * Load the template for this action.
+		 */
+		protected function loadTemplate()
+		{
+			parent::loadTemplate();
+			$this->tpl->assign('items', $this->items);
+			$this->parsePagination();
+		}
+	}
