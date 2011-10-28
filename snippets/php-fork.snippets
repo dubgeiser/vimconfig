@@ -20,9 +20,6 @@ snippet ffindex
 		 */
 		protected $pagination = array();
 
-		/**
-		 * Execute this action.
-		 */
 		public function execute()
 		{
 			parent::execute();
@@ -31,9 +28,6 @@ snippet ffindex
 			$this->loadTemplate();
 		}
 
-		/**
-		 * Load the data necessary for this action.
-		 */
 		private function loadData()
 		{
 			$requestedPage = $this->URL->getParameter('page', 'int', 1);
@@ -80,9 +74,6 @@ snippet ffindex
 			$this->filter = array(${2});
 		}
 
-		/**
-		 * Load the template for this action.
-		 */
 		protected function loadTemplate()
 		{
 			parent::loadTemplate();
