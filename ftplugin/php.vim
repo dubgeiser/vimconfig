@@ -10,6 +10,8 @@ set noexpandtab
 set fileformat=unix
 set textwidth=0
 
+nmap <leader>f /function\s*
+
 set makeprg=php\ -l\ %
 
 " PHP error

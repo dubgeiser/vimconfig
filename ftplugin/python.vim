@@ -5,6 +5,8 @@ set tabstop=4
 set expandtab
 set softtabstop=4
 
+nmap <leader>f /def\s*
+
 " pyflakes is required, using python will cause scripts to execute and will
 " also dump a bunch of import errors on django projects if DJANGO environment
 " variable is not set.
