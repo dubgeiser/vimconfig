@@ -251,9 +251,6 @@ autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
 " {{{1 Plugin configuration
 "===============================================================================
 "
-" {{{2 SnipMate
-let g:snips_author = "P. Juchtmans"
-
 " {{{2 TagList
 " http://vim-taglist.sourceforge.net/extend.html
 let Tlist_Close_On_Select = 1
