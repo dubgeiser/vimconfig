@@ -74,9 +74,9 @@ snippet ffindex
 			$this->filter = array(${2});
 		}
 
-		protected function loadTemplate()
+		protected function loadTemplate($path = null, $overwrite = false)
 		{
-			parent::loadTemplate();
+			parent::loadTemplate($path, $overwrite);
 			$this->tpl->assign('items', $this->items);
 			$this->parsePagination();
 		}
