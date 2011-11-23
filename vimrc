@@ -77,6 +77,10 @@ call pathogen#infect()
 filetype plugin indent on
 
 
+" {{{1 Abbreviations and typo's
+" Compensate for the FUCKING Mac AZERTY BE layout, for instance: typing "|| "
+" fast will result in the trailing char to be char 160 instead of 32.
+inoremap   <Space>
 
 " {{{1 Settings
 "===============================================================================
