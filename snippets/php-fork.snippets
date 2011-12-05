@@ -81,3 +81,17 @@ snippet ffi
 			$this->parsePagination();
 		}
 	}
+snippet ffc
+	${4}
+	class Frontend${1:Module}Config extends FrontendBaseConfig
+	{
+		/**
+		 * @var string
+		 */
+		protected $defaultAction = '${2:index}';
+
+		/**
+		 * @var array
+		 */
+		protected $disabledActions = array(${3});
+	}
