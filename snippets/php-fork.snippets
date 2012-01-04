@@ -81,8 +81,44 @@ snippet ffi
 			$this->parsePagination();
 		}
 	}
+snippet fbi
+	/**
+	 * The backend index action for the $1 module.
+	 *
+	 * @author <per@netlash.com>
+	 */
+	class Backend${1:BaseClassName}Index extends BackendBaseActionIndex
+	{
+		public function execute()
+		{
+			parent::execute();
+			$this->loadDataGrids();
+			$this->parse();
+			$this->display();
+		}
+
+		private function loadDataGrids()
+		{
+			$this->dg = new BackendDataGridArray(Backend$1Model::${2:all}());
+		}
+
+		/**
+		 * Assign the template variables.
+		 */
+		private function parse()
+		{
+			$this->tpl->assign(
+				'dg',
+				$this->dg->getNumResults() != 0 ? $this->dg->getContent() : false
+			);
+		}
+	}
 snippet ffc
-	${4}
+	/**
+	 * Frontend configuration for the $1 module.
+	 *
+	 * @author <per@netlash.com>
+	 */
 	class Frontend${1:Module}Config extends FrontendBaseConfig
 	{
 		/**
@@ -95,3 +131,68 @@ snippet ffc
 		 */
 		protected $disabledActions = array(${3});
 	}
+snippet fbc
+	/**
+	 * Backend configuration for the $1 module.
+	 *
+	 * @author <per@netlash.com>
+	 */
+	class Backend${1:Module}Config extends BackendBaseConfig
+	{
+		/**
+		 * @var string
+		 */
+		protected $defaultAction = '${2:index}';
+
+		/**
+		 * @var array
+		 */
+		protected $disabledActions = array(${3});
+	}
+snippet fba
+	/**
+	 * Backend Add action for the $1 module.
+	 * It will display a form, validate it when posted and update the model when
+	 * the form is valid.
+	 *
+	 * @author <per@netlash.com>
+	 */
+	class Backend${1:Module}Add extends BackendBaseActionAdd
+	{
+		public function execute()
+		{
+			parent::execute();
+			$this->loadForm();
+			$this->validateForm();
+			$this->parse();
+			$this->display();
+		}
+
+		private function loadForm()
+		{
+			$this->frm = new BackendForm('add');
+		}
+
+		private function validateForm()
+		{
+			if(!$this->frm->isSubmitted()) return;
+
+			// validation here
+
+			if(!$this->frm->isCorrect()) return;
+			$id = Backend$1Model::add($this->getItemFromForm());
+		}
+
+		/**
+		 * Extract the necessary values from the submitted form and return it as a record
+		 * that is suitable for updating the model.
+		 *
+		 * @return array
+		 */
+		private function getItemFromForm()
+		{
+			// Get the necessary values from the form here.
+		}
+	}
+
+
