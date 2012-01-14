@@ -15,10 +15,6 @@
 	path = bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
 	ignore = dirty
-[submodule "bundle/taglist"]
-	path = bundle/taglist
-	url = git://github.com/vim-scripts/taglist.vim.git
-	ignore = dirty
 [submodule "bundle/cmdline-completion"]
 	path = bundle/cmdline-completion
 	url = git://github.com/vim-scripts/cmdline-completion.git
