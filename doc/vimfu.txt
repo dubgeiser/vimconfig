@@ -9,7 +9,9 @@ Based on http://djcraven5.blogspot.com/2006/10/mastering-vim-help-system.html
 Keyboard mappings to get in my fingers     *vimfu-learning* *vimfu-training*
 ------------------------------------------------------------------------------
 Note to self: COPY them over from other sections, do not move them.
-
+g_                  Movement: to the last non-blank character of the line.
+                    Handy for when in visual mode and want to select to the
+                    end of the line, but leave out the line ending.
 cc		    Empty current line and move cursor to relevant indent.
 		    Can't believe this isn't in my muscle memory :-/
 `.                  To the line you have last edited.
@@ -85,6 +87,9 @@ H, M, L         High-, Middle-, Low part of the page
 ]}              End of current block (no go in Python)
 ''              To the last place you were.
 `.              To the line you have last edited.
+g_              To the last non-blank character of the line.
+                Handy for when in visual mode and want to select to the end of
+                the line, but leave out the line ending.
 
 These are not motion commands, but they can come in handy and they "move"
 through files, so I put them here:
