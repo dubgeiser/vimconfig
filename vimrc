@@ -237,7 +237,7 @@ autocmd BufReadPost *
   \ endif
 
 " Automatically rebuild the help documentation when vimfu file is changed.
-autocmd BufWrite vimfu.txt :helptags ~/.vim/doc/
+autocmd BufWrite *fu.txt :helptags ~/.vim/doc/
 
 " For programming languages using a semi colon at the end of statement.
 autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y

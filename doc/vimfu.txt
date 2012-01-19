@@ -159,4 +159,4 @@ C-F             In command line mode: take current edit and take that to a
                 buffer for further 'full' editing.
 
 
- vim:tw=78:ts=8:ft=help:norl:nocindent:
+ vim:tw=78:ts=8:ft=help:norl:nocindent:et:

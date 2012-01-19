@@ -1,0 +1,54 @@
+*gitfu.txt*
+
+
+.git                                                           *gitfu-files*
+----------------------------------------------------------------------------
+.git/refs/heads/*       Where the HEAD of different branches point to
+.git/HEAD               Where your current working HEAD is.
+
+
+add                                                              *gitfu-add*
+----------------------------------------------------------------------------
+git add --update        Stage all changes in _tracked_ files only.
+                        alias: au
+
+
+diff                                                            *gitfu-diff*
+----------------------------------------------------------------------------
+git diff                local / staged
+git diff --cached       staged / committed
+                        alias dc
+git commit --ammend     Undoing stuff
+                        alias: ammend
+
+
+log                                                              *gitfu-log*
+----------------------------------------------------------------------------
+git log ..[BRANCH]      Show log messages in BRANCH that are not in HEAD
+
+
+log --pretty=format:'FORMAT HERE'                  *gitfu-log-pretty-format*
+----------------------------------------------------------------------------
+%h                      SHA1 short
+%H                      SHA1 full
+%d                      decorations (HEAD, origin/master, ...)
+%s                      Commit message subject line.
+%b                      Commit message body.
+%an                     Name committer
+%cr                     Time
+
+
+remote                                                       *gitfu-remotes*
+---------------------------------------------------------------------------
+git remote -v           all known remote repositories
+git ls-remote           All remote repositories
+
+
+reset                                                          *gitfu-reset*
+---------------------------------------------------------------------------
+git reset --hard [SHA1] Point current branch at specific commit
+
+
+
+
+ vim:tw=78:ts=8:ft=help:norl:nocindent:et:
