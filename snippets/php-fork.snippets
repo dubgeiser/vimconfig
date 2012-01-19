@@ -1,7 +1,173 @@
+snippet kvf
+	'${1:field}' => $this->frm->getField('$1')->getValue(),${2}
 snippet sd
 	Spoon::dump(${1});
 snippet sdd
 	Spoon::dump('TEST');${1}
+snippet fba
+	/**
+	 * Backend Add action for the $1 module.
+	 * It will display a form, validate it when posted and update the model when
+	 * the form is valid.
+	 *
+	 * @author <per@netlash.com>
+	 */
+	class Backend${1:Module}Add extends BackendBaseActionAdd
+	{
+		public function execute()
+		{
+			parent::execute();
+			$this->loadForm();
+			$this->validateForm();
+			$this->parse();
+			$this->display();
+		}
+
+		private function loadForm()
+		{
+			$this->frm = new BackendForm('add');
+			$this->frm->add${3:Text}('${2:title}');
+			${4}
+			$this->meta = new BackendMeta($this->frm, null, '$2', true);
+		}
+
+		protected function parse()
+		{
+			$this->frm->parse($this->tpl);
+		}
+
+		private function validateForm()
+		{
+			if($this->frm->isSubmitted())
+			{
+				$this->frm->cleanupFields();
+				$this->meta->validate();
+				$this->frm->getField('$2')->isFilled(BL::err('FieldIsRequired'));
+				if($this->frm->isCorrect())
+				{
+					$item = array(
+						'$2' => $this->frm->getField('$2')->getValue(),
+						'meta_id' => $this->meta->save(),
+					);
+					$id = Backend$1Model::add($item);
+
+					// XXX files / images processing?
+
+					$this->redirect(
+						BackendModel::createURLForAction('index')
+							. '&report=added'
+							. '&var=' . urlencode($item['$2'])
+							. '&highlight=row-' . $id
+					);
+				}
+			}
+		}
+	}
+snippet fbc
+	/**
+	 * Backend configuration for the $1 module.
+	 *
+	 * @author <per@netlash.com>
+	 */
+	class Backend${1:Module}Config extends BackendBaseConfig
+	{
+		/**
+		 * @var string
+		 */
+		protected $defaultAction = '${2:index}';
+
+		/**
+		 * @var array
+		 */
+		protected $disabledActions = array();
+		${3}
+	}
+snippet fbi
+	/**
+	 * The backend index action for the $1 module.
+	 *
+	 * @author <per@netlash.com>
+	 */
+	class Backend${1:BaseClassName}Index extends BackendBaseActionIndex
+	{
+		public function execute()
+		{
+			parent::execute();
+			$this->loadDataGrids();
+			$this->parse();
+			$this->display();
+		}
+
+		private function loadDataGrids()
+		{
+			$this->dg = new BackendDataGridArray(Backend$1Model::${2:all}());
+		}
+
+		/**
+		 * Assign the template variables.
+		 */
+		protected function parse()
+		{
+			$this->tpl->assign(
+				'dg',
+				$this->dg->getNumResults() != 0 ? $this->dg->getContent() : false
+			);
+		}
+	}
+snippet fbm
+	/**
+	 * Backend model for the $1 module
+	 *
+	 * @author <per@netlash.com>
+	 */
+	class Backend${1:BaseClassName}Model
+	{
+		/**
+		 * @param array $item
+		 * @return int The ID the item got in storage.
+		 */
+		public static function add(array $item)
+		{
+			$db = BackendModel::getDB(true);
+			$item['language'] = BL::getWorkingLanguage();
+			$item['id'] = $db->insert('${2:dbTable}', $item);
+			BackendModel::triggerEvent(
+				'${3:module}',
+				'after_add',
+				array('item' => $item)
+			);
+			return $item['id'];
+		}
+
+		/**
+		 * @param array $item
+		 * @param int $id
+		 * @return int Number of affected rows.
+		 */
+		public static function update(array $item, $id)
+		{
+			$db = BackendModel::getDB(true);
+			return (int) $db->update('$2', 'id = ?', array((int) $id));
+		}
+	}
+snippet ffc
+	/**
+	 * Frontend configuration for the $1 module.
+	 *
+	 * @author <per@netlash.com>
+	 */
+	class Frontend${1:Module}Config extends FrontendBaseConfig
+	{
+		/**
+		 * @var string
+		 */
+		protected $defaultAction = '${2:index}';
+
+		/**
+		 * @var array
+		 */
+		protected $disabledActions = array(${3});
+	}
 snippet ffi
 	class Frontend${1:BaseClassName}Index extends FrontendBaseBlock
 	{
@@ -81,118 +247,4 @@ snippet ffi
 			$this->parsePagination();
 		}
 	}
-snippet fbi
-	/**
-	 * The backend index action for the $1 module.
-	 *
-	 * @author <per@netlash.com>
-	 */
-	class Backend${1:BaseClassName}Index extends BackendBaseActionIndex
-	{
-		public function execute()
-		{
-			parent::execute();
-			$this->loadDataGrids();
-			$this->parse();
-			$this->display();
-		}
-
-		private function loadDataGrids()
-		{
-			$this->dg = new BackendDataGridArray(Backend$1Model::${2:all}());
-		}
-
-		/**
-		 * Assign the template variables.
-		 */
-		protected function parse()
-		{
-			$this->tpl->assign(
-				'dg',
-				$this->dg->getNumResults() != 0 ? $this->dg->getContent() : false
-			);
-		}
-	}
-snippet ffc
-	/**
-	 * Frontend configuration for the $1 module.
-	 *
-	 * @author <per@netlash.com>
-	 */
-	class Frontend${1:Module}Config extends FrontendBaseConfig
-	{
-		/**
-		 * @var string
-		 */
-		protected $defaultAction = '${2:index}';
-
-		/**
-		 * @var array
-		 */
-		protected $disabledActions = array(${3});
-	}
-snippet fbc
-	/**
-	 * Backend configuration for the $1 module.
-	 *
-	 * @author <per@netlash.com>
-	 */
-	class Backend${1:Module}Config extends BackendBaseConfig
-	{
-		/**
-		 * @var string
-		 */
-		protected $defaultAction = '${2:index}';
-
-		/**
-		 * @var array
-		 */
-		protected $disabledActions = array(${3});
-	}
-snippet fba
-	/**
-	 * Backend Add action for the $1 module.
-	 * It will display a form, validate it when posted and update the model when
-	 * the form is valid.
-	 *
-	 * @author <per@netlash.com>
-	 */
-	class Backend${1:Module}Add extends BackendBaseActionAdd
-	{
-		public function execute()
-		{
-			parent::execute();
-			$this->loadForm();
-			$this->validateForm();
-			$this->parse();
-			$this->display();
-		}
-
-		private function loadForm()
-		{
-			$this->frm = new BackendForm('add');
-		}
-
-		private function validateForm()
-		{
-			if(!$this->frm->isSubmitted()) return;
-
-			// validation here
-
-			if(!$this->frm->isCorrect()) return;
-			$id = Backend$1Model::add($this->getItemFromForm());
-		}
-
-		/**
-		 * Extract the necessary values from the submitted form and return it as a record
-		 * that is suitable for updating the model.
-		 *
-		 * @return array
-		 */
-		private function getItemFromForm()
-		{
-			// Get the necessary values from the form here.
-		}
-	}
-
 
