@@ -1,0 +1,20 @@
+*colorschemes.txt*
+
+Notes on colorschemes I've tried out.
+
+
+
+Solarized                                                        *solarized*
+----------------------------------------------------------------------------
+Punctuation marks are too bright, distracting from reading.  Both dark and
+light not good enough.
+
+
+
+
+
+
+ vim:tw=78:ts=8:ft=help:norl:nocindent:et:
+
+
+

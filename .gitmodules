@@ -31,7 +31,4 @@
 	path = bundle/todo
 	url = git://github.com/dubgeiser/vim-todo.git
 	ignore = dirty
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = git://github.com/dubgeiser/vim-vim-colors-solarized.git
-	ignore = dirty
+
