@@ -192,6 +192,7 @@ snippet ffi
 			$this->loadFilter();
 			$this->loadData();
 			$this->loadTemplate();
+			$this->parse();
 		}
 
 		private function loadData()
@@ -240,9 +241,8 @@ snippet ffi
 			$this->filter = array(${2});
 		}
 
-		protected function loadTemplate($path = null, $overwrite = false)
+		protected function parse()
 		{
-			parent::loadTemplate($path, $overwrite);
 			$this->tpl->assign('items', $this->items);
 			$this->parsePagination();
 		}
