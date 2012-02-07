@@ -18,6 +18,8 @@ cc		    Empty current line and move cursor to relevant indent.
 gc-g                Detailed info on position in file
 C-F                 In command line mode: take current edit and switch to
                     command mode (ie. in a buffer)
+&                   Repeat substitution (ex. when g is forgotten in
+                    :s/foo/bar)
 
 
 Auto completions                         *vimfu-autocomplete* *vimfu-complete*
