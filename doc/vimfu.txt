@@ -120,7 +120,7 @@ cs<C1><C2>      Change surronding char <C1> to char <C2>
 cst<C>          Change surrounding tag (<tag>) with char <C>
 ds<C>           Delete surrounding chars <C>
 dst             Delete surroundig html tag.
-s<C>            Surround selection with char <C> (Visual mode)
+S<C>            Surround selection with char <C> (Visual mode)
 
 
 Selecting stuff                               *vimfu-visual* *vimfu-selection*
@@ -154,7 +154,6 @@ help on functions, variables, script(s), usr_41.txt
 
 Command line                                               *vimfu-commandline*
 ------------------------------------------------------------------------------
-
 C-F             In command line mode: take current edit and take that to a
                 buffer for further 'full' editing.
 
