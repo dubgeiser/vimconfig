@@ -205,8 +205,9 @@ nmap <Leader>t :call Tdd_RunTest()<cr>
 nnoremap <Leader>= yypVr=
 nnoremap <Leader>- yypVr-
 
-" Shortcut to open my gtd inbox
+" Quick open certain files...
 nnoremap <Leader>i :e ~/gtd/inbox.rst<cr>
+nnoremap <Leader>s :e ~/.scratchbuffer<cr>
 
 " Less finger wrecking window navigation.
 nnoremap <c-j> <c-w>j
