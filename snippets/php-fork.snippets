@@ -109,6 +109,78 @@ snippet fbd
 			);
 		}
 	}
+snippet fbe
+	/**
+	 * Backend Edit action for the $1 module.
+	 * It will display a form with initial data, validate it when posted and update
+	 * the model when the form is valid.
+	 *
+	 * @author <per@netlash.com>
+	 */
+	class Backend${1:Module}Edit extends BackendBaseActionEdit
+	{
+		public function execute()
+		{
+			$this->id = $this->getParameter('id', 'int');
+			if($this->id === null || !Backend$1Model::exists($this->id))
+			{
+				$this->redirect(BackendModel::createURLForAction('index') . '&error=non-existing');
+			}
+			parent::execute();
+			$this->loadData();
+			$this->loadForm();
+			$this->validateForm();
+			$this->parse();
+			$this->display();
+		}
+
+		private function loadData()
+		{
+			$this->record = Backend$1Model::get($this->id);
+		}
+
+		private function loadForm()
+		{
+			$this->frm = new BackendForm('edit');
+			$this->frm->add${3:Text}('${2:title}');
+			${5}
+			$this->meta = new BackendMeta($this->frm, $this->record['meta_id'], '$2', true);
+			$this->meta->setURLCallback('Backend$1Model', '${4:getURL}', array($this->record['id']));
+		}
+
+		protected function parse()
+		{
+			parent::parse();
+			$this->tpl->assign('item', $this->record);
+		}
+
+		private function validateForm()
+		{
+			if($this->frm->isSubmitted())
+			{
+				$this->frm->cleanupFields();
+				$this->meta->validate();
+				$this->frm->getField('$2')->isFilled(BL::err('FieldIsRequired'));
+				if($this->frm->isCorrect())
+				{
+					$item = array(
+						'$2' => $this->frm->getField('$2')->getValue(),
+						'meta_id' => $this->meta->save(true),
+					);
+					Backend$1Model::update($item, $this->id);
+
+					// XXX files / images processing?
+
+					$this->redirect(
+						BackendModel::createURLForAction('index')
+							. '&report=edited'
+							. '&var=' . urlencode($item['$2'])
+							. '&highlight=row-' . $this->id
+					);
+				}
+			}
+		}
+	}
 snippet fbi
 	/**
 	 * The backend index action for the $1 module.
