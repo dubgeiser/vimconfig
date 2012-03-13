@@ -33,7 +33,7 @@ function s:appendSemiColon()
 endfunction
 
 
-" Remove trailing whitespace current buffer from trailing whitespace.
+" Remove trailing whitespace.
 fun s:rtrim()
     exec('%s/\s\+$//e')
 endf
