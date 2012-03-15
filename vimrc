@@ -273,3 +273,12 @@ command C call <SID>toggleColorScheme()
 :C
 command Rtrim call <SID>rtrim()
 
+
+" Trying out powerline
+if has('gui_running')
+    let g:Powerline_symbols='fancy'
+else
+    let g:Powerline_symbols='compatible'
+endif
+let g:Powerline_stl_path_style='short'
+"let g:Powerline_stl_path_style='filename' " like %t
