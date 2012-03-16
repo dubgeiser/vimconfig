@@ -1,4 +1,3 @@
-" Veur den vandenbossche
 " ==============================================================================
 " Description: vimrc configuration
 "              This should be svn co'd in the directory ~/.vim
