@@ -39,37 +39,6 @@ fun s:rtrim()
 endf
 
 
-" Toggle between dark / light colorschemes.
-" depends on 3 configuration variables being set
-" (in ~/.vimcolorscheme)
-"
-" - g:light_colorscheme     The name of the 'light' colorscheme
-" - g:dark_colorscheme      The name of the 'dark' colorscheme
-" - g:colorscheme_mode      Which colorscheme mode ('light' or 'dark') to
-"                           start in.
-" Example:
-" let g:light_colorscheme = 'newspaper'
-" let g:dark_colorscheme = 'zenburn'
-" let g:colorscheme_mode = 'dark'
-" Will start with zenburn colorscheme, when toggleColorScheme() is called,
-" will set the background to 'light' and use g:light_colorscheme.
-"
-" Note:
-" There is a command 'C' mapped to this function
-" (see the section 'Further initialization')
-fun! s:toggleColorScheme()
-    if !exists('g:colorscheme_mode')
-        return
-    endif
-    let light_or_dark = g:colorscheme_mode
-    let colorscheme = eval('g:' . light_or_dark . '_colorscheme')
-    exec('set background=' . light_or_dark)
-    exec('colorscheme ' . colorscheme)
-    let g:colorscheme_mode = light_or_dark == 'dark' ? 'light' : 'dark'
-endf
-
-
-
 " {{{1 pathogen
 " Apparently, we need to execute pathogen before filetype detection.
 " http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
@@ -118,8 +87,6 @@ set ignorecase
 set smartcase
 
 set nonumber
-" no longer necessary with custom statusline.
-"set ruler
 set scrolljump=1
 set scrolloff=5
 set shiftwidth=4
@@ -144,11 +111,6 @@ set wildmenu
 set wildmode=full
 syntax on
 set nohlsearch
-
-" Which color scheme to use is not under version control so that it doesn't
-" bother anyone if I choose to switch color schemes.
-source ~/.vimcolorscheme
-
 set nocursorcolumn
 set cursorline
 
@@ -163,13 +125,6 @@ let g:mapleader = ","
 inoremap <c-space> <c-x><c-o>
 inoremap <c-d> <c-x><c-f>
 
-" Use Perl/Python/egrep regex when searching
-" 2011-08-30
-"   In 'PHP' programming, this makes searching for vars in various forms rather
-"   cumbersome, fi. both '$' and '>' need to be escaped.  After a couple days
-"   of use have to conclude that this mapping is of little to no use.
-"nmap / /\v
-
 " Easier accesible word deletion when typing, also in command
 imap <c-h> <c-w>
 cmap <c-h> <c-w>
@@ -180,12 +135,9 @@ vnoremap < <gv
 
 nnoremap <Leader>b :buffers<CR>:buffer 
 nnoremap <Leader>e :e ./**/
-"nnoremap <Leader>e :e <C-D>
 
 " CD to the directory the file in the current buffer is in.
 nmap <silent> <Leader>cd :cd %:h<CR>
-" ... same thing, but for the current window only.
-"nmap <silent> <Leader>lcd :lcd %:h<CR>
 
 " Hop from method to method.
 nmap <c-n> ]]
@@ -215,8 +167,6 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-
-" {{{2 Function keys
 nnoremap <silent> <F5> :make<CR>
 
 
@@ -250,8 +200,6 @@ autocmd FocusLost * :wa
 autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
 
 
-
-
 " {{{1 Plugin configuration
 "===============================================================================
 "
@@ -272,8 +220,12 @@ let g:Powerline_symbols='compatible'
 let g:Powerline_stl_path_style='short'
 
 
+" {{{1 Colorscheme
+"===============================================================================
+set t_Co=256
+colorscheme perzen
+
+
 "{{{1 Further initialization
-command C call <SID>toggleColorScheme()
-:C
 command Rtrim call <SID>rtrim()
 
