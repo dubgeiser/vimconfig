@@ -259,7 +259,7 @@ autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
 let g:tlWindowPosition = 1
 let g:tlTokenList = ['TODO', 'FIXME', 'XXX', 'HACK', '@todo', '???']
 
- " {{{2 vim-todo
+" {{{2 vim-todo
 nmap <Leader>o :call Todo_ToggleTickbox()<cr>
 vmap <Leader>o :call Todo_ToggleTickbox()<cr>
 nmap <Leader>v :call Todo_TickFinished()<cr>
