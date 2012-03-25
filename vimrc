@@ -24,7 +24,7 @@ runtime macros/matchit.vim
 " {{{1 pathogen
 " Apparently, we need to execute pathogen before filetype detection.
 " http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
-call pathogen#infect() 
+call pathogen#infect()
 filetype plugin indent on
 
 
@@ -40,7 +40,7 @@ set autoread
 
 " Remember undo's even when buffer has been in the background.
 " Also allows for sending buffers to the background without saving...
-set hidden 
+set hidden
 " ... this is where this comes in:
 set autowrite
 
@@ -200,7 +200,6 @@ vmap <Leader>x :call Todo_TickCancelled()<cr>
 " {{{2 Powerline
 let g:Powerline_symbols='compatible'
 let g:Powerline_stl_path_style='short'
-
 
 " {{{1 Colorscheme
 "===============================================================================
