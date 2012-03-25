@@ -20,24 +20,6 @@ au!
 " and running the :helptags command afterwards.
 runtime macros/matchit.vim
 
-" {{{1 Functions
-"===============================================================================
-
-" If there isn't one, append a semi colon to the end of the current line.
-function s:appendSemiColon()
-    if getline('.') !~ ';$'
-        let save_cursor = getpos('.')
-        exec("s/$/;/")
-        call setpos('.', save_cursor)
-    endif
-endfunction
-
-
-" Remove trailing whitespace.
-fun s:rtrim()
-    exec('%s/\s\+$//e')
-endf
-
 
 " {{{1 pathogen
 " Apparently, we need to execute pathogen before filetype detection.
@@ -192,7 +174,7 @@ autocmd BufWrite *fu.txt :helptags ~/.vim/doc/
 
 " For programming languages using a semi colon at the end of statement.
 autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
-    \ nmap <silent> <Leader>; :call <SID>appendSemiColon()<cr>
+    \ nmap <silent> <Leader>; :call functions#append_semi_colon()<cr>
 
 autocmd FocusLost * :wa
 
@@ -227,5 +209,5 @@ colorscheme perzen
 
 
 "{{{1 Further initialization
-command Rtrim call <SID>rtrim()
+command Rtrim call functions#rtrim()
 
