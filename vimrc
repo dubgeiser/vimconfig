@@ -1,14 +1,6 @@
 " ==============================================================================
-" Description: vimrc configuration
-"              This should be svn co'd in the directory ~/.vim
-"              From ~/.vimrc source this file:
-"
-"                   source ~/.vim/vimrc
-"
-"              Or make ~/.vimrc a symlink
-"
 " Author: P. Juchtmans
-" Note: Still needs some cleaning up.
+" Note: Continuously under construction
 " ==============================================================================
 
 " do this before anything else...
