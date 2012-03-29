@@ -18,8 +18,8 @@ diff                                                            *gitfu-diff*
 git diff                local / staged
 git diff --cached       staged / committed
                         alias dc
-git commit --ammend     Undoing stuff
-                        alias: ammend
+git commit --amend     Undoing stuff
+                        alias: amend
 
 
 log                                                              *gitfu-log*
