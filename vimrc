@@ -121,6 +121,9 @@ nmap <c-p> [[
 nmap <CR> o<ESC>
 nmap <C-CR> O<ESC>
 
+" Jump to tag, but offer choice if multiple matches.
+nmap <C-]> g<C-]>
+
 " TaskList
 nmap <unique> <Leader>l <Plug>TaskList
 
