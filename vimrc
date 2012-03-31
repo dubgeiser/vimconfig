@@ -191,6 +191,7 @@ vmap <Leader>x :call Todo_TickCancelled()<cr>
 " {{{2 Powerline
 let g:Powerline_symbols='compatible'
 let g:Powerline_stl_path_style='short'
+call Pl#Theme#RemoveSegment('mode_indicator')
 
 " {{{1 Colorscheme
 "===============================================================================
