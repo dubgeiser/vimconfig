@@ -198,6 +198,6 @@ set t_Co=256
 colorscheme perzen
 
 
-"{{{1 Further initialization
+"{{{1 Commands for functions
 command Rtrim call functions#rtrim()
 
