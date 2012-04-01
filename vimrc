@@ -193,6 +193,8 @@ let g:Powerline_symbols='compatible'
 let g:Powerline_stl_path_style='short'
 call Pl#Theme#RemoveSegment('mode_indicator')
 call Pl#Theme#RemoveSegment('scrollpercent')
+call Pl#Theme#InsertSegment('ws_marker', 'before', 'fileinfo')
+
 
 " {{{1 Colorscheme
 "===============================================================================
