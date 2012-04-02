@@ -83,7 +83,7 @@ set visualbell
 set wildmenu
 set wildmode=full
 syntax on
-set nohlsearch
+set hlsearch
 set nocursorcolumn
 set cursorline
 
@@ -132,6 +132,9 @@ nnoremap <Leader>- yypVr-
 " Quick open certain files...
 nnoremap <Leader>i :e ~/gtd/inbox.rst<cr>
 nnoremap <Leader>s :e ~/.scratchbuffer<cr>
+
+" So we can turn off quickly highlighted matches.
+nnoremap <leader><space> :nohlsearch<cr>
 
 " Less finger wrecking window navigation.
 nnoremap <c-j> <c-w>j
