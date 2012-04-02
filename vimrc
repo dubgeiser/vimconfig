@@ -68,10 +68,6 @@ set showcmd
 set smartindent
 set softtabstop=4
 
-"Default
-"set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-set statusline=%-25.25(%<%t\ %m%r\%)line\ %l\ of\ %L\ col\ %c%V\ (%p%%)%=%{&ff},%{strlen(&fenc)?&fenc:''}%Y\ 
-
 " Not too long or we drop to a virtual stand still when editing
 " large-all-on-one-line-code (like OOo xml files.)
 set synmaxcol=512
