@@ -26,3 +26,8 @@ function! functions#rtrim()
 endfunction
 
 
+" @return string The git branch we're in, empty if none.
+function! functions#git_branch()
+    return system("git branch 2>/dev/null | grep '^\*' | sed 's/^\* //'")
+endfunction
+
