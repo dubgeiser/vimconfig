@@ -61,6 +61,9 @@ set ignorecase
 set smartcase
 
 set nonumber
+" only use relativenumber.
+set numberwidth=2
+set relativenumber
 set scrolljump=1
 set scrolloff=5
 set shiftwidth=4
