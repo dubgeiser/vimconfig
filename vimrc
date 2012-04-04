@@ -163,7 +163,7 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-" Automatically rebuild the help documentation when vimfu file is changed.
+" Automatically rebuild the help documentation when a vimfu file is changed.
 autocmd BufWrite *fu.txt :helptags ~/.vim/doc/
 
 " For programming languages using a semi colon at the end of statement.
