@@ -47,8 +47,13 @@ git ls-remote           All remote repositories
 reset                                                          *gitfu-reset*
 ---------------------------------------------------------------------------
 git reset --hard [SHA1] Point current branch at specific commit
-
-
+git reset --soft HEAD^  Undo last commit
+    Example:
+    $ git commit ...            ((1) commit something incomplete/wrong)
+    $ git reset --soft HEAD^    (restage last commit)
+    $ edit                      (do necessary edits...)
+    $ git add ....              (and adds.)
+    $ git commit -c ORIG_HEAD   (commit with last commit message (1))
 
 
  vim:tw=78:ts=8:ft=help:norl:nocindent:et:
