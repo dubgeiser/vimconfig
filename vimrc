@@ -86,7 +86,7 @@ syntax on
 set hlsearch
 set nocursorcolumn
 set cursorline
-set colorcolumn=85
+set colorcolumn=80
 
 
 " {{{1 Key bindings
