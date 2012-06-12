@@ -36,3 +36,6 @@
 	path = bundle/powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
 	ignore = dirty
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git

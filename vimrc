@@ -198,6 +198,9 @@ call Pl#Theme#RemoveSegment('mode_indicator')
 call Pl#Theme#RemoveSegment('scrollpercent')
 call Pl#Theme#InsertSegment('ws_marker', 'before', 'fileformat')
 
+" {{{2 CTRLP
+let g:ctrlp_map = '<c-SPACE>'
+
 
 " {{{1 Colorscheme
 "===============================================================================
