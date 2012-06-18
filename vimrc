@@ -103,8 +103,10 @@ inoremap <c-d> <c-x><c-f>
 vnoremap > >gv
 vnoremap < <gv
 
-nnoremap <Leader>b :buffers<CR>:buffer 
-nnoremap <Leader>e :e ./**/
+" Testing out CtrlP plugin
+"nnoremap <Leader>b :buffers<CR>:buffer 
+nnoremap <Leader>b :CtrlPBuffer<CR>
+"nnoremap <Leader>e :e ./**/
 
 " CD to the directory the file in the current buffer is in.
 nmap <silent> <Leader>cd :cd %:h<CR>
@@ -199,7 +201,7 @@ call Pl#Theme#RemoveSegment('scrollpercent')
 call Pl#Theme#InsertSegment('ws_marker', 'before', 'fileformat')
 
 " {{{2 CTRLP
-let g:ctrlp_map = '<c-SPACE>'
+let g:ctrlp_map = '<leader>e'
 
 
 " {{{1 Colorscheme
