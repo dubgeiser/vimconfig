@@ -103,9 +103,8 @@ inoremap <c-d> <c-x><c-f>
 vnoremap > >gv
 vnoremap < <gv
 
+nnoremap <Leader>b :buffers<CR>:buffer 
 " Testing out CtrlP plugin
-"nnoremap <Leader>b :buffers<CR>:buffer 
-nnoremap <Leader>b :CtrlPBuffer<CR>
 "nnoremap <Leader>e :e ./**/
 
 " CD to the directory the file in the current buffer is in.
