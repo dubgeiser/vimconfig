@@ -259,6 +259,61 @@ snippet fbm
 		}
 
 		/**
+		 * @param ID in the database of an item to fetch.
+		 * @return array The record representing that item.
+		 */
+		public static function get($id)
+		{
+			$db = BackendModel::getDB(false);
+			$record = (array) $db->getRecord(
+				'SELECT i.*, m.url
+				 FROM $2 i
+				 INNER JOIN meta m ON m.id = i.meta_id
+				 WHERE i.id = ? AND language = ?',
+				array(
+					(int) $id,
+					BL::getWorkingLanguage()
+				)
+			);
+			return $record;
+		}
+
+		public static function getURL($url, $id = null)
+		{
+			$url = (string) $url;
+			$db = BackendModel::getDB(false);
+			if($id === null)
+			{
+				if((bool) $db->getVar(
+					'SELECT 1
+					 FROM $2 i
+					 INNER JOIN meta m ON i.meta_id = m.id
+					 WHERE i.language = ? AND m.url = ?
+					 LIMIT 1',
+					array(BL::getWorkingLanguage(), $url)))
+				{
+					$url = BackendModel::addNumber($url);
+					return self::getURL($url);
+				}
+			}
+			else
+			{
+				if((bool) $db->getVar(
+					'SELECT 1
+					 FROM $2 i
+					 INNER JOIN meta m ON i.meta_id = m.id
+					 WHERE i.language = ? AND m.url = ? AND i.id <> = ?
+					 LIMIT 1',
+					array(BL::getWorkingLanguage(), $url, $id)))
+				{
+					$url = BackendModel::addNumber($url);
+					return self::getURL($url, $id);
+				}
+			}
+			return $url;
+		}
+
+		/**
 		 * @param array $item
 		 * @param int $id
 		 * @return int Number of affected rows.
