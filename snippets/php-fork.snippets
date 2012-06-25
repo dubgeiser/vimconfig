@@ -248,7 +248,7 @@ snippet fbm
 		public static function update(array $item, $id)
 		{
 			$db = BackendModel::getDB(true);
-			return (int) $db->update('$2', 'id = ?', array((int) $id));
+			return (int) $db->update('$2', $item, 'id = ?', array((int) $id));
 		}
 	}
 snippet ffc
