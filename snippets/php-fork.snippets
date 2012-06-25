@@ -241,6 +241,24 @@ snippet fbm
 		}
 
 		/**
+		 * @param int ID of an item to check for existance.
+		 * @return bool Whether or not an item with that ID exists.
+		 */
+		public static function exists($id)
+		{
+			$db = BackendModel::getDB(false);
+			return (bool) $db->getVar(
+				'SELECT i.id
+				 FROM $2 i
+				 WHERE i.id = ? AND i.language = ?',
+				array(
+					(int) $id,
+					BL::getWorkingLanguage()
+				)
+			);
+		}
+
+		/**
 		 * @param array $item
 		 * @param int $id
 		 * @return int Number of affected rows.
