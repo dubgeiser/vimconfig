@@ -421,4 +421,25 @@ snippet ffi
 			$this->parsePagination();
 		}
 	}
+snippet ffw
+	class Frontend${1:Module}Widget${2:Name} extends FrontendBaseWidget
+	{
+		public function execute()
+		{
+			//${3}$this->slug = $this->URL->getParameter(0, 'string', null);
+			parent::execute();
+			$this->loadData();
+			$this->loadTemplate();
+			$this->parse();
+		}
 
+		private function loadData()
+		{
+			$this->items = Frontend$1Model::get();
+		}
+
+		private function parse()
+		{
+			$this->tpl->assign('widget$1$2', $this->items);
+		}
+	}
