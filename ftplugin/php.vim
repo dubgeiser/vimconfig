@@ -21,8 +21,7 @@ set errorformat+=%m\ in\ %f\ on\ line\ %l
 set errorformat+=%m\ at\ \[%f\ line\ %l]
 
 " PHPUnit
-" TODO Match the error message too.
-set errorformat+=%f:%l
+set errorformat+=%E%\\d%\\+)\ %m,%CFailed%m,%Z%f:%l,%-G
 
-let g:Tdd_makeprg='php %'
+let g:Tdd_makeprg='phpunit %'
 
