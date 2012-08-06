@@ -201,6 +201,10 @@ call Pl#Theme#InsertSegment('ws_marker', 'before', 'fileformat')
 
 " {{{2 CTRLP
 let g:ctrlp_map = '<leader>e'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$',
+  \ 'file': '\.exe$\|\.so$\|\.dll$\|^\..*\.swp$',
+  \ }
 
 
 " {{{1 Colorscheme
