@@ -22,8 +22,11 @@ elseif has("gui_macvim")
     set fuoptions=maxvert,maxhorz
 
     "http://nodnod.net/2009/feb/12/adding-straight-single-and-double-quotes-inconsola/
-    set guifont=Inconsolata-dz:h14
-    set antialias
+    "set guifont=Inconsolata-dz:h14
+
+    " Uncheck 'Use LCD font smoothing when available' in System Preferences >
+    " General for best result.
+    set guifont=Ubuntu\ Mono:h16
 else
     set guifont=Monospace\ 10
 endif
