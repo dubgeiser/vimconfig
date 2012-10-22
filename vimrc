@@ -176,6 +176,9 @@ autocmd FocusLost * :wa
 " .tpl files are mainly (x)html files, xhtml gives better omni completion.
 autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
 
+" Twig templates are like Django templates
+autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
+
 
 " {{{1 Plugin configuration
 "===============================================================================
