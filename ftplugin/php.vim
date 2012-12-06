@@ -11,6 +11,7 @@ set fileformat=unix
 set textwidth=0
 
 nmap <leader>f /function\s*
+nmap <leader>u :call PhpInsertUse()<CR>
 
 set makeprg=php\ -l\ %
 
