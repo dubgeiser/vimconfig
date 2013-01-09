@@ -1,6 +1,6 @@
 "winpos 0 0
-set lines=48
-set columns=86
+set lines=52
+set columns=167
 
 " no menu
 set guioptions-=m
