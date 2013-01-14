@@ -103,7 +103,8 @@ inoremap <c-d> <c-x><c-f>
 vnoremap > >gv
 vnoremap < <gv
 
-nnoremap <Leader>b :buffers<CR>:buffer<space>
+"nnoremap <Leader>b :buffers<CR>:buffer<space>
+nnoremap <Leader>b :CtrlPBuffer<CR>
 " Testing out CtrlP plugin
 "nnoremap <Leader>e :e ./**/
 
