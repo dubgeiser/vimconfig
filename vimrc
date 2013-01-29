@@ -103,10 +103,14 @@ inoremap <c-d> <c-x><c-f>
 vnoremap > >gv
 vnoremap < <gv
 
-"nnoremap <Leader>b :buffers<CR>:buffer<space>
-nnoremap <Leader>b :CtrlPBuffer<CR>
-" Testing out CtrlP plugin
-"nnoremap <Leader>e :e ./**/
+" NOTE: If I ever get the brilliant idea to use ctrlp for buffers:
+"   There are reasons not to do it: finger muscle for instance, which is used
+"   to the <TAB> key for selecting buffers, but the biggest annoyance is this:
+"   When you have a vertical split and you want to load op the same buffer as
+"   the one in the other window, you _can_ select that buffer, but then ctrlp
+"   will jump to the other window instead of opening the buffer in the current
+"   window, that's just painful.
+nnoremap <Leader>b :buffers<CR>:buffer<space>
 
 " CD to the directory the file in the current buffer is in.
 nmap <silent> <Leader>cd :cd %:h<CR>
