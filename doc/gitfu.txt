@@ -56,4 +56,12 @@ git reset --soft HEAD^  Undo last commit
     $ git commit -c ORIG_HEAD   (commit with last commit message (1))
 
 
+diff-filter                                              *gitfu-diff-filter*
+----------------------------------------------------------------------------
+Used to filter diffs, examples:
+
+When was file 'foo.bar' added:
+    $ git log --diff-filter=A -- foo.bar
+
+
  vim:tw=78:ts=8:ft=help:norl:nocindent:et:
