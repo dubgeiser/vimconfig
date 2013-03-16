@@ -113,24 +113,24 @@ vnoremap < <gv
 nnoremap <Leader>b :buffers<CR>:buffer<space>
 
 " CD to the directory the file in the current buffer is in.
-nmap <silent> <Leader>cd :cd %:h<CR>
+nnoremap <silent> <Leader>cd :cd %:h<CR>
 
 " Hop from method to method.
-nmap <c-n> ]]
-nmap <c-p> [[
+nnoremap <c-n> ]]
+nnoremap <c-p> [[
 
 " Add open lines without going to insert mode.
-nmap <CR> o<ESC>
-nmap <C-CR> O<ESC>
+nnoremap <CR> o<ESC>
+nnoremap <C-CR> O<ESC>
 
 " Jump to tag, but offer choice if multiple matches.
-nmap <C-]> g<C-]>
+nnoremap <C-]> g<C-]>
 
 " TaskList
 nmap <unique> <Leader>l <Plug>TaskList
 
 " Run current defined test (see tdd.vim plugin)
-nmap <Leader>t :call Tdd_RunTest()<cr>
+nnoremap <Leader>t :call Tdd_RunTest()<cr>
 
 " Underline current line
 nnoremap <Leader>= yypVr=
@@ -192,12 +192,12 @@ let g:tlWindowPosition = 1
 let g:tlTokenList = ['TODO', 'FIXME', 'XXX', 'HACK', '@todo', '???']
 
 " {{{2 vim-todo
-nmap <Leader>o :call Todo_ToggleTickbox()<cr>
-vmap <Leader>o :call Todo_ToggleTickbox()<cr>
-nmap <Leader>v :call Todo_TickFinished()<cr>
-vmap <Leader>v :call Todo_TickFinished()<cr>
-nmap <Leader>x :call Todo_TickCancelled()<cr>
-vmap <Leader>x :call Todo_TickCancelled()<cr>
+nnoremap <Leader>o :call Todo_ToggleTickbox()<cr>
+vnoremap <Leader>o :call Todo_ToggleTickbox()<cr>
+nnoremap <Leader>v :call Todo_TickFinished()<cr>
+vnoremap <Leader>v :call Todo_TickFinished()<cr>
+nnoremap <Leader>x :call Todo_TickCancelled()<cr>
+vnoremap <Leader>x :call Todo_TickCancelled()<cr>
 
 " {{{2 Powerline
 let g:Powerline_symbols='compatible'

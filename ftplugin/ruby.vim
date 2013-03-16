@@ -6,7 +6,7 @@ set tabstop=2
 set expandtab
 set softtabstop=2
 
-nmap <leader>f /def\s*
+nnoremap <leader>f /def\s*
 
 set makeprg=ruby\ -c\ %
 

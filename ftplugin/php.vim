@@ -10,8 +10,8 @@ set noexpandtab
 set fileformat=unix
 set textwidth=0
 
-nmap <leader>f /function\s*
-nmap <leader>i :call PhpInsertUse()<CR>
+nnoremap <leader>f /function\s*
+nnoremap <leader>i :call PhpInsertUse()<CR>
 
 set makeprg=php\ -l\ %
 
