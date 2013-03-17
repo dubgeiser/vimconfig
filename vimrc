@@ -116,8 +116,8 @@ nnoremap <Leader>b :buffers<CR>:buffer<space>
 nnoremap <silent> <Leader>cd :cd %:h<CR>
 
 " Hop from method to method.
-nnoremap <c-n> ]]
-nnoremap <c-p> [[
+nmap <c-n> ]]
+nmap <c-p> [[
 
 " Add open lines without going to insert mode.
 nnoremap <CR> o<ESC>
