@@ -213,6 +213,9 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.exe$\|\.so$\|\.dll$\|^\..*\.swp$',
   \ }
 
+" {{{2 Gist
+let g:gist_clip_command = 'pbcopy'
+let g:gist_open_browser_after_post = 1
 
 " {{{1 Colorscheme
 "===============================================================================
