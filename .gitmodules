@@ -43,3 +43,9 @@
 	path = bundle/vim-php-namespace
 	url = git://github.com/arnaud-lb/vim-php-namespace.git
 	ignore = dirty
+[submodule "bundle/webapi"]
+	path = bundle/webapi
+	url = git://github.com/mattn/webapi-vim.git
+[submodule "bundle/gist"]
+	path = bundle/gist
+	url = git://github.com/mattn/gist-vim.git
