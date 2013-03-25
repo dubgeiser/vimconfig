@@ -3,12 +3,10 @@
 Notes on colorschemes I've tried out.
 
 
-
 Mustang                                                            *mustang*
 ----------------------------------------------------------------------------
 Nice, but too "greeny"
 No visual distinction between variable and string (PHP); That's BAD.
-
 
 
 Solarized                                                        *solarized*
@@ -17,6 +15,12 @@ Punctuation marks are too bright, distracting from reading.  Both dark and
 light not good enough.
 
 
+Tomorrow-night                                             *tommorrow-night*
+----------------------------------------------------------------------------
+Calm and pleasing colors.
+A lot of red, variables for instance.
+ft=sql does noet highlight?
+No warning color change when editing GIT COMMIT message > 50 chars.
 
 
 
