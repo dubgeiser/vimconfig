@@ -220,8 +220,7 @@ let g:gist_open_browser_after_post = 1
 " {{{1 Colorscheme
 "===============================================================================
 set t_Co=256
-"colorscheme perzen
-colorscheme Tomorrow-Night
+colorscheme perzen
 
 
 "{{{1 Commands for functions
