@@ -19,7 +19,7 @@ Tomorrow-night                                             *tommorrow-night*
 ----------------------------------------------------------------------------
 Calm and pleasing colors.
 A lot of red, variables for instance.
-ft=sql does noet highlight?
+ft=sql does not highlight?
 No warning color change when editing GIT COMMIT message > 50 chars.
 
 
