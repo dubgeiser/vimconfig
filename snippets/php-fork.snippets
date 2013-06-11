@@ -146,7 +146,7 @@ snippet fbe
 		private function loadForm()
 		{
 			$this->frm = new BackendForm('edit');
-			$this->frm->add${3:Text}('${2:title}');
+			$this->frm->add${3:Text}('${2:title}', $this->record['$2']);
 			${5}
 			$this->meta = new BackendMeta($this->frm, $this->record['meta_id'], '$2', true);
 			$this->meta->setURLCallback('Backend$1Model', '${4:getURL}', array($this->record['id']));
