@@ -105,7 +105,7 @@ snippet fbd
 			}
 			$this->record = Backend$1Model::get($this->id);
 			parent::execute();
-			Backend$1Model::delete($this->record);
+			Backend$1Model::delete($this->id);
 			$this->redirect(
 				BackendModel::createURLForAction('index')
 					. '&report=deleted'
