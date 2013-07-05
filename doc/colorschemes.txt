@@ -23,6 +23,11 @@ ft=sql does not highlight?
 No warning color change when editing GIT COMMIT message > 50 chars.
 
 
+New Noise                                                         *newnoise*
+----------------------------------------------------------------------------
+Mainly red + grey, totally useless for day-to-day coding, but _very_ useful
+when used with extreme small font size to get an overview of the structure of
+the code.
 
 
  vim:tw=78:ts=8:ft=help:norl:nocindent:et:
