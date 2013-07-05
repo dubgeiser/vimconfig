@@ -1,5 +1,5 @@
 #!/bin/bash
 
 # Thanks to Jeroen Vandebossche for bringing this to my attention.
-git submodule foreach git pull
+git submodule foreach git pull origin master
 
