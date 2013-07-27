@@ -9,6 +9,13 @@ Nice, but too "greeny"
 No visual distinction between variable and string (PHP); That's BAD.
 
 
+New Noise                                                         *newnoise*
+----------------------------------------------------------------------------
+Mainly red + grey, totally useless for day-to-day coding, but _very_ useful
+when used with extreme small font size to get an overview of the structure of
+the code.
+
+
 Solarized                                                        *solarized*
 ----------------------------------------------------------------------------
 Punctuation marks are too bright, distracting from reading.  Both dark and
@@ -23,14 +30,14 @@ ft=sql does not highlight?
 No warning color change when editing GIT COMMIT message > 50 chars.
 
 
-New Noise                                                         *newnoise*
+Xoria 256                                                         *xoria256*
 ----------------------------------------------------------------------------
-Mainly red + grey, totally useless for day-to-day coding, but _very_ useful
-when used with extreme small font size to get an overview of the structure of
-the code.
+Dark, ok contrast, like working with it, unfortunately just little bit too
+purple/pink for my taste.  Would probably still be using this if I didn't know
+zenburn.
 
 
- vim:tw=78:ts=8:ft=help:norl:nocindent:et:
+ vim:tw=78:ts=8:ft=help:norl:nocindent:et:spell:
 
 
 
