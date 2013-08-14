@@ -71,6 +71,11 @@ set showcmd
 set smartindent
 set softtabstop=4
 
+"Default
+"set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+"set statusline=%-25.25(%<%t\ %m%r\%)%l:%c%V\ (%p%%\ of\ %L\ lines)%=%{&ff},%{strlen(&fenc)?&fenc:''}%Y
+"set statusline=%-25.25(%<%t\ %m%r\%)%{&ff},%{strlen(&fenc)?&fenc:''}%Y,%L\ lines%=%l:%c%V
+
 " Not too long or we drop to a virtual stand still when editing
 " large-all-on-one-line-code (like OOo xml files.)
 set synmaxcol=512
@@ -199,12 +204,12 @@ vnoremap <Leader>v :call Todo_TickFinished()<cr>
 nnoremap <Leader>x :call Todo_TickCancelled()<cr>
 vnoremap <Leader>x :call Todo_TickCancelled()<cr>
 
-" {{{2 Powerline
-let g:Powerline_symbols='compatible'
-let g:Powerline_stl_path_style='short'
-call Pl#Theme#RemoveSegment('mode_indicator')
-call Pl#Theme#RemoveSegment('scrollpercent')
-call Pl#Theme#InsertSegment('ws_marker', 'before', 'fileformat')
+" {{{2 Airline
+let g:airline_theme='simple'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_detect_whitespace=1 "icon and message (default)
+let g:airline_whitespace_symbol = 'Ξ'
 
 " {{{2 CTRLP
 let g:ctrlp_map = '<leader>e'
