@@ -7,7 +7,15 @@ snippet sda
 snippet sdd
 	Spoon::dump('TEST');${1}
 snippet db
-	$db = ${1:Front}endModel::getDB(${2:false});${3}
+	$db = self::getDB();${1}
+snippet getdb
+	/**
+	 * @return SpoonDatabase The DB this model operates on.
+	 */
+	private static function getDb()
+	{
+		return FrontendModel::getContainer()->get('database');${1}
+	}
 snippet fba
 	/**
 	 * Backend Add action for the $1 module.
