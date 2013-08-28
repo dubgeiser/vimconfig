@@ -233,4 +233,5 @@ colorscheme perzen
 
 "{{{1 Commands for functions
 command Rtrim call functions#rtrim()
+command Tsquint call functions#toggle_squint_mode()
 
