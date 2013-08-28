@@ -3,6 +3,10 @@
 "
 runtime colors/zenburn.vim
 
+" Overwrite, or g:colors_name will still be 'zenburn', causing possible
+" confusion in various custom scripts/functions.
+let g:colors_name = "perzen"
+
 hi Cursor   guifg=black     guibg=orange    gui=none    ctermfg=black   ctermbg=yellow  cterm=bold
 
 hi Error            guifg=NONE        guibg=NONE        gui=undercurl ctermfg=white       ctermbg=red         cterm=NONE     guisp=#FF0000
