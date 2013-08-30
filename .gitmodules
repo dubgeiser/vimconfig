@@ -52,3 +52,6 @@
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = git@github.com:bling/vim-airline.git
+[submodule "bundle/vim-coloresque"]
+	path = bundle/vim-coloresque
+	url = git@github.com:gorodinskiy/vim-coloresque.git
