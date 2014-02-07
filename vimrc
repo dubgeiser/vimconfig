@@ -207,7 +207,7 @@ nnoremap <Leader>x :call Todo_TickCancelled()<cr>
 vnoremap <Leader>x :call Todo_TickCancelled()<cr>
 
 " {{{2 Airline
-let g:airline_theme='zenburn'
+let g:airline_theme='solarized'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_detect_whitespace=1 "icon and message (default)
@@ -228,7 +228,9 @@ let g:gist_open_browser_after_post = 1
 "===============================================================================
 set t_Co=256
 "colorscheme xoria256
-colorscheme perzen
+let g:solarized_termcolors=256
+colorscheme solarized
+"colorscheme perzen
 
 
 "{{{1 Commands for functions
