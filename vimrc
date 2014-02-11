@@ -10,6 +10,9 @@ au!
 " Better % matching.  Note that this comes from vim install and might need to
 " be updated if Vim is updated.  This includes the doc file macros/matchit.txt
 " and running the :helptags command afterwards.
+"
+" TODO Investigate: this screws up {} matching in templates.
+"
 runtime macros/matchit.vim
 
 
