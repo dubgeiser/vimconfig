@@ -160,6 +160,9 @@ nnoremap <c-l> <c-w>l
 
 nnoremap <silent> <F5> :make<CR>
 
+" Always seem to forget this 'sudo tee' construct, let's hope 'sudow' will
+" retain better.
+cnoremap sudow w !sudo tee % >/dev/null
 
 " {{{1 Auto commands
 "===============================================================================
