@@ -12,8 +12,8 @@ Note to self: COPY them over from other sections, do not move them.
 g_                  Movement: to the last non-blank character of the line.
                     Handy for when in visual mode and want to select to the
                     end of the line, but leave out the line ending.
-cc		    Empty current line and move cursor to relevant indent.
-		    Can't believe this isn't in my muscle memory :-/
+cc                  Empty current line and move cursor to relevant indent.
+                    Can't believe this isn't in my muscle memory :-/
 `.                  To the line you have last edited.
 gc-g                Detailed info on position in file
 C-F                 In command line mode: take current edit and switch to
