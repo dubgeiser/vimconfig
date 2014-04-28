@@ -159,4 +159,11 @@ C-F             In command line mode: take current edit and take that to a
                 buffer for further 'full' editing.
 
 
+Files and directories                                *vimfu-file* *vimfu-dir*
+------------------------------------------------------------------------------
+:!mkdir %:p:h   Create the full directory path of the current buffer.
+                Useful when editing a buffer with a path that does not exist
+                yet.
+
+
  vim:tw=78:ts=8:ft=help:norl:nocindent:et:
