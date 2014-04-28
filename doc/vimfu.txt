@@ -25,7 +25,7 @@ C-F                 In command line mode: take current edit and switch to
 Auto completions                         *vimfu-autocomplete* *vimfu-complete*
 ------------------------------------------------------------------------------
 ^N              Complete function.
-C-X C-F         Complete file path.
+C-X C-F         Complete file path.  This has been mapped to <C-D>
 C-X C-O         Omni completion.  This has been mapped to <C-SPACE>
 
 
@@ -34,6 +34,7 @@ Buffers                                                       *vimfu-buffers*
 :%bd            Close all buffers
 :wa             Write all changed buffers
 :w !sudo tee %  Write buffer when opened without sudo
+                (note: There is now a sudow mapping for this)
 
 
 Editing                                                          *vimfu-edit*
@@ -140,12 +141,10 @@ Get input from user                               *vimfu-input* *vimfu-prompt*
 :let a = confirm("ok?", "&OK\n&Cancel")  Get input from prompt with buttons.
 
 
-
 Windows                                                        *vimfu-windows*
 ------------------------------------------------------------------------------
 :only           Close all windows except current
 <c-w><c-o>      Close all windows except current
-
 
 
 Programming                                                *vimfu-programming*
