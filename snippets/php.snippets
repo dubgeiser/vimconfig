@@ -111,5 +111,5 @@ snippet @p
 	@param ${1:type}${2:[optional]} $${3:varname} ${4:description}
 snippet @r
 	@return ${1:void}
-snippet pd
-	die('<pre>' . print_r($${1:var}, true) . '</pre>');
+snippet vd
+	var_dump(${1}); exit();
