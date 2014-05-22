@@ -20,6 +20,8 @@ C-F                 In command line mode: take current edit and switch to
                     command mode (ie. in a buffer)
 &                   Repeat substitution (ex. when g is forgotten in
                     :s/foo/bar)
+C-X C-L             Complete full line.
+C-X C-K             Complete from dictionary. (Only works with 'set spell')
 
 
 Auto completions                         *vimfu-autocomplete* *vimfu-complete*
@@ -27,6 +29,8 @@ Auto completions                         *vimfu-autocomplete* *vimfu-complete*
 ^N              Complete function.
 C-X C-F         Complete file path.  This has been mapped to <C-D>
 C-X C-O         Omni completion.  This has been mapped to <C-SPACE>
+C-X C-L         Complete full line.
+C-X C-K         Complete from dictionary. (Only works with 'set spell')
 
 
 Buffers                                                       *vimfu-buffers*
