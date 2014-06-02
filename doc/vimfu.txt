@@ -41,6 +41,13 @@ Buffers                                                       *vimfu-buffers*
                 (note: There is now a sudow mapping for this)
 
 
+Registers                                                   *vimfu-registers*
+----------------------------------------------------------------------------
+<c-r>=          [insert mode] Go to expression register, expression will be
+                evaluated and its result will be inserted on the current
+                cursor position.
+
+
 Editing                                                          *vimfu-edit*
 ------------------------------------------------------------------------------
 ciw             Change complete word under cursor.
