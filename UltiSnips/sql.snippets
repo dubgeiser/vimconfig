@@ -15,3 +15,8 @@ endsnippet
 snippet acol
 alter table ${1:tablename} add column ${2:colname} ${3:coltype};
 endsnippet
+
+# Fork
+snippet fime
+INSERT INTO modules_extras (module, type, label, action, data, hidden, sequence) VALUES ('${1:module}', '${2:widget}', '${3:label}', '${4:action}', NULL, 'N', ${5:sequence});
+endsnippet
