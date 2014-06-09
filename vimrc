@@ -197,6 +197,19 @@ autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
 autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
 
 
+" {{{1 Colorscheme
+"===============================================================================
+set t_Co=256
+"colorscheme xoria256
+let g:solarized_termcolors=256
+colorscheme solarized
+"colorscheme perzen
+
+
+"{{{1 Commands for functions
+command Rtrim call functions#rtrim()
+command Tsquint call functions#toggle_squint_mode()
+
 " {{{1 Plugin configuration
 "===============================================================================
 "
@@ -230,16 +243,7 @@ let g:ctrlp_custom_ignore = {
 let g:gist_clip_command = 'pbcopy'
 let g:gist_open_browser_after_post = 1
 
-" {{{1 Colorscheme
-"===============================================================================
-set t_Co=256
-"colorscheme xoria256
-let g:solarized_termcolors=256
-colorscheme solarized
-"colorscheme perzen
-
-
-"{{{1 Commands for functions
-command Rtrim call functions#rtrim()
-command Tsquint call functions#toggle_squint_mode()
-
+" {{{2 UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"

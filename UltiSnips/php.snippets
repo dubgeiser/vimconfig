@@ -1,0 +1,138 @@
+snippet php "php start"
+<?php
+
+${1}
+
+endsnippet
+snippet inco
+include_once '${1:file}';${2}
+endsnippet
+snippet reqo
+require_once '${1:file}';${2}
+endsnippet
+# File header
+snippet doc
+/**
+ * ${4}
+ *
+ * @author <${1:per}@${2:dubgeiser}.${3:net}>
+ */
+endsnippet
+# Start Docblock
+snippet /**
+/**
+ * ${1}
+ */
+# class ...
+endsnippet
+snippet cl
+class ${1}
+{
+	${2}
+}
+endsnippet
+snippet clt
+class ${1}Test extends ${2:PHPUnit_Framework_TestCase}
+{
+	${3}
+}
+endsnippet
+snippet if
+if(${1})
+{
+	${2}
+}
+endsnippet
+snippet ife
+if(${1})
+{
+	${2}
+}
+else
+{
+	${3}
+}
+endsnippet
+snippet else
+else
+{
+	${1}
+}
+endsnippet
+snippet elif
+elseif(${1})
+{
+	${2}
+}
+endsnippet
+# Tertiary conditional
+snippet ?:
+$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
+endsnippet
+snippet fori
+for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++})
+{
+	${4}
+}
+endsnippet
+snippet for
+foreach($${1:collection} as $${2:key})
+{
+	${3}
+}
+endsnippet
+snippet forkv
+foreach($${1:collection} as $${2:key} => $${3:value})
+{
+	${4}
+}
+endsnippet
+snippet fn
+${1:public} function ${2:name}(${3})
+{
+	${4}
+}
+endsnippet
+snippet fns
+${1:public} static function ${2:name}(${3})
+{
+	${4}
+}
+endsnippet
+snippet fnt
+function test_${1:usecase}_${2:expectedBehavior}()
+{
+	${3}
+}
+endsnippet
+snippet kv
+'${1:key}' => '${2:value}',${3}
+endsnippet
+snippet .
+$this->${1}
+endsnippet
+snippet ctor
+public function __construct(${1})
+{
+	${2}
+}
+endsnippet
+snippet cctor
+parent::__construct(${1});
+endsnippet
+snippet try
+try {
+	${1}
+} catch(${2:Exception} $e) {
+	${3}
+}
+endsnippet
+snippet @p
+@param ${1:type}${2:[optional]} $${3:varname} ${4:description}
+endsnippet
+snippet @r
+@return ${1:void}
+endsnippet
+snippet vd
+var_dump(${1}); exit();
+endsnippet

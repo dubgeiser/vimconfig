@@ -1,0 +1,97 @@
+# Django snipps
+snippet vn
+verbose_name=_("${1}")
+endsnippet
+snippet vnp
+verbose_name_plural=_("${1}")
+endsnippet
+snippet vnm
+verbose_name = _("${1}")
+endsnippet
+snippet vnpm
+verbose_name_plural = _("${1}")
+endsnippet
+snippet mmodel
+class ${1:ModelName}(${2:models.Model}):
+	${4}
+
+	def __unicode__(self):
+		return unicode(${3})
+endsnippet
+snippet bnt
+blank=${1:True}, null=${2:True}${3}
+endsnippet
+snippet rtr
+render_to_response('${1:template}', RequestContext(${2:request}, ${3:context}))${4}
+endsnippet
+# Django model fields
+snippet mfk
+models.ForeignKey(${1})
+endsnippet
+snippet mchar
+models.CharField(max_length=${1:128}${2})
+endsnippet
+snippet mpint
+models.PositiveIntegerField(${1})
+endsnippet
+snippet mint
+models.IntegerField(${1})
+endsnippet
+snippet mdate
+models.DateField(${1})
+endsnippet
+snippet mtime
+models.TimeField(${1})
+endsnippet
+snippet mdatet
+models.DateTimeField(${1})
+endsnippet
+snippet mbool
+models.BooleanField(${1})
+endsnippet
+snippet mtext
+models.TextField(${1})
+endsnippet
+snippet mdec
+models.DecimalField(max_digits=${1:10}, decimal_places=${2:2}${3})
+endsnippet
+snippet mip
+models.IPAddressField(${1})
+endsnippet
+snippet mfile
+models.FileField(upload_to='${1}'${2})
+endsnippet
+snippet mid
+id = models.AutoField(primary_key=True, verbose_name=_('ID'))
+endsnippet
+# Django Form fields
+snippet fchar
+forms.CharField(label=_('${1}')${2})
+endsnippet
+snippet fint
+forms.IntegerField(label=_('${1}')${2})
+endsnippet
+snippet fdate
+forms.DateField(label=_('${1}')${2})
+endsnippet
+snippet ftime
+forms.TimeField(label=_('${1}')${2})
+endsnippet
+snippet fdatet
+forms.DateTimeField(label=_('${1}')${2})
+endsnippet
+snippet fbool
+forms.BooleanField(label=_('${1}')${2})
+endsnippet
+snippet fdec
+forms.DecimalField(label=_('${1}')${2})
+endsnippet
+snippet fip
+forms.IPAddressField(label=_('${1}')${2})
+endsnippet
+snippet ffile
+forms.FileField(label=_('${1}')${2})
+endsnippet
+snippet fchoice
+forms.ChoiceField(label=_('${1}')${2})
+endsnippet

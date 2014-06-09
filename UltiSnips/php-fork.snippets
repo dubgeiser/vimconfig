@@ -1,0 +1,467 @@
+snippet kvf
+'${1:field}' => $this->frm->getField('$1')->getValue(),${2}
+endsnippet
+snippet sda
+Spoon::dump(array(${1}));
+endsnippet
+snippet sdd
+Spoon::dump('TEST');${1}
+endsnippet
+snippet db
+$db = self::getDB();${1}
+endsnippet
+snippet getdb
+/**
+ * @return SpoonDatabase The DB this model operates on.
+ */
+private static function getDb()
+{
+	return FrontendModel::getContainer()->get('database');${1}
+}
+endsnippet
+snippet fba
+/**
+ * Backend Add action for the $1 module.
+ * It will display a form, validate it when posted and update the model when
+ * the form is valid.
+ *
+ * @author <per@wijs.be>
+ */
+class Backend${1:Module}Add extends BackendBaseActionAdd
+{
+	public function execute()
+	{
+		parent::execute();
+		$this->loadForm();
+		$this->validateForm();
+		$this->parse();
+		$this->display();
+	}
+
+	private function loadForm()
+	{
+		$this->frm = new BackendForm('add');
+		$this->frm->add${3:Text}('${2:title}');
+		${4}
+		$this->meta = new BackendMeta($this->frm, null, '$2', true);
+	}
+
+	protected function parse()
+	{
+		$this->frm->parse($this->tpl);
+	}
+
+	private function validateForm()
+	{
+		if($this->frm->isSubmitted())
+		{
+			$this->frm->cleanupFields();
+			$this->meta->validate();
+			$this->frm->getField('$2')->isFilled(BL::err('FieldIsRequired'));
+			if($this->frm->isCorrect())
+			{
+				$item = array(
+					'$2' => $this->frm->getField('$2')->getValue(),
+					'meta_id' => $this->meta->save(),
+				);
+				$id = Backend$1Model::add($item);
+
+				// XXX files / images processing?
+
+				$this->redirect(
+					BackendModel::createURLForAction('index')
+						. '&report=added'
+						. '&var=' . urlencode($item['$2'])
+						. '&highlight=row-' . $id
+				);
+			}
+		}
+	}
+}
+endsnippet
+snippet fbc
+/**
+ * Backend configuration for the $1 module.
+ *
+ * @author <per@wijs.be>
+ */
+class Backend${1:Module}Config extends BackendBaseConfig
+{
+	/**
+	 * @var string
+	 */
+	protected $defaultAction = '${2:index}';
+
+	/**
+	 * @var array
+	 */
+	protected $disabledActions = array();
+	${3}
+}
+endsnippet
+snippet fbd
+/**
+ * Backend delete action for $1 module.
+ *
+ * @author <per@wijs.be>
+ */
+class Backend${1:Module}Delete extends BackendBaseActionDelete
+{
+	public function execute()
+	{
+		$this->id = $this->getParameter('id', 'int');
+		if($this->id === null || !Backend$1Model::exists($this->id))
+		{
+			$this->redirect(
+				BackendModel::createURLForAction('index') . '&error=non-existing'
+			);
+		}
+		$this->record = Backend$1Model::get($this->id);
+		parent::execute();
+		Backend$1Model::delete($this->id);
+		$this->redirect(
+			BackendModel::createURLForAction('index')
+				. '&report=deleted'
+				. '&var=' . urlencode($this->record['${2:title}'])
+		);
+	}
+}
+endsnippet
+snippet fbe
+/**
+ * Backend Edit action for the $1 module.
+ * It will display a form with initial data, validate it when posted and update
+ * the model when the form is valid.
+ *
+ * @author <per@wijs.be>
+ */
+class Backend${1:Module}Edit extends BackendBaseActionEdit
+{
+	public function execute()
+	{
+		$this->id = $this->getParameter('id', 'int');
+		if($this->id === null || !Backend$1Model::exists($this->id))
+		{
+			$this->redirect(BackendModel::createURLForAction('index') . '&error=non-existing');
+		}
+		parent::execute();
+		$this->loadData();
+		$this->loadForm();
+		$this->validateForm();
+		$this->parse();
+		$this->display();
+	}
+
+	private function loadData()
+	{
+		$this->record = Backend$1Model::get($this->id);
+	}
+
+	private function loadForm()
+	{
+		$this->frm = new BackendForm('edit');
+		$this->frm->add${3:Text}('${2:title}', $this->record['$2']);
+		${5}
+		$this->meta = new BackendMeta($this->frm, $this->record['meta_id'], '$2', true);
+		$this->meta->setURLCallback('Backend$1Model', '${4:getURL}', array($this->record['id']));
+	}
+
+	protected function parse()
+	{
+		parent::parse();
+		$this->tpl->assign('item', $this->record);
+	}
+
+	private function validateForm()
+	{
+		if($this->frm->isSubmitted())
+		{
+			$this->frm->cleanupFields();
+			$this->meta->validate();
+			$this->frm->getField('$2')->isFilled(BL::err('FieldIsRequired'));
+			if($this->frm->isCorrect())
+			{
+				$item = array(
+					'$2' => $this->frm->getField('$2')->getValue(),
+					'meta_id' => $this->meta->save(true),
+				);
+				Backend$1Model::update($item, $this->id);
+
+				// XXX files / images processing?
+
+				$this->redirect(
+					BackendModel::createURLForAction('index')
+						. '&report=edited'
+						. '&var=' . urlencode($item['$2'])
+						. '&highlight=row-' . $this->id
+				);
+			}
+		}
+	}
+}
+endsnippet
+snippet fbi
+/**
+ * The backend index action for the $1 module.
+ *
+ * @author <per@wijs.be>
+ */
+class Backend${1:BaseClassName}Index extends BackendBaseActionIndex
+{
+	public function execute()
+	{
+		parent::execute();
+		$this->loadDataGrids();
+		$this->parse();
+		$this->display();
+	}
+
+	private function loadDataGrids()
+	{
+		$this->dg = new BackendDataGridArray(Backend$1Model::${2:all}());
+	}
+
+	/**
+	 * Assign the template variables.
+	 */
+	protected function parse()
+	{
+		$this->tpl->assign(
+			'dg',
+			$this->dg->getNumResults() != 0 ? $this->dg->getContent() : false
+		);
+	}
+}
+endsnippet
+snippet fbm
+/**
+ * Backend model for the $1 module
+ *
+ * @author <per@wijs.be>
+ */
+class Backend${1:BaseClassName}Model
+{
+	/**
+	 * @param array $item
+	 * @return int The ID the item got in storage.
+	 */
+	public static function add(array $item)
+	{
+		$db = BackendModel::getDB(true);
+		$item['language'] = BL::getWorkingLanguage();
+		$item['id'] = $db->insert('${2:dbTable}', $item);
+		BackendModel::triggerEvent(
+			'${3:module}',
+			'after_add',
+			array('item' => $item)
+		);
+		return $item['id'];
+	}
+
+	/**
+	 * @param int ID of an item to check for existance.
+	 * @return bool Whether or not an item with that ID exists.
+	 */
+	public static function exists($id)
+	{
+		$db = BackendModel::getDB(false);
+		return (bool) $db->getVar(
+			'SELECT i.id
+			 FROM $2 i
+			 WHERE i.id = ? AND i.language = ?',
+			array(
+				(int) $id,
+				BL::getWorkingLanguage()
+			)
+		);
+	}
+
+	/**
+	 * @param ID in the database of an item to fetch.
+	 * @return array The record representing that item.
+	 */
+	public static function get($id)
+	{
+		$db = BackendModel::getDB(false);
+		$record = (array) $db->getRecord(
+			'SELECT i.*, m.url
+			 FROM $2 i
+			 INNER JOIN meta m ON m.id = i.meta_id
+			 WHERE i.id = ? AND language = ?',
+			array(
+				(int) $id,
+				BL::getWorkingLanguage()
+			)
+		);
+		return $record;
+	}
+
+	public static function getURL($url, $id = null)
+	{
+		$url = (string) $url;
+		$db = BackendModel::getDB(false);
+		if($id === null)
+		{
+			if((bool) $db->getVar(
+				'SELECT 1
+				 FROM $2 i
+				 INNER JOIN meta m ON i.meta_id = m.id
+				 WHERE i.language = ? AND m.url = ?
+				 LIMIT 1',
+				array(BL::getWorkingLanguage(), $url)))
+			{
+				$url = BackendModel::addNumber($url);
+				return self::getURL($url);
+			}
+		}
+		else
+		{
+			if((bool) $db->getVar(
+				'SELECT 1
+				 FROM $2 i
+				 INNER JOIN meta m ON i.meta_id = m.id
+				 WHERE i.language = ? AND m.url = ? AND i.id <> = ?
+				 LIMIT 1',
+				array(BL::getWorkingLanguage(), $url, $id)))
+			{
+				$url = BackendModel::addNumber($url);
+				return self::getURL($url, $id);
+			}
+		}
+		return $url;
+	}
+
+	/**
+	 * @param array $item
+	 * @param int $id
+	 * @return int Number of affected rows.
+	 */
+	public static function update(array $item, $id)
+	{
+		$db = BackendModel::getDB(true);
+		return (int) $db->update('$2', $item, 'id = ?', array((int) $id));
+	}
+}
+endsnippet
+snippet ffc
+/**
+ * Frontend configuration for the $1 module.
+ *
+ * @author <per@wijs.be>
+ */
+class Frontend${1:Module}Config extends FrontendBaseConfig
+{
+	/**
+	 * @var string
+	 */
+	protected $defaultAction = '${2:index}';
+
+	/**
+	 * @var array
+	 */
+	protected $disabledActions = array(${3});
+}
+endsnippet
+snippet ffi
+class Frontend${1:BaseClassName}Index extends FrontendBaseBlock
+{
+	/**
+	 * @var array Assoc. array used to filter the items that must be fetched.
+	 */
+	protected $filter;
+
+	/**
+	 * @var array The list of items fetched by this action.
+	 */
+	protected $items;
+
+	/**
+	 * @var array Assoc. array with the pager's parameters.
+	 */
+	protected $pagination = array();
+
+	public function execute()
+	{
+		parent::execute();
+		$this->loadFilter();
+		$this->loadData();
+		$this->loadTemplate();
+		$this->parse();
+	}
+
+	private function loadData()
+	{
+		$requestedPage = $this->URL->getParameter('page', 'int', 1);
+		$limit = FrontendModel::getModuleSetting($this->getModule(), 'overview_num_items', 10);
+		$offset = ($requestedPage * $limit) - $limit;
+		list($this->items, $totalRowCount) = Frontend$1Model::find(
+			$this->filter, $limit, $offset
+		);
+		$this->configurePager($requestedPage, $limit, $totalRowCount, $offset);
+	}
+
+	/**
+	 * Configure the pagination component for this request.
+	 *
+	 * @param int $requestedPage The requested page (starts from 1)
+	 * @param int $limit The number of rows displayed in a page.
+	 * @param int $totalRowCount The total number of rows counted.
+	 * @param int $offset The offset in all the rows we have started to fetch from.
+	 */
+	private function configurePager($requestedPage, $limit, $totalRowCount, $offset)
+	{
+		$this->pagination['url'] = FrontendNavigation::getURLForBlock($this->getModule())
+			. ($this->filter ? '?' . http_build_query($this->filter) : '');
+		$this->pagination['limit'] = $limit;
+		$this->pagination['num_items'] = $totalRowCount;
+		$this->pagination['num_pages'] = (int) ceil($totalRowCount / $limit);
+		if($this->pagination['num_pages'] == 0)
+		{
+			$this->pagination['num_pages'] = 1;
+		}
+		if($requestedPage > $this->pagination['num_pages'] || $requestedPage < 1)
+		{
+			$this->redirect(FrontendNavigation::getURL(404));
+		}
+		$this->pagination['requested_page'] = $requestedPage;
+		$this->pagination['offset']  = $offset;
+	}
+
+	/**
+	 * Load the filter to be used when retrieving items.
+	 */
+	private function loadFilter()
+	{
+		$this->filter = array(${2});
+	}
+
+	protected function parse()
+	{
+		$this->tpl->assign('items', $this->items);
+		$this->parsePagination();
+	}
+}
+endsnippet
+snippet ffw
+class Frontend${1:Module}Widget${2:Name} extends FrontendBaseWidget
+{
+	public function execute()
+	{
+		//${3}$this->slug = $this->URL->getParameter(0, 'string', null);
+		parent::execute();
+		$this->loadData();
+		$this->loadTemplate();
+		$this->parse();
+	}
+
+	private function loadData()
+	{
+		$this->items = Frontend$1Model::get();
+	}
+
+	private function parse()
+	{
+		$this->tpl->assign('widget$1$2', $this->items);
+	}
+}
+endsnippet
