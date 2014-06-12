@@ -10,12 +10,6 @@ Follow @dgcode on Twitter for updates (uses github hook)
 Installation
 ============
 
-Dependencies
-------------
-The taglist plugin needs exuberant ctags <http://ctags.sourceforge.net/> to work.
-See <code>:help taglist-install</code> in Vim.
-
-
 Backup (*IMPORTANT*)
 --------------------
 If you already have a Vim configuration back it up, keep it under (D)VCS, in short have an extra copy somewhere.
@@ -23,22 +17,21 @@ If you already have a Vim configuration back it up, keep it under (D)VCS, in sho
 
 Install
 -------
-Clone the git repository and make the necessary symlinks:
+Clone the git repository and make the necessary symlinks, then initialize the submodules (these are handled by pathogen https://github.com/tpope/vim-pathogen):
 
+	pushd
+	cd ~
     git clone git://github.com/dubgeiser/vimconfig.git .vim/
     ln -s .vim/vimrc .vimrc
     ln -s .vim/gvimrc .gvimrc
-
-A color scheme is a very personal thing, people often change it depending on the ambient light, the file type being edited, their mood, etc...  People using this Vim configuration, can now choose their own color scheme, without going through the hassle of setting your color scheme again every time you merge.  Create a file in your home directory and set your preferred color scheme there:
-
-	echo 'colorscheme zenburn' > ~/.vimcolorscheme
-
-Note that this file is read from vimrc now (as oppose to being set in gvimrc before).
+	cd ~/.vim
+	git submodule update --init
+	popd
 
 Then, in Vim, (re)generate all the doc files:
 
     vim
-    :helptags ~/.vim/doc/
+    :call pathogen#helptags()
 
 Enjoy.
 
@@ -46,5 +39,5 @@ Enjoy.
 LICENSE
 =======
 For all plugins used, the license of that plugin applies.
-For personal written stuff in this repo (like tdd.vim or todo.vim), http://sam.zoy.org/wtfpl/COPYING applies.
+For personal written stuff in this repo http://sam.zoy.org/wtfpl/COPYING applies.
 
