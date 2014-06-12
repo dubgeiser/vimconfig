@@ -249,7 +249,7 @@ let g:airline_mode_map = {
 			\ '' : 'S',
 			\ }
 
-# Airline fugitive integration
+" Airline fugitive integration
 let g:airline#extensions#branch#enabled = 1
 let g:airline_symbols.branch = '⎇'
 
