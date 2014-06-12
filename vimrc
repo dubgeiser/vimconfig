@@ -249,6 +249,10 @@ let g:airline_mode_map = {
 			\ '' : 'S',
 			\ }
 
+# Airline fugitive integration
+let g:airline#extensions#branch#enabled = 1
+let g:airline_symbols.branch = '⎇'
+
 " {{{2 CTRLP
 let g:ctrlp_map = '<leader>e'
 let g:ctrlp_custom_ignore = {
