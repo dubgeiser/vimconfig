@@ -1,39 +1,47 @@
 # html snippets additions
-snippet aref
+snippet aref "anchor" w
 <a href="${1:http://}"${3}>${2}</a>${4}
 endsnippet
-snippet img
+
+snippet img "image" w
 <img src="${1}" style="border: ${2:0};" />${3}
 endsnippet
-snippet p
+
+snippet p "Paragraph"
 <p${1}>${2}</p>${3}
 endsnippet
 
 # Fork template snippets.
 # Put an autocommand in vimrc that sets the filetype to html for *.tpl files.
-snippet v
+snippet v "SpoonTemplate variable"  w
 {$${1}}
 endsnippet
-snippet err
+
+snippet err "SpoonTemplate error message" w
 {$err${1}}
 endsnippet
-snippet lbl
+
+snippet lbl "SpoonTemplate label" w
 {$lbl${1}}
 endsnippet
-snippet msg
+
+snippet msg "SpoonTemplate message" w
 {$msg${1}}
 endsnippet
-snippet it
+
+snippet it "SpoonTempate iteration"
 {iteration:${1:IterationName}}
 	${2}
 {/iteration:$1}
 endsnippet
-snippet op
+
+snippet op "SpoonTemplate option" w
 {option:${1:OptionName}}
-	${2}
+${2}
 {/option:$1}
 endsnippet
-snippet box
+
+snippet box "Fork backend boxed field"
 <div class="box">
 	<div class="heading">
 		<h3><label for="${1}">{$lbl${2}|ucfirst}</label></h3>
@@ -43,6 +51,7 @@ snippet box
 	</div>
 </div>${4}
 endsnippet
-snippet areq
+
+snippet areq "Fork template denote required field" w
 <abbr title="{$lblRequiredField|ucfirst">*</abbr>${1}
 endsnippet
