@@ -18,17 +18,22 @@ snippet doc
  * @author <${1:per}@${2:dubgeiser}.${3:net}>
  */
 endsnippet
-# Start Docblock
-snippet /**
+
+snippet /** "Start doc block"
 /**
- * ${1}
+ * ${0}
  */
-# class ...
 endsnippet
+
 snippet cl
+/**
+ * ${3}
+ *
+ * @author <$2>
+ */
 class ${1}
 {
-	${2}
+	${0}
 }
 endsnippet
 snippet clt
