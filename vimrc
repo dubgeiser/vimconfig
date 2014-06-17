@@ -233,7 +233,8 @@ let g:airline_theme='solarized'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_symbols.linenr = ''
-let g:airline_detect_whitespace=1 "icon and message (default)
+let g:airline_detect_whitespace=2 "icon only
+let g:airline#extensions#whitespace#checks = ['trailing']
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_mode_map = {
 			\ '__' : '-',
