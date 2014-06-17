@@ -196,6 +196,9 @@ autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
 " Twig templates are like Django templates
 autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
 
+" Set spelling on when typing a git commit message.
+autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
+
 
 " {{{1 Colorscheme
 "===============================================================================
