@@ -64,4 +64,13 @@ When was file 'foo.bar' added:
     $ git log --diff-filter=A -- foo.bar
 
 
+Merge conflicts (--ours --theirs)                      *gitfu-merge-conflicts*
+----------------------------------------------------------------------------
+When dealing with a merge conflict (or a stash pop gone "bad"), it might be
+that you simply want to keep one version or the other.
+
+git checkout --ours     Keep the version from before the merge
+git checkout --theirs   Keep the merged in version
+
+
  vim:tw=78:ts=8:ft=help:norl:nocindent:et:
