@@ -177,4 +177,20 @@ Files and directories                                *vimfu-file* *vimfu-dir*
                 yet.
 
 
+Ack plugin                                                       *vimfu-ack*
+------------------------------------------------------------------------------
+In quickfix window:
+
+o    to open (same as enter)
+O    to open and close quickfix window
+go   to preview file (open but maintain focus on ack.vim results)
+t    to open in new tab
+T    to open in new tab silently
+h    to open in horizontal split
+H    to open in horizontal split silently
+v    to open in vertical split
+gv   to open in vertical split silently
+q    to close the quickfix window
+
+
  vim:tw=78:ts=8:ft=help:norl:nocindent:et:
