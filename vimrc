@@ -212,6 +212,7 @@ autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
 set t_Co=256
 let g:solarized_termcolors=256
 colorscheme solarized
+command! -bar Invert :let &background = (&background=="light"?"dark":"light")
 
 
 "{{{1 Commands for functions
