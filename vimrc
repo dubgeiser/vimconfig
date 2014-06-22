@@ -210,10 +210,8 @@ autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
 " {{{1 Colorscheme
 "===============================================================================
 set t_Co=256
-"colorscheme xoria256
 let g:solarized_termcolors=256
 colorscheme solarized
-"colorscheme perzen
 
 
 "{{{1 Commands for functions
