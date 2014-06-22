@@ -48,15 +48,19 @@ set cindent
 " Show extra info if menu (preview)
 set completeopt=preview,menu,longest
 
+set display+=lastline
 set encoding=utf-8
 set expandtab
 set fileformat=unix
 set foldclose=all
 set foldmethod=marker
-set history=1000
+if &history < 1000
+    set history=1000
+endif
 set incsearch
 set laststatus=2
 set linespace=0
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 set mousehide
 set nobackup
 
@@ -71,9 +75,10 @@ set relativenumber
 set number
 
 set scrolljump=1
-set scrolloff=5
+set scrolloff=1
 set shiftwidth=4
 set showcmd
+set sidescrolloff=5
 set smartindent
 set softtabstop=4
 
@@ -99,6 +104,7 @@ set nocursorcolumn
 set cursorline
 set colorcolumn=80
 
+set shell=/bin/bash
 
 " {{{1 Key bindings
 "===============================================================================
