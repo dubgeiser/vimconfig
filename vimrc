@@ -101,7 +101,7 @@ set wildmode=full
 syntax on
 set hlsearch
 set nocursorcolumn
-set cursorline
+set nocursorline
 set colorcolumn=80
 
 set shell=/bin/bash
