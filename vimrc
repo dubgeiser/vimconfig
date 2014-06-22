@@ -195,7 +195,7 @@ autocmd BufWrite *fu.txt :helptags ~/.vim/doc/
 autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
     \ nmap <silent> <Leader>; :call functions#append_semi_colon()<cr>
 
-autocmd FocusLost * :wa
+autocmd FocusLost * silent! wall
 
 " .tpl files are mainly (x)html files, xhtml gives better omni completion.
 autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
