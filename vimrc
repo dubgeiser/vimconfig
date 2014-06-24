@@ -60,7 +60,7 @@ endif
 set incsearch
 set laststatus=2
 set linespace=0
-set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:·
 set list
 set mousehide
 set nobackup
