@@ -176,7 +176,7 @@ cnoremap sudow w !sudo tee % >/dev/null
 "===============================================================================
 autocmd FileType mail setlocal nocindent textwidth=72
 autocmd FileType text,rst,gitcommit setlocal nocindent
-autocmd FileType gitcommit setlocal spell
+autocmd FileType gitcommit setlocal spell nolist
 
 " These types are fussy about tabs and spaces.
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
