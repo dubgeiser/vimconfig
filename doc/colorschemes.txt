@@ -21,6 +21,11 @@ Solarized                                                        *solarized*
 Punctuation marks are too bright, distracting from reading.  Both dark and
 light not good enough.
 
+2014-06-29
+I've given the light version a run for its money and must say I'm linking it
+quite a bit actually!  Very complete, better diff hilighting than zenburn,
+quickfix, gitcommit (with fugitive), etc...
+
 
 Tomorrow-night                                             *tommorrow-night*
 ----------------------------------------------------------------------------
