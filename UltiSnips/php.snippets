@@ -43,30 +43,24 @@ class ${1}Test extends ${2:PHPUnit_Framework_TestCase}
 }
 endsnippet
 snippet if
-if(${1})
-{
+if (${1}) {
 	${2}
 }
 endsnippet
 snippet ife
-if(${1})
-{
+if (${1}) {
 	${2}
-}
-else
-{
+} else {
 	${3}
 }
 endsnippet
 snippet else
-else
-{
+else {
 	${1}
 }
 endsnippet
 snippet elif
-elseif(${1})
-{
+elseif (${1}) {
 	${2}
 }
 endsnippet
@@ -75,20 +69,17 @@ snippet ?:
 $${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
 endsnippet
 snippet fori
-for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++})
-{
+for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
 	${4}
 }
 endsnippet
 snippet for
-foreach($${1:collection} as $${2:key})
-{
+foreach ($${1:collection} as $${2:key}) {
 	${3}
 }
 endsnippet
 snippet forkv
-foreach($${1:collection} as $${2:key} => $${3:value})
-{
+foreach ($${1:collection} as $${2:key} => $${3:value}) {
 	${4}
 }
 endsnippet
@@ -181,7 +172,6 @@ class Backend${1:Module}Add extends BackendBaseActionAdd
 	{
 		$this->frm = new BackendForm('add');
 		$this->frm->add${3:Text}('${2:title}');
-		${4}
 		$this->meta = new BackendMeta($this->frm, null, '$2', true);
 	}
 
@@ -192,13 +182,11 @@ class Backend${1:Module}Add extends BackendBaseActionAdd
 
 	private function validateForm()
 	{
-		if($this->frm->isSubmitted())
-		{
+		if ($this->frm->isSubmitted()) {
 			$this->frm->cleanupFields();
 			$this->meta->validate();
 			$this->frm->getField('$2')->isFilled(BL::err('FieldIsRequired'));
-			if($this->frm->isCorrect())
-			{
+			if ($this->frm->isCorrect()) {
 				$item = array(
 					'$2' => $this->frm->getField('$2')->getValue(),
 					'meta_id' => $this->meta->save(),
@@ -249,8 +237,7 @@ class Backend${1:Module}Delete extends BackendBaseActionDelete
 	public function execute()
 	{
 		$this->id = $this->getParameter('id', 'int');
-		if($this->id === null || !Backend$1Model::exists($this->id))
-		{
+		if ($this->id === null || !Backend$1Model::exists($this->id)) {
 			$this->redirect(
 				BackendModel::createURLForAction('index') . '&error=non-existing'
 			);
@@ -279,9 +266,10 @@ class Backend${1:Module}Edit extends BackendBaseActionEdit
 	public function execute()
 	{
 		$this->id = $this->getParameter('id', 'int');
-		if($this->id === null || !Backend$1Model::exists($this->id))
-		{
-			$this->redirect(BackendModel::createURLForAction('index') . '&error=non-existing');
+		if ($this->id === null || !Backend$1Model::exists($this->id)) {
+			$this->redirect(
+				BackendModel::createURLForAction('index') . '&error=non-existing'
+			);
 		}
 		parent::execute();
 		$this->loadData();
@@ -313,13 +301,11 @@ class Backend${1:Module}Edit extends BackendBaseActionEdit
 
 	private function validateForm()
 	{
-		if($this->frm->isSubmitted())
-		{
+		if ($this->frm->isSubmitted()) {
 			$this->frm->cleanupFields();
 			$this->meta->validate();
 			$this->frm->getField('$2')->isFilled(BL::err('FieldIsRequired'));
-			if($this->frm->isCorrect())
-			{
+			if ($this->frm->isCorrect()) {
 				$item = array(
 					'$2' => $this->frm->getField('$2')->getValue(),
 					'meta_id' => $this->meta->save(true),
@@ -439,30 +425,27 @@ class Backend${1:BaseClassName}Model
 	{
 		$url = (string) $url;
 		$db = BackendModel::getDB(false);
-		if($id === null)
-		{
-			if((bool) $db->getVar(
+		if ($id === null) {
+			if ((bool) $db->getVar(
 				'SELECT 1
 				 FROM $2 i
 				 INNER JOIN meta m ON i.meta_id = m.id
 				 WHERE i.language = ? AND m.url = ?
 				 LIMIT 1',
-				array(BL::getWorkingLanguage(), $url)))
-			{
+				array(BL::getWorkingLanguage(), $url)
+			) {
 				$url = BackendModel::addNumber($url);
 				return self::getURL($url);
 			}
-		}
-		else
-		{
-			if((bool) $db->getVar(
+		} else {
+			if ((bool) $db->getVar(
 				'SELECT 1
 				 FROM $2 i
 				 INNER JOIN meta m ON i.meta_id = m.id
 				 WHERE i.language = ? AND m.url = ? AND i.id <> = ?
 				 LIMIT 1',
-				array(BL::getWorkingLanguage(), $url, $id)))
-			{
+				array(BL::getWorkingLanguage(), $url, $id))
+			) {
 				$url = BackendModel::addNumber($url);
 				return self::getURL($url, $id);
 			}
@@ -554,12 +537,10 @@ class Frontend${1:BaseClassName}Index extends FrontendBaseBlock
 		$this->pagination['limit'] = $limit;
 		$this->pagination['num_items'] = $totalRowCount;
 		$this->pagination['num_pages'] = (int) ceil($totalRowCount / $limit);
-		if($this->pagination['num_pages'] == 0)
-		{
+		if ($this->pagination['num_pages'] == 0) {
 			$this->pagination['num_pages'] = 1;
 		}
-		if($requestedPage > $this->pagination['num_pages'] || $requestedPage < 1)
-		{
+		if ($requestedPage > $this->pagination['num_pages'] || $requestedPage < 1) {
 			$this->redirect(FrontendNavigation::getURL(404));
 		}
 		$this->pagination['requested_page'] = $requestedPage;
