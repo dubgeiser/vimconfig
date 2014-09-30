@@ -168,6 +168,11 @@ nnoremap <c-l> <c-w>l
 
 nnoremap <silent> <F5> :make<CR>
 
+nmap <silent> <RIGHT> :cnext<CR>
+nmap <silent> <RIGHT><RIGHT> :cnfile<CR><C-G>
+nmap <silent> <LEFT> :cprev<CR>
+nmap <silent> <LEFT><LEFT> :cpfile<CR><C-G>
+
 " Always seem to forget this 'sudo tee' construct, let's hope 'sudow' will
 " retain better.
 cnoremap sudow w !sudo tee % >/dev/null
