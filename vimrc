@@ -145,7 +145,7 @@ nnoremap <C-CR> O<ESC>
 nnoremap <C-]> g<C-]>
 
 " TaskList
-nmap <unique> <Leader>l <Plug>TaskList
+nmap <Leader>l <Plug>TaskList
 
 " Run current defined test (see tdd.vim plugin)
 nnoremap <Leader>t :call Tdd_RunTest()<cr>
