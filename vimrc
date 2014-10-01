@@ -155,7 +155,7 @@ nnoremap <Leader>= yypVr=
 nnoremap <Leader>- yypVr-
 
 " Quick open certain files...
-nnoremap <Leader>s :e ~/.notes<cr>
+nnoremap <Leader>s :tabe ~/.notes<cr>
 
 " So we can turn off quickly highlighted matches.
 nnoremap <leader><space> :nohlsearch<cr>
