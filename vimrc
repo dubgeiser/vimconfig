@@ -173,6 +173,8 @@ nmap <silent> <RIGHT> :cnext<CR>
 nmap <silent> <RIGHT><RIGHT> :cnfile<CR><C-G>
 nmap <silent> <LEFT> :cprev<CR>
 nmap <silent> <LEFT><LEFT> :cpfile<CR><C-G>
+nmap <silent> <UP><UP> :cfirst<CR>
+nmap <silent> <DOWN><DOWN> :clast<CR>
 
 " Always seem to forget this 'sudo tee' construct, let's hope 'sudow' will
 " retain better.
