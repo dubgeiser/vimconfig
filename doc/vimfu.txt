@@ -22,6 +22,11 @@ C-F                 In command line mode: take current edit and switch to
                     :s/foo/bar)
 C-X C-L             Complete full line.
 C-X C-K             Complete from dictionary. (Only works with 'set spell')
+gn              Like 'n' for going to the next search pattern, but also start
+                Visual mode to select the match (will be visual when on the
+                match itself).  If combined with an operator; operates on the
+                match; ex: "dgn" deletes text of next match.
+                Handy to use with regex search and/or '.' operator.
 
 
 Auto completions                         *vimfu-autocomplete* *vimfu-complete*
@@ -104,6 +109,11 @@ H, M, L         High-, Middle-, Low part of the page
 g_              To the last non-blank character of the line.
                 Handy for when in visual mode and want to select to the end of
                 the line, but leave out the line ending.
+gn              Like 'n' for going to the next search pattern, but also start
+                Visual mode to select the match (will be visual when on the
+                match itself).  If combined with an operator; operates on the
+                match; ex: "dgn" deletes text of next match.
+                Handy to use with regex search and/or '.' operator.
 
 These are not motion commands, but they can come in handy and they "move"
 through files, so I put them here:
