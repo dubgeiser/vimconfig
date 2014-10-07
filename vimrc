@@ -69,12 +69,6 @@ set nobackup
 set ignorecase
 set smartcase
 
-" Use relative line numbering, but absolute for the current line.
-" 7.4 only I think.
-set numberwidth=3
-set relativenumber
-set number
-
 set scrolljump=1
 set scrolloff=1
 set shiftwidth=4
