@@ -138,15 +138,12 @@ snippet kvf
 '${1:field}' => $this->frm->getField('$1')->getValue(),${2}
 endsnippet
 snippet db
-$db = self::getDB();${1}
-endsnippet
-snippet getdb
 /**
  * @return SpoonDatabase The DB this model operates on.
  */
-private static function getDb()
+private static function db()
 {
-	return FrontendModel::getContainer()->get('database');${1}
+	return ${1:Frontend}Model::getContainer()->get('database');${0}
 }
 endsnippet
 snippet fba
