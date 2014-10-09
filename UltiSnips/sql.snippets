@@ -1,19 +1,19 @@
 snippet ct
-create table ${1:tablename} (
+CREATE TABLE ${1:tablename} (
 	${2}
 );
 endsnippet
 snippet pk
-id integer primary key default nextval('${1}_serial'),
+id INTEGER PRIMARY KEY DEFAULT NEXTVAL('${1}_serial'),
 ${2}
 endsnippet
 snippet fk
-${1:table}_id ${2:integer} references $1(id)
-	on delete ${3:cascade}
-	deferrable initially deferred${4}
+${1:table}_id ${2:integer} REFERENCES $1(id)
+	ON DELETE ${3:cascade}
+	DEFERRABLE INITIALLY DEFERRED${4}
 endsnippet
 snippet acol
-alter table ${1:tablename} add column ${2:colname} ${3:coltype};
+ALTER TABLE ${1:tablename} ADD COLUMN ${2:colname} ${3:coltype};
 endsnippet
 
 # Fork
