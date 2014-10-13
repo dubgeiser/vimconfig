@@ -153,7 +153,7 @@ nnoremap <Leader>s :tabe ~/.notes<cr>
 nnoremap <Leader>r :tabe $MYVIMRC<cr>
 
 " So we can turn off quickly highlighted matches.
-nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <space> :nohlsearch<cr>
 
 " Less finger wrecking window navigation.
 nnoremap <c-j> <c-w>j
