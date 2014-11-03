@@ -20,6 +20,30 @@ function! functions#append_semi_colon()
 endfunction
 
 
+" Display some useful info on the file in the current buffer.
+function! functions#buffer_info()
+    echo printf("%s (%s)",
+                \functions#remove_newline(system("pwd")),
+                \functions#git_branch())
+    echo bufname("%")
+    echo join([line("$") . " lines", &filetype, &fileformat, &fileencoding], ', ')
+    echo "vim encoding: " . &encoding
+endfunction
+
+
+" @param string
+" @return string The given string with newlines removed
+function! functions#remove_newline(s)
+    return substitute(a:s, "\n", "", "g")
+endfunction
+
+
+" @return string The current git branch
+function! functions#git_branch()
+    return functions#remove_newline(
+                \system("git branch 2>/dev/null | grep '^\*' | sed 's/^\* //'"))
+endfunction
+
 " Remove trailing whitespace from the current buffer.
 function! functions#rtrim()
     exec('%s/\s\+$//e')
@@ -29,7 +53,8 @@ endfunction
 " Toggle squint mode.
 " Squint mode gives a bird's eye view of the current buffer, thus helping in
 " identifying blocks of code that might need refactoring.
-" TODO save window locations
+" TODO: save window location
+" See: h usr_41 (under 'GUI:')
 function! functions#toggle_squint_mode()
     if !exists("g:squint_mode")
         let g:squint_mode = "normal"

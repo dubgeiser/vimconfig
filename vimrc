@@ -227,6 +227,7 @@ command! -bar Invert :let &background = (&background=="light"?"dark":"light")
 "{{{1 Commands for functions
 command Rtrim call functions#rtrim()
 command Tsquint call functions#toggle_squint_mode()
+command Info call functions#buffer_info()
 
 " {{{1 Plugin configuration
 "===============================================================================
