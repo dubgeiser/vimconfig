@@ -42,6 +42,7 @@ set autowrite
 
 set backspace=indent,eol,start whichwrap+=<,>,[,]
 set cindent
+set cmdheight=2
 
 " Complete as far as possible, just complete if there's only one possibility
 " and show menu if there's more than 1 possible completion.
