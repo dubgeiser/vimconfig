@@ -54,9 +54,7 @@ set expandtab
 set fileformat=unix
 set foldclose=all
 set foldmethod=marker
-if &history < 1000
-    set history=1000
-endif
+set history=10000
 set incsearch
 set laststatus=2
 set linespace=0
