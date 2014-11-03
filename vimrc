@@ -20,7 +20,6 @@ runtime macros/matchit.vim
 " Apparently, we need to execute pathogen before filetype detection.
 " http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-let g:pathogen_disabled = ['vim-airline']
 call pathogen#infect()
 filetype plugin indent on
 
@@ -243,35 +242,6 @@ nnoremap <Leader>v :call Todo_TickFinished()<cr>
 vnoremap <Leader>v :call Todo_TickFinished()<cr>
 nnoremap <Leader>x :call Todo_TickCancelled()<cr>
 vnoremap <Leader>x :call Todo_TickCancelled()<cr>
-
-" {{{2 Airline
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
-endif
-let g:airline_theme='solarized'
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.linenr = ''
-let g:airline_detect_whitespace=2 "icon only
-let g:airline#extensions#whitespace#checks = ['trailing']
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_mode_map = {
-			\ '__' : '-',
-			\ 'n'  : 'N',
-			\ 'i'  : 'I',
-			\ 'R'  : 'R',
-			\ 'c'  : 'C',
-			\ 'v'  : 'V',
-			\ 'V'  : 'V',
-			\ '' : 'V',
-			\ 's'  : 'S',
-			\ 'S'  : 'S',
-			\ '' : 'S',
-			\ }
-
-" Airline fugitive integration
-let g:airline#extensions#branch#enabled = 1
-let g:airline_symbols.branch = '⎇'
 
 " {{{2 CTRLP
 let g:ctrlp_map = '<leader>e'
