@@ -24,6 +24,9 @@ let g:pathogen_disabled = ['vim-airline']
 call pathogen#infect()
 filetype plugin indent on
 
+" {{{1 MacVim
+let macvim_skip_cmd_opt_movement = 1
+let macvim_skip_colorscheme = 1
 
 " {{{1 Abbreviations and typo's
 " Compensate for the FUCKING Mac AZERTY BE layout, for instance: typing "|| "
