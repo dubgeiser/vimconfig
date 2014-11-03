@@ -1,5 +1,5 @@
 set lines=52
-set columns=90
+set columns=80
 
 " no menu
 set guioptions-=m
