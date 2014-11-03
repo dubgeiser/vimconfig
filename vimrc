@@ -132,8 +132,8 @@ nmap <c-n> ]]
 nmap <c-p> [[
 
 " Add open lines without going to insert mode.
-nnoremap <CR> o<ESC>
-nnoremap <C-CR> O<ESC>
+nnoremap <C-CR> o<ESC>
+nnoremap <C-S-CR> O<ESC>
 
 " Jump to tag, but offer choice if multiple matches.
 nnoremap <C-]> g<C-]>
