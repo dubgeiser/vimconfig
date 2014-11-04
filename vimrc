@@ -144,9 +144,6 @@ nnoremap <C-]> g<C-]>
 " TaskList
 nmap <Leader>l <Plug>TaskList
 
-" Run current defined test (see tdd.vim plugin)
-nnoremap <Leader>t :call Tdd_RunTest()<cr>
-
 " Underline current line
 nnoremap <Leader>= yypVr=
 nnoremap <Leader>- yypVr-
