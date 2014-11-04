@@ -27,7 +27,6 @@ function! functions#buffer_info()
                 \functions#git_branch())
     echo bufname("%")
     echo join([line("$") . " lines", &filetype, &fileformat, &fileencoding], ', ')
-    echo "vim encoding: " . &encoding
 endfunction
 
 
