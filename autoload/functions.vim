@@ -27,7 +27,7 @@ function! functions#buffer_info()
                 \functions#git_branch(),
                 \bufname("%")
                 \)
-    echo join([line("$") . " lines", &filetype, &fileformat, &fileencoding], ', ')
+    echo printf("%d lines of %s (%s,%s)", line("$"), &filetype, &fileformat, &fileencoding)
 endfunction
 
 
