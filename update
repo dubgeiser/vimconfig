@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+git pull --ff-only
+
 # Thanks to Jeroen Vandebossche for bringing this to my attention.
 git submodule foreach git pull origin master
 
