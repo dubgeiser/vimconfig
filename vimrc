@@ -83,7 +83,7 @@ set softtabstop=4
 "set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 "set statusline=%-25.25(%<%t\ %m%r\%)%l:%c%V\ (%p%%\ of\ %L\ lines)%=%{&ff},%{strlen(&fenc)?&fenc:''}%Y
 "set statusline=%-25.25(%<%t\ %m%r\%)%{&ff},%{strlen(&fenc)?&fenc:''}%Y,%L\ lines%=%l:%c%V
-set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+set statusline=%<%{functions#short_path()}%t\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 " Not too long or we drop to a virtual stand still when editing
 " large-all-on-one-line-code (like OOo xml files.)

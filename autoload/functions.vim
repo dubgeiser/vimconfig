@@ -50,6 +50,27 @@ function! functions#rtrim()
 endfunction
 
 
+" Display a short path where the first directory is displayed with its
+" full name, and the subsequent directories are shortened to their
+" first letter, i.e. "/home/user/foo/foo/bar/baz.vim" becomes
+" "~/foo/f/b/baz.vim"
+function! functions#short_path()
+    let dirsep = has('win32') && ! &shellslash ? '\' : '/'
+    let filepath = expand('%:p')
+    if empty(filepath)
+        return ''
+    endif
+    let mod = (exists('+acd') && &acd) ? ':~:h' : ':~:.:h'
+    let fpath = split(fnamemodify(filepath, mod), dirsep)
+    let fpath_shortparts = map(fpath[1:], 'v:val[0]')
+    let path = join(extend([fpath[0]], fpath_shortparts), dirsep) . dirsep
+    if path == ('.' . dirsep)
+        let path = ''
+    endif
+    return path
+endfunction
+
+
 " Toggle squint mode.
 " Squint mode gives a bird's eye view of the current buffer, thus helping in
 " identifying blocks of code that might need refactoring.
