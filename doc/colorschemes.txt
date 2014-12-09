@@ -18,13 +18,16 @@ the code.
 
 Solarized                                                        *solarized*
 ----------------------------------------------------------------------------
-Punctuation marks are too bright, distracting from reading.  Both dark and
-light not good enough.
+Punctuation marks are too bright, distracting from reading (dark version).
 
 2014-06-29
 I've given the light version a run for its money and must say I'm linking it
 quite a bit actually!  Very complete, better diff hilighting than zenburn,
 quickfix, gitcommit (with fugitive), etc...
+
+2014-12-09
+Still using it in light version, still liking it, still no intention to switch
+back to zenburn.
 
 
 Tomorrow-night                                             *tommorrow-night*
