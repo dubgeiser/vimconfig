@@ -149,9 +149,9 @@ nnoremap <Leader>= yypVr=
 nnoremap <Leader>- yypVr-
 
 " Quick open certain files...
-nnoremap <Leader>s :10split ~/.notes<cr>
-nnoremap <Leader>r :10split $MYVIMRC<cr>
-nnoremap <Leader>d :10split ~/.vim/doc/<cr>
+nnoremap <Leader>s :e ~/.notes<cr>
+nnoremap <Leader>r :e $MYVIMRC<cr>
+nnoremap <Leader>d :e ~/.vim/doc/<cr>
 
 " So we can turn off quickly highlighted matches.
 nnoremap <space> :nohlsearch<cr>
