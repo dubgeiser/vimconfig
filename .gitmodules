@@ -67,6 +67,3 @@
 [submodule "bundle/vim-argwrap"]
 	path = bundle/vim-argwrap
 	url = git://github.com/FooSoft/vim-argwrap
-[submodule "bundle/vim-gutentags"]
-	path = bundle/vim-gutentags
-	url = git@github.com:ludovicchabant/vim-gutentags.git
