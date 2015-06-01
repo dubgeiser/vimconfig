@@ -248,3 +248,5 @@ let g:gist_open_browser_after_post = 1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" {{{2 ArgWrap
+nmap <Leader>a :ArgWrap<cr>
