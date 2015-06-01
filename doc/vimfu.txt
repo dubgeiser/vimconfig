@@ -43,7 +43,8 @@ Buffers                                                       *vimfu-buffers*
 :%bd            Close all buffers
 :wa             Write all changed buffers
 :w !sudo tee %  Write buffer when opened without sudo
-                (note: There is now a sudow mapping for this)
+                (note: This can now be done with :SudoWrite from Tim Pope's
+                'Eunich' plugin)
 
 
 Registers                                                   *vimfu-registers*

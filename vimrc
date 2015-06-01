@@ -168,10 +168,6 @@ nmap <silent> <LEFT><LEFT> :cpfile<CR><C-G>
 nmap <silent> <UP><UP> :cfirst<CR>
 nmap <silent> <DOWN><DOWN> :clast<CR>
 
-" Always seem to forget this 'sudo tee' construct, let's hope 'sudow' will
-" retain better.
-cnoremap sudow w !sudo tee % >/dev/null
-
 " {{{1 Auto commands
 "===============================================================================
 autocmd FileType mail setlocal nocindent textwidth=72
