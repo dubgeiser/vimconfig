@@ -141,9 +141,6 @@ nnoremap <C-S-CR> O<ESC>
 " Jump to tag, but offer choice if multiple matches.
 nnoremap <C-]> g<C-]>
 
-" TaskList
-nmap <Leader>l <Plug>TaskList
-
 " Underline current line
 nnoremap <Leader>= yypVr=
 nnoremap <Leader>- yypVr-
@@ -230,6 +227,7 @@ command Info call functions#buffer_info()
 " {{{2 TaskList
 let g:tlWindowPosition = 1
 let g:tlTokenList = ['TODO', 'FIXME', 'XXX', 'HACK', '@todo', '???']
+nmap <Leader>l <Plug>TaskList
 
 " {{{2 vim-todo
 nnoremap <Leader>o :call Todo_ToggleTickbox()<cr>
