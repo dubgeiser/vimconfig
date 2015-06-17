@@ -250,3 +250,6 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " {{{2 ArgWrap
 nmap <Leader>a :ArgWrap<cr>
+" {{{2 PHP Refactor
+let g:php_refactor_command='php ~/bin/refactor.phar'
+

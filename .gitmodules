@@ -67,3 +67,6 @@
 [submodule "bundle/vim-argwrap"]
 	path = bundle/vim-argwrap
 	url = git://github.com/FooSoft/vim-argwrap
+[submodule "bundle/vim-php-refactoring"]
+	path = bundle/vim-php-refactoring
+	url = git@github.com:vim-php/vim-php-refactoring.git
