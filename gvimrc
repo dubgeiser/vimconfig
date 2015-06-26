@@ -10,6 +10,8 @@ set guioptions-=l
 set guioptions-=r
 set guioptions-=L
 
+set guicursor+=blinkon0
+
 if !has("unix")
     " ProggyClean does not look too good on my Ubuntu
     set guifont=ProggyClean
