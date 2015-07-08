@@ -23,3 +23,18 @@ if !exists(":PSR2")
 	command PSR2 exec("w") | exec("!php-cs-fixer --level=psr2 --fixers=unused_use fix %")
 	nnoremap <silent> <S-F5> :PSR2<CR>
 endif
+
+
+" @param string path Path to convert to a namespace
+"        Assume that the first directory in the path must be dropped and that
+"        we are dealing with a file (ie. the last element can be dropped too).
+" @return string the namespace for that path
+fun! PathToNamespace(path)
+	return join(split(a:path, '/')[1:-2], '\')
+endf
+
+fun! Namespace()
+	exec('s/^/' . 'namespace ' . escape(PathToNamespace(expand("%")), '\') . ';')
+endf
+
+command! Namespace call Namespace()
