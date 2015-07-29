@@ -130,7 +130,7 @@ snippet @r
 @return ${1:void}
 endsnippet
 snippet vd
-echo '<pre>';var_dump(${1});echo '</pre>';exit();
+echo '<pre>';var_dump(${1:'DEBUG'});echo '</pre>';exit();
 endsnippet
 
 # Fork
