@@ -131,8 +131,8 @@ nnoremap <Leader>b :buffers<CR>:buffer<space>
 nnoremap <silent> <Leader>cd :cd %:h<CR>
 
 " Hop from method to method.
-nmap <c-n> ]]
-nmap <c-p> [[
+nnoremap <c-n> ]]
+nnoremap <c-p> [[
 
 " Add open lines without going to insert mode.
 nnoremap <C-CR> o<ESC>
@@ -161,12 +161,12 @@ nnoremap <c-l> <c-w>l
 
 nnoremap <silent> <F5> :make<CR>
 
-nmap <silent> <RIGHT> :cnext<CR>
-nmap <silent> <RIGHT><RIGHT> :cnfile<CR><C-G>
-nmap <silent> <LEFT> :cprev<CR>
-nmap <silent> <LEFT><LEFT> :cpfile<CR><C-G>
-nmap <silent> <UP><UP> :cfirst<CR>
-nmap <silent> <DOWN><DOWN> :clast<CR>
+nnoremap <silent> <RIGHT> :cnext<CR>
+nnoremap <silent> <RIGHT><RIGHT> :cnfile<CR><C-G>
+nnoremap <silent> <LEFT> :cprev<CR>
+nnoremap <silent> <LEFT><LEFT> :cpfile<CR><C-G>
+nnoremap <silent> <UP><UP> :cfirst<CR>
+nnoremap <silent> <DOWN><DOWN> :clast<CR>
 
 " {{{1 Auto commands
 "===============================================================================
@@ -191,7 +191,7 @@ autocmd BufWrite *fu.txt :helptags ~/.vim/doc/
 
 " For programming languages using a semi colon at the end of statement.
 autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
-    \ nmap <silent> <Leader>; :call functions#append_semi_colon()<cr>
+    \ nnoremap <silent> <Leader>; :call functions#append_semi_colon()<cr>
 
 autocmd FocusLost * silent! wall
 
@@ -223,7 +223,7 @@ command Info call functions#buffer_info()
 " {{{2 TaskList
 let g:tlWindowPosition = 1
 let g:tlTokenList = ['TODO', 'FIXME', 'XXX', 'HACK', '@todo', '???']
-nmap <Leader>l <Plug>TaskList
+nnoremap <Leader>l <Plug>TaskList
 
 " {{{2 vim-todo
 nnoremap <Leader>o :call Todo_ToggleTickbox()<cr>
@@ -249,7 +249,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " {{{2 ArgWrap
-nmap <Leader>a :ArgWrap<cr>
+nnoremap <Leader>a :ArgWrap<cr>
 " {{{2 PHP Refactor
 let g:php_refactor_command='php ~/bin/refactor.phar'
 
