@@ -1,97 +1,452 @@
-# Django snipps
-snippet vn
-verbose_name=_("${1}")
-endsnippet
-snippet vnp
-verbose_name_plural=_("${1}")
-endsnippet
-snippet vnm
-verbose_name = _("${1}")
-endsnippet
-snippet vnpm
-verbose_name_plural = _("${1}")
-endsnippet
-snippet mmodel
-class ${1:ModelName}(${2:models.Model}):
-	${4}
+# Taken from https://github.com/aalvarado/ultisnips-snippets/
 
-	def __unicode__(self):
-		return unicode(${3})
+###########################################################################
+#                            TEXTMATE SNIPPETS                            #
+###########################################################################
+
+#! header
+snippet #! "Shebang header for python scripts" b
+#!/usr/bin/env python
+# encoding: utf-8
+$0
 endsnippet
-snippet bnt
-blank=${1:True}, null=${2:True}${3}
+
+snippet ifmain "ifmain" b
+if __name__ == '__main__':
+	${1:main()}$0
 endsnippet
-snippet rtr
-render_to_response('${1:template}', RequestContext(${2:request}, ${3:context}))${4}
+
+
+##########
+# COMMON #
+##########
+
+# The smart def and smart class snippets use a global option called
+# "g:ultisnips_python_style" which, if set to "doxygen" will use doxygen
+# style comments in docstrings.
+
+global !p
+
+NORMAL  = 0x1
+DOXYGEN = 0x2
+
+def get_args(arglist):
+    args = [arg.split('=')[0].strip() for arg in arglist.split(',') if arg]
+    args = [arg for arg in args if arg and arg != "self"]
+
+    return args
+
+
+def get_style(snip):
+    style = snip.opt("g:ultisnips_python_style", "normal")
+
+    if    style == "doxygen": return DOXYGEN
+    else: return NORMAL
+
+
+def format_arg(arg, style):
+    if style == DOXYGEN:
+        return "@param %s @todo" % arg
+    elif style == NORMAL:
+        return ":%s: @todo" % arg
+
+
+def format_return(style):
+    if style == DOXYGEN:
+        return "@return: @todo"
+    elif style == NORMAL:
+        return ":returns: @todo"
+
+
+def write_docstring_args(args, snip):
+    if not args:
+        snip.rv += ' """'
+        return
+
+    snip += ""
+
+    style = get_style(snip)
+
+    for arg in args:
+        snip += format_arg(arg, style)
+
+
+def write_init_body(args, parents, snip):
+    parents = [p.strip() for p in parents.split(",")]
+    parents = [p for p in parents if p != 'object']
+
+    for p in parents:
+        snip += p + ".__init__(self)"
+
+    if parents:
+        snip += ""
+
+    for arg in args:
+        snip += "self._%s = %s" % (arg, arg)
+
+
+def write_slots_args(args, snip):
+    args = ['"%s"' % arg for arg in args]
+    snip += '__slots__ = (%s,)' % ', '.join(args)
+
+endglobal
+
+########################################
+# Class & Special Method Name Snippets #
+########################################
+
+snippet class "class with docstrings" b
+class ${1:MyClass}(${2:object}):
+	"""${3:Docstring for $1 }"""
+
+	def __init__(self$4):
+		"""${5:@todo: to be defined}`!p
+snip.rv = ""
+snip >> 2
+
+args = get_args(t[4])
+
+write_docstring_args(args, snip)
+if args: snip += '"""'
+
+snip += ""
+write_init_body(args, t[2], snip)
+`
+		$0
 endsnippet
-# Django model fields
-snippet mfk
-models.ForeignKey(${1})
+
+
+snippet slotclass "class with slots and docstrings" b
+class ${1:MyClass}(${2:object}):
+	"""${3:Docstring for $1 }"""
+	`!p
+snip >> 1
+args = get_args(t[4])
+write_slots_args(args, snip)
+`
+
+	def __init__(self$4):
+		"""${5:@todo: to be defined}`!p
+snip.rv = ""
+snip >> 2
+
+args = get_args(t[4])
+
+write_docstring_args(args, snip)
+if args: snip += '"""'
+
+snip += ""
+write_init_body(args, t[2], snip)
+`
+		$0
 endsnippet
-snippet mchar
-models.CharField(max_length=${1:128}${2})
+
+
+snippet contain "methods for emulating a container type" b
+def __len__(self):
+	${1:pass}
+
+def __getitem__(self, key):
+	${2:pass}
+
+def __setitem__(self, key, value):
+	${3:pass}
+
+def __delitem__(self, key):
+	${4:pass}
+
+def __iter__(self):
+	${5:pass}
+
+def __reversed__(self):
+	${6:pass}
+
+def __contains__(self, item):
+	${7:pass}
 endsnippet
-snippet mpint
-models.PositiveIntegerField(${1})
+
+
+snippet context "context manager methods" b
+def __enter__(self):
+	${1:pass}
+
+def __exit__(self, exc_type, exc_value, traceback):
+	${2:pass}
 endsnippet
-snippet mint
-models.IntegerField(${1})
+
+
+snippet attr "methods for customizing attribute access" b
+def __getattr__(self, name):
+	${1:pass}
+
+def __setattr__(self, name, value):
+	${2:pass}
+
+def __delattr__(self, name):
+	${3:pass}
 endsnippet
-snippet mdate
-models.DateField(${1})
+
+
+snippet desc "methods implementing descriptors" b
+def __get__(self, instance, owner):
+	${1:pass}
+
+def __set__(self, instance, value):
+	${2:pass}
+
+def __delete__(self, instance):
+	${3:pass}
 endsnippet
-snippet mtime
-models.TimeField(${1})
+
+
+snippet cmp "methods implementing rich comparison"
+def __eq__(self, other):
+	${1:pass}
+
+def __ne__(self, other):
+	${2:pass}
+
+def __lt__(self, other):
+	${3:pass}
+
+def __le__(self, other):
+	${4:pass}
+
+def __gt__(self, other):
+	${5:pass}
+
+def __ge__(self, other):
+	${6:pass}
+
+def __cmp__(self, other):
+	${7:pass}
 endsnippet
-snippet mdatet
-models.DateTimeField(${1})
+
+
+snippet repr "methods implementing string representation"
+def __repr__(self, other):
+	${1:pass}
+
+def __str__(self, other):
+	${2:pass}
+
+def __unicode__(self, other):
+	${3:pass}
 endsnippet
-snippet mbool
-models.BooleanField(${1})
+
+
+# note: reflected operands and augmented arithmeitc assignements have been
+# intentionally ommited to reduce verbosity.
+snippet numeric "methods for emulating a numeric type" b
+def __add__(self, other):
+	${1:pass}
+
+def __sub__(self, other):
+	${2:pass}
+
+def __mul__(self, other):
+	${3:pass}
+
+def __div__(self, other):
+	${4:pass}
+
+def __truediv__(self, other):
+	${5:pass}
+
+def __floordiv__(self, other):
+	${6:pass}
+
+
+def __mod__(self, other):
+	${7:pass}
+
+def __divmod__(self, other):
+	${8:pass}
+
+def __pow__(self, other):
+	${9:pass}
+
+
+def __lshift__(self, other):
+	${10:pass}
+
+def __rshift__(self, other):
+	${11:pass}
+
+def __and__(self, other):
+	${12:pass}
+
+def __xor__(self, other):
+	${13:pass}
+
+def __or__(self, other):
+	${14:pass}
+
+
+def __neg__(self):
+	${15:pass}
+
+def __pos__(self):
+	${16:pass}
+
+def __abs__(self):
+	${17:pass}
+
+def __invert__(self):
+	${18:pass}
+
+
+def __complex__(self):
+	${19:pass}
+
+def __int__(self):
+	${20:pass}
+
+def __long__(self):
+	${21:pass}
+
+def __float__(self):
+	${22:pass}
+
+
+def __oct__(self):
+	${22:pass}
+
+def __hex__(self):
+	${23:pass}
+
+
+def __index__(self):
+	${24:pass}
+
+def __coerce__(self, other):
+	${25:pass}
 endsnippet
-snippet mtext
-models.TextField(${1})
+
+snippet def "function with docstrings" b
+def ${1:function}(`!p if snip.indent: snip.rv = 'self, '`${2:arg1}):
+	"""${4:@todo: Docstring for $1}`!p
+snip.rv = ""
+snip >> 1
+
+args = get_args(t[2])
+write_docstring_args(args, snip)
+
+style = get_style(snip)
+snip += format_return(style)
+snip += '"""' `
+
+	${0:pass}
 endsnippet
-snippet mdec
-models.DecimalField(max_digits=${1:10}, decimal_places=${2:2}${3})
+
+
+# doesn't expand when there is a word in front
+snippet /(^|(?<=\W))\./ "self." r
+self.
 endsnippet
-snippet mip
-models.IPAddressField(${1})
+
+snippet from "from module import name" b
+from ${1:module} import ${2:Stuff}
 endsnippet
-snippet mfile
-models.FileField(upload_to='${1}'${2})
+
+
+##############
+# PROPERTIES #
+##############
+snippet roprop "Read Only Property" b
+@property
+def ${1:property}(self):
+	${2:return self._$1}$0
 endsnippet
-snippet mid
-id = models.AutoField(primary_key=True, verbose_name=_('ID'))
+
+snippet rwprop "Read write property" b
+def ${1:property}():
+	${2/.+/(?0:""")/}${2:The RW property $1}${2/.+/(?0:"""\n		)/}def fget(self):
+		return self._$1$0
+	def fset(self, value):
+		self._$1 = value
+	return locals()
+$1 = property(**$1())
 endsnippet
-# Django Form fields
-snippet fchar
-forms.CharField(label=_('${1}')${2})
+
+
+##########################
+# Try / Except / Finally #
+##########################
+snippet try "Try / Except" b
+try:
+	${1:pass}
+except ${2:Exception}, ${3:e}:
+	${4:raise $3}
 endsnippet
-snippet fint
-forms.IntegerField(label=_('${1}')${2})
+
+snippet try "Try / Except / Else" b
+try:
+	${1:pass}
+except ${2:Exception}, ${3:e}:
+	${4:raise $3}
+else:
+	${5:pass}
 endsnippet
-snippet fdate
-forms.DateField(label=_('${1}')${2})
+
+snippet try "Try / Except / Finally" b
+try:
+	${1:pass}
+except ${2:Exception}, ${3:e}:
+	${4:raise $3}
+finally:
+	${5:pass}
 endsnippet
-snippet ftime
-forms.TimeField(label=_('${1}')${2})
+
+snippet try "Try / Except / Else / Finally" b
+try:
+	${1:pass}
+except${2: ${3:Exception}, ${4:e}}:
+	${5:raise}
+else:
+	${6:pass}
+finally:
+	${7:pass}
 endsnippet
-snippet fdatet
-forms.DateTimeField(label=_('${1}')${2})
+
+
+#####################
+# Assertions & Tests #
+#####################
+
+snippet ae "Assert equal" b
+self.assertEqual(${1:first},${2:second})
 endsnippet
-snippet fbool
-forms.BooleanField(label=_('${1}')${2})
+
+snippet at "Assert True" b
+self.assertTrue(${0:exp})
 endsnippet
-snippet fdec
-forms.DecimalField(label=_('${1}')${2})
+
+snippet af "Assert False" b
+self.assertFalse(${1:expression})
 endsnippet
-snippet fip
-forms.IPAddressField(label=_('${1}')${2})
+
+snippet aae "Assert almost equal" b
+self.assertAlmostEqual(${1:first},${2:second})
 endsnippet
-snippet ffile
-forms.FileField(label=_('${1}')${2})
+
+snippet ar "Assert raises" b
+self.assertRaises(${1:exception}, ${2:func}${3/.+/, /}${3:arguments})
 endsnippet
-snippet fchoice
-forms.ChoiceField(label=_('${1}')${2})
+
+
+snippet testcase "pyunit testcase" b
+class Test${1:Class}(${2:unittest.TestCase}):
+	"""${3:Test case docstring}"""
+
+	def setUp(self):
+		${3:pass}
+
+	def tearDown(self):
+		${4:pass}
+
+	def test_${5:name}(self):
+		${6:pass}
 endsnippet
+
+# vim:ft=snippets:
