@@ -223,7 +223,7 @@ command Info call functions#buffer_info()
 " {{{2 TaskList
 let g:tlWindowPosition = 1
 let g:tlTokenList = ['TODO', 'FIXME', 'XXX', 'HACK', '@todo', '???']
-nnoremap <Leader>l <Plug>TaskList
+nnoremap <Leader>l :TaskList<cr>
 
 " {{{2 vim-todo
 nnoremap <Leader>o :call Todo_ToggleTickbox()<cr>
