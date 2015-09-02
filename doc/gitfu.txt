@@ -37,6 +37,12 @@ log --pretty=format:'FORMAT HERE'                  *gitfu-log-pretty-format*
 %an                     Name committer
 %cr                     Time
 
+remove                                                        *gitfu-remove*
+--------------------------------------------------------------------------
+Remove files from repository that are in .gitignore, example: .DS_Store files.
+
+find . -name .DS_Store | xargs git rm -f --ignore-unmatch
+
 
 remote                                                       *gitfu-remotes*
 ---------------------------------------------------------------------------
