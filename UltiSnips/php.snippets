@@ -582,3 +582,23 @@ class Frontend${1:Module}Widget${2:Name} extends FrontendBaseWidget
 	}
 }
 endsnippet
+snippet getset "Generate getter and setter"
+/**
+ * @return ${3:type} ${4:description}
+ */
+public function get${1:Name}()
+{
+	return $this->${2:$1};
+}
+
+/**
+ * @param $3 $$2 $4
+ * @return self
+ */
+public function set$1($$2)
+{
+	$this->$2 = $$2;
+	return $this;
+}
+${0}
+endsnippet
