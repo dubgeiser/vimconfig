@@ -83,3 +83,6 @@
 	path = bundle/vim-php-refactoring
 	url = git@github.com:vim-php/vim-php-refactoring.git
 	ignore = dirty
+[submodule "bundle/vim-instant-markdown"]
+	path = bundle/vim-instant-markdown
+	url = git@github.com:suan/vim-instant-markdown.git
