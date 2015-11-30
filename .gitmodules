@@ -83,5 +83,5 @@
 	path = bundle/vim-instant-markdown
 	url = git@github.com:suan/vim-instant-markdown.git
 [submodule "bundle/ctrl"]
-	path = bundle/ctrl
+	path = bundle/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
