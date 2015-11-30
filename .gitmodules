@@ -27,10 +27,6 @@
 	path = bundle/todo
 	url = git://github.com/dubgeiser/vim-todo.git
 	ignore = dirty
-[submodule "bundle/ctrlp"]
-	path = bundle/ctrlp
-	url = git://github.com/kien/ctrlp.vim.git
-	ignore = dirty
 [submodule "bundle/vim-php-namespace"]
 	path = bundle/vim-php-namespace
 	url = git://github.com/arnaud-lb/vim-php-namespace.git
