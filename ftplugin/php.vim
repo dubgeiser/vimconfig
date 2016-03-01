@@ -7,6 +7,10 @@ nnoremap <leader>f /function\s*
 nnoremap <leader>i :call PhpInsertUse()<CR>
 
 set makeprg=php\ -l\ %
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set softtabstop=4
 
 " PHP error
 set errorformat+=%m\ in\ %f\ on\ line\ %l
