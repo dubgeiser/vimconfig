@@ -24,8 +24,8 @@ set errorformat+=%E%\\d%\\+)\ %m,%CFailed%m,%Z%f:%l,%-G
 let g:Tdd_makeprg='phpunit'
 
 if !exists(":PSR2")
-	command PSR2 exec("w") | exec("!php-cs-fixer --level=psr2 --fixers=unused_use fix %")
-	nnoremap <silent> <S-F5> :PSR2<CR>
+    command PSR2 exec("w") | exec("!php-cs-fixer --level=psr2 --fixers=unused_use fix %")
+    nnoremap <silent> <S-F5> :PSR2<CR>
 endif
 
 
@@ -34,11 +34,14 @@ endif
 "        we are dealing with a file (ie. the last element can be dropped too).
 " @return string the namespace for that path
 fun! PathToNamespace(path)
-	return join(split(a:path, '/')[1:-2], '\')
+    return join(split(a:path, '/')[1:-2], '\')
 endf
 
 fun! Namespace()
-	exec('s/^/' . 'namespace ' . escape(PathToNamespace(expand("%")), '\') . ';')
+    exec('s/^/' . 'namespace ' . escape(PathToNamespace(expand("%")), '\') . ';')
 endf
 
 command! Namespace call Namespace()
+
+" Doing quite some symfony, load specific snippets when in PHP files.
+exec("UltiSnipsAddFiletypes php-symfony2")
