@@ -239,7 +239,7 @@ vnoremap <Leader>x :call Todo_TickCancelled()<cr>
 " is acting up funny in where that it cannot fetch suggestions from deeply
 " nested sub directories.
 nnoremap <leader>e :CtrlP ./
-"let g:ctrlp_map = '<leader>e'
+let g:ctrlp_map = '<leader>e'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$',
   \ 'file': '\.exe$\|\.so$\|\.dll$\|^\..*\.swp$',
