@@ -51,7 +51,6 @@ endsnippet
 snippet act "Symfony2 action" b
 /**
  * @Route("${3}", name="${4}")
- * @Method({${5:"POST"}})
  */
 public function ${1}Action(${2})
 {
@@ -62,7 +61,7 @@ endsnippet
 snippet actt "Symfony2 action and template" b
 /**
  * @Route("${3}", name="${4}")
- * @Method({${5:"GET"}})
+ * @Template()
  */
 public function ${1}Action(${2})
 {
