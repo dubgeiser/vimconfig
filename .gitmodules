@@ -81,6 +81,3 @@
 [submodule "bundle/ctrl"]
 	path = bundle/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
-[submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
-	url = git@gitgub.com:SirVer/ultisnips.git
