@@ -235,10 +235,7 @@ vnoremap <Leader>x :call Todo_TickCancelled()<cr>
 
 " {{{2 CTRLP
 "
-" Mapping a separate key to CtrlP instead of using g:ctrlp_map because CtrlP
-" is acting up funny in where that it cannot fetch suggestions from deeply
-" nested sub directories.
-nnoremap <leader>e :CtrlP ./
+let g:ctrlp_max_files = 0
 let g:ctrlp_map = '<leader>e'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$',
