@@ -239,7 +239,7 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_map = '<leader>e'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$',
-  \ 'file': '\.exe$\|\.so$\|\.dll$\|^\..*\.swp$',
+  \ 'file': '\.exe$\|\.so$\|\.dll$\|^\..*\.swp$|\.pyc$',
   \ }
 
 " {{{2 Gist
