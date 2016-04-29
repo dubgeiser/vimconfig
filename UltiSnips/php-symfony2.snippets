@@ -3,6 +3,10 @@
 
 priority -50
 
+snippet dump
+\Symfony\Component\VarDumper\VarDumper::dump(${1:'DEBUG'}); exit();
+endsnippet
+
 snippet classn "Basic class with namespace snippet" b
 namespace `!p
 abspath = os.path.abspath(path)
