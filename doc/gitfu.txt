@@ -79,4 +79,13 @@ git checkout --ours     Keep the version from before the merge
 git checkout --theirs   Keep the merged in version
 
 
+Do something to a whole branch: filter-branch          *gitfu-filter-branch*
+----------------------------------------------------------------------------
+Example: change author/e-mail for the entire branch:
+
+    $ git filter-branch -f --env-filter "GIT_AUTHOR_NAME='New name'; GIT_AUTHOR_EMAIL='newname@example.com'; GIT_COMMITTER_NAME='new committer name'; GIT_COMMITTER_EMAIL='newcommitername@example.com';" HEAD
+
+Then force push (git push -f)
+
+
  vim:tw=78:ts=8:ft=help:norl:nocindent:et:
