@@ -22,12 +22,16 @@ endfunction
 
 " Display some useful info on the file in the current buffer.
 function! functions#buffer_info()
-    echo printf("(%s) (%s) %s",
-                \functions#remove_newline(system("pwd")),
-                \functions#git_branch(),
-                \bufname("%")
-                \)
-    echo printf("%d lines of %s (%s,%s)", line("$"), &filetype, &fileformat, &fileencoding)
+    echo "\n"
+    echo printf("%s", bufname("%"))
+    echo "\n"
+    echo printf("Lines:      %d", line("$"))
+    echo printf("Type:       %s", &filetype)
+    echo printf("Format:     %s", &fileformat)
+    echo printf("Encoding:   %s", &fileencoding)
+    echo printf("Directory:  %s", functions#remove_newline(system("pwd")))
+    echo printf("Git branch: %s", functions#git_branch())
+    echo "\n"
 endfunction
 
 
