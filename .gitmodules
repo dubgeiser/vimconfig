@@ -84,3 +84,6 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
+[submodule "bundle/visSum"]
+	path = bundle/visSum
+	url = git@github.com:vim-scripts/visSum.vim.git
