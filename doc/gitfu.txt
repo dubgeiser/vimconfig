@@ -61,6 +61,9 @@ git reset --soft HEAD^  Undo last commit
     $ git add ....              (and adds.)
     $ git commit -c ORIG_HEAD   (commit with last commit message (1))
 
+Remove last commit (from current branch).
+    $ git reset HEAD~ --hard
+
 
 diff-filter                                              *gitfu-diff-filter*
 ----------------------------------------------------------------------------
