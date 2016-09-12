@@ -85,9 +85,9 @@ git checkout --theirs   Keep the merged in version
 Has a branch been merged into master?                           *gitfu-merged*
 ----------------------------------------------------------------------------
 
-git branch --merged     master lists branches merged into master
-git branch --merged     lists branches merged into HEAD (i.e. tip of current
-                        branch)
+git branch --merged master  lists branches merged into master
+git branch --merged         lists branches merged into HEAD (i.e. tip of
+                            current branch)
 git branch --no-merged  lists branches that have not been merged
 
 
