@@ -22,8 +22,7 @@ elseif has("gui_macvim")
     " Take up all the space when running full screen MacVim
     set fuoptions=maxvert,maxhorz
 
-    "http://nodnod.net/2009/feb/12/adding-straight-single-and-double-quotes-inconsola/
-    set guifont=Inconsolata-dz:h18
+    set guifont=Inconsolata\ Regular:h18
     set antialias
 else
     set guifont=Monospace\ 10
