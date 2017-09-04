@@ -22,7 +22,7 @@ elseif has("gui_macvim")
     " Take up all the space when running full screen MacVim
     set fuoptions=maxvert,maxhorz
 
-    set guifont=Inconsolata\ Regular:h18
+    set guifont=Inconsolata\ Regular:h20
     set antialias
 else
     set guifont=Monospace\ 10
