@@ -1,4 +1,11 @@
-*gitfu.txt*
+*gitfu.txt* Personal Git help
+Author: Per Juchtmans <https://dubgeiser.github.io>
+License: WTFPL <http://www.wtfpl.net/>
+
+
+INTRODUCTION                                                *gitfu*
+----------------------------------------------------------------------------
+Personal Vim help document for the git command.
 
 
 .git                                                           *gitfu-files*
