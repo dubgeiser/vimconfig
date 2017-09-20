@@ -1,11 +1,17 @@
-*vimfu.txt*
+*vimfu.txt* Personal Vim help
+Author: Per Juchtmans <https://dubgeiser.github.io>
+License: WTFPL <http://www.wtfpl.net/>
+
+
+INTRO                                                               *vimfu*
+------------------------------------------------------------------------------
 
 Using the Vim help system to keep track of my own personal Vim tips.
 
 Based on http://djcraven5.blogspot.com/2006/10/mastering-vim-help-system.html
 
 
-Auto completions                         *vimfu-autocomplete* *vimfu-complete*
+AUTO COMPLETIONS                         *vimfu-autocomplete* *vimfu-complete*
 ------------------------------------------------------------------------------
 ^N              Complete function.
 C-X C-F         Complete file path.  This has been mapped to <C-D>
@@ -14,31 +20,31 @@ C-X C-L         Complete full line.
 C-X C-K         Complete from dictionary. (Only works with 'set spell')
 
 
-Buffers                                                       *vimfu-buffers*
+BUFFERS                                                       *vimfu-buffers*
 ------------------------------------------------------------------------------
 :%bd            Close all buffers
 :wa             Write all changed buffers
 :w !sudo tee %  Write buffer when opened without sudo
-                (note: This can now be done with :SudoWrite from Tim Pope's
-                'Eunich' plugin)
+                (note: This can now be done with `:SudoWrite` from Tim Pope's
+                |eunuch| plugin)
 
 
-Registers                                                   *vimfu-registers*
+REGISTERS                                                   *vimfu-registers*
 ----------------------------------------------------------------------------
 <c-r>=          [insert mode] Go to expression register, expression will be
                 evaluated and its result will be inserted on the current
                 cursor position.
 
 
-Editing                                                          *vimfu-edit*
+EDITING                                                          *vimfu-edit*
 ------------------------------------------------------------------------------
 ciw             Change complete word under cursor.
 cit             Change everything between open/close html tag.
-C-R "           paste clipboard in insert mode.
+C-R "           Paste clipboard in insert mode.
 gJ              Join lines without inserting a space
 
 
-Folds                                                           *vimfu-folds*
+FOLDS                                                           *vimfu-folds*
 ------------------------------------------------------------------------------
 zf              Create a fold (follows normal movements, so zf20j creates fold
                 over the next 20 lines down).  zf in visual will create a fold
@@ -53,7 +59,7 @@ zM              Close all open folds.
 zR              Open all folds.
 
 
-Help                                                             *vimfu-help*
+HELP                                                             *vimfu-help*
 ------------------------------------------------------------------------------
 :helpgrep       Search help with a regex
 K               To man page of word under cursor.
@@ -61,19 +67,19 @@ C-$             Jump to tag (normally C-] but that doesn't do it on AZERTY)
 C-T             Back from tag jump
 
 
-Indent                                                         *vimfu-indent*
+INDENT                                                         *vimfu-indent*
 ------------------------------------------------------------------------------
 ==              Indent current line
 
 
-Getting Information                                              *vimfu-info*
+GETTING INFORMATION                                              *vimfu-info*
 ------------------------------------------------------------------------------
 ga              Show ascii, hex and octal value of char under cursor
 c-g             Full name of file, how many line, whether it is modified, ...
 gc-g            Detailed info on position in file
 
 
-Moving around                                                    *vimfu-move*
+MOVING AROUND                                                    *vimfu-move*
 ------------------------------------------------------------------------------
 C-u/d           Half page up/down
 H, M, L         High-, Middle-, Low part of the page
@@ -99,19 +105,19 @@ through files, so I put them here:
 ^I/TAB          Jump to next position in jump list
 
 
-Finding / searching                                *vimfu-find* *vimfu-search*
+FINDING AND SEARCHING                                *vimfu-find* *vimfu-search*
 ------------------------------------------------------------------------------
 :g/SE/#         Find occurences of SE and list them in command buffer with lines
                 numbered.
 &               Repeat substitution (ex. when g is forgotten in :s/foo/bar)
 
 
-Spellchecker                                              *vimfu-spellchecker*
+SPELLCHECKER                                              *vimfu-spellchecker*
 ------------------------------------------------------------------------------
-z=              Find spelling suggestion for word under/after cursor.
+z=              Find spelling suggestions for word under/after cursor.
 
 
-Surrounding stuff with brackets etc...                       *vimfu-surround*
+SURROUNDING                                                  *vimfu-surround*
 ------------------------------------------------------------------------------
 Uses |surround.txt|
 
@@ -125,7 +131,7 @@ dst             Delete surroundig html tag.
 S<C>            Surround selection with char <C> (Visual mode)
 
 
-Selecting stuff                               *vimfu-visual* *vimfu-selection*
+SELECTING                                       *vimfu-visual* *vimfu-selection*
 ------------------------------------------------------------------------------
 vaw             Visual select word (+ space if there)
 viw             Visual select 1 word
@@ -133,39 +139,40 @@ vap             Visual select paragraph (+ open line if there)
 vip             Visual select 1 paragraph
 
 
-Get input from user                               *vimfu-input* *vimfu-prompt*
+GET USER INPUT                                       *vimfu-input* *vimfu-prompt*
 ------------------------------------------------------------------------------
 :let a = input('A: ')           Get input from user on commandline
 :let a = inputdialog('A')       Get input from user in a graphical ui dialog.
 :let a = confirm("ok?", "&OK\n&Cancel")  Get input from prompt with buttons.
 
 
-Windows                                                        *vimfu-windows*
+WINDOWS                                                        *vimfu-windows*
 ------------------------------------------------------------------------------
 :only           Close all windows except current
 <c-w><c-o>      Close all windows except current
 
 
-Programming                                                *vimfu-programming*
+PROGRAMMING                                                *vimfu-programming*
 ------------------------------------------------------------------------------
 Loads of stuff in the vim-OPL book (ex: chapters 26, 27 and more), also check
-help on functions, variables, script(s), usr_41.txt
+help on functions, variables, script(s), usr_41.txkdir!
 
 
-Command line                                               *vimfu-commandline*
+COMMAND LINE                                               *vimfu-commandline*
 ------------------------------------------------------------------------------
 C-F             In command line mode: take current edit and take that to a
                 buffer for further 'full' editing.
 
 
-Files and directories                                *vimfu-file* *vimfu-dir*
+FILES AND DIRECTORIES                                *vimfu-file* *vimfu-dir*
 ------------------------------------------------------------------------------
 :!mkdir %:p:h   Create the full directory path of the current buffer.
                 Useful when editing a buffer with a path that does not exist
                 yet.
+                This can be done with `:Mkdir!` from |eunuch|
 
 
-Ack plugin                                                       *vimfu-ack*
+ACK PLUGIN                                                       *vimfu-ack*
 ------------------------------------------------------------------------------
 In quickfix window:
 
