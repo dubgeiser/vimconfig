@@ -62,6 +62,11 @@ set history=10000
 set incsearch
 set laststatus=2
 set linespace=0
+
+" line numbering: relative, but do show current line
+set relativenumber
+set number
+
 set listchars=tab:⇒\ ,extends:»,precedes:«,trail:▒,nbsp:·
 set list
 set mousehide
