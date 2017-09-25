@@ -29,6 +29,9 @@ quickfix, gitcommit (with fugitive), etc...
 Still using it in light version, still liking it, still no intention to switch
 back to zenburn.
 
+2017-09-25
+Still in use all the time, will remove zenburn.
+
 
 Tomorrow-night                                             *tommorrow-night*
 ----------------------------------------------------------------------------
