@@ -42,6 +42,7 @@ set autoread
 set hidden
 " ... this is where this comes in:
 set autowrite
+set undofile
 
 set backspace=indent,eol,start whichwrap+=<,>,[,]
 set cindent
