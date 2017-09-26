@@ -42,7 +42,10 @@ set autoread
 set hidden
 " ... this is where this comes in:
 set autowrite
+
 set undofile
+set directory=~/.vim/tmp
+set undodir=~/.vim/tmp
 
 set backspace=indent,eol,start whichwrap+=<,>,[,]
 set cindent
@@ -71,7 +74,6 @@ set number
 set listchars=tab:⇒\ ,extends:»,precedes:«,trail:▒,nbsp:·
 set list
 set mousehide
-set nobackup
 
 " Ignore case sensitivity, unless a search term has capital letters in it.
 set ignorecase

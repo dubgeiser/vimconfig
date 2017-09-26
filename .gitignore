@@ -1,4 +1,4 @@
-.*.swp
+/tmp/
 doc/tags
 .DS_Store
 .netrwhist
