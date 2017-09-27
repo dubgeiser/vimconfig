@@ -7,10 +7,6 @@
 	path = bundle/repeat
 	url = git://github.com/tpope/vim-repeat.git
 	ignore = dirty
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = git://github.com/scrooloose/nerdcommenter.git
-	ignore = dirty
 [submodule "bundle/cmdline-completion"]
 	path = bundle/cmdline-completion
 	url = git://github.com/vim-scripts/cmdline-completion.git
@@ -87,3 +83,6 @@
 [submodule "bundle/visSum"]
 	path = bundle/visSum
 	url = git@github.com:vim-scripts/visSum.vim.git
+[submodule "bundle/commentary"]
+	path = bundle/commentary
+	url = git://github.com/tpope/vim-commentary.git
