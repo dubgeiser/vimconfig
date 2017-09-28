@@ -7,13 +7,11 @@
 set nocompatible
 au!
 
-" Better % matching.  Note that this comes from vim install and might need to
-" be updated if Vim is updated.  This includes the doc file macros/matchit.txt
-" and running the :helptags command afterwards.
-"
-" TODO Investigate: this screws up {} matching in templates.
-"
-runtime macros/matchit.vim
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+" TODO Does this still screw up {} matching in Django/Twig templates?
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
 
 
 " {{{1 pathogen
