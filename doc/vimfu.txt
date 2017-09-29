@@ -44,6 +44,12 @@ C-R "           Paste clipboard in insert mode.
 gJ              Join lines without inserting a space
 
 
+EX                                                          *vimfu-ex*
+------------------------------------------------------------------------------
+@:              Repeat last ex command.  Subsequent repeats can be done with
+                `@@`
+
+
 FOLDS                                                           *vimfu-folds*
 ------------------------------------------------------------------------------
 zf              Create a fold (follows normal movements, so zf20j creates fold
