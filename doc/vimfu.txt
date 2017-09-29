@@ -145,7 +145,7 @@ vap             Visual select paragraph (+ open line if there)
 vip             Visual select 1 paragraph
 
 
-GET USER INPUT                                       *vimfu-input* *vimfu-prompt*
+GET USER INPUT                                      *vimfu-input* *vimfu-prompt*
 ------------------------------------------------------------------------------
 :let a = input('A: ')           Get input from user on commandline
 :let a = inputdialog('A')       Get input from user in a graphical ui dialog.
