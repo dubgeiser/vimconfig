@@ -22,7 +22,10 @@ call pathogen#infect()
 filetype plugin indent on
 
 " {{{1 MacVim
+" Disable keymappings that MacVim adds
 let macvim_skip_cmd_opt_movement = 1
+
+" Do not load MacVim colorscheme when loading gvimrc.
 let macvim_skip_colorscheme = 1
 
 " {{{1 Abbreviations and typo's
