@@ -89,14 +89,14 @@ function! functions#toggle_squint_mode()
     if g:squint_mode == "squint"
         exec("colorscheme " . g:squint_mode_save_colorscheme)
         exec("set guifont=" . g:squint_mode_save_font)
-		exec("set lines=" . g:squint_mode_save_lines)
-		exec("set columns=" . g:squint_mode_save_columns)
+        exec("set lines=" . g:squint_mode_save_lines)
+        exec("set columns=" . g:squint_mode_save_columns)
         let g:squint_mode = "normal"
     else
         let g:squint_mode_save_colorscheme = g:colors_name
         let g:squint_mode_save_font = &guifont
-		let g:squint_mode_save_lines = &lines
-		let g:squint_mode_save_columns = &columns
+        let g:squint_mode_save_lines = &lines
+        let g:squint_mode_save_columns = &columns
         exec("colorscheme " . g:squint_mode_colorscheme)
         exec("set guifont=" . g:squint_mode_font)
         let g:squint_mode = "squint"
