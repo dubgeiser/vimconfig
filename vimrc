@@ -2,6 +2,9 @@
 " Author: Per Juchtmans <dubgeiser+vimconfig@gmail.com>
 " Note: Continuously under construction
 " ==============================================================================
+"
+" TODO Take a look at
+" http://web.archive.org/web/20161129224221/http://dougireton.com/blog/2013/02/23/layout-your-vimrc-like-a-boss/
 
 " do this before anything else...
 set nocompatible
