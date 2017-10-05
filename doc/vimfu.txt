@@ -113,7 +113,7 @@ through files, so I put them here:
 
 FINDING AND SEARCHING                                *vimfu-find* *vimfu-search*
 ------------------------------------------------------------------------------
-:g/SE/#         Find occurences of SE and list them in command buffer with lines
+:g/SE/#         Find occurrences of SE and list them in command buffer with lines
                 numbered.
 &               Repeat substitution (ex. when g is forgotten in :s/foo/bar)
 
