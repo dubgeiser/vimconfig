@@ -1,88 +1,84 @@
 # vim: noet:
 [submodule "bundle/surround"]
-	path = bundle/surround
+	path = pack/vendor/start/surround
 	url = git://github.com/tpope/vim-surround.git
 	ignore = dirty
 [submodule "bundle/repeat"]
-	path = bundle/repeat
+	path = pack/vendor/start/repeat
 	url = git://github.com/tpope/vim-repeat.git
 	ignore = dirty
 [submodule "bundle/cmdline-completion"]
-	path = bundle/cmdline-completion
+	path = pack/vendor/start/cmdline-completion
 	url = git://github.com/vim-scripts/cmdline-completion.git
 	ignore = dirty
 [submodule "bundle/tasklist"]
-	path = bundle/tasklist
+	path = pack/vendor/start/tasklist
 	url = git://github.com/vim-scripts/TaskList.vim.git
 	ignore = dirty
 [submodule "bundle/tdd"]
-	path = bundle/tdd
+	path = pack/vendor/start/tdd
 	url = git://github.com/dubgeiser/vim-tdd.git
 	ignore = dirty
 [submodule "bundle/todo"]
-	path = bundle/todo
+	path = pack/vendor/start/todo
 	url = git://github.com/dubgeiser/vim-todo.git
 	ignore = dirty
 [submodule "bundle/vim-php-namespace"]
-	path = bundle/vim-php-namespace
+	path = pack/vendor/start/vim-php-namespace
 	url = git://github.com/arnaud-lb/vim-php-namespace.git
 	ignore = dirty
 [submodule "bundle/webapi"]
-	path = bundle/webapi
+	path = pack/vendor/start/webapi
 	url = git://github.com/mattn/webapi-vim.git
 	ignore = dirty
 [submodule "bundle/gist"]
-	path = bundle/gist
+	path = pack/vendor/start/gist
 	url = git://github.com/mattn/gist-vim.git
 	ignore = dirty
 [submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
+	path = pack/vendor/start/vim-colors-solarized
 	url = git@github.com:altercation/vim-colors-solarized.git
 	ignore = dirty
 [submodule "bundle/editorconfig-vim"]
-	path = bundle/editorconfig-vim
+	path = pack/vendor/start/editorconfig-vim
 	url = git@github.com:editorconfig/editorconfig-vim.git
 	ignore = dirty
 [submodule "bundle/vim-fugitive"]
-	path = bundle/vim-fugitive
+	path = pack/vendor/start/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
 	ignore = dirty
 [submodule "bundle/ack.vim"]
-	path = bundle/ack.vim
+	path = pack/vendor/start/ack.vim
 	url = git@github.com:mileszs/ack.vim.git
 	ignore = dirty
-[submodule "bundle/vim-pathogen"]
-	path = bundle/vim-pathogen
-	url = git@github.com:tpope/vim-pathogen.git
-	ignore = dirty
 [submodule "bundle/vim-abolish"]
-	path = bundle/vim-abolish
+	path = pack/vendor/start/vim-abolish
 	url = git://github.com/tpope/vim-abolish.git
 	ignore = dirty
 [submodule "bundle/vim-eunuch"]
-	path = bundle/vim-eunuch
+	path = pack/vendor/start/vim-eunuch
 	url = git://github.com/tpope/vim-eunuch.git
 	ignore = dirty
 [submodule "bundle/vim-argwrap"]
-	path = bundle/vim-argwrap
+	path = pack/vendor/start/vim-argwrap
 	url = git://github.com/FooSoft/vim-argwrap
 	ignore = dirty
 [submodule "bundle/vim-php-refactoring"]
-	path = bundle/vim-php-refactoring
+	path = pack/vendor/start/vim-php-refactoring
 	url = git@github.com:vim-php/vim-php-refactoring.git
 	ignore = dirty
 [submodule "bundle/vim-instant-markdown"]
-	path = bundle/vim-instant-markdown
+	path = pack/vendor/start/vim-instant-markdown
 	url = git@github.com:suan/vim-instant-markdown.git
 [submodule "bundle/ctrl"]
-	path = bundle/ctrlp
+	path = pack/vendor/start/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
 [submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
+	path = pack/vendor/start/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
 [submodule "bundle/visSum"]
-	path = bundle/visSum
+	path = pack/vendor/start/visSum
 	url = git@github.com:vim-scripts/visSum.vim.git
 [submodule "bundle/commentary"]
-	path = bundle/commentary
+	path = pack/vendor/start/commentary
 	url = git://github.com/tpope/vim-commentary.git

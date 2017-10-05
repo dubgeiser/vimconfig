@@ -17,13 +17,6 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 
-" {{{1 pathogen
-" Apparently, we need to execute pathogen before filetype detection.
-" http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-filetype plugin indent on
-
 " {{{1 MacVim
 " Disable keymappings that MacVim adds
 let macvim_skip_cmd_opt_movement = 1
