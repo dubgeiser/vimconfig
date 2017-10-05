@@ -112,8 +112,8 @@ set shell=/bin/bash
 " {{{1 Key bindings
 "===============================================================================
 " Make <Leader> char something more accessible on a AZERTY keyboard
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = " "
+let g:mapleader = " "
 
 " Easier omni-complete keys
 inoremap <c-space> <c-x><c-o>
