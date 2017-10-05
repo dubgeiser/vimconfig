@@ -120,7 +120,10 @@ FINDING AND SEARCHING                                *vimfu-find* *vimfu-search*
 
 SPELLCHECKER                                              *vimfu-spellchecker*
 ------------------------------------------------------------------------------
+These options only work when spell checking is on (:set spell)
+
 z=              Find spelling suggestions for word under/after cursor.
+[s              Go to the beginning of the last spelling error
 
 
 SURROUNDING                                                  *vimfu-surround*
