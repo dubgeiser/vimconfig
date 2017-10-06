@@ -12,7 +12,6 @@ au!
 filetype plugin indent on
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
-" TODO Does this still screw up {} matching in Django/Twig templates?
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
