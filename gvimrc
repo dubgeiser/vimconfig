@@ -1,16 +1,13 @@
-set lines=55
-set columns=93
-
 " no menu
 set guioptions-=m
+
 " no toolbar
 set guioptions-=T
+
 " no scrollbars
 set guioptions-=l
 set guioptions-=r
 set guioptions-=L
-
-set guicursor+=a:blinkon0
 
 if !has("unix")
     " ProggyClean does not look too good on my Ubuntu
