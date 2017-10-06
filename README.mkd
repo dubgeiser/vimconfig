@@ -1,32 +1,17 @@
 Vim configuration
 =================
 
-This is my Vim configuration (http://www.vim.org/).
-Feel free to check it out.
-
-Follow @dgcode on Twitter for updates (uses github hook)
+This is my Vim (http://www.vim.org/) configuration, there are many like
+it, but this one is mine.  Feel free to check it out.  Follow @dgcode on
+Twitter for updates (uses github hook)
 
 
 Installation
 ============
-
-Backup (*IMPORTANT*)
---------------------
-If you already have a Vim configuration back it up, keep it under (D)VCS, in short have an extra copy somewhere.
-
-
-Install
--------
+This assumes no previous install of a vim configuration.
 
     git clone git://github.com/dubgeiser/vimconfig.git <VIMDIR>
     ./<VIMDIR>/install
-
-Then, in Vim, (re)generate all the doc files:
-
-    vim
-    :helptags ALL
-
-Enjoy.
 
 
 LICENSE

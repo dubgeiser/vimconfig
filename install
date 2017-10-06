@@ -12,4 +12,5 @@ ln -s $VIMDIR/gvimrc .gvimrc
 cd $VIMDIR
 mkdir -p tmp
 git submodule update --init
+vim -u NONE -c "helptags ALL" -c q
 popd
