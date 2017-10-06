@@ -9,6 +9,7 @@
 " do this before anything else...
 set nocompatible
 au!
+filetype plugin indent on
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 " TODO Does this still screw up {} matching in Django/Twig templates?
