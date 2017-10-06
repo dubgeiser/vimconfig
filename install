@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#
+# This installer assumes that you have cloned in $VIMDIR
+#
+VIMDIR=~/.vim
+
+pushd
+cd ~
+ln -s $VIMDIR/vimrc .vimrc
+ln -s $VIMDIR/gvimrc .gvimrc
+cd $VIMDIR
+mkdir -p tmp
+git submodule update --init
+popd

@@ -17,16 +17,9 @@ If you already have a Vim configuration back it up, keep it under (D)VCS, in sho
 
 Install
 -------
-Clone the git repository and make the necessary symlinks, then initialize the submodules (submodules are managed by Vim's package system (sinve 8.0, they are under ```./pack/vendor/```):
 
-    pushd
-    cd ~
-    git clone git://github.com/dubgeiser/vimconfig.git .vim/
-    ln -s .vim/vimrc .vimrc
-    ln -s .vim/gvimrc .gvimrc
-    cd ~/.vim
-    git submodule update --init
-    popd
+    git clone git://github.com/dubgeiser/vimconfig.git <VIMDIR>
+    ./<VIMDIR>/install
 
 Then, in Vim, (re)generate all the doc files:
 
