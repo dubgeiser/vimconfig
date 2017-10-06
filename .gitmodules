@@ -24,7 +24,7 @@
 	url = git://github.com/dubgeiser/vim-todo.git
 	ignore = dirty
 [submodule "bundle/vim-php-namespace"]
-	path = pack/vendor/start/vim-php-namespace
+	path = pack/vendor/start/php-namespace
 	url = git://github.com/arnaud-lb/vim-php-namespace.git
 	ignore = dirty
 [submodule "bundle/webapi"]
@@ -36,7 +36,7 @@
 	url = git://github.com/mattn/gist-vim.git
 	ignore = dirty
 [submodule "bundle/vim-colors-solarized"]
-	path = pack/vendor/start/vim-colors-solarized
+	path = pack/vendor/start/solarized
 	url = git@github.com:altercation/vim-colors-solarized.git
 	ignore = dirty
 [submodule "bundle/editorconfig-vim"]
@@ -44,7 +44,7 @@
 	url = git@github.com:editorconfig/editorconfig-vim.git
 	ignore = dirty
 [submodule "bundle/vim-fugitive"]
-	path = pack/vendor/start/vim-fugitive
+	path = pack/vendor/start/fugitive
 	url = git@github.com:tpope/vim-fugitive.git
 	ignore = dirty
 [submodule "bundle/ack.vim"]
@@ -52,23 +52,23 @@
 	url = git@github.com:mileszs/ack.vim.git
 	ignore = dirty
 [submodule "bundle/vim-abolish"]
-	path = pack/vendor/start/vim-abolish
+	path = pack/vendor/start/abolish
 	url = git://github.com/tpope/vim-abolish.git
 	ignore = dirty
 [submodule "bundle/vim-eunuch"]
-	path = pack/vendor/start/vim-eunuch
+	path = pack/vendor/start/eunuch
 	url = git://github.com/tpope/vim-eunuch.git
 	ignore = dirty
 [submodule "bundle/vim-argwrap"]
-	path = pack/vendor/start/vim-argwrap
+	path = pack/vendor/start/argwrap
 	url = git://github.com/FooSoft/vim-argwrap
 	ignore = dirty
 [submodule "bundle/vim-php-refactoring"]
-	path = pack/vendor/start/vim-php-refactoring
+	path = pack/vendor/start/php-refactoring
 	url = git@github.com:vim-php/vim-php-refactoring.git
 	ignore = dirty
 [submodule "bundle/vim-instant-markdown"]
-	path = pack/vendor/start/vim-instant-markdown
+	path = pack/vendor/start/instant-markdown
 	url = git@github.com:suan/vim-instant-markdown.git
 [submodule "bundle/ctrl"]
 	path = pack/vendor/start/ctrlp
