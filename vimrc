@@ -150,6 +150,9 @@ nnoremap <Leader>s :e ~/.notes<cr>
 nnoremap <Leader>r :e $MYVIMRC<cr>
 nnoremap <Leader>d :e ~/.vim/doc/<cr>
 
+" Turn highlighted matches off quickly
+nnoremap <cr> :nohlsearch<cr>
+
 " Less finger wrecking window navigation.
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
