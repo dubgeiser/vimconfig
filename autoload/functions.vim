@@ -1,7 +1,7 @@
 " ==============================================================================
 " Description: Vim functions.
 " Use: Source it from vimrc or put in autoload/ directory.
-" Author: P. Juchtmans
+" Author: P. Juchtmans <dubgeiser+vimconfig@gmail.com>
 " ==============================================================================
 
 if exists("g:functions_loaded") || &cp
