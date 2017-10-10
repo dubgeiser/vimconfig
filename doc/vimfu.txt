@@ -13,17 +13,12 @@ Based on http://djcraven5.blogspot.com/2006/10/mastering-vim-help-system.html
 
 AUTO COMPLETIONS                         *vimfu-autocomplete* *vimfu-complete*
 ------------------------------------------------------------------------------
-^N              Complete function.
-C-X C-F         Complete file path.  This has been mapped to <C-D>
-C-X C-O         Omni completion.  This has been mapped to <C-SPACE>
 C-X C-L         Complete full line.
 C-X C-K         Complete from dictionary. (Only works with 'set spell')
 
 
 BUFFERS                                                       *vimfu-buffers*
 ------------------------------------------------------------------------------
-:%bd            Close all buffers
-:wa             Write all changed buffers
 :w !sudo tee %  Write buffer when opened without sudo
                 (note: This can now be done with `:SudoWrite` from Tim Pope's
                 |eunuch| plugin)
@@ -38,8 +33,6 @@ REGISTERS                                                   *vimfu-registers*
 
 EDITING                                                          *vimfu-edit*
 ------------------------------------------------------------------------------
-ciw             Change complete word under cursor.
-cit             Change everything between open/close html tag.
 C-R "           Paste clipboard in insert mode.
 gJ              Join lines without inserting a space
 
@@ -73,11 +66,6 @@ C-$             Jump to tag (normally C-] but that doesn't do it on AZERTY)
 C-T             Back from tag jump
 
 
-INDENT                                                         *vimfu-indent*
-------------------------------------------------------------------------------
-==              Indent current line
-
-
 GETTING INFORMATION                                              *vimfu-info*
 ------------------------------------------------------------------------------
 ga              Show ascii, hex and octal value of char under cursor
@@ -87,8 +75,6 @@ gc-g            Detailed info on position in file
 
 MOVING AROUND                                                    *vimfu-move*
 ------------------------------------------------------------------------------
-C-u/d           Half page up/down
-H, M, L         High-, Middle-, Low part of the page
 [[              Previous function / class declaration. (only class in Python)
 ]]              Next function / class declaration. (only class in Python)
 [{              Beginning of block (no go in Python)
@@ -104,12 +90,6 @@ gn              Like 'n' for going to the next search pattern, but also start
                 match; ex: "dgn" deletes text of next match.
                 Handy to use with regex search and/or '.' operator.
 
-These are not motion commands, but they can come in handy and they "move"
-through files, so I put them here:
-
-^O              Jump to previous position in jump list
-^I/TAB          Jump to next position in jump list
-
 
 FINDING AND SEARCHING                                *vimfu-find* *vimfu-search*
 ------------------------------------------------------------------------------
@@ -122,7 +102,6 @@ SPELLCHECKER                                              *vimfu-spellchecker*
 ------------------------------------------------------------------------------
 These options only work when spell checking is on (:set spell)
 
-z=              Find spelling suggestions for word under/after cursor.
 [s              Go to the beginning of the last spelling error
 
 
@@ -138,14 +117,6 @@ cst<C>          Change surrounding tag (<tag>) with char <C>
 ds<C>           Delete surrounding chars <C>
 dst             Delete surroundig html tag.
 S<C>            Surround selection with char <C> (Visual mode)
-
-
-SELECTING                                       *vimfu-visual* *vimfu-selection*
-------------------------------------------------------------------------------
-vaw             Visual select word (+ space if there)
-viw             Visual select 1 word
-vap             Visual select paragraph (+ open line if there)
-vip             Visual select 1 paragraph
 
 
 GET USER INPUT                                      *vimfu-input* *vimfu-prompt*
