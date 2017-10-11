@@ -112,16 +112,16 @@ Uses |surround.txt|
 If surrounding with [{(, use closing version, the opening char will padd the
 surrounding with a space.
 
-cs<C1><C2>      Change surronding char <C1> to char <C2>
+cs<C1><C2>      Change surrounding char <C1> to char <C2>
 cst<C>          Change surrounding tag (<tag>) with char <C>
 ds<C>           Delete surrounding chars <C>
-dst             Delete surroundig html tag.
+dst             Delete surrounding html tag.
 S<C>            Surround selection with char <C> (Visual mode)
 
 
 GET USER INPUT                                      *vimfu-input* *vimfu-prompt*
 ------------------------------------------------------------------------------
-:let a = input('A: ')           Get input from user on commandline
+:let a = input('A: ')           Get input from user on command line
 :let a = inputdialog('A')       Get input from user in a graphical ui dialog.
 :let a = confirm("ok?", "&OK\n&Cancel")  Get input from prompt with buttons.
 
