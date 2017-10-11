@@ -152,6 +152,12 @@ FILES AND DIRECTORIES                                *vimfu-file* *vimfu-dir*
                 This can be done with `:Mkdir!` from |eunuch|
 
 
+SYNNTAX HIGHLIGHTING                                           *vimfu-synntax*
+------------------------------------------------------------------------------
+:syntax sync fromstart  Reset the syntax highlighting.  Useful when syntax
+                        highlighting seems to go awry.
+
+
 ACK PLUGIN                                                       *vimfu-ack*
 ------------------------------------------------------------------------------
 In quickfix window:
