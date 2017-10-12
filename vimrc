@@ -146,7 +146,7 @@ nnoremap <Leader>= yypVr=
 nnoremap <Leader>- yypVr-
 
 " Quick open certain files...
-nnoremap <Leader>s :e ~/.notes<cr>
+nnoremap <Leader>s :e ~/Documents/notes<cr>
 nnoremap <Leader>r :e $MYVIMRC<cr>
 nnoremap <Leader>d :e ~/.vim/doc/<cr>
 
