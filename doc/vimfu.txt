@@ -144,6 +144,14 @@ PROGRAMMING                                                *vimfu-programming*
 Loads of stuff in the vim-OPL book (ex: chapters 26, 27 and more), also check
 help on functions, variables, script(s), usr_41.txkdir!
 
+Neat state machine system:
+
+    execute {
+        \ '00': 'set relativenumber   | set number',
+        \ '01': 'set norelativenumber | set number',
+        \ '10': 'set norelativenumber | set nonumber',
+        \ '11': 'set norelativenumber | set number' }[&number .  &relativenumber]
+
 
 COMMAND LINE                                               *vimfu-commandline*
 ------------------------------------------------------------------------------
