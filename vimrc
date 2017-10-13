@@ -57,7 +57,6 @@ set display+=lastline
 set encoding=utf-8
 set expandtab
 set fileformat=unix
-set foldclose=all
 set foldmethod=marker
 set history=10000
 set incsearch
