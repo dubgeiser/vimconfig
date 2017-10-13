@@ -102,7 +102,8 @@ SPELLCHECKER                                              *vimfu-spellchecker*
 ------------------------------------------------------------------------------
 These options only work when spell checking is on (:set spell)
 
-[s              Go to the beginning of the last spelling error
+[s              Go to the beginning of the previous spelling error
+]s              Go to the beginning of the next spelling error
 
 
 SURROUNDING                                                  *vimfu-surround*
@@ -130,6 +131,8 @@ WINDOWS                                                        *vimfu-windows*
 ------------------------------------------------------------------------------
 :only           Close all windows except current
 <c-w><c-o>      Close all windows except current
+<c-w>H,J,K,L    Move current buffer to the left,down,up,right
+<c-w>=          Distribute windows equally over the screen.
 
 
 PROGRAMMING                                                *vimfu-programming*
