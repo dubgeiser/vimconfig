@@ -83,10 +83,6 @@ set softtabstop=4
 
 set statusline=%<%{functions#short_path()}%t\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
-" Not too long or we drop to a virtual stand still when editing
-" large-all-on-one-line-code (like OOo xml files.)
-set synmaxcol=512
-
 set tabstop=4
 
 "hate the error dingdong or whatever noise.
