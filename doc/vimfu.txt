@@ -14,7 +14,7 @@ Based on http://djcraven5.blogspot.com/2006/10/mastering-vim-help-system.html
 AUTO COMPLETIONS                         *vimfu-autocomplete* *vimfu-complete*
 ------------------------------------------------------------------------------
 C-X C-L         Complete full line.
-C-X C-K         Complete from dictionary. (Only works with 'set spell')
+C-X C-K         Complete from dictionary. (Only works with `:set spell`)
 
 
 BUFFERS                                                       *vimfu-buffers*
