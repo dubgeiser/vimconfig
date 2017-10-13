@@ -90,6 +90,10 @@ gn              Like 'n' for going to the next search pattern, but also start
                 match; ex: "dgn" deletes text of next match.
                 Handy to use with regex search and/or '.' operator.
 
+In |vimdiff| (and thus |fugitive-:Gdiff|):
+]c              Move to the next change in a diff
+[c              Move to the previous change in a diff
+
 
 FINDING AND SEARCHING                                *vimfu-find* *vimfu-search*
 ------------------------------------------------------------------------------
