@@ -117,9 +117,6 @@ vnoremap < <gv
 "   window, that's just painful.
 nnoremap <Leader>b :buffers<CR>:buffer<space>
 
-" CD to the directory the file in the current buffer is in.
-nnoremap <silent> <Leader>cd :cd %:h<CR>
-
 " Hop from method to method.
 nmap <c-n> ]]
 nmap <c-p> [[
