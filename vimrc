@@ -75,8 +75,6 @@ set mousehide
 set ignorecase
 set smartcase
 
-set scrolljump=1
-set scrolloff=1
 set shiftwidth=4
 set showcmd
 set sidescrolloff=5
