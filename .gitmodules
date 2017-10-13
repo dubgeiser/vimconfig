@@ -47,10 +47,6 @@
 	path = pack/vendor/start/fugitive
 	url = git@github.com:tpope/vim-fugitive.git
 	ignore = dirty
-[submodule "bundle/ack.vim"]
-	path = pack/vendor/start/ack.vim
-	url = git@github.com:mileszs/ack.vim.git
-	ignore = dirty
 [submodule "bundle/vim-abolish"]
 	path = pack/vendor/start/abolish
 	url = git://github.com/tpope/vim-abolish.git
