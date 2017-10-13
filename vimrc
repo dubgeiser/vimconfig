@@ -103,8 +103,6 @@ set nocursorcolumn
 set nocursorline
 set colorcolumn=80
 
-set shell=/bin/bash
-
 " {{{1 Key bindings
 "===============================================================================
 " Make <Leader> char something more accessible, especially  on a AZERTY keyboard
