@@ -1,27 +1,25 @@
 *gitfu.txt* Personal Git help
-Author: Per Juchtmans <https://dubgeiser.github.io>
-License: WTFPL <http://www.wtfpl.net/>
+
+                 Per Juchtmans <https://dubgeiser.github.io>
+                        WTFPL <http://www.wtfpl.net/>
 
 
-INTRODUCTION                                                *gitfu*
-----------------------------------------------------------------------------
+============================================================================
+GITFU                                                              *gitfu*
 Personal Vim help document for the git command.
 
 
-.git                                                           *gitfu-files*
-----------------------------------------------------------------------------
+                                                                 *gitfu-files*
 .git/refs/heads/*       Where the HEAD of different branches point to
 .git/HEAD               Where your current working HEAD is.
 
 
-add                                                              *gitfu-add*
-----------------------------------------------------------------------------
+                                                                   *gitfu-add*
 git add --update        Stage all changes in _tracked_ files only.
                         alias: au
 
 
-diff                                                            *gitfu-diff*
-----------------------------------------------------------------------------
+                                                                  *gitfu-diff*
 git diff                local / staged
 git diff --cached       staged / committed
                         alias dc
@@ -29,13 +27,12 @@ git commit --amend     Undoing stuff
                         alias: amend
 
 
-log                                                              *gitfu-log*
-----------------------------------------------------------------------------
+                                                                   *gitfu-log*
 git log ..[BRANCH]      Show log messages in BRANCH that are not in HEAD
 
 
-log --pretty=format:'FORMAT HERE'                  *gitfu-log-pretty-format*
-----------------------------------------------------------------------------
+                                                     *gitfu-log-pretty-format*
+git log --pretty=format:'FORMAT HERE' where format can be composed of:
 %h                      SHA1 short
 %H                      SHA1 full
 %d                      decorations (HEAD, origin/master, ...)
@@ -44,21 +41,17 @@ log --pretty=format:'FORMAT HERE'                  *gitfu-log-pretty-format*
 %an                     Name committer
 %cr                     Time
 
-remove                                                        *gitfu-remove*
---------------------------------------------------------------------------
+                                                                *gitfu-remove*
 Remove files from repository that are in .gitignore, example: .DS_Store files.
-
 find . -name .DS_Store | xargs git rm -f --ignore-unmatch
 
 
-remote                                                       *gitfu-remotes*
----------------------------------------------------------------------------
+                                                               *gitfu-remotes*
 git remote -v           all known remote repositories
 git ls-remote           All remote repositories
 
 
-reset                                                          *gitfu-reset*
----------------------------------------------------------------------------
+                                                                 *gitfu-reset*
 git reset --hard [SHA1] Point current branch at specific commit
 git reset --soft HEAD^  Undo last commit
     Example:
@@ -72,16 +65,14 @@ Remove last commit (from current branch).
     $ git reset HEAD~ --hard
 
 
-diff-filter                                              *gitfu-diff-filter*
-----------------------------------------------------------------------------
+                                                           *gitfu-diff-filter*
 Used to filter diffs, examples:
 
 When was file 'foo.bar' added:
     $ git log --diff-filter=A -- foo.bar
 
 
-Merge conflicts (--ours --theirs)                      *gitfu-merge-conflicts*
-----------------------------------------------------------------------------
+                                                       *gitfu-merge-conflicts*
 When dealing with a merge conflict (or a stash pop gone "bad"), it might be
 that you simply want to keep one version or the other.
 
@@ -89,26 +80,22 @@ git checkout --ours     Keep the version from before the merge
 git checkout --theirs   Keep the merged in version
 
 
-Has a branch been merged into master?                           *gitfu-merged*
-----------------------------------------------------------------------------
-
+                                                                *gitfu-merged*
 git branch --merged master  lists branches merged into master
 git branch --merged         lists branches merged into HEAD (i.e. tip of
                             current branch)
 git branch --no-merged  lists branches that have not been merged
 
 
-Do something to a whole branch: filter-branch          *gitfu-filter-branch*
-----------------------------------------------------------------------------
+                                                         *gitfu-filter-branch*
 Example: change author/e-mail for the entire branch:
 
-    $ git filter-branch -f --env-filter "GIT_AUTHOR_NAME='New name'; GIT_AUTHOR_EMAIL='newname@example.com'; GIT_COMMITTER_NAME='new committer name'; GIT_COMMITTER_EMAIL='newcommitername@example.com';" HEAD
+$ git filter-branch -f --env-filter "GIT_AUTHOR_NAME='New name'; GIT_AUTHOR_EMAIL='newname@example.com'; GIT_COMMITTER_NAME='new committer name'; GIT_COMMITTER_EMAIL='newcommitername@example.com';" HEAD
 
 Then force push (git push -f)
 
 
-Sub modules                                               *gitfu-submodules*
-----------------------------------------------------------------------------
+                                                            *gitfu-submodules*
 Mostly working with this in my Vim configuration.
 
 git submodule status            Status of all submodules

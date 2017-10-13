@@ -1,54 +1,43 @@
-*colorschemes.txt*
-
-Notes on colorschemes I've tried out.
+*colorschemes.txt* Color schemes I've tried out.
 
 
-Mustang                                                            *mustang*
-----------------------------------------------------------------------------
+                                                                     *mustang*
 Nice, but too "greeny"
 No visual distinction between variable and string (PHP); That's BAD.
 
 
-New Noise                                                         *newnoise*
-----------------------------------------------------------------------------
+                                                                    *newnoise*
 Mainly red + grey, totally useless for day-to-day coding, but _very_ useful
 when used with extreme small font size to get an overview of the structure of
 the code.
 
 
-Solarized                                                        *solarized*
-----------------------------------------------------------------------------
+                                                                   *solarized*
 Punctuation marks are too bright, distracting from reading (dark version).
+- 2014-06-29
+    I've given the light version a run for its money and must say I'm linking
+    it quite a bit actually!  Very complete, better diff hilighting than
+    zenburn, quickfix, gitcommit (with fugitive), etc...
 
-2014-06-29
-I've given the light version a run for its money and must say I'm linking it
-quite a bit actually!  Very complete, better diff hilighting than zenburn,
-quickfix, gitcommit (with fugitive), etc...
+- 2014-12-09
+    Still using it in light version, still liking it, still no intention to
+    switch back to zenburn.
 
-2014-12-09
-Still using it in light version, still liking it, still no intention to switch
-back to zenburn.
-
-2017-09-25
-Still in use all the time, will remove zenburn.
+- 2017-09-25
+    Still in use all the time, will remove zenburn.
 
 
-Tomorrow-night                                             *tommorrow-night*
-----------------------------------------------------------------------------
+                                                             *tommorrow-night*
 Calm and pleasing colors.
 A lot of red, variables for instance.
 ft=sql does not highlight?
 No warning color change when editing GIT COMMIT message > 50 chars.
 
 
-Xoria 256                                                         *xoria256*
-----------------------------------------------------------------------------
+                                                                    *xoria256*
 Dark, ok contrast, like working with it, unfortunately just little bit too
 purple/pink for my taste.  Would probably still be using this if I didn't know
 zenburn.
 
 
  vim:tw=78:ts=8:ft=help:norl:nocindent:et:spell:
-
-
-
