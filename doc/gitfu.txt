@@ -113,14 +113,11 @@ Mostly working with this in my Vim configuration.
 
 git submodule status            Status of all submodules
 git submodule add <url> <path>  Add a submodule
-git submodule rm <path>         Remove a submodule, can be undone using git
-                                revert
-                                Deletion removes trackingdata, ie. the gitlink
-                                and the section in .gitmodules
-                                Submodule is removed from the file system, but
-                                is still found in .git/modules/<name>
-                                (manually delete it to completely remove the
-                                submodule)
+git rm <path>       Remove a submodule, can be undone using git revert
+                    Deletion removes trackingdata, ie. the gitlink and the
+                    section in .gitmodules Submodule is removed from the file
+                    system, but is still found in .git/modules/<name>
+                    (manually delete it to completely remove the submodule)
 
 Occasionally update the submodule to a new version:
 
@@ -130,4 +127,4 @@ Occasionally update the submodule to a new version:
 
 
 
- vim:tw=78:ts=8:ft=help:norl:nocindent:et:
+vim:tw=78:ts=8:ft=help:norl:nocindent:et:
