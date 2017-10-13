@@ -63,9 +63,6 @@
 	path = pack/vendor/start/php-refactoring
 	url = git@github.com:vim-php/vim-php-refactoring.git
 	ignore = dirty
-[submodule "bundle/vim-instant-markdown"]
-	path = pack/vendor/start/instant-markdown
-	url = git@github.com:suan/vim-instant-markdown.git
 [submodule "bundle/ctrl"]
 	path = pack/vendor/start/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
