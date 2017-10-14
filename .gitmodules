@@ -31,10 +31,6 @@
 	path = pack/vendor/start/webapi
 	url = git://github.com/mattn/webapi-vim.git
 	ignore = dirty
-[submodule "bundle/gist"]
-	path = pack/vendor/start/gist
-	url = git://github.com/mattn/gist-vim.git
-	ignore = dirty
 [submodule "bundle/vim-colors-solarized"]
 	path = pack/vendor/start/solarized
 	url = git@github.com:altercation/vim-colors-solarized.git
