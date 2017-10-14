@@ -230,10 +230,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.exe$\|\.so$\|\.dll$\|^\..*\.swp$|\.pyc$',
   \ }
 
-" {{{2 Gist
-let g:gist_clip_command = 'pbcopy'
-let g:gist_open_browser_after_post = 1
-
 " {{{2 UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
