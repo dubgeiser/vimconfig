@@ -208,11 +208,6 @@ command Info call functions#buffer_info()
 " {{{1 Plugin configuration
 "===============================================================================
 "
-" {{{2 TaskList
-let g:tlWindowPosition = 1
-let g:tlTokenList = ['TODO', 'FIXME', 'XXX', 'HACK', '@todo', '???']
-nnoremap <Leader>l :TaskList<cr>
-
 " {{{2 vim-todo
 nnoremap <Leader>o :call Todo_ToggleTickbox()<cr>
 vnoremap <Leader>o :call Todo_ToggleTickbox()<cr>
