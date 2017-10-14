@@ -193,8 +193,9 @@ autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
 
 " {{{1 Colorscheme
 "===============================================================================
-set t_Co=256
-let g:solarized_termcolors=256
+if !has('gui_running')
+    set t_Co=256
+endif
 set background=light
 colorscheme solarized
 
