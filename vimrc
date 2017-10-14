@@ -134,7 +134,7 @@ nnoremap <Leader>- yypVr-
 
 " Quick open certain files...
 nnoremap <Leader>s :e ~/Documents/notes<cr>
-nnoremap <Leader>r :e $MYVIMRC<cr>
+nnoremap <Leader>r :cd ~/.vim/<cr>:e vimrc<cr>
 nnoremap <Leader>d :e ~/.vim/doc/<cr>
 
 " Turn highlighted matches off quickly
