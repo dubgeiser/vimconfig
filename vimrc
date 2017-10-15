@@ -90,7 +90,7 @@ set visualbell
 set wildmenu
 set wildmode=full
 syntax on
-set hlsearch
+
 set nocursorcolumn
 set nocursorline
 set colorcolumn=80
@@ -136,9 +136,6 @@ nnoremap <Leader>- yypVr-
 nnoremap <Leader>s :e ~/Documents/notes<cr>
 nnoremap <Leader>r :cd ~/.vim/<cr>:e vimrc<cr>
 nnoremap <Leader>d :e ~/.vim/doc/<cr>
-
-" Turn highlighted matches off quickly
-nnoremap <Leader>c :nohlsearch<cr>
 
 " Less finger wrecking window navigation.
 nnoremap <c-j> <c-w>j
@@ -233,4 +230,3 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 nnoremap <Leader>a :ArgWrap<cr>
 " {{{2 PHP Refactor
 let g:php_refactor_command='php ~/bin/refactor.phar'
-
