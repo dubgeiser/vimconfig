@@ -90,6 +90,8 @@ In |vimdiff| (and thus |fugitive-:Gdiff|):
 :g/SE/#         Find occurrences of SE and list them in command buffer with lines
                 numbered.
 &               Repeat substitution (ex. when g is forgotten in :s/foo/bar)
+<c-g>           In search mode (`/`) go to the next match
+<c-t>           In search mode (`/`) go to the previous match
 
 
                                                           *vimfu-spellchecker*
