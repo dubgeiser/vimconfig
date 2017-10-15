@@ -162,13 +162,16 @@ autocmd FileType gitcommit setlocal spell nolist nocindent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 
-" When editing a file, always jump to the last known cursor position.
-" Don't do it when the position is invalid or when inside an event handler
-" (happens when dropping a file on gvim).
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
+augroup viminit
+    au!
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") && &ft !~# 'commit' |
+        \   exe "normal g`\"" |
+        \ endif
+augroup END
 
 " Automatically rebuild the help documentation when a vimfu file is changed.
 autocmd BufWrite *fu.txt :helptags ~/.vim/doc/
