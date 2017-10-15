@@ -154,16 +154,35 @@ nnoremap <silent> <DOWN><DOWN> :clast<CR>
 
 " {{{1 Auto commands
 "===============================================================================
-autocmd FileType mail setlocal nocindent textwidth=72
-autocmd FileType text,rst setlocal nocindent
-autocmd FileType gitcommit setlocal spell nolist nocindent
-
-" These types are fussy about tabs and spaces.
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-
-augroup viminit
+augroup file_type_defines
     au!
+
+    " .tpl files are mainly (x)html files, xhtml gives better omni completion.
+    autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
+
+    " Twig templates are like Django templates
+    autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
+augroup END
+
+augroup file_type_settings
+    au!
+
+    " These types are fussy about tabs and spaces.
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+
+    autocmd FileType mail setlocal nocindent textwidth=72
+    autocmd FileType text,rst setlocal nocindent
+    autocmd FileType gitcommit setlocal spell nolist nocindent
+
+    " For programming languages using a semi colon at the end of statement.
+    autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
+        \ nnoremap <silent> <Leader>; :call functions#append_semi_colon()<cr>
+augroup END
+
+augroup vim_setup
+    au!
+
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
     " (happens when dropping a file on gvim).
@@ -171,25 +190,16 @@ augroup viminit
         \ if line("'\"") > 0 && line("'\"") <= line("$") && &ft !~# 'commit' |
         \   exe "normal g`\"" |
         \ endif
+
+    autocmd FocusLost * silent! wall
 augroup END
 
-" Automatically rebuild the help documentation when a vimfu file is changed.
-autocmd BufWrite *fu.txt :helptags ~/.vim/doc/
+augroup fu_help
+    au!
 
-" For programming languages using a semi colon at the end of statement.
-autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
-    \ nnoremap <silent> <Leader>; :call functions#append_semi_colon()<cr>
-
-autocmd FocusLost * silent! wall
-
-" .tpl files are mainly (x)html files, xhtml gives better omni completion.
-autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
-
-" Twig templates are like Django templates
-autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
-
-
-
+    " Automatically rebuild the help documentation when a vimfu file is changed.
+    autocmd BufWrite *fu.txt :helptags ~/.vim/doc/
+augroup END
 
 " {{{1 Colorscheme
 "===============================================================================
@@ -199,15 +209,14 @@ endif
 set background=light
 colorscheme solarized
 
-
 "{{{1 Commands for functions
+"===============================================================================
 command Rtrim call functions#rtrim()
 command Tsquint call functions#toggle_squint_mode()
 command Info call functions#buffer_info()
 
 " {{{1 Plugin configuration
 "===============================================================================
-"
 " {{{2 vim-todo
 nnoremap <Leader>o :call Todo_ToggleTickbox()<cr>
 vnoremap <Leader>o :call Todo_ToggleTickbox()<cr>
