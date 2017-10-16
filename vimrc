@@ -3,8 +3,34 @@
 " Note: Continuously under construction
 " ==============================================================================
 "
-" TODO Take a look at
-" http://web.archive.org/web/20161129224221/http://dougireton.com/blog/2013/02/23/layout-your-vimrc-like-a-boss/
+" TODO organize vimrc, into `:options`
+ " 1 important
+ " 2 moving around, searching and patterns
+ " 3 tags
+ " 4 displaying text
+ " 5 syntax, highlighting and spelling
+ " 6 multiple windows
+ " 7 multiple tab pages
+ " 8 terminal
+ " 9 using the mouse
+" 10 GUI (put them into .gvimrc? or fold .gvimrc into .vimrc? (1 symlink less))
+" 11 printing
+" 12 messages and info
+" 13 selecting text
+" 14 editing text
+" 15 tabs and indenting
+" 16 folding
+" 17 diff mode
+" 18 mapping
+" 19 reading and writing files
+" 20 the swap file
+" 21 command line editing
+" 22 executing external commands
+" 23 running make and jumping to errors
+" 24 language specific
+" 25 multi-byte characters
+" 26 various
+" 27 Auto commands (custom added by me)
 
 " do this before anything else...
 set nocompatible
