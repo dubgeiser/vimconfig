@@ -145,10 +145,6 @@ vnoremap < <gv
 "   window, that's just painful.
 nnoremap <Leader>b :buffers<CR>:buffer<space>
 
-" Hop from method to method.
-nmap <c-n> ]]
-nmap <c-p> [[
-
 " Add open lines without going to insert mode.
 nnoremap <C-CR> o<ESC>
 nnoremap <C-S-CR> O<ESC>
