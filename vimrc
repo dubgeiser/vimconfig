@@ -212,6 +212,8 @@ augroup vim_setup
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
     " (happens when dropping a file on gvim).
+    " When editing a commit message (gitcommit for instance), just ignore the
+    " last cursor position, it'll probably be wrong anyway.
     autocmd BufReadPost *
         \ if line("'\"") > 0 && line("'\"") <= line("$") && &ft !~# 'commit' |
         \   exe "normal g`\"" |
