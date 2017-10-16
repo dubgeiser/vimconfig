@@ -272,6 +272,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 nnoremap <Leader>a :ArgWrap<cr>
 " {{{2 PHP Refactor
 let g:php_refactor_command='php ~/bin/refactor.phar'
-2}}}
-1}}}
+" 2}}}
+" 1}}}
 " vim:foldmethod=marker:foldlevel=0
