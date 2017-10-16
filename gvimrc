@@ -9,6 +9,9 @@ set guioptions-=l
 set guioptions-=r
 set guioptions-=L
 
+" Use :ex instead of gui modal dialogs.
+set guioptions+=c
+
 if !has("unix")
     " ProggyClean does not look too good on my Ubuntu
     set guifont=ProggyClean
