@@ -117,6 +117,9 @@ set wildmenu
 set wildmode=full
 syntax on
 
+" Windows can be 0 lines high, effectively being able to minimize them.
+set winminheight=0
+
 set nocursorcolumn
 set nocursorline
 set colorcolumn=80
