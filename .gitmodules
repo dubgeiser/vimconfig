@@ -67,3 +67,6 @@
 [submodule "bundle/commentary"]
 	path = pack/vendor/start/commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule "pack/vendor/start/vdebug"]
+	path = pack/vendor/start/vdebug
+	url = git@github.com:joonty/vdebug.git
