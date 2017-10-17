@@ -222,8 +222,6 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-nnoremap <silent> <F5> :make<CR>
-
 nnoremap <silent> <RIGHT> :cnext<CR>
 nnoremap <silent> <RIGHT><RIGHT> :cnfile<CR><C-G>
 nnoremap <silent> <LEFT> :cprev<CR>
