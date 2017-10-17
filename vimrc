@@ -1,130 +1,185 @@
-" ==============================================================================
 " Author: Per Juchtmans <dubgeiser+vimconfig@gmail.com>
 " Note: Continuously under construction
-" ==============================================================================
-"
-" TODO organize vimrc, into `:options`
- " 1 important
- " 2 moving around, searching and patterns
- " 3 tags
- " 4 displaying text
- " 5 syntax, highlighting and spelling
- " 6 multiple windows
- " 7 multiple tab pages
- " 8 terminal
- " 9 using the mouse
-" 10 GUI (put them into .gvimrc? or fold .gvimrc into .vimrc? (1 symlink less))
-" 11 printing
-" 12 messages and info
-" 13 selecting text
-" 14 editing text
-" 15 tabs and indenting
-" 16 folding
-" 17 diff mode
-" 18 mapping
-" 19 reading and writing files
-" 20 the swap file
-" 21 command line editing
-" 22 executing external commands
-" 23 running make and jumping to errors
-" 24 language specific
-" 25 multi-byte characters
-" 26 various
-" 27 Auto commands (custom added by me)
 
+" Important {{{
+" ----------------------------------------------------------------------------
 " do this before anything else...
 set nocompatible
 au!
 filetype plugin indent on
-
-" Load matchit.vim, but only if the user hasn't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
+" }}}
+" Moving around, searching and patterns {{{
+" ----------------------------------------------------------------------------
+set incsearch
+set ignorecase  " Ignore case sensitivity....
+set smartcase   " ... unless there's a capital letter
+" }}}
+" Tags {{{
+" ----------------------------------------------------------------------------
+" }}}
+" Displaying text {{{
+" ----------------------------------------------------------------------------
+set sidescrolloff=5
+set display+=lastline
+set relativenumber
+set number
+set list
+set listchars=tab:⇒\ ,extends:»,precedes:«,trail:▒,nbsp:·
+" }}}
+" Syntax, highlighting and spelling {{{
+" ----------------------------------------------------------------------------
+set background=light
+if !has('gui_running')  " See `:help solarized
+    set t_Co=256
 endif
+colorscheme solarized
+syntax on
+set nocursorcolumn
+set nocursorline
+set colorcolumn=78
+" }}}
+" Multiple windows {{{
+" ----------------------------------------------------------------------------
+set laststatus=2
+set statusline=%<%{functions#short_path()}%t\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+set winminheight=0  " Allow for fully minimized windows.
+set hidden          " Remember undo, even when buffer is not shown in window.
+" }}}
+" Multiple tab pages {{{
+" ----------------------------------------------------------------------------
+" }}}
+" Terminal {{{
+" ----------------------------------------------------------------------------
+" }}}
+" Using the mouse {{{
+" ----------------------------------------------------------------------------
+set mousehide
+" }}}
+" Printing {{{
+" ----------------------------------------------------------------------------
+" }}}
+" Messages and info {{{
+" ----------------------------------------------------------------------------
+set showcmd
+set noerrorbells
+set visualbell
+" }}}
+" Selecting text {{{
+" ----------------------------------------------------------------------------
+" }}}
+" Editing text {{{
+" ----------------------------------------------------------------------------
+set undofile
+set undodir=~/.vim/tmp
+set backspace=indent,eol,start whichwrap+=<,>,[,]
 
+" Complete as far as possible, no menu etc if there's only 1 match.
+" Show menu if there's more than 1 possible completion.
+" Show extra info if menu (preview)
+set completeopt=preview,menu,longest
+" }}}
+" Tabs and indenting {{{
+" ----------------------------------------------------------------------------
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set autoindent
+set smartindent
+set cindent
+" }}}
+" Folding {{{
+" ----------------------------------------------------------------------------
+" }}}
+" Diff mode {{{
+" ----------------------------------------------------------------------------
+" }}}
+" Mapping {{{
+" ----------------------------------------------------------------------------
+" }}}
+" Reading and writing files {{{
+" ----------------------------------------------------------------------------
+set fileformat=unix
+set autoread
+set autowrite
+" }}}
+" The swap file {{{
+" ----------------------------------------------------------------------------
+set directory=~/.vim/tmp
+" }}}
+" Command line editing {{{
+" ----------------------------------------------------------------------------
+set history=10000
+set wildmode=full
+set wildmenu
+set cmdwinheight=12
+" }}}
+" Executing external commands {{{
+" ----------------------------------------------------------------------------
+" }}}
+" Running make and jumping to errors {{{
+" ----------------------------------------------------------------------------
+" }}}
+" Language specific {{{
+" ----------------------------------------------------------------------------
+" }}}
+" Multi-byte characters {{{
+" ----------------------------------------------------------------------------
+set encoding=utf-8
+" }}}
+" Various {{{
+" ----------------------------------------------------------------------------
+" }}}
+" Auto commands  {{{
+" ----------------------------------------------------------------------------
+augroup file_type_defines
+    au!
+    autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
+    autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
+augroup END
 
-" {{{1 MacVim
-" Disable keymappings that MacVim adds
-let macvim_skip_cmd_opt_movement = 1
+augroup file_type_settings
+    au!
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+    autocmd FileType mail setlocal nocindent textwidth=72
+    autocmd FileType text,rst setlocal nocindent
+    autocmd FileType gitcommit setlocal spell nolist nocindent
 
-" Do not load MacVim colorscheme when loading gvimrc.
-let macvim_skip_colorscheme = 1
+    " For programming languages using a semi colon at the end of statement.
+    autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
+        \ nnoremap <silent> <Leader>; :call functions#append_semi_colon()<cr>
+augroup END
 
-" {{{1 Abbreviations and typo's
+augroup vim_setup
+    au!
+
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    " When editing a commit message (gitcommit for instance), just ignore the
+    " last cursor position, it'll probably be wrong anyway.
+    autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") && &ft !~# 'commit' |
+        \   exe "normal g`\"" |
+        \ endif
+
+    autocmd FocusLost * silent! wall
+augroup END
+
+augroup fu_help
+    au!
+    autocmd BufWrite *fu.txt :helptags ~/.vim/doc/
+augroup END
+" }}}
+" Abbreviations and typo's {{{
+" ----------------------------------------------------------------------------
 " Compensate for the FUCKING Mac AZERTY BE layout, for instance: typing "|| "
 " fast will result in the trailing char to be char 160 instead of 32.
 inoremap   <Space>
-
-" {{{1 Settings
-"===============================================================================
-set autoindent
-set autoread
-
-" Remember undo's even when buffer has been in the background.
-" Also allows for sending buffers to the background without saving...
-set hidden
-" ... this is where this comes in:
-set autowrite
-
-set undofile
-set directory=~/.vim/tmp
-set undodir=~/.vim/tmp
-
-set backspace=indent,eol,start whichwrap+=<,>,[,]
-set cindent
-
-" Complete as far as possible, just complete if there's only one possibility
-" and show menu if there's more than 1 possible completion.
-" Show extra info if menu (preview)
-set completeopt=preview,menu,longest
-
-set display+=lastline
-set encoding=utf-8
-set expandtab
-set fileformat=unix
-set history=10000
-set incsearch
-set laststatus=2
-set linespace=0
-
-" line numbering: relative, but do show current line
-set relativenumber
-set number
-
-set listchars=tab:⇒\ ,extends:»,precedes:«,trail:▒,nbsp:·
-set list
-set mousehide
-
-" Ignore case sensitivity, unless a search term has capital letters in it.
-set ignorecase
-set smartcase
-
-set shiftwidth=4
-set showcmd
-set sidescrolloff=5
-set smartindent
-set softtabstop=4
-
-set statusline=%<%{functions#short_path()}%t\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-
-set tabstop=4
-
-"hate the error dingdong or whatever noise.
-set visualbell
-
-set wildmenu
-set wildmode=full
-syntax on
-
-" Windows can be 0 lines high, effectively being able to minimize them.
-set winminheight=0
-
-set nocursorcolumn
-set nocursorline
-set colorcolumn=80
-
-" {{{1 Key bindings
-"===============================================================================
+" }}}
+" Key bindings {{{
+" ----------------------------------------------------------------------------
 " Make <Leader> char something more accessible, especially  on a AZERTY keyboard
 let mapleader = " "
 
@@ -175,75 +230,24 @@ nnoremap <silent> <LEFT> :cprev<CR>
 nnoremap <silent> <LEFT><LEFT> :cpfile<CR><C-G>
 nnoremap <silent> <UP><UP> :cfirst<CR>
 nnoremap <silent> <DOWN><DOWN> :clast<CR>
+" }}}
+" MacVim {{{
+" ----------------------------------------------------------------------------
+" Disable keymappings that MacVim adds
+let macvim_skip_cmd_opt_movement = 1
 
-" {{{1 Auto commands
-"===============================================================================
-augroup file_type_defines
-    au!
-
-    " .tpl files are mainly (x)html files, xhtml gives better omni completion.
-    autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
-
-    " Twig templates are like Django templates
-    autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
-augroup END
-
-augroup file_type_settings
-    au!
-
-    " These types are fussy about tabs and spaces.
-    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-
-    autocmd FileType mail setlocal nocindent textwidth=72
-    autocmd FileType text,rst setlocal nocindent
-    autocmd FileType gitcommit setlocal spell nolist nocindent
-
-    " For programming languages using a semi colon at the end of statement.
-    autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
-        \ nnoremap <silent> <Leader>; :call functions#append_semi_colon()<cr>
-augroup END
-
-augroup vim_setup
-    au!
-
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
-    " When editing a commit message (gitcommit for instance), just ignore the
-    " last cursor position, it'll probably be wrong anyway.
-    autocmd BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") && &ft !~# 'commit' |
-        \   exe "normal g`\"" |
-        \ endif
-
-    autocmd FocusLost * silent! wall
-augroup END
-
-augroup fu_help
-    au!
-
-    " Automatically rebuild the help documentation when a vimfu file is changed.
-    autocmd BufWrite *fu.txt :helptags ~/.vim/doc/
-augroup END
-
-" {{{1 Colorscheme
-"===============================================================================
-if !has('gui_running')
-    set t_Co=256
-endif
-set background=light
-colorscheme solarized
-
-"{{{1 Commands for functions
-"===============================================================================
+" Do not load MacVim colorscheme when loading gvimrc.
+let macvim_skip_colorscheme = 1
+" }}}
+" Commands for functions {{{
+" ----------------------------------------------------------------------------
 command Rtrim call functions#rtrim()
 command Tsquint call functions#toggle_squint_mode()
 command Info call functions#buffer_info()
-
-" {{{1 Plugin configuration
-"===============================================================================
-" {{{2 vim-todo
+" }}}
+" Plugin configuration {{{
+" ----------------------------------------------------------------------------
+" vim-todo
 nnoremap <Leader>o :call Todo_ToggleTickbox()<cr>
 vnoremap <Leader>o :call Todo_ToggleTickbox()<cr>
 nnoremap <Leader>v :call Todo_TickFinished()<cr>
@@ -251,8 +255,7 @@ vnoremap <Leader>v :call Todo_TickFinished()<cr>
 nnoremap <Leader>x :call Todo_TickCancelled()<cr>
 vnoremap <Leader>x :call Todo_TickCancelled()<cr>
 
-" {{{2 CTRLP
-"
+" CTRLP
 let g:ctrlp_max_files = 0
 let g:ctrlp_map = '<leader>e'
 let g:ctrlp_custom_ignore = {
@@ -260,14 +263,21 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.exe$\|\.so$\|\.dll$\|^\..*\.swp$|\.pyc$',
   \ }
 
-" {{{2 UltiSnips
+" UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-" {{{2 ArgWrap
+
+" ArgWrap
 nnoremap <Leader>a :ArgWrap<cr>
-" {{{2 PHP Refactor
+
+" PHP Refactor
 let g:php_refactor_command='php ~/bin/refactor.phar'
-" 2}}}
-" 1}}}
+
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+" }}}
+
 " vim:foldmethod=marker:foldlevel=0
