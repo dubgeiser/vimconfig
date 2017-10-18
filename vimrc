@@ -1,5 +1,4 @@
 " Author: Per Juchtmans <dubgeiser+vimconfig@gmail.com>
-" Note: Continuously under construction
 
 " Important {{{
 " ----------------------------------------------------------------------------
