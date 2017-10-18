@@ -28,4 +28,4 @@ else
     set guifont=Monospace\ 10
 endif
 
-set linespace=0
+set linespace=1
