@@ -161,10 +161,6 @@
     inoremap <c-space> <c-x><c-o>
     inoremap <c-d> <c-x><c-f>
 
-    " Do not exit visual mode when shifting
-    vnoremap > >gv
-    vnoremap < <gv
-
     " NOTE: If I ever get the brilliant idea to use ctrlp for buffers:
     "   There are reasons not to do it: finger muscle for instance, which is used
     "   to the <TAB> key for selecting buffers, but the biggest annoyance is this:
@@ -188,7 +184,6 @@
     " Quick open certain files...
     nnoremap <Leader>s :e ~/Documents/notes<cr>
     nnoremap <Leader>r :cd ~/.vim/<cr>:e vimrc<cr>
-    nnoremap <Leader>d :e ~/.vim/doc/<cr>
 
     " Less finger wrecking window navigation.
     nnoremap <c-j> <c-w>j
