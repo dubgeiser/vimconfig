@@ -15,10 +15,6 @@
 	path = pack/vendor/start/tdd
 	url = git://github.com/dubgeiser/vim-tdd.git
 	ignore = dirty
-[submodule "bundle/todo"]
-	path = pack/vendor/start/todo
-	url = git://github.com/dubgeiser/vim-todo.git
-	ignore = dirty
 [submodule "bundle/vim-php-namespace"]
 	path = pack/vendor/start/php-namespace
 	url = git://github.com/arnaud-lb/vim-php-namespace.git

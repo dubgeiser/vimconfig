@@ -214,15 +214,6 @@
 " }
 
 " Plugins {
-    " Todo {
-        nnoremap <Leader>o :call Todo_ToggleTickbox()<cr>
-        vnoremap <Leader>o :call Todo_ToggleTickbox()<cr>
-        nnoremap <Leader>v :call Todo_TickFinished()<cr>
-        vnoremap <Leader>v :call Todo_TickFinished()<cr>
-        nnoremap <Leader>x :call Todo_TickCancelled()<cr>
-        vnoremap <Leader>x :call Todo_TickCancelled()<cr>
-    " }
-
     " CtrlP {
         let g:ctrlp_max_files = 0
         let g:ctrlp_map = '<leader>e'
