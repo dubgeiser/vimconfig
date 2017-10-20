@@ -207,9 +207,9 @@
 " }
 
 " Commands {
-    command Rtrim call functions#rtrim()
-    command Tsquint call functions#toggle_squint_mode()
-    command Info call functions#buffer_info()
+    command! Rtrim call functions#rtrim()
+    command! Tsquint call functions#toggle_squint_mode()
+    command! Info call functions#buffer_info()
 " }
 
 " Plugins {
