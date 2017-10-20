@@ -183,7 +183,6 @@
 
     " Quick open certain files...
     nnoremap <Leader>s :e ~/Documents/notes<cr>
-    nnoremap <Leader>r :cd ~/.vim/<cr>:e vimrc<cr>
 
     " Less finger wrecking window navigation.
     nnoremap <c-j> <c-w>j
