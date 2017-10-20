@@ -35,7 +35,8 @@ endfunction
 function test#buffer_info()
     :Info
     :sleep 3
-    :e ~/.vim/test.vim
+    :cd ~/.vim/
+    :e vimrc
     :Info
 endfunction
 
