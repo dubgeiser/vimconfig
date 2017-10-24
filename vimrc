@@ -157,6 +157,9 @@
     " Make <Leader> char something more accessible, especially  on a AZERTY keyboard
     let mapleader = " "
 
+    " Make Y behave consistently with D and C in all modes
+    noremap Y y$
+
     " Easier omni-complete keys
     inoremap <c-space> <c-x><c-o>
     inoremap <c-d> <c-x><c-f>
