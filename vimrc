@@ -201,6 +201,7 @@
     nnoremap <silent> <DOWN><DOWN> :clast<CR>
 
     nnoremap <Leader>q :quit<cr>
+    nnoremap <Leader><Leader> <C-^>
 " }
 
 " MacVim {
