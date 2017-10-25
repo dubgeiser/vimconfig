@@ -199,6 +199,8 @@
     nnoremap <silent> <LEFT><LEFT> :cpfile<CR><C-G>
     nnoremap <silent> <UP><UP> :cfirst<CR>
     nnoremap <silent> <DOWN><DOWN> :clast<CR>
+
+    nnoremap <Leader>q :quit<cr>
 " }
 
 " MacVim {
