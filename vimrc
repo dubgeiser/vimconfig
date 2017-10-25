@@ -166,6 +166,10 @@
     " Make Y behave consistently with D and C in all modes
     noremap Y y$
 
+    " I don't use 'K' and the times that I hit it unintentionally, it has only
+    " caused distraction in editing... No more.
+    noremap K <Nop>
+
     " Easier omni-complete keys
     inoremap <C-Space> <C-X><C-O>
     inoremap <C-D> <C-X><C-F>
