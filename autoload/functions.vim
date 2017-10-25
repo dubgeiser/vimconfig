@@ -49,7 +49,9 @@ endfunction
 
 " Remove trailing whitespace from the current buffer.
 function! functions#rtrim()
+    let save_cursor = getpos('.')
     exec('%s/\s\+$//e')
+    call setpos('.', save_cursor)
 endfunction
 
 
