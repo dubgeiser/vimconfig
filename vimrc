@@ -124,7 +124,7 @@
 
         " For programming languages using a semi colon at the end of statement.
         autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
-            \ nnoremap <silent> <Leader>; :call functions#append_semi_colon()<cr>
+            \ nnoremap <silent> <Leader>; :call functions#append_semi_colon()<CR>
     augroup END
     augroup vim_setup
         au!
@@ -161,17 +161,17 @@
     noremap Y y$
 
     " Easier omni-complete keys
-    inoremap <c-space> <c-x><c-o>
-    inoremap <c-d> <c-x><c-f>
+    inoremap <C-Space> <C-X><C-O>
+    inoremap <C-D> <C-X><C-F>
 
     " NOTE: If I ever get the brilliant idea to use ctrlp for buffers:
     "   There are reasons not to do it: finger muscle for instance, which is used
-    "   to the <TAB> key for selecting buffers, but the biggest annoyance is this:
+    "   to the <Tab> key for selecting buffers, but the biggest annoyance is this:
     "   When you have a vertical split and you want to load op the same buffer as
     "   the one in the other window, you _can_ select that buffer, but then ctrlp
     "   will jump to the other window instead of opening the buffer in the current
     "   window, that's just painful.
-    nnoremap <Leader>b :buffers<CR>:buffer<space>
+    nnoremap <Leader>b :buffers<CR>:buffer<Space>
 
     " Add open lines without going to insert mode.
     nnoremap <C-CR> o<ESC>
@@ -185,22 +185,22 @@
     nnoremap <Leader>- yypVr-
 
     " Quick open certain files...
-    nnoremap <Leader>s :e ~/Documents/notes<cr>
+    nnoremap <Leader>s :e ~/Documents/notes<CR>
 
     " Less finger wrecking window navigation.
-    nnoremap <c-j> <c-w>j
-    nnoremap <c-k> <c-w>k
-    nnoremap <c-h> <c-w>h
-    nnoremap <c-l> <c-w>l
+    nnoremap <C-J> <C-W>j
+    nnoremap <C-K> <C-W>k
+    nnoremap <C-H> <C-W>h
+    nnoremap <C-L> <C-W>l
 
-    nnoremap <silent> <RIGHT> :cnext<CR>
-    nnoremap <silent> <RIGHT><RIGHT> :cnfile<CR><C-G>
-    nnoremap <silent> <LEFT> :cprev<CR>
-    nnoremap <silent> <LEFT><LEFT> :cpfile<CR><C-G>
-    nnoremap <silent> <UP><UP> :cfirst<CR>
-    nnoremap <silent> <DOWN><DOWN> :clast<CR>
+    nnoremap <silent> <Right> :cnext<CR>
+    nnoremap <silent> <Right><Right> :cnfile<CR><C-G>
+    nnoremap <silent> <Left> :cprev<CR>
+    nnoremap <silent> <Left><Left> :cpfile<CR><C-G>
+    nnoremap <silent> <Up><Up> :cfirst<CR>
+    nnoremap <silent> <Down><Down> :clast<CR>
 
-    nnoremap <Leader>q :quit<cr>
+    nnoremap <Leader>q :quit<CR>
     nnoremap <Leader><Leader> <C-^>
 " }
 
@@ -221,7 +221,7 @@
 " Plugins {
     " CtrlP {
         let g:ctrlp_max_files = 0
-        let g:ctrlp_map = '<leader>e'
+        let g:ctrlp_map = '<Leader>e'
         let g:ctrlp_custom_ignore = {
           \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$',
           \ 'file': '\.exe$\|\.so$\|\.dll$\|^\..*\.swp$|\.pyc$',
@@ -229,13 +229,13 @@
     " }
 
     " UltiSnips {
-        let g:UltiSnipsExpandTrigger="<tab>"
-        let g:UltiSnipsJumpForwardTrigger="<tab>"
-        let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+        let g:UltiSnipsExpandTrigger="<Tab>"
+        let g:UltiSnipsJumpForwardTrigger="<Tab>"
+        let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
     " }
 
     " ArgWrap {
-        nnoremap <Leader>a :ArgWrap<cr>
+        nnoremap <Leader>a :ArgWrap<CR>
     " }
 
     " PHP Refactor {
