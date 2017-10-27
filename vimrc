@@ -162,6 +162,7 @@
     " missing the <Esc> key because of no tactile feedback... or touch bar
     " switching off.
     inoremap <C-J> <Esc>
+    vnoremap <C-J> <Esc>
 
     " Make Y behave consistently with D and C in all modes
     noremap Y y$
