@@ -261,3 +261,37 @@
         endif
     " }
 " }
+
+" GUI {
+    if has('gui_running')
+        " no menu, no toolbar, no scrollbars
+        set guioptions-=m
+        set guioptions-=T
+        set guioptions-=l
+        set guioptions-=r
+        set guioptions-=L
+
+        " Use :ex instead of gui modal dialogs.
+        " This is kinda borked on MacVim which goes to great length to present
+        " you a modal dialog.
+        set guioptions+=c
+
+        if !has("unix")
+            " ProggyClean does not look too good on my Ubuntu
+            set guifont=ProggyClean
+            " For CTRL-V to work autoselect must be off.
+            " On Unix we have two selections, autoselect can be used.
+            set guioptions-=a
+        elseif has("gui_macvim")
+            " Take up all the space when running full screen MacVim
+            set fuoptions=maxvert,maxhorz
+
+            set guifont=Inconsolata\ Regular:h19
+            set antialias
+        else
+            set guifont=Monospace\ 10
+        endif
+
+        set linespace=1
+    endif
+" }
