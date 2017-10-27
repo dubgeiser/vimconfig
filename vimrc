@@ -44,7 +44,7 @@
 " Syntax, highlighting and spelling {
     set background=light
     if !has('gui_running')  " See `:help solarized
-        set t_Co=256
+        " set t_Co=256
     endif
     colorscheme solarized
     syntax on
@@ -57,7 +57,7 @@
     set laststatus=2
     set statusline=%<%{functions#short_path()}%t\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
     set winminheight=0  " Allow for fully minimized windows.
-    set hidden          " Remember undo, even when buffer is not shown in window.
+    set hidden          " Remember undo, even when buffer is not active.
 " }
 
 " Messages and info {
@@ -130,10 +130,10 @@
         au!
 
         " When editing a file, always jump to the last known cursor position.
-        " Don't do it when the position is invalid or when inside an event handler
-        " (happens when dropping a file on gvim).
-        " When editing a commit message (gitcommit for instance), just ignore the
-        " last cursor position, it'll probably be wrong anyway.
+        " Don't do it when the position is invalid or when inside an event
+        " handler (happens when dropping a file on gvim).
+        " When editing a commit message (gitcommit for instance), just ignore
+        " the last cursor position, it'll probably be wrong anyway.
         autocmd BufReadPost *
             \ if line("'\"") > 0 && line("'\"") <= line("$") && &ft !~# 'commit' |
             \   exe "normal g`\"" |
@@ -148,13 +148,14 @@
 " }
 
 " Abbreviations and typo's {
-    " Compensate for the FUCKING Mac AZERTY BE layout, for instance: typing "|| "
-    " fast will result in the trailing char to be char 160 instead of 32.
+    " Compensate for the FUCKING Mac AZERTY BE layout, for instance:
+    " typing "|| " fast will result in the trailing char to be char 160
+    " instead of 32.
     inoremap   <Space>
 " }
 
 " Key bindings {
-    " Make <Leader> char something more accessible, especially  on a AZERTY keyboard
+    " Make <Leader> char something more accessible, especially  on AZERTY.
     let mapleader = " "
 
     " I cannot get used to the escape key on Mac's touch bar.
@@ -176,12 +177,12 @@
     inoremap <C-D> <C-X><C-F>
 
     " NOTE: If I ever get the brilliant idea to use ctrlp for buffers:
-    "   There are reasons not to do it: finger muscle for instance, which is used
-    "   to the <Tab> key for selecting buffers, but the biggest annoyance is this:
-    "   When you have a vertical split and you want to load op the same buffer as
-    "   the one in the other window, you _can_ select that buffer, but then ctrlp
-    "   will jump to the other window instead of opening the buffer in the current
-    "   window, that's just painful.
+    "   There are reasons not to do it: finger muscle for instance, which is
+    "   used to the <Tab> key for selecting buffers, but the biggest annoyance
+    "   is this: When you have a vertical split and you want to load op the
+    "   same buffer as the one in the other window, you _can_ select that
+    "   buffer, but then ctrlp will jump to the other window instead of
+    "   opening the buffer in the current window, that's just painful.
     nnoremap <Leader>b :buffers<CR>:buffer<Space>
 
     " Add open lines without going to insert mode.
