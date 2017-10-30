@@ -1,6 +1,16 @@
 Vim configuration
 =================
 
+                     _____         _   _    _ _
+                    (____ \       | | | |  | (_)
+                     _   \ \ _   _| | | |  | |_ ____
+                    | |   | | | | | || \ \/ /| |    \
+                    | |__/ /| |_| | |_) )  / | | | | |
+                    |_____/  \____|____/ \/  |_|_|_|_|
+
+               Per Juchtmans <dubgeiser+vimconfig@gmail.com>
+
+
 This is my Vim (http://www.vim.org/) configuration, there are many like
 it, but this one is mine.  Feel free to check it out.  Follow @dgcode on
 Twitter for updates (uses github hook)
