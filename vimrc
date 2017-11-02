@@ -43,9 +43,6 @@
 
 " Syntax, highlighting and spelling {
     set background=light
-    if !has('gui_running')  " See `:help solarized
-        " set t_Co=256
-    endif
     colorscheme solarized
     syntax on
     set nocursorcolumn
