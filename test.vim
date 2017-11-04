@@ -38,14 +38,6 @@ function s:run_tests(tests)
 endfunction
 
 
-" 2014-11-04 01:55:58
-function test#TddRunTestExecutesCorrectly()
-    :cd ~/Projects/Knife/
-    :e Tests/DictTest.php
-    :TddRunTest
-endfunction
-
-
 " 2014-11-04 23:56:47
 function test#buffer_info()
     :Info

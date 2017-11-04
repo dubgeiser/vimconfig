@@ -11,10 +11,6 @@
 	path = pack/vendor/start/cmdline-completion
 	url = git://github.com/vim-scripts/cmdline-completion.git
 	ignore = dirty
-[submodule "bundle/tdd"]
-	path = pack/vendor/start/tdd
-	url = git://github.com/dubgeiser/vim-tdd.git
-	ignore = dirty
 [submodule "bundle/vim-php-namespace"]
 	path = pack/vendor/start/php-namespace
 	url = git://github.com/arnaud-lb/vim-php-namespace.git

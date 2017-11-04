@@ -28,16 +28,11 @@ set tabstop=4
 set expandtab
 set softtabstop=4
 
-" PHP error
-set errorformat+=%m\ in\ %f\ on\ line\ %l
-
-" SimpleTest Failing Test
-set errorformat+=%m\ at\ \[%f\ line\ %l]
-
-" PHPUnit
-set errorformat+=%E%\\d%\\+)\ %m,%CFailed%m,%Z%f:%l,%-G
-
-let g:Tdd_makeprg='phpunit'
+" Error formats {
+    set errorformat+=%m\ in\ %f\ on\ line\ %l               " Standard PHP
+    set errorformat+=%m\ at\ \[%f\ line\ %l]                "SimpleTest fail
+    set errorformat+=%E%\\d%\\+)\ %m,%CFailed%m,%Z%f:%l,%-G "PHPUnit fail
+"}
 
 if !exists(":PSR2")
     command PSR2 exec("w") | exec("!php-cs-fixer --level=psr2 --fixers=unused_use fix %")
