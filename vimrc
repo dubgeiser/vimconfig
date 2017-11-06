@@ -173,14 +173,6 @@
     inoremap <C-Space> <C-X><C-O>
     inoremap <C-D> <C-X><C-F>
 
-    " NOTE: If I ever get the brilliant idea to use ctrlp for buffers:
-    "   There are reasons not to do it: finger muscle for instance, which is
-    "   used to the <Tab> key for selecting buffers, but the biggest annoyance
-    "   is this: When you have a vertical split and you want to load op the
-    "   same buffer as the one in the other window, you _can_ select that
-    "   buffer, but then ctrlp will jump to the other window instead of
-    "   opening the buffer in the current window, that's just painful.
-    " nnoremap <Leader>b :buffers<CR>:buffer<Space>
     nnoremap <Leader>b :Buffers<CR>
 
     " Add open lines without going to insert mode.
@@ -230,14 +222,6 @@
 " }
 
 " Plugins {
-    " CtrlP {
-        let g:ctrlp_max_files = 0
-        let g:ctrlp_custom_ignore = {
-          \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$',
-          \ 'file': '\.exe$\|\.so$\|\.dll$\|^\..*\.swp$|\.pyc$',
-          \ }
-    " }
-
     " fzf {
         nnoremap <Leader>e :Files<cr>
     " }
