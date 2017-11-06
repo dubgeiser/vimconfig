@@ -180,7 +180,8 @@
     "   same buffer as the one in the other window, you _can_ select that
     "   buffer, but then ctrlp will jump to the other window instead of
     "   opening the buffer in the current window, that's just painful.
-    nnoremap <Leader>b :buffers<CR>:buffer<Space>
+    " nnoremap <Leader>b :buffers<CR>:buffer<Space>
+    nnoremap <Leader>b :Buffers<CR>
 
     " Add open lines without going to insert mode.
     nnoremap <C-CR> o<ESC>
