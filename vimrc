@@ -24,6 +24,7 @@
     set nocompatible
     au!
     filetype plugin indent on
+    set rtp+=/usr/local/opt/fzf
 " }
 
 " Moving around, searching and patterns {

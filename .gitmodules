@@ -62,3 +62,6 @@
 [submodule "pack/vendor/start/vdebug"]
 	path = pack/vendor/start/vdebug
 	url = git@github.com:joonty/vdebug.git
+[submodule ".vim/pack/vendor/start/fzf"]
+	path = pack/vendor/start/fzf
+	url = git@github.com:junegunn/fzf.vim.git
