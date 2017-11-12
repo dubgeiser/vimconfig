@@ -64,3 +64,6 @@
 [submodule "pack/vendor/start/lightline"]
 	path = pack/vendor/start/lightline
 	url = git@github.com:itchyny/lightline.vim.git
+[submodule "pack/vendor/start/php-refactoring-toolbox"]
+	path = pack/vendor/start/php-refactoring-toolbox
+	url = git@github.com:adoy/vim-php-refactoring-toolbox.git
