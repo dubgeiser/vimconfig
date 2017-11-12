@@ -43,10 +43,6 @@
 	path = pack/vendor/start/argwrap
 	url = git://github.com/FooSoft/vim-argwrap
 	ignore = dirty
-[submodule "bundle/vim-php-refactoring"]
-	path = pack/vendor/start/php-refactoring
-	url = git@github.com:vim-php/vim-php-refactoring.git
-	ignore = dirty
 [submodule "bundle/ultisnips"]
 	path = pack/vendor/start/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
@@ -68,3 +64,6 @@
 [submodule "pack/vendor/start/lightline"]
 	path = pack/vendor/start/lightline
 	url = git@github.com:itchyny/lightline.vim.git
+[submodule "pack/vendor/start/php-refactoring-toolbox"]
+	path = pack/vendor/start/php-refactoring-toolbox
+	url = git@github.com:adoy/vim-php-refactoring-toolbox.git
