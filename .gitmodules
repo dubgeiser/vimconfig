@@ -65,3 +65,6 @@
 [submodule "pack/vendor/start/goyo"]
 	path = pack/vendor/start/goyo
 	url = git@github.com:junegunn/goyo.vim.git
+[submodule "pack/vendor/start/lightline"]
+	path = pack/vendor/start/lightline
+	url = git@github.com:itchyny/lightline.vim.git
