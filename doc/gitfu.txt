@@ -113,5 +113,10 @@ Occasionally update the submodule to a new version:
     git commit -m "update submodule to new version"
 
 
+                                                     *gitfu-online-resources*
+https://github.com/blog/2019-how-to-undo-almost-anything-with-git
+https://github.com/k88hudson/git-flight-rules
+
+
 
 vim:tw=78:ts=8:ft=help:norl:nocindent:et:
