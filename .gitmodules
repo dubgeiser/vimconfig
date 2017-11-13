@@ -46,9 +46,6 @@
 [submodule "bundle/ultisnips"]
 	path = pack/vendor/start/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
-[submodule "bundle/visSum"]
-	path = pack/vendor/start/visSum
-	url = git@github.com:vim-scripts/visSum.vim.git
 [submodule "bundle/commentary"]
 	path = pack/vendor/start/commentary
 	url = git://github.com/tpope/vim-commentary.git
