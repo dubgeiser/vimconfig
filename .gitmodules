@@ -58,6 +58,7 @@
 [submodule "pack/vendor/start/php-refactoring-toolbox"]
 	path = pack/vendor/start/php-refactoring-toolbox
 	url = git@github.com:adoy/vim-php-refactoring-toolbox.git
+	ignore = dirty
 [submodule "pack/vendor/start/fzf"]
 	path = pack/vendor/start/fzf
 	url = git@github.com:junegunn/fzf.vim.git
