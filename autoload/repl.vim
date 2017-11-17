@@ -41,21 +41,17 @@ function! repl#command(file_type)
                 \ "python" : "python3",
                 \ "ruby" : "irb",
                 \}
-    let repl = ""
-    if has_key(known_repls, a:file_type)
-        let repl = known_repls[a:file_type]
-    endif
-    return repl
+
+    return has_key(known_repls, a:file_type) ? known_repls[a:file_type] : ""
 endfunction
 
 
 " Run the Read-Eval-Print-Loop for a given file type.
+" handy:  command! Repl call repl#run(&filetype)
 function! repl#run(file_type)
-    let repl_command = repl#command(a:file_type)
-    if repl_command == ""
-        let full_command = "echo ' *** NO REPL FOUND FOR FILE TYPE [" . a:file_type . "] ***'"
-    else
-        let full_command = "vert bo terminal " . repl_command
-    endif
+    let full_command = repl#command(a:file_type) == ""
+        \? "echo ' *** NO REPL FOUND FOR FILE TYPE [" . a:file_type . "] ***'"
+        \: "vert bo terminal " . repl#command(a:file_type)
+
     exec(full_command)
 endfunction
