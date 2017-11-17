@@ -46,7 +46,7 @@ endif
 " Return the command (as a string) that will fire up the repl associated with
 " the given file type.
 " If the file type cannot be mapped to a repl, return an empty string.
-function! repl#command(file_type)
+function! s:command(file_type)
     let known_repls = {
                 \ "php" : "php -a",
                 \ "python" : "python3",
@@ -62,9 +62,9 @@ endfunction
 function! repl#run(file_type)
     let placement = winwidth("%") > g:repl_vsplit_threshold
                 \? "vertical botright" : "rightbelow"
-    let full_command = repl#command(a:file_type) == ""
+    let full_command = s:command(a:file_type) == ""
         \? "echo ' *** NO REPL FOUND FOR FILE TYPE [" . a:file_type . "] ***'"
-        \: placement . " terminal " . repl#command(a:file_type)
+        \: placement . " terminal " . s:command(a:file_type)
 
     exec(full_command)
 endfunction
