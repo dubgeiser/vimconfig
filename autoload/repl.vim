@@ -32,6 +32,17 @@ endif
 let g:repl_loaded = 1
 
 
+" The value of this variable determines what the threshold point is for number
+" of columns to vertically split.
+" If there is more screen real estate than this, repl#run() will split the
+" screen vertically and put the repl to the right, else it will split
+" horizontally and put the repl underneath.
+" Default = 150 columns
+if !exists("g:repl_vsplit_threshold")
+    let g:repl_vsplit_threshold = 150
+endif
+
+
 " Return the command (as a string) that will fire up the repl associated with
 " the given file type.
 " If the file type cannot be mapped to a repl, return an empty string.
@@ -49,9 +60,11 @@ endfunction
 " Run the Read-Eval-Print-Loop for a given file type.
 " handy:  command! Repl call repl#run(&filetype)
 function! repl#run(file_type)
+    let placement = winwidth("%") > g:repl_vsplit_threshold
+                \? "vertical botright" : "rightbelow"
     let full_command = repl#command(a:file_type) == ""
         \? "echo ' *** NO REPL FOUND FOR FILE TYPE [" . a:file_type . "] ***'"
-        \: "vert bo terminal " . repl#command(a:file_type)
+        \: placement . " terminal " . repl#command(a:file_type)
 
     exec(full_command)
 endfunction
