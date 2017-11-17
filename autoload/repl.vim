@@ -55,7 +55,7 @@ endif
 
 " Run the Read-Eval-Print-Loop for a given file type.
 " handy:  command! Repl call repl#run(&filetype)
-function! repl#run(file_type)
+function! repl#run(file_type) abort
     let placement = winwidth("%") > g:repl_vsplit_threshold
                 \? "vertical botright" : "rightbelow"
     let full_command = s:command(a:file_type) == ""
@@ -83,6 +83,6 @@ call repl#map('ruby', 'irb')
 " Return the command (as a string) that will fire up the repl associated with
 " the given file type.
 " If the file type cannot be mapped to a repl, return an empty string.
-function! s:command(file_type)
+function! s:command(file_type) abort
     return has_key(s:known_repls, a:file_type) ? s:known_repls[a:file_type] : ""
 endfunction
