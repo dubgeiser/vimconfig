@@ -19,9 +19,19 @@
 "   This plugin will fie up a terminal with a repl running that is based on
 "   the file of the file in the current buffer.
 "
-"   :terminal is available since Vim 8.0 and this plugin assumes Vim 8.
+"   `:terminal` is available since Vim 8.0 and this plugin assumes Vim 8.
 "
 "   This plugin has not been tested with a Vim version lower than 8.0.1272
+"
+"   `repl#map(filetype, command)`
+"   let's you map a file type to a specific shell command that fires up that
+"   repl.
+"
+"   `g:repl_vsplit_threshold`
+"   Default: 150
+"   When the amount of columns available in the current window is greater than
+"   this, the repl will open in a vertical split to the right.
+"   If not, it will open in an horizontal split below.
 "
 " }
 
@@ -43,20 +53,6 @@ if !exists("g:repl_vsplit_threshold")
 endif
 
 
-" Return the command (as a string) that will fire up the repl associated with
-" the given file type.
-" If the file type cannot be mapped to a repl, return an empty string.
-function! s:command(file_type)
-    let known_repls = {
-                \ "php" : "php -a",
-                \ "python" : "python3",
-                \ "ruby" : "irb",
-                \}
-
-    return has_key(known_repls, a:file_type) ? known_repls[a:file_type] : ""
-endfunction
-
-
 " Run the Read-Eval-Print-Loop for a given file type.
 " handy:  command! Repl call repl#run(&filetype)
 function! repl#run(file_type)
@@ -67,4 +63,26 @@ function! repl#run(file_type)
         \: placement . " terminal " . s:command(a:file_type)
 
     exec(full_command)
+endfunction
+
+
+" Map a file type to a shell command that starts a repl.
+function! repl#map(file_type, repl_command) abort
+    let s:known_repls[a:file_type] = a:repl_command
+endfunction
+
+
+"
+" // PRIVATE
+"
+let s:known_repls = {}
+call repl#map('php', 'php -a')
+call repl#map('python', 'python3')
+call repl#map('ruby', 'irb')
+
+" Return the command (as a string) that will fire up the repl associated with
+" the given file type.
+" If the file type cannot be mapped to a repl, return an empty string.
+function! s:command(file_type)
+    return has_key(s:known_repls, a:file_type) ? s:known_repls[a:file_type] : ""
 endfunction
