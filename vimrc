@@ -222,6 +222,7 @@
     command! Rtrim call functions#rtrim()
     command! Tsquint call functions#toggle_squint_mode()
     command! Info call functions#buffer_info()
+    command! Repl call repl#run(&filetype)
 " }
 
 " Plugins {
