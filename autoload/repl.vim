@@ -23,66 +23,62 @@
 "
 "   This plugin has not been tested with a Vim version lower than 8.0.1272
 "
-"   `repl#map(filetype, command)`
-"   let's you map a file type to a specific shell command that fires up that
-"   repl.
+"   Register a REPL command for a specific file type:
 "
-"   `g:repl_vsplit_threshold`
-"   Default: 150
-"   When the amount of columns available in the current window is greater than
-"   this, the repl will open in a vertical split to the right.
-"   If not, it will open in an horizontal split below.
+"       `repl#register(filetype, command)`
+"
+"
+"   Set the windows width threshold at which we will split vertically and put
+"   the REPL window to the right (default is 150):
+"
+"       `g:repl_vsplit_threshold`
 "
 " }
-
 
 if exists("g:repl_loaded") || &cp
     finish
 endif
 let g:repl_loaded = 1
 
-
-" The value of this variable determines what the threshold point is for number
-" of columns to vertically split.
-" If there is more screen real estate than this, repl#run() will split the
-" screen vertically and put the repl to the right, else it will split
-" horizontally and put the repl underneath.
-" Default = 150 columns
-if !exists("g:repl_vsplit_threshold")
-    let g:repl_vsplit_threshold = 150
-endif
-
-
 " Run the Read-Eval-Print-Loop for a given file type.
-" handy:  command! Repl call repl#run(&filetype)
+" Tip: command! Repl call repl#run(&filetype)
 function! repl#run(file_type) abort
-    let placement = winwidth("%") > g:repl_vsplit_threshold
-                \? "vertical botright" : "rightbelow"
-    let full_command = s:command(a:file_type) == ""
-        \? "echo ' *** NO REPL FOUND FOR FILE TYPE [" . a:file_type . "] ***'"
-        \: placement . " terminal " . s:command(a:file_type)
-
-    exec(full_command)
+    if repl#has(a:file_type)
+        exec(s:window_placement()." terminal ".repl#get(a:file_type))
+    elseif a:file_type == ""
+        :echo "*** You cannot run a REPL if &filetype is not set."
+    else
+        :echo "*** No REPL found for [".a:file_type."] files"
+        :echo "Use repl#register('".a:file_type."', '<REPL>')"
+    endif
 endfunction
-
 
 " Map a file type to a shell command that starts a repl.
-function! repl#map(file_type, repl_command) abort
-    let s:known_repls[a:file_type] = a:repl_command
+function! repl#register(file_type, repl_command) abort
+    let s:repls[a:file_type] = a:repl_command
 endfunction
 
-
-"
-" // PRIVATE
-"
-let s:known_repls = {}
-call repl#map('php', 'php -a')
-call repl#map('python', 'python3')
-call repl#map('ruby', 'irb')
-
-" Return the command (as a string) that will fire up the repl associated with
-" the given file type.
-" If the file type cannot be mapped to a repl, return an empty string.
-function! s:command(file_type) abort
-    return has_key(s:known_repls, a:file_type) ? s:known_repls[a:file_type] : ""
+" Is there a REPL registered for the given file type?
+function! repl#has(file_type) abort
+    return has_key(s:repls, a:file_type)
 endfunction
+
+" Get the registered REPL command for a given file type.
+" If no REPL was registered for the file type, raise an error.
+" You can check if the file type was registered via repl#has().
+function! repl#get(file_type) abort
+    return s:repls[a:file_type]
+endfunction
+
+" Return a string with Vim split behavior commands.
+function! s:window_placement() abort
+    return winwidth("%") > g:repl_vsplit_threshold
+                \? "vertical botright" : "rightbelow"
+endfunction
+
+" Initialize defaults.
+let g:repl_vsplit_threshold = 150
+let s:repls = {}
+call repl#register('php', 'php -a')
+call repl#register('python', 'python3')
+call repl#register('ruby', 'irb')
