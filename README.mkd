@@ -22,10 +22,3 @@ This assumes no previous install of a vim configuration.
 
     git clone git://github.com/dubgeiser/vimconfig.git <VIMDIR>
     ./<VIMDIR>/install
-
-
-LICENSE
-=======
-For all plugins used, the license of that plugin applies.
-For personal written stuff in this repo http://sam.zoy.org/wtfpl/COPYING applies.
-
