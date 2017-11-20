@@ -58,3 +58,6 @@
 [submodule "pack/vendor/start/fzf"]
 	path = pack/vendor/start/fzf
 	url = git@github.com:junegunn/fzf.vim.git
+[submodule "pack/vendor/start/ale"]
+	path = pack/vendor/start/ale
+	url = git@github.com:w0rp/ale.git
