@@ -132,6 +132,9 @@ endsnippet
 snippet vd
 echo "\n<pre>\n";var_dump(${1:'DEBUG'});echo "\n<pre>\n";exit();
 endsnippet
+snippet log "Poor man's debug log"
+$_fnLog = "/tmp/${1:phpdebug}.log"; file_put_contents($_fnLog, @file_get_contents($_fnLog).sprintf(":LOG: %s\n%s\n", date('Y-m-d H:i:s'), print_r(${2:'DEBUG'}, true)));
+endsnippet
 
 snippet getset "Generate getter and setter"
 /**
