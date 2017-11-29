@@ -191,7 +191,7 @@
 
     " Quick open certain files...
     nnoremap <Leader>s :e ~/Documents/notes<CR>
-    nnoremap <Leader>c :cd ~/Projects/*
+    nnoremap <Leader>p :cd ~/Projects/*
 
     " Less finger wrecking window navigation.
     nnoremap <C-J> <C-W>j
