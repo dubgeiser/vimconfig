@@ -249,12 +249,6 @@
           runtime! macros/matchit.vim
         endif
     " }
-
-    " lightline {
-        let g:lightline = {
-                    \ 'colorscheme': 'solarized'
-                    \ }
-    " }
 " }
 
 " GUI {
