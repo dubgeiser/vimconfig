@@ -176,7 +176,9 @@
     inoremap <C-Space> <C-X><C-O>
     inoremap <C-D> <C-X><C-F>
 
+    " :Buffers and :Files are commands provided by the FZF plugin.
     nnoremap <Leader>b :Buffers<CR>
+    nnoremap <Leader>e :Files<cr>
 
     " Add open lines without going to insert mode.
     nnoremap <C-CR> o<ESC>
@@ -225,9 +227,8 @@
     command! Repl call repl#run(&filetype)
 " }
 
-" Plugins {
+" Plugin Configuration {
     " fzf {
-        nnoremap <Leader>e :Files<cr>
     " }
 
     " UltiSnips {
