@@ -270,7 +270,7 @@
         " Take up all the space when running full screen MacVim
         set fuoptions=maxvert,maxhorz
 
-        set guifont=Inconsolata\ Regular:h19
+        set guifont=Consolas:h18
         set antialias
     endif
 " }
