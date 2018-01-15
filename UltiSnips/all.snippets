@@ -5,6 +5,32 @@ ${0}
 }
 endsnippet
 
+snippet digifichemail "Mail voor nieuwe Fichebak account."
+Beste ${1:firstname},
+
+
+We hebben voor jou een account voorzien op de fichebak.
+Misschien dat je de procedure reeds hebt ontvangen om de eerste keer de koppeling te maken, maar we schrijven ze hier nog even voor je uit zodat je meteen aan de slag kan:
+
+Je gaat naar http://fiches.gentgrp.gent.be/user en gebruikt daar je AD account om in te loggen.
+(In jouw geval zal dit gentgrp\\${2:AD Username} zijn, en het paswoord van je laptop/mail/… dat je altijd gebruikt).
+
+Daarna zal de site de koppeling willen maken met je account en vragen achter de drupal account.
+Deze heb ik voorzien en kan je de volgende info gebruiker:
+Gebruikersnaam: ${3:username}
+Paswoord: ${4:password}
+
+De site zal dan de koppeling maken tussen de accounts. En waarschijnlijk moet je daarna nog een laatste keer inloggen met je AD account om echt toegang te krijgen.
+Dit hoef je enkel de eerste keer te doen, daarna kan je altijd inloggen met je AD account.
+
+Kan je dit proberen en ons laten weten of dit lukt?
+
+
+Vriendelijke groeten,
+Per
+${0}
+endsnippet
+
 snippet date
 `date +%Y-%m-%d`${1: `date +%T`}${0}
 endsnippet
