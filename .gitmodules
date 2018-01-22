@@ -1,19 +1,19 @@
 # vim: noet:
 [submodule "bundle/surround"]
 	path = pack/vendor/start/surround
-	url = git://github.com/tpope/vim-surround.git
+	url = git@github.com:tpope/vim-surround.git
 	ignore = dirty
 [submodule "bundle/repeat"]
 	path = pack/vendor/start/repeat
-	url = git://github.com/tpope/vim-repeat.git
+	url = git@github.com:tpope/vim-repeat.git
 	ignore = dirty
 [submodule "bundle/cmdline-completion"]
 	path = pack/vendor/start/cmdline-completion
-	url = git://github.com/vim-scripts/cmdline-completion.git
+	url = git@github.com:vim-scripts/cmdline-completion.git
 	ignore = dirty
 [submodule "bundle/vim-php-namespace"]
 	path = pack/vendor/start/php-namespace
-	url = git://github.com/arnaud-lb/vim-php-namespace.git
+	url = git@github.com:arnaud-lb/vim-php-namespace.git
 	ignore = dirty
 [submodule "bundle/vim-colors-solarized"]
 	path = pack/vendor/start/solarized
@@ -29,22 +29,22 @@
 	ignore = dirty
 [submodule "bundle/vim-abolish"]
 	path = pack/vendor/start/abolish
-	url = git://github.com/tpope/vim-abolish.git
+	url = git@github.com:tpope/vim-abolish.git
 	ignore = dirty
 [submodule "bundle/vim-eunuch"]
 	path = pack/vendor/start/eunuch
-	url = git://github.com/tpope/vim-eunuch.git
+	url = git@github.com:tpope/vim-eunuch.git
 	ignore = dirty
 [submodule "bundle/vim-argwrap"]
 	path = pack/vendor/start/argwrap
-	url = git://github.com/FooSoft/vim-argwrap
+	url = git@github.com:FooSoft/vim-argwrap
 	ignore = dirty
 [submodule "bundle/ultisnips"]
 	path = pack/vendor/start/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
 [submodule "bundle/commentary"]
 	path = pack/vendor/start/commentary
-	url = git://github.com/tpope/vim-commentary.git
+	url = git@github.com:tpope/vim-commentary.git
 [submodule "pack/vendor/start/vdebug"]
 	path = pack/vendor/start/vdebug
 	url = git@github.com:joonty/vdebug.git
