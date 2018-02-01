@@ -126,7 +126,7 @@ Occasionally update the submodule to a new version:
     git commit -m "update submodule to new version"
 
 
-                                                     *gitfu-online-resources*
+                                                      *gitfu-online-resources*
 https://github.com/blog/2019-how-to-undo-almost-anything-with-git
 https://github.com/k88hudson/git-flight-rules
 
