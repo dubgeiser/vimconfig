@@ -95,6 +95,19 @@ $ git filter-branch -f --env-filter "GIT_AUTHOR_NAME='New name'; GIT_AUTHOR_EMAI
 Then force push (git push -f)
 
 
+                                                                  *gitfu-show*
+Show only the files that have been affected by a certain commit:
+
+    git diff-tree --no-commit-id --name-only -r <COMMITSHA1>
+or
+    git show --pretty="" --name-only <COMMITSHA1>
+
+In script the diff-tree is preferred (plumbing), while the second solution is
+considered to be user-facing (porcelain)
+You can also use --name-status to also show what has been done to the
+corresponding file (modified, added, deleted...)
+
+
                                                             *gitfu-submodules*
 Mostly working with this in my Vim configuration.
 
