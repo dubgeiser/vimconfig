@@ -20,7 +20,6 @@ set fileformat=unix
 set textwidth=0
 
 nnoremap <leader>f /function\s*
-nnoremap <leader>i :call PhpInsertUse()<CR>
 
 set makeprg=php\ -l\ %
 set shiftwidth=4
