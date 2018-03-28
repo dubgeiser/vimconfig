@@ -11,10 +11,6 @@
 	path = pack/vendor/start/cmdline-completion
 	url = git@github.com:vim-scripts/cmdline-completion.git
 	ignore = dirty
-[submodule "bundle/vim-php-namespace"]
-	path = pack/vendor/start/php-namespace
-	url = git@github.com:arnaud-lb/vim-php-namespace.git
-	ignore = dirty
 [submodule "bundle/vim-colors-solarized"]
 	path = pack/vendor/start/solarized
 	url = git@github.com:altercation/vim-colors-solarized.git
@@ -51,13 +47,12 @@
 [submodule "pack/vendor/start/goyo"]
 	path = pack/vendor/start/goyo
 	url = git@github.com:junegunn/goyo.vim.git
-[submodule "pack/vendor/start/php-refactoring-toolbox"]
-	path = pack/vendor/start/php-refactoring-toolbox
-	url = git@github.com:adoy/vim-php-refactoring-toolbox.git
-	ignore = dirty
 [submodule "pack/vendor/start/fzf"]
 	path = pack/vendor/start/fzf
 	url = git@github.com:junegunn/fzf.vim.git
 [submodule "pack/vendor/start/ale"]
 	path = pack/vendor/start/ale
 	url = git@github.com:w0rp/ale.git
+[submodule "pack/vendor/start/phpactor"]
+	path = pack/vendor/start/phpactor
+	url = git@github.com:phpactor/phpactor.git
