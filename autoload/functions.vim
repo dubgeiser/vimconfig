@@ -79,6 +79,13 @@ function! functions#short_path()
     endif
     let mod = (exists('+acd') && &acd) ? ':~:h' : ':~:.:h'
     let fpath = split(fnamemodify(filepath, mod), dirsep)
+
+    " Empty fpath happens when editing a file in '/' on Unix-based systems
+    " This behavior is untested under Windows!
+    if empty(fpath)
+        return dirsep
+    endif
+
     let fpath_shortparts = map(fpath[1:], 'v:val[0]')
     let path = join(extend([fpath[0]], fpath_shortparts), dirsep) . dirsep
     if path == ('.' . dirsep)
