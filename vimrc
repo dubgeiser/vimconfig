@@ -233,6 +233,10 @@
         nnoremap <Leader>a :ArgWrap<CR>
     " }
 
+    " Phpactor {
+        nnoremap <Leader>r :call phpactor#ContextMenu()<CR>
+    " }
+
     " matchit.vim {
         if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
           runtime! macros/matchit.vim
