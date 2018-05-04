@@ -235,6 +235,7 @@
 
     " Phpactor {
         nnoremap <Leader>r :call phpactor#ContextMenu()<CR>
+        vnoremap <Leader>r :call phpactor#ContextMenu()<CR>
     " }
 
     " matchit.vim {
