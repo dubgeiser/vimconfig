@@ -156,5 +156,12 @@ C-F             In command line mode: take current edit and take that to a
                 Useful when syntax highlighting seems to go awry.
 
 
+                                                  *vimfu-tdd* *vimfu-map-test*
+:map <Leader>t :wall!\|!./vendor/bin/phpunit tests/Some/ThingTest.php<cr>
+                Writes all the files in the open buffers and runs 1 specific
+                test.
+                This comes in handy when doing TDD cycles and you're editing
+                the code under test; you can run only the relevant test case
+                without shying away from the buffer where you're editing.
 
  vim:tw=78:ts=8:ft=help:norl:nocindent:et:
