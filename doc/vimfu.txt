@@ -138,6 +138,9 @@ Neat state machine system:
         \ '10': 'set norelativenumber | set nonumber',
         \ '11': 'set norelativenumber | set number' }[&number .  &relativenumber]
 
+IBM has a nice (but old) resource on scripting Vim:
+https://www.ibm.com/developerworks/linux/library/l-vim-script-2/
+
 
                                                            *vimfu-commandline*
 C-F             In command line mode: take current edit and take that to a
