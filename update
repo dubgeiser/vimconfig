@@ -21,3 +21,4 @@
 
 git pull --ff-only
 git submodule update --remote --merge
+vim -u NONE -c "call phpactor#Update()" -c q
