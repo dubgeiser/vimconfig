@@ -141,6 +141,10 @@ Neat state machine system:
 IBM has a nice (but old) resource on scripting Vim:
 https://www.ibm.com/developerworks/linux/library/l-vim-script-2/
 
+Interpret output of an external script as Vim commands:
+
+    :exec(system('/path/to/script'))
+
 
                                                            *vimfu-commandline*
 C-F             In command line mode: take current edit and take that to a
