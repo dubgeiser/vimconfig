@@ -166,6 +166,12 @@
 
     " Easier omni-complete keys
     inoremap <C-Space> <C-X><C-O>
+
+    " <C-Space> does not seem to work in CLI vim, Terminal and iTerm2 apps
+    " interpret it as <C-@>.
+    if !has('nvim') && !has('gui_running') && has('unix')
+        inoremap <C-@> <C-X><C-O>
+    endif
     inoremap <C-D> <C-X><C-F>
 
     " :Buffers and :Files are commands provided by the FZF plugin.
