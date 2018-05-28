@@ -244,6 +244,11 @@
         vnoremap <Leader>r :call phpactor#ContextMenu()<CR>
     " }
 
+    " Ale {
+        nnoremap <Leader><Down> :ALENextWrap<CR>
+        nnoremap <Leader><Up> :ALEPreviousWrap<CR>
+    " }
+
     " matchit.vim {
         if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
           runtime! macros/matchit.vim
