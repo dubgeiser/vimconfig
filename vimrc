@@ -245,8 +245,8 @@
     " }
 
     " Ale {
-        nnoremap <Leader><Down> :ALENextWrap<CR>
-        nnoremap <Leader><Up> :ALEPreviousWrap<CR>
+        nnoremap <Leader>j :ALENextWrap<CR>
+        nnoremap <Leader>k :ALEPreviousWrap<CR>
     " }
 
     " matchit.vim {
