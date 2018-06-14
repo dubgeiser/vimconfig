@@ -63,3 +63,6 @@
 	path = pack/vendor/start/ale
 	url = git@github.com:w0rp/ale.git
 	ignore = dirty
+[submodule "pack/vendor/start/flavored-markdown"]
+	path = pack/vendor/start/flavored-markdown
+	url = git@github.com:jtratner/vim-flavored-markdown.git
