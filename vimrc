@@ -146,7 +146,7 @@
     augroup END
     augroup markdown
         au!
-        au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+        au BufNewFile,BufRead *.md,*.markdown,*.mkd setlocal filetype=ghmarkdown
     augroup END
 " }
 
