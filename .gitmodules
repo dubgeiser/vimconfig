@@ -66,6 +66,3 @@
 [submodule "pack/vendor/start/flavored-markdown"]
 	path = pack/vendor/start/flavored-markdown
 	url = git@github.com:jtratner/vim-flavored-markdown.git
-[submodule "pack/vendor/start/pencil"]
-	path = pack/vendor/start/pencil
-	url = git@github.com:reedes/vim-pencil.git

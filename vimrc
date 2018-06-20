@@ -118,7 +118,6 @@
         autocmd FileType mail setlocal nocindent textwidth=72
         autocmd FileType text,rst setlocal nocindent
         autocmd FileType gitcommit setlocal spell nolist nocindent
-        autocmd FileType markdown,text call pencil#init()
 
         " For programming languages using a semi colon at the end of statement.
         autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
