@@ -290,12 +290,11 @@
         " you a modal dialog.
         set guioptions+=c
 
-        set linespace=1
-
         " Take up all the space when running full screen MacVim
         set fuoptions=maxvert,maxhorz
 
-        set guifont=Consolas:h18
+        set guifont=IBM\ Plex\ Mono:h17
+        set linespace=0
         set antialias
     endif
 " }
