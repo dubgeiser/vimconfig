@@ -129,7 +129,7 @@ S<C>            Surround selection with char <C> (Visual mode)
 
                                                            *vimfu-programming*
 Loads of stuff in the vim-OPL book (ex: chapters 26, 27 and more), also check
-help on functions, variables, script(s), usr_41.txkdir!
+help on functions, variables, script(s), :h usr_41.txt
 Neat state machine system:
 
     execute {
