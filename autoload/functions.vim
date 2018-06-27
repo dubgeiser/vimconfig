@@ -59,7 +59,7 @@ function! functions#git_branch()
                 \system("git branch 2>/dev/null | grep '^\*' | sed 's/^\* //'"))
 endfunction
 
-" Remove trailing whitespace from the current buffer.
+" Remove trailing white space from the current buffer.
 function! functions#rtrim()
     let save_cursor = getpos('.')
     exec('%s/\s\+$//e')
