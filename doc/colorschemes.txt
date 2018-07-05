@@ -2,7 +2,7 @@
 
 
                                                                      *mustang*
-Nice, but too "greeny"
+Nice, but too green.
 No visual distinction between variable and string (PHP); That's BAD.
 
 
@@ -16,7 +16,7 @@ the code.
 Punctuation marks are too bright, distracting from reading (dark version).
 - 2014-06-29
     I've given the light version a run for its money and must say I'm linking
-    it quite a bit actually!  Very complete, better diff hilighting than
+    it quite a bit actually!  Very complete, better diff high lighting than
     zenburn, quickfix, gitcommit (with fugitive), etc...
 
 - 2014-12-09
@@ -27,7 +27,7 @@ Punctuation marks are too bright, distracting from reading (dark version).
     Still in use all the time, will remove zenburn.
 
 
-                                                             *tommorrow-night*
+                                                             *tomorrow-night*
 Calm and pleasing colors.
 A lot of red, variables for instance.
 ft=sql does not highlight?
