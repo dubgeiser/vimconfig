@@ -81,7 +81,6 @@
     set expandtab
     set autoindent
     set smartindent
-    set cindent
 " }
 
 " Reading and writing files {
