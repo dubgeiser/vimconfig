@@ -137,6 +137,8 @@
             \ endif
 
         autocmd FocusLost * silent! wall
+        autocmd WinEnter * set cursorline
+        autocmd WinLeave * set nocursorline
     augroup END " }
     augroup fu_help " {
         au!
