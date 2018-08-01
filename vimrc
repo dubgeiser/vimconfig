@@ -45,7 +45,7 @@
     colorscheme solarized
     syntax on
     set nocursorcolumn
-    set nocursorline
+    set cursorline
     set colorcolumn=80
 " }
 
