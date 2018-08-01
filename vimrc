@@ -20,7 +20,6 @@
 
 " Important {
     " Things that need to get done before anything else.
-
     set nocompatible
     au!
     filetype plugin indent on
