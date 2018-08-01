@@ -104,12 +104,12 @@
 " }
 
 " Auto commands  {
-    augroup file_type_defines
+    augroup file_type_defines " {
         au!
         autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
         autocmd BufNewFile,BufRead *.html.twig set filetype=htmldjango
-    augroup END
-    augroup file_type_settings
+    augroup END " }
+    augroup file_type_settings " {
         au!
         autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
         autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
@@ -122,8 +122,8 @@
             \ nnoremap <silent> <Leader>; :call functions#append_semi_colon()<CR>
 
         autocmd FileType php setlocal omnifunc=phpactor#Complete
-    augroup END
-    augroup vim_setup
+    augroup END " }
+    augroup vim_setup " {
         au!
 
         " When editing a file, always jump to the last known cursor position.
@@ -137,15 +137,15 @@
             \ endif
 
         autocmd FocusLost * silent! wall
-    augroup END
-    augroup fu_help
+    augroup END " }
+    augroup fu_help " {
         au!
         autocmd BufWrite *fu.txt :helptags ~/.vim/doc/
-    augroup END
-    augroup markdown
+    augroup END " }
+    augroup markdown " {
         au!
         au BufNewFile,BufRead *.md,*.markdown,*.mkd setlocal filetype=ghmarkdown
-    augroup END
+    augroup END " }
 " }
 
 " Abbreviations and typo's {
