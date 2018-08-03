@@ -21,5 +21,4 @@
 
 git pull --ff-only
 git submodule update --remote --merge
-vim -u NONE -c "call phpactor#Update()" -c q
-vim -u NONE -c "helptags ALL" -c q
+vim -c "call phpactor#Update()" -c "helptags ALL" -c q
