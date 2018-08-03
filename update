@@ -21,4 +21,13 @@
 
 git pull --ff-only
 git submodule update --remote --merge
-vim -c "call phpactor#Update()" -c "helptags ALL" -c q
+
+updated_submodules=$(git status --short | egrep 'pack\/' | sed 's/ M //' | cut -d/ -f4)
+if [[ "$updated_submodules" != "" ]]; then
+    for each in $updated_submodules; do
+        if [[ "$each" == "phpactor" ]]; then
+            vim -c "call phpactor#Update()" -c q
+        fi
+    done
+    vim -c "helptags ALL" -c q
+fi
