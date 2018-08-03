@@ -30,5 +30,5 @@ git submodule update --init
 cd pack/vendor/start/phpactor/
 composer install
 cd -
-vim -u NONE -c "helptags ALL" -c q
+vim -c "helptags ALL" -c q
 popd
