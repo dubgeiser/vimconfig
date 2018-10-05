@@ -25,7 +25,7 @@
 "
 "   Register a REPL command for a specific file type:
 "
-"       `repl#register(filetype, command)`
+"       `repl#Register(filetype, command)`
 "
 "
 "   Set the windows width threshold at which we will split vertically and put
@@ -41,32 +41,32 @@ endif
 let g:repl_loaded = 1
 
 " Run the Read-Eval-Print-Loop for a given file type.
-" Tip: command! Repl call repl#run(&filetype)
-function! repl#run(file_type) abort
-    if repl#has(a:file_type)
-        exec(s:window_placement()." terminal ".repl#get(a:file_type))
+" Tip: command! Repl call repl#Run(&filetype)
+function! repl#Run(file_type) abort
+    if repl#Has(a:file_type)
+        exec(s:window_placement()." terminal ".repl#Get(a:file_type))
     elseif a:file_type == ""
         :echo "*** You cannot run a REPL if &filetype is not set."
     else
         :echo "*** No REPL found for [".a:file_type."] files"
-        :echo "Use repl#register('".a:file_type."', '<REPL>')"
+        :echo "Use repl#Register('".a:file_type."', '<REPL>')"
     endif
 endfunction
 
 " Map a file type to a shell command that starts a repl.
-function! repl#register(file_type, repl_command) abort
+function! repl#Register(file_type, repl_command) abort
     let s:repls[a:file_type] = a:repl_command
 endfunction
 
 " Is there a REPL registered for the given file type?
-function! repl#has(file_type) abort
+function! repl#Has(file_type) abort
     return has_key(s:repls, a:file_type)
 endfunction
 
 " Get the registered REPL command for a given file type.
 " If no REPL was registered for the file type, raise an error.
-" You can check if the file type was registered via repl#has().
-function! repl#get(file_type) abort
+" You can check if the file type was registered via repl#Has().
+function! repl#Get(file_type) abort
     return s:repls[a:file_type]
 endfunction
 
@@ -79,6 +79,6 @@ endfunction
 " Initialize defaults.
 let g:repl_vsplit_threshold = 150
 let s:repls = {}
-call repl#register('php', 'php -a')
-call repl#register('python', 'python3')
-call repl#register('ruby', 'irb')
+call repl#Register('php', 'php -a')
+call repl#Register('python', 'python3')
+call repl#Register('ruby', 'irb')

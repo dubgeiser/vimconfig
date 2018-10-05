@@ -39,7 +39,7 @@ endfunction
 
 
 " 2014-11-04 23:56:47
-function test#buffer_info()
+function test#BufferInfo()
     :Info
     :sleep 3
     :cd ~/.vim/

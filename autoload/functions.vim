@@ -23,7 +23,7 @@ let g:functions_loaded = 1
 
 
 " If there isn't one, append a semi colon to the end of the current line.
-function! functions#append_semi_colon()
+function! functions#AppendSemiColon() abort
     if getline('.') !~ ';$'
         let save_cursor = getpos('.')
         exec("s/$/;/")
@@ -33,10 +33,10 @@ endfunction
 
 
 " Display some useful info on the file in the current buffer.
-function functions#buffer_info()
+function! functions#BufferInfo() abort
     echo printf("%s (%s)",
-                \functions#remove_newline(system("pwd")),
-                \functions#git_branch())
+                \functions#RemoveNewline(system("pwd")),
+                \functions#GitBranch())
     echo printf("%s", bufname("%"))
     echo printf("%d lines of %s, %s, %s",
                 \line("$"),
@@ -48,19 +48,19 @@ endfunction
 
 " @param string
 " @return string The given string with newlines removed
-function! functions#remove_newline(s)
+function! functions#RemoveNewline(s) abort
     return substitute(a:s, "\n", "", "g")
 endfunction
 
 
 " @return string The current git branch
-function! functions#git_branch()
-    return functions#remove_newline(
+function! functions#GitBranch() abort
+    return functions#RemoveNewline(
                 \system("git branch 2>/dev/null | grep '^\*' | sed 's/^\* //'"))
 endfunction
 
 " Remove trailing white space from the current buffer.
-function! functions#rtrim()
+function! functions#Rtrim() abort
     let save_cursor = getpos('.')
     exec('%s/\s\+$//e')
     call setpos('.', save_cursor)
@@ -71,7 +71,7 @@ endfunction
 " full name, and the subsequent directories are shortened to their
 " first letter, i.e. "/home/user/foo/foo/bar/baz.vim" becomes
 " "~/foo/f/b/baz.vim"
-function! functions#short_path()
+function! functions#ShortPath() abort
     let dirsep = has('win32') && ! &shellslash ? '\' : '/'
     let filepath = expand('%:p')
     if empty(filepath)

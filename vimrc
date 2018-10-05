@@ -51,7 +51,7 @@
 
 " Multiple windows {
     set laststatus=2
-    set statusline=%<%{functions#short_path()}%t\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+    set statusline=%<%{functions#ShortPath()}%t\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
     set winminheight=0  " Allow for fully minimized windows.
     set hidden          " Remember undo, even when buffer is not active.
 " }
@@ -119,7 +119,7 @@
 
         " For programming languages using a semi colon at the end of statement.
         autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
-            \ nnoremap <silent> <Leader>; :call functions#append_semi_colon()<CR>
+            \ nnoremap <silent> <Leader>; :call functions#AppendSemiColon()<CR>
 
         autocmd FileType php setlocal omnifunc=phpactor#Complete
     augroup END " }
@@ -223,9 +223,9 @@
 " }
 
 " Commands {
-    command! Rtrim call functions#rtrim()
-    command! Info call functions#buffer_info()
-    command! Repl call repl#run(&filetype)
+    command! Rtrim call functions#Rtrim()
+    command! Info call functions#BufferInfo()
+    command! Repl call repl#Run(&filetype)
 " }
 
 " Plugin Configuration {
