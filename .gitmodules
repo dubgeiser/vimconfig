@@ -55,10 +55,6 @@
 	path = pack/vendor/start/phpactor
 	url = git@github.com:phpactor/phpactor.git
 	ignore = dirty
-[submodule "pack/vendor/start/abolish"]
-	path = pack/vendor/start/abolish
-	url = git@github.com:tpope/vim-abolish.git
-	ignore = dirty
 [submodule "pack/vendor/start/ale"]
 	path = pack/vendor/start/ale
 	url = git@github.com:w0rp/ale.git
