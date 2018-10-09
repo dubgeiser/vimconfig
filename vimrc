@@ -180,7 +180,7 @@
 
     " :Buffers and :Files are commands provided by the FZF plugin.
     nnoremap <Leader>b :Buffers<CR>
-    nnoremap <Leader>e :Files<cr>
+    nnoremap <Leader>e :Files<CR>
     nnoremap <Leader>h :History<CR>
 
     " Add open lines without going to insert mode.
