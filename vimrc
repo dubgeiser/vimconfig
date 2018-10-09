@@ -54,6 +54,8 @@
     set statusline=%<%{functions#ShortPath()}%t\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
     set winminheight=0  " Allow for fully minimized windows.
     set hidden          " Remember undo, even when buffer is not active.
+    set splitbelow
+    set splitright
 " }
 
 " Messages and info {
