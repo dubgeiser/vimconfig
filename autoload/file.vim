@@ -11,67 +11,22 @@
 "
 "               Per Juchtmans <dubgeiser+vimconfig@gmail.com>
 "
-"   DubVim Vim autoload functions.
+"   DubVim Vim autoload functions that operate on files and paths.
 "
 "
 " }
 
-if exists("g:functions_loaded") || &cp
+if exists("g:file_loaded") || &cp
     finish
 endif
-let g:functions_loaded = 1
-
-
-" If there isn't one, append a semi colon to the end of the current line.
-function! functions#AppendSemiColon() abort
-    if getline('.') !~ ';$'
-        let save_cursor = getpos('.')
-        exec("s/$/;/")
-        call setpos('.', save_cursor)
-    endif
-endfunction
-
-
-" Display some useful info on the file in the current buffer.
-function! functions#BufferInfo() abort
-    echo printf("%s (%s)",
-                \functions#RemoveNewline(system("pwd")),
-                \functions#GitBranch())
-    echo printf("%s", bufname("%"))
-    echo printf("%d lines of %s, %s, %s",
-                \line("$"),
-                \&filetype,
-                \&fileformat,
-                \&fileencoding)
-endfunction
-
-
-" @param string
-" @return string The given string with newlines removed
-function! functions#RemoveNewline(s) abort
-    return substitute(a:s, "\n", "", "g")
-endfunction
-
-
-" @return string The current git branch
-function! functions#GitBranch() abort
-    return functions#RemoveNewline(
-                \system("git branch 2>/dev/null | grep '^\*' | sed 's/^\* //'"))
-endfunction
-
-" Remove trailing white space from the current buffer.
-function! functions#Rtrim() abort
-    let save_cursor = getpos('.')
-    exec('%s/\s\+$//e')
-    call setpos('.', save_cursor)
-endfunction
+let g:file_loaded = 1
 
 
 " Display a short path where the first directory is displayed with its
 " full name, and the subsequent directories are shortened to their
 " first letter, i.e. "/home/user/foo/foo/bar/baz.vim" becomes
 " "~/foo/f/b/baz.vim"
-function! functions#ShortPath() abort
+function! file#ShortPath() abort
     let dirsep = has('win32') && ! &shellslash ? '\' : '/'
     let filepath = expand('%:p')
     if empty(filepath)
