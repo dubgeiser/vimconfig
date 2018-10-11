@@ -163,6 +163,10 @@ C-F             In command line mode: take current edit and take that to a
                 Useful when syntax highlighting seems to go awry.
 
 
+                                                              *vimfu-quickfix*
+:expr []        Clear the quickfix window.
+
+
                                                   *vimfu-tdd* *vimfu-map-test*
 :map <Leader>t :wall!\|!./vendor/bin/phpunit tests/Some/ThingTest.php<cr>
                 Writes all the files in the open buffers and runs 1 specific
