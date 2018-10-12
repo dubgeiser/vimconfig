@@ -31,6 +31,9 @@ Based on http://djcraven5.blogspot.com/2006/10/mastering-vim-help-system.html
                                                    *vimfu-insert* *vimfu-edit*
 <C-R>"          Paste clipboard in insert mode.
 gJ              Join lines without inserting a space
+<c-a>           Paste text last typed in insert mode.  (works well when
+                replacing hardcoded numbers into variables or constants)
+                Via https://robots.thoughtbot.com/how-to-extract-an-intention-revealing-name-using-vim
 
 
                                               i                     *vimfu-ex*
