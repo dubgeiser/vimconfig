@@ -12,8 +12,8 @@ Based on http://djcraven5.blogspot.com/2006/10/mastering-vim-help-system.html
 
 
                                          *vimfu-autocomplete* *vimfu-complete*
-C-X C-L         Complete full line.
-C-X C-K         Complete from dictionary. (Only works with `:set spell`)
+<C-X><C-L>      Complete full line.
+<C-X><C-K>      Complete from dictionary. (Only works with `:set spell`)
 
 
                                                                *vimfu-buffers*
@@ -29,7 +29,7 @@ C-X C-K         Complete from dictionary. (Only works with `:set spell`)
 
 
                                                    *vimfu-insert* *vimfu-edit*
-C-R "           Paste clipboard in insert mode.
+<C-R>"          Paste clipboard in insert mode.
 gJ              Join lines without inserting a space
 
 
