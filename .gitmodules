@@ -43,10 +43,6 @@
 	path = pack/vendor/start/vdebug
 	url = git@github.com:joonty/vdebug.git
 	ignore = dirty
-[submodule "pack/vendor/start/goyo"]
-	path = pack/vendor/start/goyo
-	url = git@github.com:junegunn/goyo.vim.git
-	ignore = dirty
 [submodule "pack/vendor/start/fzf"]
 	path = pack/vendor/start/fzf
 	url = git@github.com:junegunn/fzf.vim.git
