@@ -42,6 +42,7 @@
 " }
 
 " Syntax, highlighting and spelling {
+    set background=dark
     colorscheme solarized
     syntax on
     set nocursorcolumn
