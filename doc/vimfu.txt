@@ -152,6 +152,14 @@ How to check if we're in a normal buffer:
 
     empty(&buftype) ? 'NORMAL' : 'SPECIAL'
 
+Check if arguments have been passed to a function:
+
+    function! Fubar(...)
+        if a:0
+            'ARGS HAVE BEEN PASSED'
+        endif
+    endfunction
+
 
                                                            *vimfu-commandline*
 C-F             In command line mode: take current edit and take that to a
