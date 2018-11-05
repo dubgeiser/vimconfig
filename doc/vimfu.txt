@@ -148,6 +148,10 @@ Interpret output of an external script as Vim commands:
 
     :exec(system('/path/to/script'))
 
+How to check if we're in a normal buffer:
+
+    empty(&buftype) ? 'NORMAL' : 'SPECIAL'
+
 
                                                            *vimfu-commandline*
 C-F             In command line mode: take current edit and take that to a
