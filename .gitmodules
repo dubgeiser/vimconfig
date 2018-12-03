@@ -61,3 +61,6 @@
 [submodule "pack/vendor/start/rhubarb"]
 	path = pack/vendor/start/rhubarb
 	url = git@github.com:tpope/vim-rhubarb.git
+[submodule "pack/vendor/start/gruvbox"]
+	path = pack/vendor/start/gruvbox
+	url = git@github.com:morhetz/gruvbox.git

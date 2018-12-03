@@ -43,7 +43,7 @@
 
 " Syntax, highlighting and spelling {
     set background=dark
-    colorscheme solarized
+    colorscheme gruvbox
     syntax on
     set nocursorcolumn
     set cursorline
