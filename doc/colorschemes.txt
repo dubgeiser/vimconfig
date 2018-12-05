@@ -1,6 +1,13 @@
 *colorschemes.txt* Color schemes I've tried out.
 
 
+                                                                     *gruvbox*
+Nice one, switched to it after using Solarized (light and dark) for years.
+Like the dark version a lot.
+Modern color scheme, good diff highlighting, gitcommit, quickfix, etc...
+It has replaced Solarized as from 2018-12-05
+
+
                                                                      *mustang*
 Nice, but too green.
 No visual distinction between variable and string (PHP); That's BAD.
