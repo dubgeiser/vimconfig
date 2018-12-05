@@ -11,10 +11,6 @@
 	path = pack/vendor/start/cmdline-completion
 	url = git@github.com:vim-scripts/cmdline-completion.git
 	ignore = dirty
-[submodule "bundle/vim-colors-solarized"]
-	path = pack/vendor/start/solarized
-	url = git@github.com:altercation/vim-colors-solarized.git
-	ignore = dirty
 [submodule "bundle/editorconfig-vim"]
 	path = pack/vendor/start/editorconfig-vim
 	url = git@github.com:editorconfig/editorconfig-vim.git
