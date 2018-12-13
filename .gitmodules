@@ -60,3 +60,6 @@
 [submodule "pack/vendor/start/gruvbox"]
 	path = pack/vendor/start/gruvbox
 	url = git@github.com:morhetz/gruvbox.git
+[submodule "pack/vendor/start/lightline"]
+	path = pack/vendor/start/lightline
+	url = git@github.com:itchyny/lightline.vim.git
