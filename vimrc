@@ -18,7 +18,7 @@
 "
 " }
 
-" Important {
+" 1. Important {
     " Things that need to get done before anything else.
     set nocompatible
     au!
@@ -26,13 +26,13 @@
     set rtp+=/usr/local/opt/fzf
 " }
 
-" Moving around, searching and patterns {
+" 2. Moving around, searching and patterns {
     set incsearch
     set ignorecase  " Ignore case sensitivity....
     set smartcase   " ... Unless there's a capital letter
 " }
 
-" Displaying text {
+" 4. Displaying text {
     set sidescrolloff=5
     set display+=lastline
     set relativenumber
@@ -41,7 +41,7 @@
     set listchars=tab:⇒\ ,extends:»,precedes:«,trail:▒,nbsp:·
 " }
 
-" Syntax, highlighting and spelling {
+" 5. Syntax, highlighting and spelling {
     set background=dark
     colorscheme gruvbox
     syntax on
@@ -50,7 +50,7 @@
     set colorcolumn=80
 " }
 
-" Multiple windows {
+" 6. Multiple windows {
     set laststatus=2
     set statusline=%<%{file#ShortPath()}%t\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
     set winminheight=0  " Allow for fully minimized windows.
@@ -59,13 +59,36 @@
     set splitright
 " }
 
-" Messages and info {
+" 10. GUI {
+    if has('gui_running')
+        " no menu, no toolbar, no scrollbars
+        set guioptions-=m
+        set guioptions-=T
+        set guioptions-=l
+        set guioptions-=r
+        set guioptions-=L
+
+        " Use :ex instead of gui modal dialogs.
+        " This is kinda borked on MacVim which goes to great length to present
+        " you a modal dialog.
+        set guioptions+=c
+
+        " Take up all the space when running full screen MacVim
+        set fuoptions=maxvert,maxhorz
+
+        set guifont=IBM\ Plex\ Mono:h16
+        set linespace=0
+        set antialias
+    endif
+" }
+
+" 12. Messages and info {
     set showcmd
     set noerrorbells
     set visualbell
 " }
 
-" Editing text {
+" 14. Editing text {
     set undofile
     set undodir=~/.vim/tmp
     set backspace=indent,eol,start whichwrap+=<,>,[,]
@@ -76,7 +99,7 @@
     set completeopt=preview,menu,longest
 " }
 
-" Tabs and indenting {
+" 15. Tabs and indenting {
     set tabstop=4
     set shiftwidth=4
     set softtabstop=4
@@ -85,24 +108,24 @@
     set smartindent
 " }
 
-" Reading and writing files {
+" 19. Reading and writing files {
     set fileformat=unix
     set autoread
     set autowrite
 " }
 
-" The swap file {
+" 20. The swap file {
     set directory=~/.vim/tmp
 " }
 
-" Command line editing {
+" 21. Command line editing {
     set history=10000
     set wildmode=full
     set wildmenu
     set cmdwinheight=12
 " }
 
-" Multi-byte characters {
+" 25. Multi-byte characters {
     set encoding=utf-8
 " }
 
@@ -282,27 +305,4 @@
           runtime! macros/matchit.vim
         endif
     " }
-" }
-
-" GUI {
-    if has('gui_running')
-        " no menu, no toolbar, no scrollbars
-        set guioptions-=m
-        set guioptions-=T
-        set guioptions-=l
-        set guioptions-=r
-        set guioptions-=L
-
-        " Use :ex instead of gui modal dialogs.
-        " This is kinda borked on MacVim which goes to great length to present
-        " you a modal dialog.
-        set guioptions+=c
-
-        " Take up all the space when running full screen MacVim
-        set fuoptions=maxvert,maxhorz
-
-        set guifont=IBM\ Plex\ Mono:h16
-        set linespace=0
-        set antialias
-    endif
 " }
