@@ -65,4 +65,4 @@
 	url = git@github.com:itchyny/lightline.vim.git
 [submodule "pack/vendor/start/lightline-gruvbox"]
 	path = pack/vendor/start/lightline-gruvbox
-	url = git@github.com:shinchu/lightline-gruvbox.vim.git
+	url = git@github.com:dubgeiser/lightline-gruvbox.vim.git
