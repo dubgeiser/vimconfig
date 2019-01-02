@@ -301,8 +301,6 @@
     " }
 
     " matchit.vim {
-        if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-          runtime! macros/matchit.vim
-        endif
+        packadd! matchit
     " }
 " }
