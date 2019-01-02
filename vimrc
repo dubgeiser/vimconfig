@@ -168,7 +168,7 @@
     augroup END " }
     augroup fu_help " {
         au!
-        autocmd BufWrite *fu.txt :helptags ~/.vim/doc/
+        autocmd BufWritePost ~/.vim/doc/* :helptags ~/.vim/doc/
     augroup END " }
     augroup markdown " {
         au!
