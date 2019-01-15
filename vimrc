@@ -297,6 +297,7 @@
 
     " TagBar {
         let g:tagbar_autofocus=1
+        let g:tagbar_autoclose=1
         let g:tagbar_expand=1
         let g:tagbar_silent=1
         nnoremap <F8> :TagbarToggle<CR>
