@@ -66,3 +66,6 @@
 [submodule "pack/vendor/start/lightline-gruvbox"]
 	path = pack/vendor/start/lightline-gruvbox
 	url = git@github.com:dubgeiser/lightline-gruvbox.vim.git
+[submodule "pack/vendor/start/tagbar"]
+	path = pack/vendor/start/tagbar
+	url = git@github.com:majutsushi/tagbar.git
