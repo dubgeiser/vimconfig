@@ -23,7 +23,7 @@ git add --update        Stage all changes in _tracked_ files only.
 git diff                local / staged
 git diff --cached       staged / committed
                         alias dc
-git commit --amend     Undoing stuff
+git commit --amend      Undoing stuff
                         alias: amend
 
 
