@@ -129,6 +129,7 @@ Occasionally update the submodule to a new version:
                                                       *gitfu-online-resources*
 https://github.com/blog/2019-how-to-undo-almost-anything-with-git
 https://github.com/k88hudson/git-flight-rules
+https://medium.freecodecamp.org/how-to-become-a-git-expert-e7c38bf54826
 
 
 
