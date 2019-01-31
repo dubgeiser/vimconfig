@@ -25,13 +25,11 @@
     filetype plugin indent on
     set rtp+=/usr/local/opt/fzf
 " }
-
 " 2. Moving around, searching and patterns {
     set incsearch
     set ignorecase  " Ignore case sensitivity....
     set smartcase   " ... Unless there's a capital letter
 " }
-
 " 4. Displaying text {
     set sidescrolloff=5
     set display+=lastline
@@ -40,7 +38,6 @@
     set list
     set listchars=tab:⇒\ ,extends:»,precedes:«,trail:▒,nbsp:·
 " }
-
 " 5. Syntax, highlighting and spelling {
     set background=dark
     colorscheme gruvbox
@@ -49,7 +46,6 @@
     set cursorline
     set colorcolumn=80
 " }
-
 " 6. Multiple windows {
     set laststatus=2
     set statusline=%<%{file#ShortPath()}%t\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
@@ -58,7 +54,6 @@
     set splitbelow
     set splitright
 " }
-
 " 10. GUI {
     if has('gui_running')
         " no menu, no toolbar, no scrollbars
@@ -81,13 +76,11 @@
         set antialias
     endif
 " }
-
 " 12. Messages and info {
     set showcmd
     set noerrorbells
     set visualbell
 " }
-
 " 14. Editing text {
     set undofile
     set undodir=~/.vim/tmp
@@ -98,7 +91,6 @@
     " Show extra info if menu (preview)
     set completeopt=preview,menu,longest
 " }
-
 " 15. Tabs and indenting {
     set tabstop=4
     set shiftwidth=4
@@ -107,24 +99,20 @@
     set autoindent
     set smartindent
 " }
-
 " 19. Reading and writing files {
     set fileformat=unix
     set autoread
     set autowrite
 " }
-
 " 20. The swap file {
     set directory=~/.vim/tmp
 " }
-
 " 21. Command line editing {
     set history=10000
     set wildmode=full
     set wildmenu
     set cmdwinheight=12
 " }
-
 " 25. Multi-byte characters {
     set encoding=utf-8
 " }
@@ -175,14 +163,12 @@
         au BufNewFile,BufRead *.md,*.markdown,*.mkd setlocal filetype=ghmarkdown
     augroup END " }
 " }
-
 " Abbreviations and typo's {
     " Compensate for the FUCKING Mac AZERTY BE layout, for instance:
     " typing "|| " fast will result in the trailing char to be char 160
     " instead of 32.
     inoremap   <Space>
 " }
-
 " Key bindings {
     " Make <Leader> char something more accessible, especially  on AZERTY.
     let mapleader = " "
@@ -240,7 +226,6 @@
     nnoremap <Leader>q :quit<CR>
     nnoremap <Leader><Leader> <C-^>
 " }
-
 " MacVim {
     " MacVim loads a custom vimrc to make Gvim behave more like a Mac app.
     " This section's purpose is to try to load as little as possible.
@@ -248,13 +233,11 @@
     let macvim_skip_cmd_opt_movement = 1
     let macvim_skip_colorscheme = 1
 " }
-
 " Commands {
     command! Rtrim call buffer#RemoveTrailingWhitespace()
     command! Info call buffer#Info()
     command! Repl call repl#Run(&filetype)
 " }
-
 " Plugin Configuration {
     " fzf {
         if !has("gui_running")
