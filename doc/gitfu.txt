@@ -72,6 +72,15 @@ When was file 'foo.bar' added:
     $ git log --diff-filter=A -- foo.bar
 
 
+                                                        *gitfu-search-changes*
+Searching for changes via string/regex:
+    $ git log -S<string>        Will show changes in number of occurrences
+    $ git log -G<REGEX>         Will show changes that added/deleted
+Distinction is important: if there is a change that both added and deleted a
+string, -S will not show it (since the number of occurrences did not change),
+while -G will.
+
+
                                                        *gitfu-merge-conflicts*
 When dealing with a merge conflict (or a stash pop gone "bad"), it might be
 that you simply want to keep one version or the other.
