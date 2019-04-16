@@ -71,7 +71,7 @@
         " Take up all the space when running full screen MacVim
         set fuoptions=maxvert,maxhorz
 
-        set guifont=IBM\ Plex\ Mono:h16
+        set guifont=IBM\ Plex\ Mono:h18
         set linespace=0
         set antialias
     endif
