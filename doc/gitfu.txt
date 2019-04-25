@@ -81,6 +81,15 @@ string, -S will not show it (since the number of occurrences did not change),
 while -G will.
 
 
+                                                       *gitfu-stash-untracked*
+By default, Git does not stash untracked files, this can be circumvented using
+the -u flag:
+    $ git stash -u
+
+Git will then also stash untracked files, which will all come back when
+popping the stash back.
+
+
                                                        *gitfu-merge-conflicts*
 When dealing with a merge conflict (or a stash pop gone "bad"), it might be
 that you simply want to keep one version or the other.
