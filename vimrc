@@ -279,11 +279,13 @@
         let g:tagbar_silent=1
         nnoremap <F8> :TagbarToggle<CR>
     " }
-    " Lightline GruvBox {
-        let g:lightline = {}
-        let g:lightline.colorscheme = 'gruvbox'
-        let g:lightline.component_function = {}
-        let g:lightline.component_function.filename = "file#ShortPath"
+    " Lightline {
+        let g:lightline = {
+            \ 'colorscheme' : 'gruvbox',
+            \ 'component_function' : {
+            \   'filename' : 'file#ShortPath'
+            \ }
+        \ }
     " }
     " matchit.vim {
         packadd! matchit
