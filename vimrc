@@ -48,7 +48,7 @@
 " }
 " 6. Multiple windows {
     set laststatus=2
-    set statusline=%<%{file#ShortPath()}%t\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+    set statusline=%<%{file#ShortPath()}\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
     set winminheight=0  " Allow for fully minimized windows.
     set hidden          " Remember undo, even when buffer is not active.
     set splitbelow
@@ -282,6 +282,8 @@
     " Lightline GruvBox {
         let g:lightline = {}
         let g:lightline.colorscheme = 'gruvbox'
+        let g:lightline.component_function = {}
+        let g:lightline.component_function.filename = "file#ShortPath"
     " }
     " matchit.vim {
         packadd! matchit

@@ -32,13 +32,19 @@ function! file#ShortPath() abort
     if empty(filepath)
         return ''
     endif
-    let mod = (exists('+acd') && &acd) ? ':~:h' : ':~:.:h'
+    let mod = (exists('+acd') && &acd) ? ':~' : ':~:.'
     let fpath = split(fnamemodify(filepath, mod), dirsep)
+    let filename = remove(fpath, -1)
 
-    " Empty fpath happens when editing a file in '/' on Unix-based systems
+    " Empty fpath happens when editing a file in '/' or in current directory on
+    " Unix-based systems.
     " This behavior is untested under Windows!
     if empty(fpath)
-        return dirsep
+        if empty(filename)
+            return dirsep
+        else
+            return filename
+        endif
     endif
 
     let fpath_shortparts = map(fpath[1:], 'v:val[0]')
@@ -46,5 +52,5 @@ function! file#ShortPath() abort
     if path == ('.' . dirsep)
         let path = ''
     endif
-    return path
+    return path . filename
 endfunction
