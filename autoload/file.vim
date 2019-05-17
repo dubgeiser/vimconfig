@@ -40,11 +40,7 @@ function! file#ShortPath() abort
     " Unix-based systems.
     " This behavior is untested under Windows!
     if empty(fpath)
-        if empty(filename)
-            return dirsep
-        else
-            return filename
-        endif
+        return empty(filename) ? dirsep : filename
     endif
 
     let fpath_shortparts = map(fpath[1:], 'v:val[0]')
