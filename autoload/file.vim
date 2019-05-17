@@ -24,8 +24,8 @@ let g:file_loaded = 1
 
 " Display a short path where the first directory is displayed with its
 " full name, and the subsequent directories are shortened to their
-" first letter, i.e. "/home/user/foo/foo/bar/baz.vim" becomes
-" "~/foo/f/b/baz.vim"
+" first letter, i.e. `/home/user/foo/foo/bar/baz.vim` becomes
+" `~/foo/f/b/baz.vim`
 function! file#ShortPath() abort
     let dirsep = has('win32') && ! &shellslash ? '\' : '/'
     let filepath = expand('%:p')
