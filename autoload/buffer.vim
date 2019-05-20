@@ -28,6 +28,15 @@ function! buffer#RemoveTrailingWhitespace() abort
     call setpos('.', save_cursor)
 endfunction
 
+function! buffer#RemoveEofBlankLines() abort
+    let save_cursor = getpos('.')
+    normal G
+    while getline('.') == ""
+        normal dd
+    endwhile
+    call setpos('.', save_cursor)
+endfunction
+
 
 " Display some useful info on the file in the current buffer.
 function! buffer#Info() abort

@@ -15,5 +15,6 @@
 " }
 
 command! Rtrim call buffer#RemoveTrailingWhitespace()
+command! Btrim call buffer#RemoveEofBlankLines()
 command! Info call buffer#Info()
 command! Repl call repl#Run(&filetype)
