@@ -24,7 +24,7 @@
 " Each test is the main part of a function in this file, but without 'test#'
 " prefix and '()' suffix.
 let tests_to_run = [
-            \'buffer_info'
+            \'BufferInfo'
             \]
 
 
