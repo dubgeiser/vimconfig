@@ -25,7 +25,6 @@ VIMDIR=~/.vim
 
 pushd
 cd ~
-ln -s $VIMDIR/vimrc .vimrc
 cd $VIMDIR
 mkdir -p tmp
 git submodule update --init
