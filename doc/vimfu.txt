@@ -83,6 +83,8 @@ gn              Like 'n' for going to the next search pattern, but also start
                 match itself).  If combined with an operator; operates on the
                 match; ex: "dgn" deletes text of next match.
                 Handy to use with regex search and/or '.' operator.
+<c-o> / <c-i>   Cycle through *:jumps*
+g; / g,         Cycle through *:changes*
 
 In |vimdiff| (and thus |fugitive-:Gdiff|):
 ]c              Move to the next change in a diff
