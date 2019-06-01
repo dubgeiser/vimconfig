@@ -34,4 +34,3 @@ endfunction
 
 
 command! ToggleWritingMode call <SID>toggle_writing_mode()
-nnoremap <Leader>w :ToggleWritingMode<cr>
