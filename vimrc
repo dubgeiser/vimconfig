@@ -119,10 +119,10 @@
 
 " Load DubVim customization {
     if has("mac")
-        runtime dubvim/macvim
+        runtime dubvim/macvim.vim
     end
-    runtime dubvim/commands
-    runtime dubvim/autocommands
-    runtime dubvim/key_bindings
-    runtime dubvim/plugin_configuration
+    runtime dubvim/commands.vim
+    runtime dubvim/autocommands.vim
+    runtime dubvim/keybindings.vim
+    runtime dubvim/plugconfig.vim
 " }
