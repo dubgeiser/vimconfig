@@ -18,19 +18,13 @@ if !(exists(":Goyo") && exists(":Limelight"))
     finish
 endif
 
-let s:writing_mode_enabled=0
-
-function! s:toggle_writing_mode() abort
-    if s:writing_mode_enabled
-        exec(":q")
-        exec(":Limelight!")
-        let s:writing_mode_enabled=0
-    else
-        exec(":Goyo")
-        exec(":Limelight 0.6")
-        let s:writing_mode_enabled=1
-    endif
+function! s:goyo_enter()
+    Limelight
 endfunction
 
+function! s:goyo_leave()
+    Limelight!
+endfunction
 
-command! ToggleWritingMode call <SID>toggle_writing_mode()
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
