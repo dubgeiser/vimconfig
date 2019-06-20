@@ -39,6 +39,8 @@
     set listchars=tab:⇒\ ,extends:»,precedes:«,trail:▒,nbsp:·
 " }
 " 5. Syntax, highlighting and spelling {
+    let g:gruvbox_contrast_dark="soft"
+    let g:gruvbox_contrast_light="soft"
     set background=dark
     colorscheme gruvbox
     syntax on
