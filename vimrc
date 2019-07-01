@@ -99,7 +99,6 @@
     set softtabstop=4
     set expandtab
     set autoindent
-    set smartindent
 " }
 " 19. Reading and writing files {
     set fileformat=unix
