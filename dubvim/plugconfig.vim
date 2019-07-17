@@ -59,9 +59,22 @@
     let g:lightline = {
         \ 'colorscheme' : 'gruvbox',
         \ 'component_function' : {
-        \   'filename' : 'file#ShortPath'
+        \   'filename' : 'LightLineFilePath'
         \ }
     \ }
+
+    " Return the filename component for LightLine, depending on the type of
+    " file or buffer.
+    function! LightLineFilePath() abort
+        if &buftype == 'help'
+            let filename = expand("%:t")
+        elseif &buftype == 'terminal'
+            let filename = ''
+        else
+            let filename = file#ShortPath()
+        endif
+        return filename
+    endfunction
 " }
 " matchit.vim {
     packadd! matchit
