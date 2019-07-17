@@ -79,7 +79,7 @@
     endif
 " }
 " 12. Messages and info {
-    set showcmd
+    set noshowcmd
     set noshowmode " Lightline plugin covers this.
     set noerrorbells
     set visualbell
