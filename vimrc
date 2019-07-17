@@ -80,6 +80,7 @@
 " }
 " 12. Messages and info {
     set showcmd
+    set noshowmode " Lightline plugin covers this.
     set noerrorbells
     set visualbell
 " }
