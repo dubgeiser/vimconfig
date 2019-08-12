@@ -26,6 +26,12 @@ let g:file_loaded = 1
 " full name, and the subsequent directories are shortened to their
 " first letter, i.e. `/home/user/foo/foo/bar/baz.vim` becomes
 " `~/foo/f/b/baz.vim`
+"
+" This kinda duplicates the behavior of `pathshorten()` but it differs because
+" `pathshorten()` also truncates the first directory name in the path, which
+" is undesired behavior since a lot of info is in there, plus, it also helps
+" in differentiating between Git buffer and its corresponding file when doing
+" `:GDiff` and the likes.
 function! file#ShortPath() abort
     let dirsep = has('win32') && ! &shellslash ? '\' : '/'
     let filepath = expand('%:p')
