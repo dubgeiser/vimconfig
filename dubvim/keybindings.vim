@@ -39,10 +39,11 @@ if !has('nvim') && !has('gui_running') && has('unix')
 endif
 inoremap <C-D> <C-X><C-F>
 
-" :Buffers and :Files are commands provided by the FZF plugin.
+" Commands like :Buffers and :Files are provided by the FZF plugin.
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>e :Files<CR>
 nnoremap <Leader>h :History<CR>
+nnoremap <Leader>/ :BLines<CR>
 
 " Add open lines without going to insert mode.
 nnoremap <C-CR> o<ESC>
