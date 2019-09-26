@@ -18,9 +18,6 @@
 
 set fileformat=unix
 set textwidth=0
-
-nnoremap <leader>f /function\s*
-
 set shiftwidth=4
 set tabstop=4
 set expandtab
