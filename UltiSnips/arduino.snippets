@@ -1,0 +1,54 @@
+extends cpp
+
+snippet setup "Setup / loop skeleton"
+void setup()
+{
+	${1}
+}
+
+void loop()
+{
+}
+endsnippet
+
+snippet dw "digitalWrite"
+digitalWrite(${1:13}, ${2:HIGH});
+endsnippet
+
+snippet dr "digitalRead"
+digitalRead(${1:13});
+endsnippet
+
+snippet pm "pinMode"
+pinMode(${1:13}, ${2:INPUT});
+endsnippet
+
+snippet sr "Serial.read"
+Serial.read();
+endsnippet
+
+snippet sp "Serial.print"
+Serial.print(${1:""});
+endsnippet
+
+snippet spl "Serial.println"
+Serial.println(${1:""});
+endsnippet
+
+snippet if "if(condition) {}"
+if(${1:condition}) {
+	${2:}
+}
+endsnippet
+
+snippet elif "else if(condition) {}"
+else if(${1:condition}) {
+	${2:}
+}
+endsnippet
+
+snippet else "else {}"
+else {
+	${1:}
+}
+endsnippet
