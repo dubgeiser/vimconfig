@@ -73,7 +73,7 @@
         " Take up all the space when running full screen MacVim
         set fuoptions=maxvert,maxhorz
 
-        set guifont=IBMPlexMono-ExtraLight:h19
+        set guifont=IBMPlexMono-Light:h16
         set linespace=0
         set antialias
     endif
