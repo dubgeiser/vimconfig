@@ -1,13 +1,11 @@
 extends cpp
 
 snippet setup "Setup / loop skeleton"
-void setup()
-{
+void setup() {
 	${1}
 }
 
-void loop()
-{
+void loop() {
 }
 endsnippet
 
@@ -50,5 +48,12 @@ endsnippet
 snippet else "else {}"
 else {
 	${1:}
+}
+endsnippet
+
+snippet fn "function definition"
+${1:void}
+${2:}(${3:}) {
+	${0}
 }
 endsnippet
