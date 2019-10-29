@@ -23,7 +23,7 @@ set -e
 
 VIMDIR=~/.vim
 
-pushd
+pushd .
 cd ~
 cd $VIMDIR
 mkdir -p tmp
