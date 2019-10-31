@@ -71,7 +71,9 @@
         set guioptions+=c
 
         " Take up all the space when running full screen MacVim
-        set fuoptions=maxvert,maxhorz
+        if has("mac")
+            set fuoptions=maxvert,maxhorz
+        endif
 
         set guifont=IBMPlexMono-Light:h16
         set linespace=0
