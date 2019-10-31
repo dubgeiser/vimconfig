@@ -76,7 +76,7 @@
             set guifont=IBMPlexMono-Light:h16
             set antialias
         else
-            set guifont=IBM\ Plex\ Mono\ Light\ 14
+            set guifont=IBM\ Plex\ Mono\ Light\ 12
         endif
 
         set linespace=0
