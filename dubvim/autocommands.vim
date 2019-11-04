@@ -14,6 +14,17 @@
 "   DubVim Autocommands
 " }
 
+
+" Event handlers {
+" Only set the cursor line when not in a help buffer.
+function! s:WinEnterSetCursorLine() abort
+    if &buftype == 'help'
+        set nocursorline
+    else
+        set cursorline
+    endif
+endfunction
+" }
 augroup file_type_defines " {
     au!
     autocmd BufNewFile,BufRead *.tpl set filetype=xhtml
@@ -47,7 +58,7 @@ augroup vim_setup " {
         \ endif
 
     autocmd FocusLost * silent! wall
-    autocmd WinEnter,InsertLeave * set cursorline
+    autocmd BufEnter,WinEnter,InsertLeave * call <SID>WinEnterSetCursorLine()
     autocmd WinLeave,InsertEnter * set nocursorline
 augroup END " }
 augroup fu_help " {
