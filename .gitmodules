@@ -75,3 +75,6 @@
 [submodule "pack/vendor/start/vader"]
 	path = pack/vendor/start/vader
 	url = git@github.com:junegunn/vader.vim.git
+[submodule "pack/vendor/start/tdd"]
+	path = pack/vendor/start/tdd
+	url = git@github.com:dubgeiser/vim-tdd
