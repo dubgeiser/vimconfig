@@ -70,15 +70,7 @@
         " you a modal dialog.
         set guioptions+=c
 
-        " Take up all the space when running full screen MacVim
-        if has("mac")
-            set fuoptions=maxvert,maxhorz
-            set guifont=IBMPlexMono-Light:h16
-            set antialias
-        else
-            set guifont=IBM\ Plex\ Mono\ Light\ 12
-        endif
-
+        set guifont=IBMPlexMono-Light:h16,IBM\ Plex\ Mono\ Light\ 12
         set linespace=0
     endif
 " }
