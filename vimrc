@@ -114,13 +114,3 @@
 " 25. Multi-byte characters {
     set encoding=utf-8
 " }
-
-" Load DubVim customization {
-    if has("mac")
-        runtime dubvim/macvim.vim
-    end
-    runtime dubvim/commands.vim
-    runtime dubvim/autocommands.vim
-    runtime dubvim/keybindings.vim
-    runtime dubvim/plugconfig.vim
-" }
