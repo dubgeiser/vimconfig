@@ -21,13 +21,3 @@
 set shiftwidth=4
 set tabstop=4
 set expandtab
-
-set errorformat+=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-
-" pyflakes is required, using python will cause scripts to execute and will
-" also dump a bunch of import errors on django projects if DJANGO environment
-" variable is not set.
-if executable("pyflakes")
-    set makeprg=pyflakes\ %
-    set errorformat+=%E%f:%l:\ could\ not\ compile,%-Z%p^,%W%f:%l:\ %m,%-G%.%#
-endif

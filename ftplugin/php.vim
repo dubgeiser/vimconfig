@@ -23,11 +23,5 @@ set tabstop=4
 set expandtab
 set softtabstop=4
 
-" Error formats {
-    set errorformat+=%m\ in\ %f\ on\ line\ %l               " Standard PHP
-    set errorformat+=%m\ at\ \[%f\ line\ %l]                "SimpleTest fail
-    set errorformat+=%E%\\d%\\+)\ %m,%CFailed%m,%Z%f:%l,%-G "PHPUnit fail
-"}
-
 " Doing quite some symfony, load specific snippets when in PHP files.
 exec("UltiSnipsAddFiletypes php-symfony2")
