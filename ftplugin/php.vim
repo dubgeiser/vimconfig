@@ -23,5 +23,4 @@ set tabstop=4
 set expandtab
 set softtabstop=4
 
-" Doing quite some symfony, load specific snippets when in PHP files.
 exec("UltiSnipsAddFiletypes php-symfony2")
