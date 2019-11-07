@@ -78,3 +78,6 @@ nnoremap <Leader><Leader> <C-^>
 
 " :Gstatus is provided by the Fugitive plugin.
 nnoremap <Leader>g :Gstatus<CR>
+
+" :TestLast is provided by the Test plugin (vim-test)
+nnoremap <Leader>t :TestLast<CR>

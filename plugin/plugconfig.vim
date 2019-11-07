@@ -72,3 +72,6 @@
 " matchit.vim {
     packadd! matchit
 " }
+" Test {
+    let test#strategy = 'dispatch'
+" }
