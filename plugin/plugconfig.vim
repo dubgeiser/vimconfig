@@ -74,4 +74,15 @@
 " }
 " Test {
     let test#strategy = 'dispatch'
+
+    " For some reason, the file + line number was not parsed correctly, making
+    " it impossible to go to the correct line with the normal quickfix window
+    " navigation shortcuts.
+    " Might be a bug in Test, or in Dispatch.  I presume Test, since I could
+    " reproduce with the Dispatch plugin deleted.
+    " By explicitly setting pyunit, this works, but it is a small workaround;
+    " what if I use DjangoTest or Nose, etc...
+    " For the time being however, this helps me out.
+    let g:dispatch_compilers = {}
+    let g:dispatch_compilers['python'] = 'pyunit'
 " }
