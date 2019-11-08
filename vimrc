@@ -70,7 +70,11 @@
         " you a modal dialog.
         set guioptions+=c
 
-        set guifont=IBMPlexMono-Light:h16,IBM\ Plex\ Mono\ Light\ 12
+        if has('linux')
+            set guifont=IBM\ Plex\ Mono\ Light\ 12
+        else
+            set guifont=IBMPlexMono-Light:h16
+        endif
         set linespace=0
     endif
 " }
