@@ -86,3 +86,8 @@
     let g:dispatch_compilers = {}
     let g:dispatch_compilers['python'] = 'pyunit'
 " }
+" Ack {
+    if executable('ag')
+        let g:ackprg = 'ag --vimgrep'
+    endif
+" }

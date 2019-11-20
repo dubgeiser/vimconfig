@@ -81,3 +81,6 @@
 [submodule "pack/vendor/start/test"]
 	path = pack/vendor/start/test
 	url = git@github.com:janko/vim-test.git
+[submodule "pack/vendor/start/ack"]
+	path = pack/vendor/start/ack
+	url = git@github.com:mileszs/ack.vim.git
