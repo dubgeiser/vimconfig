@@ -31,6 +31,7 @@
     set smartcase   " ... Unless there's a capital letter
 " }
 " 4. Displaying text {
+    set nowrap
     set sidescrolloff=5
     set display+=lastline
     set relativenumber
