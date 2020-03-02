@@ -12,6 +12,8 @@
 "               Per Juchtmans <dubgeiser+vimconfig@gmail.com>
 "
 "   DubVim Key Bindings
+"   Note that keyboard mappings that need a plugin to function properly will
+"   be added to plugin/plugconfig.vim rather than here.
 " }
 
 " Compensate for the FUCKING Mac AZERTY BE layout, for instance:
@@ -38,13 +40,6 @@ if !has('nvim') && !has('gui_running') && has('unix')
     inoremap <C-@> <C-X><C-O>
 endif
 inoremap <C-D> <C-X><C-F>
-
-" Commands provided by the FZF plugin.
-nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>e :Files<CR>
-nnoremap <Leader>h :History<CR>
-nnoremap <Leader>/ :BLines<CR>
-nnoremap <Leader>f :BTags<CR>
 
 " Add open lines without going to insert mode.
 nnoremap <C-CR> o<ESC>
@@ -75,9 +70,3 @@ nnoremap <silent> <Down><Down> :clast<CR>
 
 nnoremap <Leader>q :quit<CR>
 nnoremap <Leader><Leader> <C-^>
-
-" :Gstatus is provided by the Fugitive plugin.
-nnoremap <Leader>g :Gstatus<CR>
-
-" :TestLast is provided by the Test plugin (vim-test)
-nnoremap <Leader>t :TestLast<CR>

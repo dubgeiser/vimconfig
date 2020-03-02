@@ -31,6 +31,15 @@
           \ 'spinner': ['fg', 'Label'],
           \ 'header':  ['fg', 'Comment'] }
     endif
+
+    nnoremap <Leader>b :Buffers<CR>
+    nnoremap <Leader>e :Files<CR>
+    nnoremap <Leader>h :History<CR>
+    nnoremap <Leader>/ :BLines<CR>
+    nnoremap <Leader>f :BTags<CR>
+" }
+" Fugitive {
+    nnoremap <Leader>g :Gstatus<CR>
 " }
 " UltiSnips {
     let g:UltiSnipsExpandTrigger="<Tab>"
@@ -85,6 +94,7 @@
     " For the time being however, this helps me out.
     let g:dispatch_compilers = {}
     let g:dispatch_compilers['python'] = 'pyunit'
+    nnoremap <Leader>t :TestLast<CR>
 " }
 " Ack {
     if executable('ag')
