@@ -70,3 +70,4 @@ nnoremap <silent> <Down><Down> :clast<CR>
 
 nnoremap <Leader>q :quit<CR>
 nnoremap <Leader><Leader> <C-^>
+nnoremap <Leader>w :call buffer#ToggleLineWrap()<CR>

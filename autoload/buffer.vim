@@ -57,3 +57,11 @@ function! buffer#GitBranch() abort
     return string#RemoveNewline(
                 \system("git branch 2>/dev/null | grep '^\*' | sed 's/^\* //'"))
 endfunction
+
+function! buffer#ToggleLineWrap() abort
+    if &wrap
+        :set nowrap
+    else
+        :set wrap
+    endif
+endfunction
