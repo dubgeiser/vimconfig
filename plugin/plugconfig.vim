@@ -32,6 +32,8 @@
           \ 'header':  ['fg', 'Comment'] }
     endif
 
+    let g:fzf_preview_window = 'right:60%'
+
     nnoremap <Leader>b :Buffers<CR>
     nnoremap <Leader>e :Files<CR>
     nnoremap <Leader>h :History<CR>
