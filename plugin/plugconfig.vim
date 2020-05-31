@@ -61,7 +61,6 @@
 " }
 " Lightline {
     let g:lightline = {
-        \ 'colorscheme' : 'gruvbox',
         \ 'component_function' : {
         \   'filename' : 'LightLineFilePath'
         \ }
