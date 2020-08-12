@@ -32,6 +32,7 @@ echo '---> Checking for extra update steps'
 updated_submodules=$(git status --short | egrep 'pack\/' | sed 's/ M //' | cut -d/ -f4)
 if [[ "$updated_submodules" != "" ]]; then
     for each in $updated_submodules; do
+        printf "\t - checking %s\n" "$each"
         if [[ "$each" == "phpactor" ]]; then
             echo '---> Updating PHPActor'
             vim -c "call phpactor#Update()" -c q
