@@ -19,15 +19,27 @@
 #
 # }
 
+echo
+echo '---> Updating local install'
 git pull --ff-only
+
+echo
+echo '---> Updating submodules'
 git submodule update --remote --merge
 
+echo
+echo '---> Checking for extra update steps'
 updated_submodules=$(git status --short | egrep 'pack\/' | sed 's/ M //' | cut -d/ -f4)
 if [[ "$updated_submodules" != "" ]]; then
     for each in $updated_submodules; do
         if [[ "$each" == "phpactor" ]]; then
+            echo '---> Updating PHPActor'
             vim -c "call phpactor#Update()" -c q
         fi
     done
+    echo
+    echo '---> Updating help'
     vim -c "helptags ALL" -c q
+else
+    echo 'No extra update steps necessary'
 fi
