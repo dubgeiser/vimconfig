@@ -58,7 +58,11 @@
     set splitbelow
     set splitright
 " }
-" 10. GUI {
+" 10. GUI / printing {
+" In GVim, option 10 relates to GUI settings, in Neovim to printing
+" I'm keeping the GUI stuff here for now, when I've fully migrated to Neovim,
+" this is probably gone.
+" I'll have to get used to the font selection thought...
     if has('gui_running')
         " no menu, no toolbar, no scrollbars
         set guioptions-=m
@@ -80,13 +84,13 @@
         set linespace=0
     endif
 " }
-" 12. Messages and info {
+" 11. Messages and info {
     set showcmd
     set noshowmode " Lightline plugin covers this.
     set noerrorbells
     set visualbell
 " }
-" 14. Editing text {
+" 13. Editing text {
     set undofile
     set undodir=~/.vim/tmp
     set backspace=indent,eol,start whichwrap+=<,>,[,]
@@ -96,27 +100,27 @@
     " Show extra info if menu (preview)
     set completeopt=preview,menu,longest
 " }
-" 15. Tabs and indenting {
+" 14. Tabs and indenting {
     set tabstop=4
     set shiftwidth=4
     set softtabstop=4
     set expandtab
     set autoindent
 " }
-" 19. Reading and writing files {
+" 18. Reading and writing files {
     set fileformat=unix
     set autoread
     set autowrite
 " }
-" 20. The swap file {
+" 19. The swap file {
     set directory=~/.vim/tmp
 " }
-" 21. Command line editing {
+" 20. Command line editing {
     set history=10000
     set wildmode=full
     set wildmenu
     set cmdwinheight=12
 " }
-" 25. Multi-byte characters {
+" 24. Multi-byte characters {
     set encoding=utf-8
 " }
