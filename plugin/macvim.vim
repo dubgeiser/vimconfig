@@ -14,7 +14,7 @@
 "   DubVim MacVim specific settings
 " }
 
-if has("mac")
+if has("mac") && has("gui")
     set antialias
     set fuoptions=maxvert,maxhorz
     " MacVim loads a custom vimrc to make Gvim behave more like a Mac app.
