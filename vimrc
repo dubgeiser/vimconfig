@@ -43,6 +43,18 @@
     let g:gruvbox_contrast_dark="medium"
     let g:gruvbox_contrast_light="medium"
     let g:gruvbox_invert_selection="0"
+
+    " Italics in Terminal version, used for doc comments.
+    let g:gruvbox_italic=1
+
+    " Terminal does not do colored underline or strike through.
+    " 'bg' makes it stand out  the most, 'fg' can be confusing with keywords.
+    let g:gruvbox_guisp_fallback='bg'
+
+    " Make terminal version looks as close to GUI as possible.
+    " Note: works in iTerm, but not in standard Terminal.
+    set termguicolors
+
     set background=dark
     colorscheme gruvbox
     syntax on
