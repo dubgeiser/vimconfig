@@ -39,10 +39,6 @@
     nnoremap <Leader>r :call phpactor#ContextMenu()<CR>
     vnoremap <Leader>r :call phpactor#ContextMenu()<CR>
 " }
-" Ale {
-    nnoremap <Leader>j :ALENextWrap<CR>
-    nnoremap <Leader>k :ALEPreviousWrap<CR>
-" }
 " Lightline {
     let g:lightline = {
         \ 'component_function' : {
