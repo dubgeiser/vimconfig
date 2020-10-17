@@ -76,8 +76,6 @@
     packadd! matchit
 " }
 " Test {
-    let test#strategy = 'dispatch'
-
     " For some reason, the file + line number was not parsed correctly, making
     " it impossible to go to the correct line with the normal quickfix window
     " navigation shortcuts.

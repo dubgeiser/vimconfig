@@ -58,9 +58,6 @@
 [submodule "pack/vendor/start/limelight"]
 	path = pack/vendor/start/limelight
 	url = git@github.com:junegunn/limelight.vim.git
-[submodule "pack/vendor/start/dispatch"]
-	path = pack/vendor/start/dispatch
-	url = git@github.com:tpope/vim-dispatch.git
 [submodule "pack/vendor/start/test"]
 	path = pack/vendor/start/test
 	url = git@github.com:janko/vim-test.git
