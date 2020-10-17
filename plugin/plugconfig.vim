@@ -72,9 +72,6 @@
         return filename
     endfunction
 " }
-" matchit.vim {
-    packadd! matchit
-" }
 " Test {
     " For some reason, the file + line number was not parsed correctly, making
     " it impossible to go to the correct line with the normal quickfix window

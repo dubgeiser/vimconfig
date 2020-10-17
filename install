@@ -26,7 +26,6 @@ VIMDIR=~/.vim
 pushd .
 cd ~
 cd $VIMDIR
-mkdir -p tmp
 git submodule update --init
 cd pack/vendor/start/phpactor/
 composer install
