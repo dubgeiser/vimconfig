@@ -88,5 +88,6 @@
 " }
 " 20. Command line editing {
     set wildmode=full
+    set wildignorecase  " Ignore case on the command line.
     set cmdwinheight=12
 " }
