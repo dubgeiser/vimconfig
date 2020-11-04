@@ -61,12 +61,15 @@ nnoremap <C-K> <C-W>k
 nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
 
-nnoremap <silent> <Right> :cnext<CR>
-nnoremap <silent> <Right><Right> :cnfile<CR><C-G>
-nnoremap <silent> <Left> :cprev<CR>
-nnoremap <silent> <Left><Left> :cpfile<CR><C-G>
-nnoremap <silent> <Up><Up> :cfirst<CR>
-nnoremap <silent> <Down><Down> :clast<CR>
+" Have some use for the arrow keys.
+" Allows for quick browsing through search results and errors and the likes in
+" the quickfix window.
+nnoremap <silent> <Down> :cnext<CR>
+nnoremap <silent> <S-Down> :cnfile<CR><C-G>
+nnoremap <silent> <Up> :cprev<CR>
+nnoremap <silent> <S-Up> :cpfile<CR><C-G>
+nnoremap <silent> <Left> :cfirst<CR>
+nnoremap <silent> <Right> :clast<CR>
 
 nnoremap <Leader>q :quit<CR>
 nnoremap <Leader><Leader> <C-^>
