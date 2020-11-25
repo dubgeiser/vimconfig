@@ -20,7 +20,7 @@
     let $FZF_DEFAULT_OPTS='--reverse'
 
     nnoremap <Leader>b :Buffers<CR>
-    nnoremap <Leader>e :Files<CR>
+    nnoremap <Leader>e :GFiles<CR>
     nnoremap <Leader>h :History<CR>
     nnoremap <Leader>/ :BLines<CR>
     nnoremap <Leader>f :BTags<CR>
