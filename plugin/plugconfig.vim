@@ -21,6 +21,7 @@
 
     nnoremap <Leader>b :Buffers<CR>
     nnoremap <Leader>e :GFiles<CR>
+    nnoremap <Leader>E :Files<CR>
     nnoremap <Leader>h :History<CR>
     nnoremap <Leader>/ :BLines<CR>
     nnoremap <Leader>f :BTags<CR>
