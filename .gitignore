@@ -2,3 +2,5 @@ doc/tags
 .DS_Store
 .netrwhist
 .VimballRecord
+/autoload/plug.vim
+/bundle/

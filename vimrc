@@ -13,11 +13,58 @@
 "
 "   DubVim .vimrc
 "   Settings are grouped like they appear in the `:options` list.
-"   Plugins are added as Git sub modules into Vim's `pack` directory.
+"   Plugins are managed by junegunn/vim-plug
 "
+"   This configuration assumes Neovim, and as such does not unnecessary things
+"   like `set nocompatible`, since Neovim comes with sensible defaults out of
+"   the box.
+"
+"   If you need a Vim configuration to put on a system that does not have
+"   Neovim installed, nor do you have the powers to install it, it might be
+"   worthwhile to take a look at Tim Pope's Vim Sensible or have a more
+"   minimalist configuration than this one.
+"
+"   For the time being, this configuration is only really tested on Mac, but
+"   will probably change.
 "
 " }
 
+" 0. Plugin managmenet {
+    " Auto load the plugin manager
+    if empty(glob('~/.vim/autoload/plug.vim'))
+        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+        echo "If plugins were not installed, issue a `:PlugInstall` manually\n"
+        echo "And then reload Neovim"
+    endif
+
+    " Since it is advised not to use known Vim directory names, we don't use
+    " pack, but reinstate the Ruby-inspired directory from pathogen.
+    call plug#begin('~/.vim/bundle')
+
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-repeat'
+    Plug 'vim-scripts/cmdline-completion'
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-eunuch'
+    Plug 'FooSoft/vim-argwrap'
+    Plug 'SirVer/ultisnips'
+    Plug 'tpope/vim-commentary'
+    Plug 'junegunn/fzf.vim'
+    Plug 'phpactor/phpactor'
+    Plug 'jtratner/vim-flavored-markdown'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'itchyny/lightline.vim'
+    Plug 'junegunn/goyo.vim'
+    Plug 'junegunn/limelight.vim'
+    Plug 'janko/vim-test'
+    Plug 'mileszs/ack.vim'
+    Plug 'gruvbox-community/gruvbox'
+
+    call plug#end()
+" }
 " 1. Important {
     " Things that need to get done before anything else.
     au!
