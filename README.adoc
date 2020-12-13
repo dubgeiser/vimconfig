@@ -11,7 +11,7 @@
                Per Juchtmans <dubgeiser+vimconfig@gmail.com>
 ....
 
-This is my http://www.vim.org/[Vim] configuration, there are many like
+This is my https://neovim.io/[Neovim] configuration, there are many like
 it, but this one is mine.  Feel free to check it out.  Follow @dgcode on
 Twitter for updates (uses github hook)
 
@@ -22,5 +22,18 @@ This assumes no previous install of a vim configuration.
 
 ----
     git clone git://github.com/dubgeiser/vimconfig.git <VIMDIR>
-    ./<VIMDIR>/install
+    nvim
 ----
+
+When entering the editor, vim-plug is automatically fetched and it'll try to
+install all the plugins.
+I had not much success with this (my first thought is that the `VimEnter` event
+is triggered too late, but I haven't investigated this further.
+If you get errors and/or nu plugins seem to be loaded, issue
+
+----
+    :PlugInstall
+    :q
+----
+
+and start Neovim again.
