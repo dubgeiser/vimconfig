@@ -53,7 +53,7 @@
     Plug 'SirVer/ultisnips'
     Plug 'tpope/vim-commentary'
     Plug 'junegunn/fzf.vim'
-    Plug 'phpactor/phpactor'
+    Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
     Plug 'jtratner/vim-flavored-markdown'
     Plug 'tpope/vim-rhubarb'
     Plug 'itchyny/lightline.vim'
