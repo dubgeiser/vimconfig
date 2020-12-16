@@ -52,6 +52,7 @@
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
+    Plug 'junegunn/vim-plug'
     Plug 'lifepillar/vim-solarized8'
     Plug 'mileszs/ack.vim'
     Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
