@@ -29,7 +29,7 @@
 "
 " }
 
-" 0. Plugin managmenet {
+" 0. Plugin management {
     " Auto load the plugin manager
     if empty(glob('~/.vim/autoload/plug.vim'))
         silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
