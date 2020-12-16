@@ -61,7 +61,7 @@
     Plug 'junegunn/limelight.vim'
     Plug 'janko/vim-test'
     Plug 'mileszs/ack.vim'
-    Plug 'gruvbox-community/gruvbox'
+    Plug 'lifepillar/vim-solarized8'
 
     call plug#end()
 " }
@@ -83,17 +83,12 @@
     set list
 " }
 " 5. Syntax, highlighting and spelling {
-    let g:gruvbox_contrast_dark="hard"
-    let g:gruvbox_invert_selection="0"
-
-    " Italics in Terminal version, used for doc comments.
-    let g:gruvbox_italic=1
-
     " Make terminal version looks as close to GUI as possible.
     " Note: works in iTerm, but not in standard Terminal.
     set termguicolors
 
-    colorscheme gruvbox
+    set background=light
+    colorscheme solarized8
     syntax on
     set nocursorcolumn
     set cursorline

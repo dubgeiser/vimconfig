@@ -43,6 +43,7 @@
 " }
 " Lightline {
     let g:lightline = {
+        \ 'colorscheme' : 'solarized',
         \ 'component_function' : {
         \   'filename' : 'LightLineFilePath',
         \ },

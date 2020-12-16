@@ -7,6 +7,11 @@ Like the dark version a lot.
 Modern color scheme, good diff highlighting, gitcommit, quickfix, etc...
 It has replaced Solarized as from 2018-12-05
 
+As of 2020-12-16 I'm back to Solarized Light
+(https://github.com/lifepillar/vim-solarized8)
+I still find it this light background theme superior in clarity and
+readability.
+
 
                                                                      *mustang*
 Nice, but too green.
