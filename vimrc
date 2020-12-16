@@ -43,25 +43,25 @@
     " pack, but reinstate the Ruby-inspired directory from pathogen.
     call plug#begin('~/.vim/bundle')
 
-    Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-repeat'
-    Plug 'vim-scripts/cmdline-completion'
-    Plug 'editorconfig/editorconfig-vim'
-    Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-eunuch'
     Plug 'FooSoft/vim-argwrap'
     Plug 'SirVer/ultisnips'
-    Plug 'tpope/vim-commentary'
-    Plug 'junegunn/fzf.vim'
-    Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
-    Plug 'jtratner/vim-flavored-markdown'
-    Plug 'tpope/vim-rhubarb'
+    Plug 'editorconfig/editorconfig-vim'
     Plug 'itchyny/lightline.vim'
+    Plug 'janko/vim-test'
+    Plug 'jtratner/vim-flavored-markdown'
+    Plug 'junegunn/fzf.vim'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
-    Plug 'janko/vim-test'
-    Plug 'mileszs/ack.vim'
     Plug 'lifepillar/vim-solarized8'
+    Plug 'mileszs/ack.vim'
+    Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-eunuch'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'tpope/vim-surround'
+    Plug 'vim-scripts/cmdline-completion'
 
     call plug#end()
 " }
