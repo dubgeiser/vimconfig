@@ -21,10 +21,13 @@
 
     nnoremap <Leader>b :Buffers<CR>
     nnoremap <Leader>e :GFiles<CR>
-    nnoremap <Leader>E :Files<CR>
-    nnoremap <Leader>h :History<CR>
+    nnoremap <Leader>o :Files<CR>
+    nnoremap <Leader>h :Helptags<CR>
     nnoremap <Leader>/ :BLines<CR>
-    nnoremap <Leader>f :BTags<CR>
+    nnoremap <Leader>d :BTags<CR>
+    if executable('ag')
+        nnoremap <Leader>f :Ag<CR>
+    endif
 " }
 " Fugitive {
     nnoremap <Leader>g :Gstatus<CR>
