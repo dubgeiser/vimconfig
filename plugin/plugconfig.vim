@@ -25,7 +25,7 @@
     nnoremap <Leader>h :Helptags<CR>
     nnoremap <Leader>/ :BLines<CR>
     nnoremap <Leader>d :BTags<CR>
-    nnoremap <Leader>c :Commits<CR> " Requires Fugitive
+    nnoremap <Leader>c :Commits<CR>
     if executable('ag')
         nnoremap <Leader>f :Ag<CR>
     endif
