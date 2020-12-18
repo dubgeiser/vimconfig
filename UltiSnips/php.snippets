@@ -25,14 +25,12 @@ snippet /** "Start doc block"
 endsnippet
 
 snippet cl
-class ${1}
-{
+class ${1} {
 	${0}
 }
 endsnippet
 snippet clt
-class ${1}Test extends ${2:TestCase}
-{
+class ${1}Test extends ${2:TestCase} {
 	${3}
 }
 endsnippet
@@ -78,20 +76,17 @@ foreach ($${1:collection} as $${2:key} => $${3:value}) {
 }
 endsnippet
 snippet fn
-${1:public} function ${2:name}(${3})
-{
+${1:public} function ${2:name}(${3}) {
 	${4}
 }
 endsnippet
 snippet fns
-${1:public} static function ${2:name}(${3})
-{
+${1:public} static function ${2:name}(${3}) {
 	${4}
 }
 endsnippet
 snippet fnt
-public function test${1}()
-{
+public function test${1}() {
 	${0}
 }
 endsnippet
@@ -102,8 +97,7 @@ snippet . "self selector" i
 $this->${0}
 endsnippet
 snippet ctor
-public function __construct(${1})
-{
+public function __construct(${1}) {
 	${2}
 }
 endsnippet
@@ -134,16 +128,14 @@ snippet getset "Generate getter and setter"
 /**
  * @return ${3:type} ${4:description}
  */
-public function get${1:Name}()
-{
+public function get${1:Name}() {
 	return $this->${2:$1};
 }
 
 /**
  * @param $3 $$2 $4
  */
-public function set$1($$2)
-{
+public function set$1($$2) {
 	$this->$2 = $$2;
 }
 ${0}
