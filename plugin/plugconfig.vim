@@ -80,17 +80,17 @@
     endfunction
 " }
 " Test {
-    " For some reason, the file + line number was not parsed correctly, making
-    " it impossible to go to the correct line with the normal quickfix window
-    " navigation shortcuts.
-    " Might be a bug in Test, or in Dispatch.  I presume Test, since I could
-    " reproduce with the Dispatch plugin deleted.
-    " By explicitly setting pyunit, this works, but it is a small workaround;
-    " what if I use DjangoTest or Nose, etc...
-    " For the time being however, this helps me out.
-    let g:dispatch_compilers = {}
-    let g:dispatch_compilers['python'] = 'pyunit'
-    nnoremap <Leader>t :TestLast<CR>
+    let g:test_has_been_run = 0
+    function! RunTest() abort
+        if g:test_has_been_run
+            :TestLast
+        else
+            :TestFile
+        endif
+        let g:test_has_been_run = 1
+    endfunction
+
+    nnoremap <Leader>t :call RunTest()<CR>
 " }
 " Ack {
     if executable('ag')
