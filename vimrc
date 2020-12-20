@@ -89,7 +89,7 @@
     set termguicolors
 
     set background=light
-    colorscheme solarized8
+    colorscheme solarized8_high
     syntax on
     set nocursorcolumn
     set cursorline
