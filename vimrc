@@ -89,6 +89,16 @@
     set termguicolors
 
     set background=light
+
+    " normal, high, low: switch to 'high' when clearer highlight is necessary
+    " Note that 'high' makes (spell) errors _really_ stand out!
+    let g:solarized_visibility = "normal"
+
+    " normal, high, low: 'high' makes for more apparent diffs.
+    let g:solarized_diffmode = "high"
+
+    " Best enabled; Seems to have a more sensible diff display.
+    let g:solarized_extra_hi_groups = 1
     colorscheme solarized8_high
     syntax on
     set nocursorcolumn
