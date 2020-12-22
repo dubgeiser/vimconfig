@@ -1,4 +1,4 @@
-= Vim configuration
+= (Neo)vim configuration
 
 ....
                      _____         _   _    _ _
@@ -18,11 +18,17 @@ Twitter for updates (uses github hook)
 
 == Installation
 
-This assumes no previous install of a vim configuration.
+This assumes no previous install of a Neovim configuration.
 
 ----
-    git clone git://github.com/dubgeiser/vimconfig.git <VIMDIR>
+    git clone git@github.com:dubgeiser/vimconfig.git .config/nvim
     nvim
+----
+
+Personally I have my tilde/dotfiles/homedirconfig/... add this as a submodule
+
+----
+    git submodule add git@github.com:dubgeiser/vimconfig.git ./config/nvim
 ----
 
 When entering the editor, vim-plug is automatically fetched and it'll try to

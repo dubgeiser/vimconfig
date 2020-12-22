@@ -11,7 +11,7 @@
 "
 "               Per Juchtmans <dubgeiser+vimconfig@gmail.com>
 "
-"   DubVim .vimrc
+"   DubVim init.vim (used to be .vimrc)
 "   Settings are grouped like they appear in the `:options` list.
 "   Plugins are managed by junegunn/vim-plug
 "

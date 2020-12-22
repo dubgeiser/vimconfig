@@ -63,7 +63,7 @@ augroup vim_setup " {
 augroup END " }
 augroup fu_help " {
     au!
-    autocmd BufWritePost ~/.vim/doc/* :helptags ~/.vim/doc/
+    autocmd BufWritePost ~/.config/nvim/doc/* :helptags ~/.config/nvim/doc/
 augroup END " }
 augroup markdown " {
     au!
