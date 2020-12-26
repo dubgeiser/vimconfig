@@ -86,8 +86,8 @@
             :TestLast
         else
             :TestFile
+            let g:test_has_been_run = 1
         endif
-        let g:test_has_been_run = 1
     endfunction
 
     nnoremap <Leader>t :call RunTest()<CR>
