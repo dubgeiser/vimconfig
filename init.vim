@@ -65,6 +65,11 @@
     Plug 'vim-scripts/cmdline-completion'
 
     call plug#end()
+
+    " Make sure help is up to date.
+    " Assumes that all plugins are installed.
+    " Fails silently and will continue execution.
+    :silent! helptags ALL
 " }
 " 1. Important {
     " Things that need to get done before anything else.
