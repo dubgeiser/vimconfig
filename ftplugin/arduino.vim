@@ -1,2 +1,2 @@
-set cindent
-set smartindent
+setlocal cindent
+setlocal smartindent

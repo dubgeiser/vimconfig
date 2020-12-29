@@ -15,10 +15,10 @@
 "
 "
 " }
-set fileformat=unix
-set textwidth=0
+setlocal fileformat=unix
+setlocal textwidth=0
 
-set shiftwidth=2
-set tabstop=2
-set expandtab
-set softtabstop=2
+setlocal shiftwidth=2
+setlocal tabstop=2
+setlocal expandtab
+setlocal softtabstop=2
