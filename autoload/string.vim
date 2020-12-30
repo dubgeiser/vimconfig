@@ -27,13 +27,3 @@ let g:string_loaded = 1
 function! string#RemoveNewline(s) abort
     return substitute(a:s, "\n", "", "g")
 endfunction
-
-
-" If there isn't one, append a semi colon to the end of the current line.
-function! string#AppendSemiColon() abort
-    if getline('.') !~ ';$'
-        let save_cursor = getpos('.')
-        exec("s/$/;/")
-        call setpos('.', save_cursor)
-    endif
-endfunction

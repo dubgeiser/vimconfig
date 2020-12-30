@@ -40,7 +40,7 @@ augroup file_type_settings " {
 
     " For programming languages using a semi colon at the end of statement.
     autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
-        \ nnoremap <silent> <Leader>; :call string#AppendSemiColon()<CR>
+        \ nnoremap <silent> <Leader>; :lua require 'tools'.append_semi_colon()<CR>
 
     autocmd FileType php setlocal omnifunc=phpactor#Complete
 augroup END " }
