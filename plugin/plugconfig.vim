@@ -19,15 +19,15 @@
     let g:fzf_preview_window = ['up:50%:hidden', 'ctrl-/']
     let $FZF_DEFAULT_OPTS='--reverse'
 
-    nnoremap <Leader>b :Buffers<CR>     " b for buffer
-    nnoremap <Leader>e :GFiles<CR>      " e for edit
-    nnoremap <Leader>o :Files<CR>       " o for open
-    nnoremap <Leader>h :Helptags<CR>    " h for help
-    nnoremap <Leader>/ :BLines<CR>      " / for Vim search in buffer
-    nnoremap <Leader>d :BTags<CR>       " d for definition
-    nnoremap <Leader>c :Commits<CR>     " c for commits
+    nnoremap <Leader>b :Buffers<CR>
+    nnoremap <Leader>e :GFiles<CR>
+    nnoremap <Leader>o :Files<CR>
+    nnoremap <Leader>h :Helptags<CR>
+    nnoremap <Leader>/ :BLines<CR>
+    nnoremap <Leader>d :BTags<CR>
+    nnoremap <Leader>c :Commits<CR>
     if executable('ag')
-        nnoremap <Leader>f :Ag<CR>      " f for find
+        nnoremap <Leader>f :Ag<CR>
     endif
 " }
 " Fugitive {
