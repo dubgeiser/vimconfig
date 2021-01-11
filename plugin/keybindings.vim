@@ -42,8 +42,8 @@ endif
 inoremap <C-D> <C-X><C-F>
 
 " Add open lines without going to insert mode.
-nnoremap <C-CR> o<ESC>
-nnoremap <C-S-CR> O<ESC>
+" TODO make <S-CR> O<Esc> work if possible
+nnoremap <CR> o<ESC>
 
 " Jump to tag, but offer choice if multiple matches.
 nnoremap <C-]> g<C-]>
