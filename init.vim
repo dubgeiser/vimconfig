@@ -63,6 +63,7 @@
     Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-surround'
     Plug 'vim-scripts/cmdline-completion'
+    Plug 'romainl/vim-cool'
 
     call plug#end()
 

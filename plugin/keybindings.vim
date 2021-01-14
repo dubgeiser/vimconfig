@@ -74,5 +74,3 @@ nnoremap <silent> <Right> :clast<CR>
 nnoremap <Leader>q :quit<CR>
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>w :call buffer#ToggleLineWrap()<CR>
-
-nnoremap <Leader><CR> :nohlsearch<CR>
