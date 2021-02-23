@@ -49,6 +49,9 @@ find . -name .DS_Store | xargs git rm -f --ignore-unmatch
                                                                *gitfu-remotes*
 git remote -v           all known remote repositories
 git ls-remote           All remote repositories
+git ls-remote --tags --ref --sort=version:refname origin
+                        This will list all tags on the remote, sorted as one
+                        would expect, most recent at the bottom.
 
 
                                                                  *gitfu-reset*
