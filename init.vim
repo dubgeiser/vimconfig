@@ -55,6 +55,7 @@
     Plug 'junegunn/vim-plug'
     Plug 'lifepillar/vim-solarized8'
     Plug 'mileszs/ack.vim'
+    Plug 'neovim/nvim-lspconfig'
     Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-eunuch'
