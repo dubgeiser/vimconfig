@@ -31,16 +31,6 @@ noremap Y y$
 " caused distraction in editing... No more.
 noremap K <Nop>
 
-" Easier omni-complete keys
-inoremap <C-Space> <C-X><C-O>
-
-" <C-Space> does not seem to work in CLI vim, Terminal and iTerm2 apps
-" interpret it as <C-@>.
-if !has('nvim') && !has('gui_running') && has('unix')
-    inoremap <C-@> <C-X><C-O>
-endif
-inoremap <C-D> <C-X><C-F>
-
 " Add open lines without going to insert mode.
 nnoremap <CR> o<ESC>
 nnoremap <S-CR> O<Esc>
