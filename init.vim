@@ -54,6 +54,7 @@
     Plug 'junegunn/limelight.vim'
     Plug 'junegunn/vim-plug'
     Plug 'lifepillar/vim-solarized8'
+    Plug 'michaeljsmith/vim-indent-object'
     Plug 'mileszs/ack.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tpope/vim-commentary'
