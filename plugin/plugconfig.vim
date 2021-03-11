@@ -41,10 +41,6 @@
 " ArgWrap {
     nnoremap <Leader>a :ArgWrap<CR>
 " }
-" Phpactor {
-    nnoremap <Leader>r :call phpactor#ContextMenu()<CR>
-    vnoremap <Leader>r :call phpactor#ContextMenu()<CR>
-" }
 " Lightline {
     let g:lightline = {
         \ 'colorscheme' : 'solarized',
