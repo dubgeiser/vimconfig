@@ -27,10 +27,6 @@ let mapleader = " "
 " Make Y behave consistently with D and C in all modes
 noremap Y y$
 
-" I don't use 'K' and the times that I hit it unintentionally, it has only
-" caused distraction in editing... No more.
-noremap K <Nop>
-
 " Add open lines without going to insert mode.
 nnoremap <CR> o<ESC>
 nnoremap <S-CR> O<Esc>
