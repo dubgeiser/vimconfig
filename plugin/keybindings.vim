@@ -1,20 +1,4 @@
-" DubVim - modeline, notes, info, ... {
 " vim: set ft=vim sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
-"
-"
-"                     _____         _   _    _ _
-"                    (____ \       | | | |  | (_)
-"                     _   \ \ _   _| | | |  | |_ ____
-"                    | |   | | | | | || \ \/ /| |    \
-"                    | |__/ /| |_| | |_) )  / | | | | |
-"                    |_____/  \____|____/ \/  |_|_|_|_|
-"
-"               Per Juchtmans <dubgeiser+vimconfig@gmail.com>
-"
-"   DubVim Key Bindings
-"   Note that keyboard mappings that need a plugin to function properly will
-"   be added to plugin/plugconfig.vim rather than here.
-" }
 
 " Compensate for the FUCKING Mac AZERTY BE layout, for instance:
 " typing "|| " fast will result in the trailing char to be char 160

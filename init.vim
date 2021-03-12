@@ -1,15 +1,5 @@
-" DubVim - modeline, notes, info, ... {
 " vim: set ft=vim sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
-"
-"
-"                     _____         _   _    _ _
-"                    (____ \       | | | |  | (_)
-"                     _   \ \ _   _| | | |  | |_ ____
-"                    | |   | | | | | || \ \/ /| |    \
-"                    | |__/ /| |_| | |_) )  / | | | | |
-"                    |_____/  \____|____/ \/  |_|_|_|_|
-"
-"               Per Juchtmans <dubgeiser+vimconfig@gmail.com>
+
 "
 "   DubVim init.vim (used to be .vimrc)
 "   Settings are grouped like they appear in the `:options` list.
@@ -19,15 +9,10 @@
 "   like `set nocompatible`, since Neovim comes with sensible defaults out of
 "   the box.
 "
-"   If you need a Vim configuration to put on a system that does not have
-"   Neovim installed, nor do you have the powers to install it, it might be
-"   worthwhile to take a look at Tim Pope's Vim Sensible or have a more
-"   minimalist configuration than this one.
+"   This is my personal configuration, I do not put any effort into being
+"   compatible with other setups than my own.
+"   At the moment this is Neovim in Kitty terminal on Mac OSX.
 "
-"   For the time being, this configuration is only really tested on Mac, but
-"   will probably change.
-"
-" }
 
 " 0. Plugin management {
     " Auto load the plugin manager
