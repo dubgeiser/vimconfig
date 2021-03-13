@@ -29,7 +29,7 @@
 " }
 " Lightline {
     let g:lightline = {
-        \ 'colorscheme' : 'solarized',
+        \ 'colorscheme' : 'nord',
         \ 'active': {
         \   'left': [ ['mode', 'paste'],
         \             ['cocstatus', 'readonly', 'filename', 'modified'] ]

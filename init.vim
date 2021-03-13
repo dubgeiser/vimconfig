@@ -30,6 +30,7 @@
 
     Plug 'FooSoft/vim-argwrap'
     Plug 'SirVer/ultisnips'
+    Plug 'arcticicestudio/nord-vim'
     Plug 'editorconfig/editorconfig-vim'
     Plug 'itchyny/lightline.vim'
     Plug 'janko/vim-test'
@@ -38,7 +39,6 @@
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
     Plug 'junegunn/vim-plug'
-    Plug 'lifepillar/vim-solarized8'
     Plug 'michaeljsmith/vim-indent-object'
     Plug 'mileszs/ack.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -77,21 +77,16 @@
 " }
 " 5. Syntax, highlighting and spelling {
     " Make terminal version looks as close to GUI as possible.
-    " Note: works in iTerm, but not in standard Terminal.
+    " Note: works in Truecolor Terminals like iTerm and Kitty,
+    " but not in standard OSX Terminal.
     set termguicolors
 
-    set background=light
+    set background=dark
+    let g:nord_cursor_line_number_background = 1
+    let g:nord_italic = 1
+    " let g:nord_italic_comments = 1
+    colorscheme nord
 
-    " normal, high, low: switch to 'high' when clearer highlight is necessary
-    " Note that 'high' makes (spell) errors _really_ stand out!
-    let g:solarized_visibility = "normal"
-
-    " normal, high, low: 'high' makes for more apparent diffs.
-    let g:solarized_diffmode = "high"
-
-    " Best enabled; Seems to have a more sensible diff display.
-    let g:solarized_extra_hi_groups = 1
-    colorscheme solarized8_high
     syntax on
     set nocursorcolumn
     set cursorline
