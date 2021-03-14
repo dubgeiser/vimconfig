@@ -1,8 +1,9 @@
---- Some utilities/tools for helping in editing
+-- Some utilities/tools for helping in editing
+local M = {}
 
 
---- If there isn't one, append a ; at the end of the current line
-function eol_semicolon()
+-- If there isn't one, append a ; at the end of the current line
+function M.append_semicolon()
   if vim.api.nvim_get_current_line():find(';', -1) == nil then
     local save_cursor = vim.api.nvim_win_get_cursor('.')
     vim.api.nvim_command("s/$/;/")
@@ -12,7 +13,4 @@ function eol_semicolon()
 end
 
 
---- @export
-return {
-  append_semi_colon = eol_semicolon;
-}
+return M
