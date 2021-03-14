@@ -27,7 +27,6 @@
     " Since it is advised not to use known Vim directory names, we don't use
     " pack, but reinstate the Ruby-inspired directory from pathogen.
     call plug#begin('~/.config/nvim/bundle')
-
     Plug 'FooSoft/vim-argwrap'
     Plug 'SirVer/ultisnips'
     Plug 'arcticicestudio/nord-vim'
@@ -50,7 +49,6 @@
     Plug 'tpope/vim-surround'
     Plug 'vim-scripts/cmdline-completion'
     Plug 'romainl/vim-cool'
-
     call plug#end()
 
     let g:coc_global_extensions = [
