@@ -32,7 +32,6 @@
     Plug 'editorconfig/editorconfig-vim'
     Plug 'itchyny/lightline.vim'
     Plug 'janko/vim-test'
-    Plug 'jtratner/vim-flavored-markdown'
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'

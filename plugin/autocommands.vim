@@ -50,5 +50,5 @@ augroup fu_help " {
 augroup END " }
 augroup markdown " {
     au!
-    au BufNewFile,BufRead *.md,*.markdown,*.mkd setlocal filetype=ghmarkdown
+    au BufNewFile,BufRead *.md,*.markdown,*.mkd setlocal filetype=markdown
 augroup END " }
