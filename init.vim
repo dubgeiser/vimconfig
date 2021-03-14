@@ -55,6 +55,7 @@
         \ 'coc-json',
         \ 'coc-pyright',
         \ 'coc-lua',
+        \ 'coc-phpactor',
       \ ]
 
     " Make sure help is up to date.
