@@ -53,6 +53,12 @@
 
     call plug#end()
 
+    let g:coc_global_extensions = [
+        \ 'coc-json',
+        \ 'coc-pyright',
+        \ 'coc-lua',
+      \ ]
+
     " Make sure help is up to date.
     " Assumes that all plugins are installed.
     " Fails silently and will continue execution.
