@@ -28,7 +28,6 @@
     " pack, but reinstate the Ruby-inspired directory from pathogen.
     call plug#begin('~/.config/nvim/bundle')
     Plug 'FooSoft/vim-argwrap'
-    Plug 'SirVer/ultisnips'
     Plug 'arcticicestudio/nord-vim'
     Plug 'editorconfig/editorconfig-vim'
     Plug 'itchyny/lightline.vim'

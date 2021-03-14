@@ -19,11 +19,6 @@
 " Fugitive {
     nnoremap <Leader>g :Gstatus<CR>
 " }
-" UltiSnips {
-    let g:UltiSnipsExpandTrigger="<c-s>"
-    let g:UltiSnipsJumpForwardTrigger="<c-s>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" }
 " ArgWrap {
     nnoremap <Leader>a :ArgWrap<CR>
 " }
