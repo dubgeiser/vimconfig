@@ -53,6 +53,7 @@
         \ 'coc-pyright',
         \ 'coc-lua',
         \ 'coc-phpactor',
+        \ 'coc-yaml',
       \ ]
 
     " Make sure help is up to date.
