@@ -22,6 +22,7 @@ augroup file_type_settings " {
     autocmd FileType mail setlocal nocindent textwidth=72
     autocmd FileType text,rst setlocal nocindent
     autocmd FileType gitcommit setlocal spell nolist nocindent
+    autocmd FileType php set iskeyword+=$
 
     " For programming languages using a semi colon at the end of statement.
     autocmd FileType c,cc,cpp,css,java,javascript,lex,perl,php,sql,y
