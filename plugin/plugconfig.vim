@@ -24,7 +24,7 @@
 " }
 " Lightline {
     let g:lightline = {
-        \ 'colorscheme' : 'nord',
+        \ 'colorscheme' : 'gruvbox_material',
         \ 'active': {
         \   'left': [ ['mode', 'paste'],
         \             ['cocstatus', 'readonly', 'filename', 'modified'] ]

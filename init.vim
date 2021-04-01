@@ -28,7 +28,6 @@
     " pack, but reinstate the Ruby-inspired directory from pathogen.
     call plug#begin('~/.config/nvim/bundle')
     Plug 'FooSoft/vim-argwrap'
-    Plug 'arcticicestudio/nord-vim'
     Plug 'editorconfig/editorconfig-vim'
     Plug 'itchyny/lightline.vim'
     Plug 'janko/vim-test'
@@ -46,6 +45,8 @@
     Plug 'tpope/vim-surround'
     Plug 'vim-scripts/cmdline-completion'
     Plug 'romainl/vim-cool'
+    Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'sainnhe/gruvbox-material'
     call plug#end()
 
     let g:coc_global_extensions = [
@@ -85,10 +86,8 @@
     set termguicolors
 
     set background=dark
-    let g:nord_cursor_line_number_background = 1
-    let g:nord_italic = 1
-    " let g:nord_italic_comments = 1
-    colorscheme nord
+    let g:gruvbox_material_background = 'soft'
+    colorscheme gruvbox-material
 
     syntax on
     set nocursorcolumn

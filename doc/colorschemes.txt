@@ -12,6 +12,13 @@ As of 2020-12-16 I'm back to Solarized Light
 I still find it this light background theme superior in clarity and
 readability.
 
+2021-04-01 Back to GruvBox, since Corona virus I'm spending a lot more time
+behind the screen and the light themes are starting to come in too heavy on
+the brain after hours of working.  Tried Nord first, but that was a tad too
+limiting for coding.  Switched to Grubbox Material, which makes use of
+Treesitter apparently for better coloring.
+
+
 
                                                                      *mustang*
 Nice, but too green.
@@ -22,6 +29,12 @@ No visual distinction between variable and string (PHP); That's BAD.
 Mainly red + grey, totally useless for day-to-day coding, but _very_ useful
 when used with extreme small font size to get an overview of the structure of
 the code.
+
+                                                                     *Nord*
+Like it a lot, light contrast, very easy on the eyes.  Maybe just a tad too
+monochrome-like, but I'm fine with that.
+The thing that made me go back to Grubbox was that Nord's way of highlighting
+closed folds is basically unreadable, that really made it a 'no' for me.
 
 
                                                                    *solarized*
