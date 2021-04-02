@@ -45,7 +45,6 @@
     Plug 'tpope/vim-surround'
     Plug 'vim-scripts/cmdline-completion'
     Plug 'romainl/vim-cool'
-    Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'sainnhe/gruvbox-material'
     call plug#end()
 
