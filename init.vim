@@ -38,6 +38,8 @@
     Plug 'michaeljsmith/vim-indent-object'
     Plug 'mileszs/ack.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-eunuch'
     Plug 'tpope/vim-fugitive'
@@ -55,6 +57,22 @@
         \ 'coc-phpactor',
         \ 'coc-yaml',
       \ ]
+
+lua <<EOF
+require 'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+
+  highlight = {
+    enable = true,
+  },
+
+  playground = {
+    enable = true,
+    updatetime = 25,
+    persist_queries = false,
+  },
+}
+EOF
 
     " Make sure help is up to date.
     " Assumes that all plugins are installed.
