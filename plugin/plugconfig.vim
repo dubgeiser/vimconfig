@@ -31,7 +31,6 @@
         \ },
         \ 'component_function' : {
         \   'filename' : 'LightLineFilePath',
-        \   'cocstatus' : 'coc#status'
         \ },
         \ 'mode_map' : {
         \   'n' : 'N ',
