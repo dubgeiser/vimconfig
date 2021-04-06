@@ -48,6 +48,9 @@
     Plug 'vim-scripts/cmdline-completion'
     Plug 'romainl/vim-cool'
     Plug 'sainnhe/gruvbox-material'
+
+    Plug 'dubgeiser/kokwame'
+
     call plug#end()
 
     let g:coc_global_extensions = [
