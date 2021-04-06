@@ -49,7 +49,7 @@
     Plug 'romainl/vim-cool'
     Plug 'sainnhe/gruvbox-material'
 
-    Plug 'dubgeiser/kokwame'
+    Plug '~/Projects/kokwame'
 
     call plug#end()
 
