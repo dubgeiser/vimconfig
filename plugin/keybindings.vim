@@ -11,10 +11,6 @@ let mapleader = " "
 " Make Y behave consistently with D and C in all modes
 noremap Y y$
 
-" Add open lines without going to insert mode.
-nnoremap <CR> o<ESC>
-nnoremap <S-CR> O<Esc>
-
 " Jump to tag, but offer choice if multiple matches.
 nnoremap <C-]> g<C-]>
 
