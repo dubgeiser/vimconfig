@@ -27,6 +27,9 @@ nnoremap <C-K> <C-W>k
 nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
 
+" I don't use `:terminal` a lot, but when I do, I forget how to escape.
+tnoremap <Esc> <C-\><C-n>
+
 " Have some use for the arrow keys.
 " Allows for quick browsing through search results and errors and the likes in
 " the quickfix window.
