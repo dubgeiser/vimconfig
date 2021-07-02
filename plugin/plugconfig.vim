@@ -17,7 +17,7 @@
     endif
 " }
 " Fugitive {
-    nnoremap <Leader>g :Gstatus<CR>
+    nnoremap <Leader>g :Git<CR>
 " }
 " ArgWrap {
     nnoremap <Leader>a :ArgWrap<CR>
