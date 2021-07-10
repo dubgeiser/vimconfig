@@ -22,44 +22,6 @@
 " ArgWrap {
     nnoremap <Leader>a :ArgWrap<CR>
 " }
-" Lightline {
-    let g:lightline = {
-        \ 'colorscheme' : 'gruvbox_material',
-        \ 'active': {
-        \   'left': [ ['mode', 'paste'],
-        \             ['cocstatus', 'readonly', 'filename', 'modified'] ]
-        \ },
-        \ 'component_function' : {
-        \   'filename' : 'LightLineFilePath',
-        \ },
-        \ 'mode_map' : {
-        \   'n' : 'N ',
-        \   'i' : 'I ',
-        \   'R' : 'R ',
-        \   'v' : 'V ',
-        \   'V' : 'VL',
-        \   "\<C-v>": 'VB',
-        \   'c' : 'C ',
-        \   's' : 'S ',
-        \   'S' : 'SL',
-        \   "\<C-s>": 'SB',
-        \   't': 'T ',
-        \ },
-    \ }
-
-    " Return the filename component for LightLine, depending on the type of
-    " file or buffer.
-    function! LightLineFilePath() abort
-        if &buftype == 'help'
-            let filename = expand("%:t")
-        elseif &buftype == 'terminal'
-            let filename = ''
-        else
-            let filename = file#ShortPath()
-        endif
-        return filename
-    endfunction
-" }
 " Test {
     let g:test_has_been_run = 0
     function! RunTest() abort

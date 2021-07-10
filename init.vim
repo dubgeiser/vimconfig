@@ -29,7 +29,7 @@
     call plug#begin('~/.config/nvim/bundle')
     Plug 'FooSoft/vim-argwrap'
     Plug 'editorconfig/editorconfig-vim'
-    Plug 'itchyny/lightline.vim'
+    Plug 'hoob3rt/lualine.nvim'
     Plug 'janko/vim-test'
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/goyo.vim'
@@ -75,6 +75,13 @@ require 'nvim-treesitter.configs'.setup {
     persist_queries = false,
   },
 }
+
+
+require('lualine').setup {
+    options = {
+        theme = 'gruvbox_material'
+    }
+}
 EOF
 
     " Make sure help is up to date.
@@ -114,14 +121,17 @@ EOF
     set colorcolumn=80
 " }
 " 6. Multiple windows {
-    set statusline=%<%{file#ShortPath()}\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+    " This used to be my custom status line, keeping it here for documentation
+    " purposes, or in case I go through another "more out-of-the-box-vim"
+    " period.
+    "set statusline=%<%{file#ShortPath()}\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
     set winminheight=0  " Allow for fully minimized windows.
     set hidden          " Remember undo, even when buffer is not active.
     set splitbelow
     set splitright
 " }
 " 11. Messages and info {
-    set noshowmode " Lightline plugin covers this.
+    set noshowmode " Status line plugin should cover this already.
     set noerrorbells
     set visualbell
 " }
